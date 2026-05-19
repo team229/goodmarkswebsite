@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SeoMeta from './components/SeoMeta';
 import Home from './pages/Home';
 import About from './pages/About';
 import Courses from './pages/Courses';
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <div className="bg-background text-on-background font-body-md scroll-smooth selection:bg-secondary/20 selection:text-secondary flex flex-col min-h-screen">
       <ScrollToTop />
+      <SeoMeta />
       <Navbar />
       <div className="flex-1">
          <Routes>
