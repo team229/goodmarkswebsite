@@ -32,6 +32,13 @@ export default function Courses() {
     }
   }, [searchParams, activeTab]);
 
+
+  const streamHeadings: Record<string, string> = {
+    iit: 'IIT JEE Coaching in Gurgaon',
+    neet: 'NEET Coaching in Gurgaon',
+    foundation: 'IIT JEE & NEET Foundation Course in Gurgaon'
+  };
+
   const handleStreamChange = (stream: string) => {
     setActiveStream(stream);
     setSearchParams({ stream });
@@ -41,6 +48,7 @@ export default function Courses() {
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
       {/* Header text */}
       <section className="px-6 relative z-10 text-center mb-10">
+         <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-3">{streamHeadings[activeStream] || 'All Courses | JEE & NEET Coaching Programs in Gurgaon'}</h1>
          <p className="text-slate-500 font-semibold mb-2">Choose your preparation path and unlock your engineering dreams</p>
       </section>
 

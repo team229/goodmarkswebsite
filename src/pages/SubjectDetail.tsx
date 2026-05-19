@@ -86,6 +86,16 @@ export default function SubjectDetail() {
   const config = subjectConfigs[subjectId || ''] || subjectConfigs['physics'];
   const Icon = config.icon;
 
+
+  const subjectHeadings: Record<string, string> = {
+    biology: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon',
+    chemistry: 'Chemistry Tuition for Class 11 & 12 in Gurgaon',
+    mathematics: 'Maths Coaching for Class 10, 11 & 12 in Gurgaon',
+    physics: 'Physics Tuition for Class 9, 10, 11 & 12 in Gurgaon'
+  };
+
+  const subjectHeading = subjectHeadings[subjectId || ''] || `${config.name} Classes`;
+
   // Flatten all courses from coursesData
   const allCourses = Object.values(coursesData).flat();
 
@@ -107,7 +117,7 @@ export default function SubjectDetail() {
               <div className="inline-block px-4 py-1 bg-offwhite/20 backdrop-blur-md rounded-full font-bold text-sm tracking-wide mb-4">
                 {config.exams}
               </div>
-              <h1 className="text-4xl md:text-6xl font-black mb-4">{config.name} Classes</h1>
+              <h1 className="text-4xl md:text-6xl font-black mb-4">{subjectHeading}</h1>
               <p className="text-xl md:text-2xl font-medium text-white/90 max-w-2xl">{config.shortDesc}</p>
             </div>
           </div>
