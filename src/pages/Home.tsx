@@ -64,8 +64,50 @@ export default function Home() {
     await submitForm(data);
   };
 
+
+  const faqItems = [
+    {
+      q: 'What courses does Good Marks Classes offer?',
+      a: 'We offer comprehensive coaching for IIT JEE (Mains & Advanced), NEET-UG, CBSE board exams, as well as Foundation and Pre-Foundation courses for school students starting from Class 7.'
+    },
+    {
+      q: 'Why should I choose Good Marks Classes for JEE/NEET?',
+      a: 'Led by Sunil Gola Sir, we provide experienced faculty, small batch sizes for personalized attention, regular Parent-Teacher Meetings (PTM), doubt clearing cells, and a supportive environment that builds the right temperament.'
+    },
+    {
+      q: 'Do you provide study material and test series?',
+      a: 'Yes, we provide highly research-oriented study materials tailored for CBSE and competitive exams. We also conduct various test papers regularly to evaluate individual performance and improve time management skills.'
+    },
+    {
+      q: 'Do you offer Foundation courses for school students?',
+      a: 'Absolutely. We have specialized Pre-Foundation and Foundation courses starting from Class 7th all the way to Class 10th to build a strong base early for future competitive success.'
+    },
+    {
+      q: 'Where is Good Marks Classes located in Gurgaon?',
+      a: 'Our offline center is conveniently located in Gurgaon, offering a focused learning environment. We also provide seamless hybrid, online, and home tutor services based on your preference.'
+    },
+    {
+      q: 'How can I enroll in Good Marks Classes?',
+      a: 'You can enroll by visiting our center, calling our student support desk, or booking a free session/demo class through our website to experience our teaching methodology firsthand.'
+    }
+  ];
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a
+      }
+    }))
+  };
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero Section */}
         <section className="relative pt-32 lg:pt-40 pb-20 px-6 overflow-hidden min-h-[90vh] flex items-center bg-gradient-to-br from-primary-50/50 via-white to-primary-50/30">
           <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-30 pointer-events-none">
@@ -645,32 +687,7 @@ export default function Home() {
             </div>
             
             <div className="flex flex-col gap-4">
-              {[
-                {
-                  q: "What courses does Good Marks Classes offer?",
-                  a: "We offer comprehensive coaching for IIT JEE (Mains & Advanced), NEET-UG, CBSE board exams, as well as Foundation and Pre-Foundation courses for school students starting from Class 7."
-                },
-                {
-                  q: "Why should I choose Good Marks Classes for JEE/NEET?",
-                  a: "Led by Sunil Gola Sir, we provide experienced faculty, small batch sizes for personalized attention, regular Parent-Teacher Meetings (PTM), doubt clearing cells, and a supportive environment that builds the right temperament."
-                },
-                {
-                  q: "Do you provide study material and test series?",
-                  a: "Yes, we provide highly research-oriented study materials tailored for CBSE and competitive exams. We also conduct various test papers regularly to evaluate individual performance and improve time management skills."
-                },
-                {
-                  q: "Do you offer Foundation courses for school students?",
-                  a: "Absolutely. We have specialized Pre-Foundation and Foundation courses starting from Class 7th all the way to Class 10th to build a strong base early for future competitive success."
-                },
-                {
-                  q: "Where is Good Marks Classes located in Gurgaon?",
-                  a: "Our offline center is conveniently located in Gurgaon, offering a focused learning environment. We also provide seamless hybrid, online, and home tutor services based on your preference."
-                },
-                {
-                  q: "How can I enroll in Good Marks Classes?",
-                  a: "You can enroll by visiting our center, calling our student support desk, or booking a free session/demo class through our website to experience our teaching methodology firsthand."
-                }
-              ].map((faq, idx) => (
+              {faqItems.map((faq, idx) => (
                 <details key={idx} className="group bg-offwhite border border-slate-200 rounded-2xl open:shadow-md transition-all duration-300 overflow-hidden">
                   <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-bold text-secondary-800 text-lg select-none group-open:bg-offwhite/50">
                     {idx + 1}. {faq.q}

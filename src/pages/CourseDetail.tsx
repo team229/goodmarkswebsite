@@ -30,6 +30,15 @@ export default function CourseDetail() {
 
   const { details } = currentCourse;
 
+  const seoHeadingByCourseId: Record<string, string> = {
+    '1-year-regular-12': '1 Year JEE Coaching in Gurgaon',
+    '1-year-regular-12-neet': '1 Year NEET Coaching in Gurgaon',
+    '2-year-integrated-regular': '2 Year IIT JEE Coaching Program in Gurgaon',
+    '2-year-integrated-regular-neet': '2 Year NEET Coaching in Gurgaon'
+  };
+
+  const courseHeading = seoHeadingByCourseId[currentCourse.id] || currentCourse.title;
+
   return (
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -63,7 +72,7 @@ export default function CourseDetail() {
                 </span>
               </div>
               <h1 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-2 leading-tight">
-                {currentCourse.title}
+                {courseHeading}
               </h1>
               <p className="text-lg text-slate-500 font-medium">{currentCourse.subtitle}</p>
             </div>
