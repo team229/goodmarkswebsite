@@ -137,6 +137,20 @@
       }
     }
     </script>
+      <script>
+      (function () {
+        window.$classproWE = window.$classproWE || {};
+        window.$classproWE.auth_key = '8c53169a1eccae8f6aedb5aa64122a3507e5c5f1';
+        document.onreadystatechange = function () {
+          if (document.readyState == 'complete') {
+            var script_tag = document.createElement('script');
+            script_tag.setAttribute('type', 'text/javascript');
+            script_tag.setAttribute('src', 'https://www.classpro.in/js/classpro-plugin.js');
+            (document.getElementsByTagName('head')[0] || document.documentElement).appendChild(script_tag);
+          }
+        };
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -31,6 +31,10 @@ const routeMeta: Record<string, MetaConfig> = {
     title: 'Doubt Clearing Sessions in Gurgaon | GoodMarks Classes',
     description: 'Clear your concepts with dedicated doubt sessions at GoodMarks Classes in Gurgaon. Our expert faculty address student queries in Physics, Chemistry, Maths, and Biology to ensure no topic is left unclear.'
   },
+  '/physics-classes-sunil-gola': {
+    title: 'Physics Classes by Sunil Gola Sir in Gurgaon | GoodMarks Classes',
+    description: 'Join dedicated Physics classes by Sunil Gola Sir (DTU) at GoodMarks Classes Gurgaon. Concept clarity, exam-focused preparation, and personalised mentorship for CBSE, JEE, and NEET.'
+  },
   '/courses': {
     title: 'All Courses | JEE & NEET Coaching Programs in Gurgaon | GoodMarks Classes',
     description: 'Explore all coaching programs at GoodMarks Classes in Gurgaon. From JEE and NEET preparation to foundation and subject-specific courses, find the right program for your academic goals.'

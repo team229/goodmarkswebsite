@@ -12,6 +12,7 @@ import HomeTuition from './pages/HomeTuition';
 import Olympiad from './pages/Olympiad';
 import DoubtSessions from './pages/DoubtSessions';
 import JoinFaculty from './pages/JoinFaculty';
+import PhysicsClassesSunilGola from './pages/PhysicsClassesSunilGola';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/olympiad" element={<Olympiad />} />
           <Route path="/doubt-sessions" element={<DoubtSessions />} />
           <Route path="/join-faculty" element={<JoinFaculty />} />
+          <Route path="/physics-classes-sunil-gola" element={<PhysicsClassesSunilGola />} />
         </Routes>
       </div>
       <Footer />
