@@ -147,6 +147,13 @@ export default function Home() {
                     Book your Free Demo Class Today
                     <ArrowRight className="w-5 h-5" />
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => window.location.assign('https://goodmarksclasses.classpro.in/people/sign_in')}
+                    className="px-8 py-4 rounded-xl border border-secondary-200 text-secondary-900 font-label-bold hover:bg-secondary-50 transition-colors flex items-center justify-center"
+                  >
+                    Student Login
+                  </button>
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-8">
