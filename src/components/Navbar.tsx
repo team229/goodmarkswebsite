@@ -52,6 +52,9 @@ export default function Navbar() {
                      <Link to="#" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-primary-500"></div> Online Courses
                      </Link>
+                     <Link to="/physics-classes-sunil-gola" className="px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-orange-600 flex items-center gap-2">
+                       <div className="w-2 h-2 rounded-full bg-orange-500"></div> Physics by Sunil Gola
+                     </Link>
                    </div>
                 </div>
               </div>
@@ -100,6 +103,7 @@ export default function Navbar() {
                   <Link to="/courses?stream=prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</Link>
                   <Link to="/courses?stream=foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</Link>
                   <Link to="#" className="block hover:text-primary-600 transition-colors text-xs font-semibold">Online Courses</Link>
+                  <Link to="/physics-classes-sunil-gola" className="block hover:text-orange-600 transition-colors text-xs font-semibold">Physics by Sunil Gola</Link>
                 </div>
               </div>
               <Link 
