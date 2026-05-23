@@ -1,23 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Phone, Menu } from 'lucide-react';
-import { useFormSubmit } from '../hooks/useFormSubmit';
 
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('Contact Us Modal');
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    await submitForm(data);
-    setTimeout(() => {
-      setIsModalOpen(false);
-    }, 2000);
-  };
-
 
   return (
     <>
@@ -174,57 +161,14 @@ export default function Navbar() {
               <p className="text-slate-500 text-sm">Fill the form below to get a callback from our mentors.</p>
             </div>
 
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              {isSuccess && (
-                <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
-                  Thanks! We will contact you soon.
-                </div>
-              )}
-              <div>
-                <input 
-                  type="text" 
-                  name="name"
-                  placeholder="Student Name" 
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm"
-                  required
-                />
-              </div>
-              <div>
-                <input 
-                  type="tel" 
-                  name="phone"
-                  placeholder="Mobile Number" 
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm"
-                  required
-                />
-              </div>
-              <div>
-                <select name="course" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all appearance-none bg-offwhite text-sm" required defaultValue="">
-                  <option value="" disabled hidden>Select Course</option>
-                  <option value="iit-jee">IIT-JEE</option>
-                  <option value="neet-ug">NEET-UG</option>
-                  <option value="pre-foundation">Pre-Foundation</option>
-                  <option value="foundation">Foundation</option>
-                  <option value="online-courses">Online Courses</option>
-                </select>
-              </div>
-              <div>
-                <textarea 
-                  name="message"
-                  placeholder="Any Questions? (Optional)" 
-                  rows={3}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 resize-none text-sm"
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full bg-primary-500 hover:bg-primary-600 text-secondary-900 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-primary-500/20 mt-4 disabled:opacity-70"
-              >
-                {isSubmitting ? 'SUBMITTING...' : 'GET STARTED \u2192'}
-              </button>
-            </form>
+            <div className="space-y-4">
+              <iframe
+                src="https://www.classpro.in/api/v3/web_enquiries/new.html?token=8c53169a1eccae8f6aedb5aa64122a3507e5c5f1"
+                width="100%"
+                style={{ height: '47em', border: '0px' }}
+                title="Contact Us Form"
+              />
+            </div>
           </div>
         </div>
       )}
