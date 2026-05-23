@@ -52,9 +52,14 @@ export default function Navbar() {
               <a href="tel:8800880028" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"><Phone className="w-4 h-4" /> 8800 8800 28</a>
             </nav>
             
-            <Link to="#" className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2">
+            <a
+              href="https://goodmarksclasses.classpro.in/people/sign_in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2"
+            >
               Student Login
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button 
@@ -129,13 +134,15 @@ export default function Navbar() {
               >
                 <Phone className="w-4 h-4" /> 8800 8800 28
               </a>
-              <Link 
+              <a 
                 onClick={() => setIsMobileMenuOpen(false)}
-                to="#" 
+                href="https://goodmarksclasses.classpro.in/people/sign_in"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all text-center mt-2"
               >
                 Student Login
-              </Link>
+              </a>
             </nav>
           </div>
         )}
