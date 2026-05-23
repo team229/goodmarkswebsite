@@ -147,6 +147,14 @@ export default function Home() {
                     Book your Free Demo Class Today
                     <ArrowRight className="w-5 h-5" />
                   </button>
+                  <a
+                    href="https://goodmarksclasses.classpro.in/people/sign_in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-8 py-4 rounded-xl border border-secondary-200 text-secondary-900 font-label-bold hover:bg-secondary-50 transition-colors flex items-center justify-center"
+                  >
+                    Student Login
+                  </a>
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-8">
