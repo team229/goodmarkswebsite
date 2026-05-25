@@ -181,6 +181,43 @@ export default function Home() {
                 </div>
               </motion.div>
 
+              <div className="lg:hidden w-full">
+                <div className="bg-offwhite/95 p-6 rounded-3xl shadow-xl shadow-primary-900/10 border border-slate-100">
+                  <div className="mb-5 text-center">
+                    <h3 className="text-xl font-bold text-secondary-900 mb-1">Request a Call Back</h3>
+                    <p className="text-sm text-slate-500">Get expert guidance for your exam preparation</p>
+                  </div>
+                  <form className="space-y-3" onSubmit={handleSubmit}>
+                    {isSuccess && (
+                      <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
+                        Thanks! We will contact you soon.
+                      </div>
+                    )}
+                    <div>
+                      <label htmlFor="mobile-name" className="block text-sm font-label-bold text-secondary-700 mb-1.5">Full Name</label>
+                      <input type="text" id="mobile-name" name="name" placeholder="Enter your full name" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />
+                    </div>
+                    <div>
+                      <label htmlFor="mobile-phone" className="block text-sm font-label-bold text-secondary-700 mb-1.5">Phone Number</label>
+                      <input type="tel" id="mobile-phone" name="phone" placeholder="Enter your phone number" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />
+                    </div>
+                    <div>
+                      <label htmlFor="mobile-course" className="block text-sm font-label-bold text-secondary-700 mb-1.5">Interested Course</label>
+                      <select name="course" id="mobile-course" defaultValue="" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required>
+                        <option value="" disabled>Select a course</option>
+                        <option value="jee">IIT JEE Coaching</option>
+                        <option value="neet">NEET Coaching</option>
+                        <option value="foundation">Class 8-10 Foundation</option>
+                        <option value="tuition">Subject-wise Tuition</option>
+                      </select>
+                    </div>
+                    <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 mt-2 transition-all">
+                      Submit Enquiry
+                    </button>
+                  </form>
+                </div>
+              </div>
+
               <div className="hidden lg:block w-full max-w-md mx-auto">
                 <div className="bg-offwhite p-8 rounded-[32px] shadow-2xl shadow-primary-900/10 border border-slate-100 flex flex-col relative z-20">
                   <div className="mb-6">
