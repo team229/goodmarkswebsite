@@ -9,12 +9,12 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
-        <div className="flex justify-between items-center px-6 lg:px-12 py-4 max-w-container-max mx-auto">
-          <Link to="/" className="text-2xl font-black text-secondary-900 tracking-tighter flex items-center gap-2">
-            <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-10 w-auto object-contain rounded-lg" />
-            <span className="text-xs sm:text-lg font-bold whitespace-nowrap">Good Marks Classes</span>
+        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
+          <Link to="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 min-w-0 flex-1">
+            <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
+            <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap truncate">Good Marks Classes</span>
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600">
               <Link className="hover:text-primary-600 transition-colors" to="/">Home</Link>
                <div className="relative group py-6 -my-6 flex items-center">
@@ -64,7 +64,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors"
+              className="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors shrink-0"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -86,6 +86,7 @@ export default function Navbar() {
                 <Link 
                   className="hover:text-primary-600 transition-colors flex items-center gap-2"
                   to="/courses"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Courses
                 </Link>
