@@ -149,6 +149,11 @@ export default function Home() {
                     Explore Physics Classes by Sunil Gola
                   </Link>
                 </p>
+                <p className="max-w-xl">
+                  <Link to="/physics-classes-sunil-gola" className="text-primary-700 font-label-bold underline hover:text-primary-800 transition-colors">
+                    Explore Physics Classes by Sunil Gola
+                  </Link>
+                </p>
                 <p className="text-sm text-slate-500 max-w-xl">
                   Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning.
                 </p>
