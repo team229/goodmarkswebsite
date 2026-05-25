@@ -136,12 +136,15 @@ export default function Home() {
                   </div>
                 </div>
                 <h1 className="font-h1 text-secondary-900 leading-[1.1] text-5xl lg:text-6xl tracking-tight">
-                  Best Coaching Institute for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">IIT JEE, NEET & CBSE</span> in Gurgaon
+                  Best Coaching Institute in Gurgaon for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">CBSE with Integrated IIT JEE & NEET Programs</span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
-                  Led by Sunil Gola Sir (DTU), we offer IIT JEE, NEET & CBSE coaching for Class 11 & 12 offline batches, online classes, hybrid, and home tutors. One place, every format.
+                  Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
                 </p>
-                
+                <p className="text-sm text-slate-500 max-w-xl">
+                  Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning.
+                </p>
+
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button onClick={() => setIsModalOpen(true)} className="btn-gradient px-8 py-4 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
                     Book your Free Demo Class Today
@@ -297,9 +300,9 @@ export default function Home() {
         </section>
 
         {/* Dedicated Subject Classes */}
-        <section className="py-section-padding-lg bg-offwhite border-b border-slate-100" id="live-classes">
+        <section className="py-16 md:py-20 bg-offwhite border-b border-slate-100" id="live-classes">
           <div className="max-w-container-max mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="font-h2 mb-4 text-secondary-900">Dedicated Subject Classes</h2>
               <p className="text-primary-700 text-xl font-bold max-w-2xl mx-auto mb-2">Are you facing difficulties with a specific subject?</p>
               <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-4">Master it with our highly-focused, expert-led sessions designed exclusively for CBSE, IIT JEE, and NEET preparation.</p>
@@ -386,9 +389,9 @@ export default function Home() {
         </section>
 
         {/* Offerings Section */}
-        <section className="py-24 bg-offwhite/50" id="offerings">
+        <section className="py-16 md:py-20 bg-offwhite/50" id="offerings">
           <div className="max-w-container-max mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="font-h2 mb-4 text-secondary-900">Everything You Need to Succeed</h2>
               <p className="text-slate-600 text-lg max-w-2xl mx-auto">Flexible learning options tailored to your specific needs.</p>
             </div>
