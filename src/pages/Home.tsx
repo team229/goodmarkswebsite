@@ -263,7 +263,8 @@ export default function Home() {
                 <Link to="/courses" className="px-6 py-2 rounded-full bg-secondary-900 text-white font-label-bold whitespace-nowrap snap-start hover:bg-secondary-800 transition-colors">All Programs</Link>
                 <Link to="/courses?stream=iit" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">IIT JEE</Link>
                 <Link to="/courses?stream=neet" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">NEET</Link>
-                <Link to="/courses?stream=foundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Class 11 & 12 Foundation</Link>
+                <Link to="/courses?stream=prefoundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Pre-Foundation</Link>
+                <Link to="/courses?stream=foundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Foundation</Link>
               </div>
             </div>
             
