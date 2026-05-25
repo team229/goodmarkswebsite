@@ -139,7 +139,7 @@ export default function Home() {
                   Best Coaching Institute in Gurgaon for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">CBSE with Integrated IIT JEE & NEET Programs</span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
-                  Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6 –12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
+                  Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
                 </p>
                 <p className="max-w-xl">
                   <Link to="/physics-classes-sunil-gola" className="text-primary-700 font-label-bold underline hover:text-primary-800 transition-colors">
