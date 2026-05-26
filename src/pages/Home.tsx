@@ -132,11 +132,14 @@ export default function Home() {
                     Academic Excellence Reimagined
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-label-bold text-xs uppercase tracking-widest shadow-sm">
-                     Now in Sector 85 Gurugram
+                    Now in Sector 85 Gurugram
                   </div>
                 </div>
-                <h1 className="font-h1 text-secondary-900 leading-[1.1] text-5xl lg:text-6xl tracking-tight">
-                  Best Coaching Institute in Gurgaon for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">CBSE with Integrated IIT JEE & NEET Programs</span>
+                <h1 className="font-h1 text-secondary-900 leading-[1.1] text-5xl lg:text-6xl tracking-tight text-center lg:text-left">
+                  Best Coaching Institute in Gurgaon for{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600 whitespace-nowrap">
+                    IIT‑JEE, NEET & CBSE Tuitions
+                  </span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
                   Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
