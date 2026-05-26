@@ -141,6 +141,10 @@ export default function Home() {
                     IIT‑JEE, NEET & CBSE Tuitions
                   </span>
                 <h1 className="font-h1 text-secondary-900 leading-[1.1] text-5xl lg:text-6xl tracking-tight">
+                  Best Coaching Institute in Gurgaon for{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">
+                    <span className="whitespace-nowrap">IIT-JEE</span>, NEET & CBSE Tuitions
+                  </span>
                   Best Coaching Institute in Gurgaon for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">IIT-JEE, NEET & CBSE Tuitions</span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
