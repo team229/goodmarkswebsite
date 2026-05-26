@@ -140,6 +140,7 @@ export default function Home() {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">
                     <span className="whitespace-nowrap">IIT-JEE</span>, NEET & CBSE Tuitions
                   </span>
+                  Best Coaching Institute in Gurgaon for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-primary-600">IIT-JEE, NEET & CBSE Tuitions</span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
                   Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
