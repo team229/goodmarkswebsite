@@ -1,3 +1,4 @@
+import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import { UserPlus, ArrowRight, CheckCircle, BookOpen, Clock, Presentation } from "lucide-react";
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, Atom, FlaskConical, Calculator, Dna, CheckCircle, Calendar, Users, GraduationCap, MapPin } from 'lucide-react';
