@@ -25,6 +25,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/courses/:stream" element={<Courses />} />
           <Route path="/course/:id" element={<CourseDetail />} />
           <Route path="/subject/:subjectId" element={<SubjectDetail />} />
           <Route path="/home-tuition" element={<HomeTuition />} />

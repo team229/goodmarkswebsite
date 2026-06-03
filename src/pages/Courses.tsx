@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
   GraduationCap, 
@@ -13,24 +13,27 @@ import {
 import { courseTabs, coursesData, streams } from '../data/courses';
 
 export default function Courses() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { stream } = useParams();
+  const navigate = useNavigate();
   
-  const initialStream = streams.find(s => s.id === searchParams.get('stream')) ? (searchParams.get('stream') as string) : 'iit';
+  const initialStream = streams.find(s => s.id === stream) ? (stream as string) : 'iit';
   const [activeStream, setActiveStream] = useState(initialStream);
   
   const availableTabs = courseTabs[activeStream] || [];
   const [activeTab, setActiveTab] = useState(availableTabs[0]?.id || 'class11');
 
   useEffect(() => {
-    const stream = searchParams.get('stream');
     if (stream && streams.find(s => s.id === stream)) {
       setActiveStream(stream);
       const newAvailableTabs = courseTabs[stream] || [];
       if (!newAvailableTabs.find(t => t.id === activeTab)) {
         setActiveTab(newAvailableTabs[0]?.id || '');
       }
+    } else if (!stream) {
+      // Default to iit if no stream is provided in URL
+      setActiveStream('iit');
     }
-  }, [searchParams, activeTab]);
+  }, [stream, activeTab]);
 
 
   const streamHeadings: Record<string, string> = {
@@ -39,9 +42,9 @@ export default function Courses() {
     foundation: 'IIT JEE & NEET Foundation Course in Gurgaon'
   };
 
-  const handleStreamChange = (stream: string) => {
-    setActiveStream(stream);
-    setSearchParams({ stream });
+  const handleStreamChange = (streamId: string) => {
+    setActiveStream(streamId);
+    navigate(`/courses/${streamId}`);
   };
 
   return (

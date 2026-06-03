@@ -24,16 +24,16 @@ export default function Navbar() {
                 </Link>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top group-hover:translate-y-0 translate-y-2 z-50">
                    <div className="bg-offwhite shadow-xl shadow-slate-200/50 rounded-2xl border border-slate-100 p-2 flex flex-col gap-1">
-                     <Link to="/courses?stream=iit" className="px-4 py-2.5 hover:bg-secondary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-secondary-600 flex items-center gap-2">
+                     <Link to="/courses/iit" className="px-4 py-2.5 hover:bg-secondary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-secondary-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-secondary-500"></div> IIT-JEE
                      </Link>
-                     <Link to="/courses?stream=neet" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
+                     <Link to="/courses/neet" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-primary-500"></div> NEET-UG
                      </Link>
-                     <Link to="/courses?stream=prefoundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
+                     <Link to="/courses/prefoundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> Pre-Foundation
                      </Link>
-                     <Link to="/courses?stream=foundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
+                     <Link to="/courses/foundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> Foundation
                      </Link>
                      <Link to="#" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
@@ -91,10 +91,10 @@ export default function Navbar() {
                   Courses
                 </Link>
                 <div className="mt-2 ml-4 space-y-2 border-l border-slate-200 pl-4">
-                  <Link to="/courses?stream=iit" className="block hover:text-secondary-600 transition-colors text-xs font-semibold">IIT-JEE</Link>
-                  <Link to="/courses?stream=neet" className="block hover:text-primary-600 transition-colors text-xs font-semibold">NEET-UG</Link>
-                  <Link to="/courses?stream=prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</Link>
-                  <Link to="/courses?stream=foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</Link>
+                  <Link to="/courses/iit" className="block hover:text-secondary-600 transition-colors text-xs font-semibold">IIT-JEE</Link>
+                  <Link to="/courses/neet" className="block hover:text-primary-600 transition-colors text-xs font-semibold">NEET-UG</Link>
+                  <Link to="/courses/prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</Link>
+                  <Link to="/courses/foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</Link>
                   <Link to="#" className="block hover:text-primary-600 transition-colors text-xs font-semibold">Online Courses</Link>
                   <Link to="/physics-classes-sunil-gola" className="block hover:text-orange-600 transition-colors text-xs font-semibold">Physics by Sunil Gola</Link>
                 </div>
