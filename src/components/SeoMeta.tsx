@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { blogPosts } from '../data/blog';
 
 type MetaConfig = {
   title: string;
@@ -38,6 +39,10 @@ const routeMeta: Record<string, MetaConfig> = {
   '/courses': {
     title: 'All Courses | JEE & NEET Coaching Programs in Gurgaon | GoodMarks Classes',
     description: 'Explore all coaching programs at GoodMarks Classes in Gurgaon. From JEE and NEET preparation to foundation and subject-specific courses, find the right program for your academic goals.'
+  },
+  '/blogs': {
+    title: 'Our Blog | Expert Insights & Guides | Good Marks Classes Gurgaon',
+    description: 'Read the latest insights, study tips, and guides from Good Marks Classes. Expert advice on JEE, NEET, and board exam preparation to help you succeed.'
   }
 };
 
@@ -133,6 +138,15 @@ export default function SeoMeta() {
     } else if (pathname.startsWith('/subject/')) {
       const subjectId = pathname.replace('/subject/', '');
       meta = subjectMeta[subjectId];
+    } else if (pathname.startsWith('/blogs/')) {
+      const slug = pathname.replace('/blogs/', '');
+      const post = blogPosts.find(p => p.slug === slug);
+      if (post) {
+        meta = {
+          title: post.metaTitle,
+          description: post.metaDescription
+        };
+      }
     } else {
       meta = routeMeta[pathname];
     }

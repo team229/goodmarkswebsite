@@ -45,7 +45,7 @@ export default function Navbar() {
                    </div>
                 </div>
               </div>
-              <Link className="hover:text-primary-600 transition-colors" to="#">Blog</Link>
+              <Link className="hover:text-primary-600 transition-colors" to="/blogs">Blog</Link>
               <Link className="hover:text-primary-600 transition-colors" to="/about">About Us</Link>
               <Link className="hover:text-primary-600 transition-colors" to="/join-faculty">Join as Faculty</Link>
               <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer">Contact Us</button>
@@ -102,7 +102,7 @@ export default function Navbar() {
               <Link 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                to="#"
+                to="/blogs"
               >
                 Blog
               </Link>

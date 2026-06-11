@@ -13,6 +13,8 @@ import Olympiad from './pages/Olympiad';
 import DoubtSessions from './pages/DoubtSessions';
 import JoinFaculty from './pages/JoinFaculty';
 import PhysicsClassesSunilGola from './pages/PhysicsClassesSunilGola';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
 
 export default function App() {
   return (
@@ -33,6 +35,8 @@ export default function App() {
           <Route path="/doubt-sessions" element={<DoubtSessions />} />
           <Route path="/join-faculty" element={<JoinFaculty />} />
           <Route path="/physics-classes-sunil-gola" element={<PhysicsClassesSunilGola />} />
+          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
         </Routes>
       </div>
       <Footer />
