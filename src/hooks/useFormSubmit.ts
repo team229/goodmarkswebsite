@@ -30,6 +30,7 @@ export function useFormSubmit(formName: string) {
       }
 
       setIsSuccess(true);
+      (window as any).dataLayer.push({ event: 'form_submit', form_name: formName });
     } catch (err: any) {
       setError(err.message || "An error occurred");
     } finally {
