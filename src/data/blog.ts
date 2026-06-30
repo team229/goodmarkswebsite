@@ -8,6 +8,7 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   schema: any;
+  category?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -17,6 +18,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "A practical guide for NEET aspirants exploring one-year NEET coaching in Gurgaon. Learn who the course is for, how the syllabus is covered, and why Good Marks Classes is a trusted choice.",
     date: '2026-06-12',
     image: '/images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg',
+    category: 'NEET Preparation',
     metaTitle: 'Good Marks Classes | 1 Year Neet Coaching Gurgaon',
     metaDescription: 'Is 1 Year NEET Coaching Gurgaon enough to crack NEET? Discover what works, how to choose the right institute, and expert preparation tips.',
     content: `
@@ -183,7 +185,8 @@ export const blogPosts: BlogPost[] = [
     title: 'One Year for JEE in Gurgaon — Honest Answers to the Questions Students Actually Have',
     excerpt: 'Nobody sits down in Class 11 thinking "I\'ll figure out JEE later." It happens anyway. Life gets in the way, school boards eat up time, coaching felt too expensive, or you just didn\'t take it seriously until you did. Now you\'re staring at a calendar and wondering if one year is actually enough to pull this off.',
     date: '2024-06-30',
-    image: '/images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg',
+    image: '/images/blog/one-year-for-jee-in-gurgaon.jpg',
+    category: 'IIT-JEE',
     metaTitle: 'One Year for JEE in Gurgaon — Honest Answers',
     metaDescription: 'Is one year enough for JEE preparation? Honest answers about 1-year JEE coaching in Gurgaon, syllabus coverage, and choosing the right institute.',
     content: `
@@ -255,7 +258,7 @@ export const blogPosts: BlogPost[] = [
       "headline": "One Year for JEE in Gurgaon — Honest Answers to the Questions Students Actually Have",
       "description": "Is one year enough for JEE preparation? Honest answers about 1-year JEE coaching in Gurgaon, syllabus coverage, and choosing the right institute.",
       "image": [
-        "https://goodmarksclasses.com/images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg"
+        "https://goodmarksclasses.com/images/blog/one-year-for-jee-in-gurgaon.jpg"
       ],
       "datePublished": "2024-06-30",
       "dateModified": "2024-06-30",
