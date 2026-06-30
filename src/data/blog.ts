@@ -560,7 +560,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Students who have completed the 2 year IIT JEE program at Good Marks Classes consistently report stronger conceptual understanding, better time management skills during exams, and significantly improved mock test scores as they progress through their preparation. The institute's focus on individual attention ensures that no student is left behind, regardless of their starting level.</p><br />
 
-<h2>Frequently Asked Questions (FAQs)</h2>
+<h2><strong>Frequently Asked Questions (FAQs)</strong></h2>
 
 <p><strong>Q1. When should I enroll in a 2 year IIT JEE program in Gurgaon?</strong></p>
 <p>The ideal time to enroll is right after completing your Class 10 board exams, typically between March and May. This ensures you start the program at the very beginning of Class 11 and do not miss any foundational topics. Enrolling early gives you the full benefit of a two-year preparation window.</p><br />
@@ -592,7 +592,7 @@ export const blogPosts: BlogPost[] = [
 <p><strong>Q10. How do I know if a coaching institute in Gurgaon is right for my child?</strong></p>
 <p>Visit the institute in person, sit in on a demo class if possible, speak with current students or parents, and check the track record. Look for transparency in their results, the quality and accessibility of their faculty, batch sizes, and the study material they provide. A good institute will always welcome your questions and help you understand exactly what the program offers before you commit.</p><br />
 
-<h2>Final Thoughts</h2>
+<h2><strong>Final Thoughts</strong></h2>
 <p>The journey to IIT is demanding, but it is absolutely achievable with the right preparation, the right mindset, and the right support system. Enrolling in a quality 2 year IIT JEE program in Gurgaon gives you the time, structure, and guidance needed to approach one of India's most prestigious exams with genuine confidence.</p><br />
 
 <p>Start early, stay consistent, and choose an institute that genuinely invests in your growth. Whether you aim for the top IITs or a strong NIT, the two-year foundation you build will shape your academic future in ways that go far beyond just the JEE score.</p><br />
@@ -691,7 +691,7 @@ export const blogPosts: BlogPost[] = [
 
       <p>This article breaks down everything you need to know about the 2-year NEET coaching format available in Gurgaon — who it suits, what it covers, how it differs from crash courses, and what to look for before you enroll.</p><br />
 
-      <h2>What Is a 2-Year NEET Coaching Program?</h2>
+      <h2><strong>What Is a 2-Year NEET Coaching Program?</strong></h2>
       <p>A 2-year NEET coaching program is a structured medical entrance preparation course that runs parallel to a student’s Class 11 and Class 12 academic cycle. Instead of cramming everything into a 6-month or 1-year drop program, students cover the entire NEET syllabus across two years — once during their regular school phase and once as a revision and test series phase.</p><br />
 
       <p>The syllabus for NEET covers Physics, Chemistry, and Biology from both Class 11 and Class 12. A 2-year program ensures each subject gets adequate depth. Concepts introduced in Class 11 — like thermodynamics, organic chemistry basics, and plant physiology — are revisited in Class 12 with greater detail and application practice.</p><br />
@@ -705,19 +705,19 @@ export const blogPosts: BlogPost[] = [
       </table>
       <br />
 
-      <h2>Why Gurgaon Has Become a Hub for NEET Aspirants in the NCR</h2>
+      <h2><strong>Why Gurgaon Has Become a Hub for NEET Aspirants in the NCR</strong></h2>
       <p>Gurgaon’s growth as an education hub is no coincidence. Its proximity to Delhi, strong infrastructure, and rising density of coaching institutes have made it a preferred destination for NEET aspirants across Haryana, parts of Western UP, and south Delhi. Students from Faridabad, Rewari, and even Gurugram’s extended suburbs now prefer enrolling locally rather than commuting to Mukherjee Nagar or Kota.</p><br />
 
       <p>The city also offers a more manageable environment compared to Kota’s high-pressure boarding ecosystem. Gurgaon students can stay at home, maintain family support, and still access quality NEET preparation — which tends to reduce burnout significantly over a 2-year cycle.</p><br />
 
-      <h2>What a Good 2-Year NEET Coaching Program Covers</h2>
-      <h3>Year One — Foundation and Concept Building</h3>
+      <h2><strong>What a Good 2-Year NEET Coaching Program Covers</strong></h2>
+      <h3><strong>Year One — Foundation and Concept Building</strong></h3>
       <p>The first year focuses on building strong conceptual clarity across all three subjects. Biology chapters like cell biology, genetics, and human physiology are introduced at a pace that allows for real understanding rather than surface memorization. Physics chapters like motion, electrostatics, and modern physics are taught with both theory and numerical practice. Chemistry covers physical, inorganic, and organic branches in structured modules.</p><br />
 
-      <h3>Year Two — Revision, Mock Tests, and Weak Area Focus</h3>
+      <h3><strong>Year Two — Revision, Mock Tests, and Weak Area Focus</strong></h3>
       <p>The second year is where students gain the edge. Regular full-syllabus mock tests, chapter-wise tests, and previous years’ question paper analysis form the backbone of Year 2. This is also when doubt-clearing sessions, individual performance tracking, and targeted weak area improvement happen. Students who have spent a full year understanding the concepts use this phase to build speed, accuracy, and exam temperament.</p><br />
 
-      <h2>Key Benefits of Choosing a 2-Year NEET Coaching in Gurgaon</h2>
+      <h2><strong>Key Benefits of Choosing a 2-Year NEET Coaching in Gurgaon</strong></h2>
       <p><strong>Balanced academic load: </strong>Students don’t have to choose between board exams and NEET preparation — both are covered simultaneously with an integrated approach.</p><br />
 
       <p><strong>Lower pressure, higher retention: </strong>Spreading preparation over 24 months means topics are revisited multiple times. Retention is significantly better than when the same content is compressed into a few months.</p><br />
@@ -726,7 +726,7 @@ export const blogPosts: BlogPost[] = [
 
       <p><strong>Performance tracking and mentoring: </strong>Institutes running 2-year batches typically offer better mentor-student ratios and consistent progress tracking compared to short-term crash courses.</p><br />
 
-      <h2>What to Look for When Choosing a NEET Coaching in Gurgaon</h2>
+      <h2><strong>What to Look for When Choosing a NEET Coaching in Gurgaon</strong></h2>
       <p>Not all coaching institutes are equal. Before enrolling, evaluate these factors carefully:</p><br />
 
       <p><strong>Faculty experience: </strong>Check whether faculty members specialize in Biology, Physics, and Chemistry separately or handle multiple subjects. NEET-specific teaching requires subject specialists, not generalists.</p><br />
@@ -741,15 +741,15 @@ export const blogPosts: BlogPost[] = [
 
       <p>One institute in Gurgaon that checks many of these boxes is <strong>Good Marks Classes</strong>, known for its structured approach to long-term NEET preparation and focused classroom environment for Class 11 and 12 medical aspirants.</p><br />
 
-      <h2>Is a 2-Year Program Right for You?</h2>
+      <h2><strong>Is a 2-Year Program Right for You?</strong></h2>
       <p>If you are currently in Class 10 or just entering Class 11 with a clear goal of pursuing MBBS, a <strong>2 year NEET coaching in Gurgaon</strong> is arguably the smartest investment you can make at this stage. The competition is not softening — if anything, the cutoffs are getting tighter every year. Starting early, maintaining consistency, and working with the right guidance can be the difference between getting into a government medical college and spending another year preparing as a dropper.</p><br />
 
       <p>Students who often struggle with the drop year model are those who didn’t have enough time to fully internalize the concepts during their board years. A 2-year approach closes that gap entirely. Institutions like <strong><a href="https://goodmarksclasses.com/">Good Marks Classes</a></strong> design their curriculum keeping both board exam alignment and NEET performance in mind — so students never feel they are preparing for two separate things at once.</p><br />
 
-      <h2>Final Thoughts</h2>
+      <h2><strong>Final Thoughts</strong></h2>
       <p>Choosing the right coaching path is one of the most important decisions a NEET aspirant makes. The <strong>2 year NEET coaching Gurgaon</strong> route offers a measured, thorough, and stress-managed path toward one of India’s most competitive medical entrance exams. The earlier you start with the right institute and the right strategy, the more confident you will be when it actually matters — on exam day.</p><br />
 
-      <h2>Frequently Asked Questions (FAQs)</h2>
+      <h2><strong>Frequently Asked Questions (FAQs)</strong></h2>
       <p><strong>Q1. What is the right age or class to start 2 year NEET coaching in Gurgaon?</strong></p>
       <p>The ideal time to enroll is at the start of Class 11, immediately after your Class 10 board results. This allows two full academic years to cover and revise the entire NEET syllabus alongside your school studies, giving you a strong advantage over students who start preparation in Class 12 or after.</p><br />
 
