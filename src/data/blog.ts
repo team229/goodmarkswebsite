@@ -491,7 +491,7 @@ export const blogPosts: BlogPost[] = [
 <p>Many students make the mistake of starting their JEE preparation only in Class 12, which leaves them with barely 10 to 12 months to cover an enormous syllabus. A 2 year IIT JEE program in Gurgaon solves this problem by beginning serious preparation from Class 11 itself.</p><br />
 
 <p>Here is why a two-year head start matters:</p>
-<ul className="list-disc pl-6 mb-4 space-y-2">
+<ul class="list-disc pl-6 mb-4 space-y-2">
   <li>The JEE syllabus spans Class 11 and Class 12 Physics, Chemistry, and Mathematics — covering it slowly over two years ensures deep understanding rather than surface-level memorization.</li>
   <li>Students get more time for concept clarity, revision cycles, and mock test practice.</li>
   <li>Two-year programs align coaching with school board preparation, reducing student stress.</li>
@@ -502,14 +502,14 @@ export const blogPosts: BlogPost[] = [
 <p>A standard 2 year IIT JEE program in Gurgaon is divided into two distinct phases aligned with the Class 11 and Class 12 academic years.</p><br />
 
 <h3>Phase 1 — Class 11 (Foundation Building)</h3>
-<ul className="list-disc pl-6 mb-4 space-y-2">
+<ul class="list-disc pl-6 mb-4 space-y-2">
   <li>Physics: Motion, Laws of Motion, Work-Energy, Thermodynamics, Waves, and more.</li>
   <li>Chemistry: Atomic Structure, Chemical Bonding, Equilibrium, Organic Basics, and Physical Chemistry fundamentals.</li>
   <li>Mathematics: Sets, Relations, Trigonometry, Quadratic Equations, Permutations, Sequences, and more.</li>
 </ul><br />
 
 <h3>Phase 2 — Class 12 (Advanced Application + Revision)</h3>
-<ul className="list-disc pl-6 mb-4 space-y-2">
+<ul class="list-disc pl-6 mb-4 space-y-2">
   <li>Physics: Electrostatics, Current Electricity, Magnetism, Optics, Modern Physics.</li>
   <li>Chemistry: Electrochemistry, Surface Chemistry, P-Block, D-Block, Biomolecules, Polymers.</li>
   <li>Mathematics: Calculus, Vectors, 3D Geometry, Probability, Matrices, and Determinants.</li>
@@ -518,7 +518,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Key Features to Look for in a Coaching Institute</h2>
 <p>With dozens of options available, choosing the right institute for your 2 year IIT JEE program in Gurgaon can be overwhelming. Here are the features that separate an average institute from a genuinely effective one:</p><br />
-<ol className="list-decimal pl-6 mb-4 space-y-2">
+<ol class="list-decimal pl-6 mb-4 space-y-2">
   <li>Experienced Faculty: Teachers who have a deep command over JEE-level problem solving and can simplify complex concepts make all the difference.</li>
   <li>Small Batch Sizes: Classes with fewer students allow more personal attention and doubt-clearing sessions.</li>
   <li>Regular Testing: Weekly chapter-wise tests and monthly full-syllabus mock tests are essential for exam readiness.</li>
@@ -534,7 +534,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>How to Make the Most of Your 2 Year JEE Journey</h2>
 <p>Joining a quality coaching institute is just the starting point. Here is a practical roadmap for making your 2 year IIT JEE program in Gurgaon truly effective:</p><br />
-<ol start="7" className="list-decimal pl-6 mb-4 space-y-2">
+<ol start="7" class="list-decimal pl-6 mb-4 space-y-2">
   <li>Build a Daily Study Routine: Consistency beats intensity. Studying 5 to 6 hours daily with proper breaks is more effective than last-minute cramming.</li>
   <li>Never Skip Doubt Sessions: Every unresolved doubt compounds over time. Make it a habit to clear doubts immediately after each class.</li>
   <li>Practice Previous Year Papers: JEE question papers from the last 10 to 15 years are among the best study tools available. Solving them gives pattern awareness and builds exam confidence.</li>
@@ -550,7 +550,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>JEE Main vs JEE Advanced — Understanding the Two-Level Exam</h2>
 <p>Many students and parents confuse JEE Main and JEE Advanced. Here is a quick breakdown:</p><br />
-<ul className="list-disc pl-6 mb-4 space-y-2">
+<ul class="list-disc pl-6 mb-4 space-y-2">
   <li>JEE Main: Conducted by NTA (National Testing Agency). Qualifying JEE Main is required for admission to NITs, IIITs, and GFTIs. It is also the gateway to JEE Advanced.</li>
   <li>JEE Advanced: Conducted by one of the IITs on rotation. Only the top 2.5 lakh rank holders from JEE Main are eligible. Clearing JEE Advanced is required for IIT admission.</li>
 </ul><br />
@@ -679,43 +679,4 @@ export const blogPosts: BlogPost[] = [
       }
     }
   },
-  {
-  "slug": "looking-for-a-biology-tutor-for-class-10-in-gurgaon-heres-what-actually-helps-before-boards",
-  "category": "Biology",
-  "title": "Looking for a Biology Tutor for Class 10 in Gurgaon? Here's What Actually Helps Before Boards",
-  "excerpt": "Biology doesn't have to be a stressful subject before boards. With the right support \u2014 clear explanations, NCERT focus, and steady practice \u2014 it can actually become one of the easier subjects to score well in.",
-  "content": "\n<p>If you're a parent or student in Gurgaon trying to figure out the right <strong>biology tutor class 10 Gurgaon board exam</strong> prep, you're probably noticing the syllabus feels heavier than it used to. Between long answers, diagrams, and tricky NCERT-based questions, biology can quickly become a subject students either love or dread. That's where the right kind of support \u2014 like what Good Marks Classes offers \u2014 can really change things.</p>\n\n<h2>Why Biology Trips Up So Many Students</h2>\n<p>Honestly, biology isn't \"hard\" in the way math sometimes is. The real issue is usually how it's taught \u2014 too much memorizing, not enough understanding. Chapters like life processes, control and coordination, heredity, and the environment-related topics carry a lot of weight in boards, and students often lose marks simply because they didn't connect the dots.</p>\n\n<p>A solid <strong><a href=\"https://goodmarksclasses.com/subject/biology\">biology tutor class 10 Gurgaon board exam</a></strong> program should fix exactly this. At Good Marks Classes, tutors take time to explain <em>why</em> something happens biologically, not just <em>what</em> happens \u2014 and that small shift makes a big difference when exam time comes.</p>\n\n<h2>Every Student Learns Differently \u2014 So Why Teach Them the Same Way?</h2>\n<p>This is something Good Marks Classes takes seriously. Some students need more time with diagrams, others struggle with long-answer writing, and some just need someone to clear doubts without judgment. Personalized attention means tutors can actually adjust pace and teaching style instead of rushing through a fixed plan.</p>\n\n<p>For board exams especially, this matters. A good <strong>biology tutor class 10 Gurgaon board exam</strong> session means doubts get sorted right away \u2014 not three chapters later when it's too late to catch up.</p>\n\n<h2>Sticking Close to NCERT (Because That's What Boards Actually Test)</h2>\n<p>Most board questions come straight from NCERT, sometimes word-for-word. So instead of jumping to outside material, Good Marks Classes focuses on making sure students know their textbook inside out \u2014 every diagram, every example, every small detail that examiners love to ask about.</p>\n\n<p>Beyond that, students also get trained on <em>how</em> to answer \u2014 structuring responses properly, managing time, and practicing the kind of questions that actually show up in papers. Regular tests help track where a student stands and what still needs work.</p>\n\n<h2>Practice Builds Confidence \u2014 Simple as That</h2>\n<p>A lot of students genuinely know their biology but still lose marks because of nerves or messy presentation. That's a confidence problem, not a knowledge problem. Good Marks Classes works on this through regular revision, doubt sessions, and exam-style practice tests that feel close to the real thing.</p>\n\n<p>Over time, students get comfortable with how to write answers, label diagrams neatly, and use the right terms \u2014 and that comfort shows up in their scores.</p>\n\n<h2>Flexible Options for Busy Gurgaon Schedules</h2>\n<p>Not every student learns the same way or has the same time availability. Good Marks Classes offers one-on-one classes, small groups, and dedicated doubt-clearing sessions, so families can pick whatever fits their routine. Parents also get regular updates on progress, which helps everyone stay on the same page.</p>\n\n<h2>Why Good Marks Classes Stands Out</h2>\n<p>At the end of the day, what makes a difference is consistency, patience, and tutors who actually care about whether a student understands the concept \u2014 not just whether they finish the syllabus. That's the approach <a href=\"https://goodmarksclasses.com/\">Good Marks Classes</a> brings to every <strong>biology tutor class 10 Gurgaon board exam</strong> session.</p>\n\n<h2>Final Thoughts</h2>\n<p>Biology doesn't have to be a stressful subject before boards. With the right support \u2014 clear explanations, NCERT focus, and steady practice \u2014 it can actually become one of the easier subjects to score well in. For students in Gurgaon, Good Marks Classes offers exactly that kind of guidance, helping students walk into their exam feeling prepared instead of panicked.</p>\n",
-  "date": "2024-05-18",
-  "image": "/images/blog/biology-tutor.jpg",
-  "metaTitle": "Biology Tutor for Class 10 in Gurgaon | Good Marks Classes",
-  "metaDescription": "Looking for a Biology tutor for Class 10 in Gurgaon? Good Marks Classes offers personalized tutoring focusing on NCERT, clearing doubts, and building confidence for board exams.",
-  "schema": {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Looking for a Biology Tutor for Class 10 in Gurgaon? Here's What Actually Helps Before Boards",
-    "image": [
-      "https://goodmarksclasses.com/images/blog/biology-tutor.jpg"
-    ],
-    "datePublished": "2026-06-30T00:00:00+05:30",
-    "dateModified": "2026-06-30T00:00:00+05:30",
-    "author": {
-      "@type": "Organization",
-      "name": "Good Marks Classes",
-      "url": "https://goodmarksclasses.com/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Good Marks Classes",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://goodmarksclasses.com/logo.png"
-      }
-    },
-    "description": "Looking for a Biology tutor for Class 10 in Gurgaon? Good Marks Classes offers personalized tutoring focusing on NCERT, clearing doubts, and building confidence for board exams.",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://goodmarksclasses.com/blogs/looking-for-a-biology-tutor-for-class-10-in-gurgaon-heres-what-actually-helps-before-boards"
-    }
-  }
-},
-];
+
