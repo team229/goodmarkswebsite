@@ -8,6 +8,7 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   schema: any;
+  category?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -678,3 +679,4 @@ export const blogPosts: BlogPost[] = [
       }
     }
   },
+

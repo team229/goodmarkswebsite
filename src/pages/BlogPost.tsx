@@ -52,7 +52,7 @@ export default function BlogPost() {
               })}
             </div>
             <div className="w-1 h-1 rounded-full bg-slate-300" />
-            <span className="font-medium text-primary-600">NEET Preparation</span>
+            <span className="font-medium text-primary-600">{post.category || "General"}</span>
           </div>
 
           <h1 className="text-3xl md:text-5xl font-black text-secondary-900 mb-8 leading-tight">
