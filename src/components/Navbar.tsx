@@ -10,9 +10,9 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
-          <Link to="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 min-w-0 flex-1">
+          <Link to="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
-            <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap truncate">Good Marks Classes</span>
+            <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
           </Link>
           <div className="flex items-center gap-2 sm:gap-4">
             <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600">
