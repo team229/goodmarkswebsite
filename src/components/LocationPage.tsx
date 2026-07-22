@@ -11,7 +11,7 @@ interface LocationPageProps {
 export default function LocationPage({ slug }: LocationPageProps) {
   const page = locationPages.find(p => p.slug === slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
+  const { submitForm, isSubmitting } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -118,11 +118,6 @@ export default function LocationPage({ slug }: LocationPageProps) {
               <div className="bg-offwhite rounded-[24px] p-8 shadow-xl border border-slate-100">
                 <h3 className="text-lg font-bold text-secondary-900 mb-6">Request a Call Back</h3>
                 <form className="space-y-4" onSubmit={handleSubmit}>
-                  {isSuccess && (
-                    <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
-                      Thanks! We will contact you soon.
-                    </div>
-                  )}
                   <div>
                     <label className="block text-sm font-bold text-secondary-700 mb-1.5">Full Name</label>
                     <input type="text" name="name" placeholder="Enter your full name" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />
@@ -235,11 +230,6 @@ export default function LocationPage({ slug }: LocationPageProps) {
           <div className="max-w-lg mx-auto">
             <div className="bg-offwhite p-8 rounded-[32px] shadow-xl border border-slate-100">
               <form className="space-y-4" onSubmit={handleSubmit}>
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
                 <div>
                   <label className="block text-sm font-bold text-secondary-700 mb-1.5">Full Name</label>
                   <input type="text" name="name" placeholder="Enter your full name" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />

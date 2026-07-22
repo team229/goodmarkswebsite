@@ -1,57 +1,72 @@
-import React, { useState } from 'react';
-import { X, Phone, Menu } from 'lucide-react';
+import React, { useState, useCallback } from 'react';
+import { X, Phone, Menu, ChevronDown, Loader2 } from 'lucide-react';
+
+const courses = [
+  { label: 'IIT-JEE', href: '/courses/iit', color: 'bg-secondary-500', hover: 'hover:bg-secondary-50', textHover: 'hover:text-secondary-600' },
+  { label: 'NEET-UG', href: '/courses/neet', color: 'bg-primary-500', hover: 'hover:bg-primary-50', textHover: 'hover:text-primary-600' },
+  { label: 'Pre-Foundation', href: '/courses/prefoundation', color: 'bg-amber-500', hover: 'hover:bg-amber-50', textHover: 'hover:text-amber-600' },
+  { label: 'Foundation', href: '/courses/foundation', color: 'bg-amber-500', hover: 'hover:bg-amber-50', textHover: 'hover:text-amber-600' },
+  { label: 'Online Courses', href: '/courses', color: 'bg-primary-500', hover: 'hover:bg-primary-50', textHover: 'hover:text-primary-600' },
+  { label: 'Physics by Sunil Gola', href: '/physics-classes-sunil-gola', color: 'bg-orange-500', hover: 'hover:bg-orange-50', textHover: 'hover:text-orange-600' },
+];
 
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading'>('idle');
+
+  const closeMobile = useCallback(() => setIsMobileMenuOpen(false), []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('loading');
+    try {
+      await fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(form),
+      });
+    } catch {}
+    setForm({ name: '', email: '', message: '' });
+    setIsModalOpen(false);
+    window.location.href = '/thank-you';
+  };
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
+      <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100">
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
-          <a href="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
+          <a href="/" className="text-lg sm:text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
-            <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
+            <span className="hidden sm:inline text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
-            <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm font-bold text-slate-600 whitespace-nowrap">
               <a className="hover:text-primary-600 transition-colors" href="/">Home</a>
-               <div className="relative group py-6 -my-6 flex items-center">
+              <div className="relative group py-6 -my-6 flex items-center">
                 <a className="hover:text-primary-600 transition-colors flex items-center gap-1" href="/courses">
-                  Courses
-                  <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  Courses <ChevronDown className="w-4 h-4 opacity-70" />
                 </a>
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top group-hover:translate-y-0 translate-y-2 z-50">
-                   <div className="bg-offwhite shadow-xl shadow-slate-200/50 rounded-2xl border border-slate-100 p-2 flex flex-col gap-1">
-                     <a href="/courses/iit" className="px-4 py-2.5 hover:bg-secondary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-secondary-600 flex items-center gap-2">
-                       <div className="w-2 h-2 rounded-full bg-secondary-500"></div> IIT-JEE
-                     </a>
-                     <a href="/courses/neet" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
-                       <div className="w-2 h-2 rounded-full bg-primary-500"></div> NEET-UG
-                     </a>
-                     <a href="/courses/prefoundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
-                       <div className="w-2 h-2 rounded-full bg-amber-500"></div> Pre-Foundation
-                     </a>
-                     <a href="/courses/foundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
-                       <div className="w-2 h-2 rounded-full bg-amber-500"></div> Foundation
-                     </a>
-                     <a href="/courses" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-primary-500"></div> Online Courses
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 origin-top translate-y-2 group-hover:translate-y-0 z-50">
+                  <div className="bg-offwhite shadow-xl shadow-slate-200/50 rounded-2xl border border-slate-100 p-2 flex flex-col gap-1">
+                    {courses.map((c) => (
+                      <a key={c.href} href={c.href} className={`px-4 py-2.5 ${c.hover} rounded-xl transition-colors font-bold text-secondary-700 ${c.textHover} flex items-center gap-2`}>
+                        <div className={`w-2 h-2 rounded-full ${c.color}`} /> {c.label}
                       </a>
-                     <a href="/physics-classes-sunil-gola" className="px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-orange-600 flex items-center gap-2">
-                       <div className="w-2 h-2 rounded-full bg-orange-500"></div> Physics by Sunil Gola
-                     </a>
-                   </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-               <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
-               <a className="hover:text-primary-600 transition-colors" href="/locations">Locations</a>
-               <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
-               <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
+              <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
+              <a className="hover:text-primary-600 transition-colors" href="/locations">Locations</a>
+              <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
+              <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
               <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer">Contact Us</button>
               <a href="tel:8800880028" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"><Phone className="w-4 h-4" /> 8800 8800 28</a>
             </nav>
-            
+
             <a
               href="https://goodmarksclasses.classpro.in/people/sign_in"
               target="_blank"
@@ -61,92 +76,49 @@ export default function Navbar() {
               Student Login
             </a>
 
-            {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            <button
+              onClick={() => setIsMobileMenuOpen((p) => !p)}
               className="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors shrink-0"
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-slate-100 bg-offwhite/95 backdrop-blur-lg">
             <nav className="flex flex-col gap-1 px-6 py-4 text-sm font-bold text-slate-600">
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                href="/"
-              >
-                Home
-              </a>
-              <div className="px-4 py-3">
-                <a 
-                  className="hover:text-primary-600 transition-colors flex items-center gap-2"
-                  href="/courses"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Courses
-                </a>
-                <div className="mt-2 ml-4 space-y-2 border-l border-slate-200 pl-4">
-                  <a href="/courses/iit" className="block hover:text-secondary-600 transition-colors text-xs font-semibold">IIT-JEE</a>
-                  <a href="/courses/neet" className="block hover:text-primary-600 transition-colors text-xs font-semibold">NEET-UG</a>
-                  <a href="/courses/prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</a>
-                  <a href="/courses/foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</a>
-                  <a href="/courses" className="block hover:text-primary-600 transition-colors text-xs font-semibold">Online Courses</a>
-                  <a href="/physics-classes-sunil-gola" className="block hover:text-orange-600 transition-colors text-xs font-semibold">Physics by Sunil Gola</a>
+              {[
+                { label: 'Home', href: '/' },
+                { label: 'Courses', href: '/courses', sub: courses },
+                { label: 'Blog', href: '/blogs' },
+                { label: 'Locations', href: '/locations' },
+                { label: 'About Us', href: '/about' },
+                { label: 'Join as Faculty', href: '/join-faculty' },
+              ].map((item) => (
+                <div key={item.href}>
+                  <a onClick={closeMobile} href={item.href} className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50 block">
+                    {item.label}
+                  </a>
+                  {item.sub && (
+                    <div className="ml-4 space-y-1 border-l border-slate-200 pl-4 mb-1">
+                      {item.sub.map((s) => (
+                        <a key={s.href} onClick={closeMobile} href={s.href} className="block hover:text-primary-600 transition-colors px-4 py-2 text-xs font-semibold rounded-lg hover:bg-slate-50">
+                          {s.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              </div>
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                href="/blogs"
-              >
-                Blog
-              </a>
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                href="/locations"
-              >
-                Locations
-              </a>
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                href="/about"
-              >
-                About Us
-              </a>
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                href="/join-faculty"
-              >
-                Join as Faculty
-              </a>
-              <button 
-                onClick={() => {
-                  setIsModalOpen(true);
-                  setIsMobileMenuOpen(false);
-                }}
-                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50 text-left"
-              >
+              ))}
+              <button onClick={() => { setIsModalOpen(true); closeMobile(); }} className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50 text-left">
                 Contact Us
               </button>
-              <a 
-                href="tel:8800880028" 
-                className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-slate-50 text-primary-700 font-semibold"
-              >
+              <a href="tel:8800880028" className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-slate-50 text-primary-700 font-semibold">
                 <Phone className="w-4 h-4" /> 8800 8800 28
               </a>
-              <a 
-                onClick={() => setIsMobileMenuOpen(false)}
-                href="https://goodmarksclasses.classpro.in/people/sign_in"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a onClick={closeMobile} href="https://goodmarksclasses.classpro.in/people/sign_in" target="_blank" rel="noopener noreferrer"
                 className="bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all text-center mt-2"
               >
                 Student Login
@@ -161,11 +133,11 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           <div 
             className="absolute inset-0 bg-secondary-900/40 backdrop-blur-sm" 
-            onClick={() => setIsModalOpen(false)}
+            onClick={() => { setIsModalOpen(false); setFormStatus('idle'); }}
           ></div>
           <div className="relative bg-offwhite rounded-3xl shadow-2xl p-8 max-w-md w-full" style={{ animation: 'fadeIn 0.2s ease-out' }}>
             <button 
-              onClick={() => setIsModalOpen(false)}
+              onClick={() => { setIsModalOpen(false); setFormStatus('idle'); }}
               className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
             >
               <X className="w-5 h-5" />
@@ -176,14 +148,40 @@ export default function Navbar() {
               <p className="text-slate-500 text-sm">Fill the form below to get a callback from our mentors.</p>
             </div>
 
-            <div className="space-y-4">
-              <iframe
-                src="https://www.classpro.in/api/v3/web_enquiries/new.html?token=8c53169a1eccae8f6aedb5aa64122a3507e5c5f1"
-                width="100%"
-                style={{ height: '47em', border: '0px' }}
-                title="Contact Us Form"
-              />
-            </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+                <textarea
+                  placeholder="Your Message"
+                  required
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={formStatus === 'loading'}
+                  className="w-full bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-3 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+                >
+                  {formStatus === 'loading' ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
+                  {formStatus === 'loading' ? 'Submitting...' : 'Submit'}
+                </button>
+              </form>
           </div>
         </div>
       )}

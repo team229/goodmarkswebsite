@@ -54,7 +54,7 @@ import {
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('Home Demo Request');
+  const { submitForm, isSubmitting } = useFormSubmit('Home Demo Request');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -190,11 +190,6 @@ export default function Home() {
                     <p className="text-sm text-slate-500">Get expert guidance for your exam preparation</p>
                   </div>
                   <form className="space-y-3" onSubmit={handleSubmit}>
-                    {isSuccess && (
-                      <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
-                        Thanks! We will contact you soon.
-                      </div>
-                    )}
                     <div>
                       <label htmlFor="mobile-name" className="block text-sm font-label-bold text-secondary-700 mb-1.5">Full Name</label>
                       <input type="text" id="mobile-name" name="name" placeholder="Enter your full name" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />
@@ -227,11 +222,6 @@ export default function Home() {
                     <p className="text-sm text-slate-500">Get expert guidance for your exam preparation</p>
                   </div>
                   <form className="space-y-4" onSubmit={handleSubmit}>
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-4">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
                     <div>
                       <label htmlFor="name" className="block text-sm font-label-bold text-secondary-700 mb-1.5">Full Name</label>
                       <input type="text" id="name" name="name" placeholder="Enter your full name" className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-offwhite focus:bg-offwhite focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all text-sm" required />
@@ -798,15 +788,7 @@ export default function Home() {
                 const formData = new FormData(e.currentTarget);
                 const data = Object.fromEntries(formData.entries());
                 submitForm(data);
-                setTimeout(() => {
-                  setIsModalOpen(false);
-                }, 2000);
               }}>
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
                 <div>
                   <input 
                     type="text" 

@@ -2,13 +2,9 @@ import { useState } from "react";
 
 export function useFormSubmit(formName: string) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const submitForm = async (data: Record<string, any>) => {
     setIsSubmitting(true);
-    setIsSuccess(false);
-    setError(null);
 
     const payload = {
       formName,
@@ -17,26 +13,17 @@ export function useFormSubmit(formName: string) {
     };
 
     try {
-      const response = await fetch("https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy", {
+      await fetch("https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(payload),
       });
+    } catch {}
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
-
-      setIsSuccess(true);
-      (window as any).dataLayer.push({ event: 'form_submit', form_name: formName });
-    } catch (err: any) {
-      setError(err.message || "An error occurred");
-    } finally {
-      setIsSubmitting(false);
-    }
+    setIsSubmitting(false);
+    window.location.href = "/thank-you";
   };
 
-  return { submitForm, isSubmitting, isSuccess, error, setIsSuccess };
+  return { submitForm, isSubmitting };
 }

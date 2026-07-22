@@ -1,4 +1,4 @@
-import { BarChart2, Share2, Link as LinkIcon } from 'lucide-react';
+import { Instagram, Youtube, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -25,14 +25,14 @@ export default function Footer() {
             Small batches. Real attention. No student gets lost.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
-              <BarChart2 className="w-4 h-4" />
+            <a href="https://www.instagram.com/goodmarksclassesgurgaon/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
+              <Instagram className="w-4 h-4" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
-              <Share2 className="w-4 h-4" />
+            <a href="https://share.google/vhB5jd28c0iT57ikX" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
+              <Globe className="w-4 h-4" />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
-              <LinkIcon className="w-4 h-4" />
+            <a href="https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
+              <Youtube className="w-4 h-4" />
             </a>
           </div>
         </div>
