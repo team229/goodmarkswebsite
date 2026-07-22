@@ -5,3 +5,9 @@ dist/
 .env.production
 .env.production.local
 *.tsbuildinfo
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+.playwright-mcp/

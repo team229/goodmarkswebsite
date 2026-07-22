@@ -1,0 +1,136 @@
+import { Link, useSearchParams } from 'react-router-dom';
+import { MapPin, GraduationCap, ChevronRight } from 'lucide-react';
+import { locationPages } from '../data/locations';
+
+const areas = ['All', 'Gurgaon', 'Manesar'];
+const types = ['All', 'IIT', 'JEE'];
+
+function getArea(title: string): string {
+  if (title.toLowerCase().includes('manesar')) return 'Manesar';
+  return 'Gurgaon';
+}
+
+export default function LocationsList() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeType = searchParams.get('type') || 'All';
+  const activeArea = searchParams.get('area') || 'All';
+
+  const filtered = locationPages.filter(p => {
+    if (activeType !== 'All' && p.type !== activeType) return false;
+    if (activeArea !== 'All' && getArea(p.title) !== activeArea) return false;
+    return true;
+  });
+
+  const grouped = filtered.reduce((acc, page) => {
+    const key = `${page.type} - ${getArea(page.title)}`;
+    if (!acc[key]) acc[key] = [];
+    acc[key].push(page);
+    return acc;
+  }, {} as Record<string, typeof locationPages>);
+
+  const setFilter = (key: string, value: string) => {
+    const params = new URLSearchParams(searchParams);
+    if (value === 'All') {
+      params.delete(key);
+    } else {
+      params.set(key, value);
+    }
+    setSearchParams(params);
+  };
+
+  return (
+    <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
+      <section className="max-w-container-max mx-auto px-6">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center">
+            <MapPin className="w-8 h-8 text-primary-600" />
+          </div>
+          <div>
+            <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Our Locations</h1>
+            <p className="text-slate-500 mt-1">Find Good Marks Classes coaching near you</p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-3 mb-8">
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-bold text-slate-500">Type:</span>
+            {types.map(t => (
+              <button
+                key={t}
+                onClick={() => setFilter('type', t)}
+                className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
+                  activeType === t
+                    ? 'bg-secondary-600 text-white shadow-md'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
+                }`}
+              >
+                {t === 'All' ? 'All Types' : t === 'IIT' ? 'IIT-JEE' : 'JEE'}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-bold text-slate-500">Area:</span>
+            {areas.map(a => (
+              <button
+                key={a}
+                onClick={() => setFilter('area', a)}
+                className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
+                  activeArea === a
+                    ? 'bg-secondary-600 text-white shadow-md'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
+                }`}
+              >
+                {a === 'All' ? 'All Areas' : a}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {Object.keys(grouped).length === 0 ? (
+          <div className="text-center py-20">
+            <MapPin className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+            <h2 className="text-2xl font-bold text-secondary-900 mb-2">No locations found</h2>
+            <p className="text-slate-500">Try changing the filters above.</p>
+          </div>
+        ) : (
+          Object.entries(grouped).map(([group, pages]) => {
+            const [type, area] = group.split(' - ');
+            const isIIT = type === 'IIT';
+            return (
+              <div key={group} className="mb-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isIIT ? 'bg-blue-100' : 'bg-emerald-100'}`}>
+                    <GraduationCap className={`w-5 h-5 ${isIIT ? 'text-blue-600' : 'text-emerald-600'}`} />
+                  </div>
+                  <h2 className="text-2xl font-black text-secondary-900">
+                    {type} Coaching in {area}
+                  </h2>
+                  <span className="text-sm text-slate-400 font-semibold">({pages.length} locations)</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {pages.map(page => (
+                    <Link
+                      key={page.slug}
+                      to={`/location/${page.slug}`}
+                      className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isIIT ? 'bg-blue-50' : 'bg-emerald-50'}`}>
+                          <MapPin className={`w-4 h-4 ${isIIT ? 'text-blue-500' : 'text-emerald-500'}`} />
+                        </div>
+                        <span className="font-bold text-secondary-700 text-sm group-hover:text-primary-600 transition-colors">
+                          {page.title.replace(`${type} Coaching in `, '')}
+                        </span>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-primary-500 transition-colors" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })
+        )}
+      </section>
+    </main>
+  );
+}

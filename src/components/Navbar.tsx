@@ -44,9 +44,10 @@ export default function Navbar() {
                    </div>
                 </div>
               </div>
-              <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
-              <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
-              <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
+               <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
+               <a className="hover:text-primary-600 transition-colors" href="/locations">Locations</a>
+               <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
+               <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
               <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer">Contact Us</button>
               <a href="tel:8800880028" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"><Phone className="w-4 h-4" /> 8800 8800 28</a>
             </nav>
@@ -104,6 +105,13 @@ export default function Navbar() {
                 href="/blogs"
               >
                 Blog
+              </a>
+              <a 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
+                href="/locations"
+              >
+                Locations
               </a>
               <a 
                 onClick={() => setIsMobileMenuOpen(false)}
