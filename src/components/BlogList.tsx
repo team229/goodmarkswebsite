@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function BlogList() {
   return (
@@ -28,7 +27,7 @@ export default function BlogList() {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
             >
-              <Link to={`/blogs/${post.slug}`}>
+              <a href={`/blogs/${post.slug}`}>
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={post.image}
@@ -55,7 +54,7 @@ export default function BlogList() {
                     Read More <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
+              </a>
             </motion.article>
           ))}
         </div>

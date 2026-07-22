@@ -1,5 +1,4 @@
 import { BarChart2, Share2, Link as LinkIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -41,10 +40,10 @@ export default function Footer() {
         <div className="col-span-1">
           <h4 className="font-label-bold mb-6 text-white uppercase tracking-wider text-xs">Quick Links</h4>
           <div className="flex flex-col gap-3 text-sm">
-            <Link className="hover:text-white transition-colors w-fit" to="/">Home</Link>
-            <Link className="hover:text-white transition-colors w-fit" to="/about">About Us</Link>
-            <Link className="hover:text-white transition-colors w-fit" to="/courses">Courses</Link>
-            <Link className="hover:text-white transition-colors w-fit" to="/blogs">Blog</Link>
+            <a className="hover:text-white transition-colors w-fit" href="/">Home</a>
+            <a className="hover:text-white transition-colors w-fit" href="/about">About Us</a>
+            <a className="hover:text-white transition-colors w-fit" href="/courses">Courses</a>
+            <a className="hover:text-white transition-colors w-fit" href="/blogs">Blog</a>
           </div>
         </div>
         
@@ -80,7 +79,7 @@ export default function Footer() {
       
       <div className="max-w-container-max mx-auto mt-16 pt-8 border-t border-secondary-900 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
         <p>
-          © 2026 Good Marks Classes. All rights reserved.
+          &copy; 2026 Good Marks Classes. All rights reserved.
         </p>
         <div className="flex gap-4">
            <span>Terms</span>

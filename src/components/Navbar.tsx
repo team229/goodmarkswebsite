@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { X, Phone, Menu } from 'lucide-react';
 
 export default function Navbar() {
@@ -10,44 +9,44 @@ export default function Navbar() {
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
-          <Link to="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
+          <a href="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
             <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
-          </Link>
+          </a>
           <div className="flex items-center gap-2 sm:gap-4">
             <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600">
-              <Link className="hover:text-primary-600 transition-colors" to="/">Home</Link>
+              <a className="hover:text-primary-600 transition-colors" href="/">Home</a>
                <div className="relative group py-6 -my-6 flex items-center">
-                <Link className="hover:text-primary-600 transition-colors flex items-center gap-1" to="/courses">
+                <a className="hover:text-primary-600 transition-colors flex items-center gap-1" href="/courses">
                   Courses
                   <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                </Link>
+                </a>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top group-hover:translate-y-0 translate-y-2 z-50">
                    <div className="bg-offwhite shadow-xl shadow-slate-200/50 rounded-2xl border border-slate-100 p-2 flex flex-col gap-1">
-                     <Link to="/courses/iit" className="px-4 py-2.5 hover:bg-secondary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-secondary-600 flex items-center gap-2">
+                     <a href="/courses/iit" className="px-4 py-2.5 hover:bg-secondary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-secondary-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-secondary-500"></div> IIT-JEE
-                     </Link>
-                     <Link to="/courses/neet" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
+                     </a>
+                     <a href="/courses/neet" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-primary-500"></div> NEET-UG
-                     </Link>
-                     <Link to="/courses/prefoundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
+                     </a>
+                     <a href="/courses/prefoundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> Pre-Foundation
-                     </Link>
-                     <Link to="/courses/foundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
+                     </a>
+                     <a href="/courses/foundation" className="px-4 py-2.5 hover:bg-amber-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-amber-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-amber-500"></div> Foundation
-                     </Link>
-                     <Link to="/courses" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
+                     </a>
+                     <a href="/courses" className="px-4 py-2.5 hover:bg-primary-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-primary-600 flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-primary-500"></div> Online Courses
-                      </Link>
-                     <Link to="/physics-classes-sunil-gola" className="px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-orange-600 flex items-center gap-2">
+                      </a>
+                     <a href="/physics-classes-sunil-gola" className="px-4 py-2.5 hover:bg-orange-50 rounded-xl transition-colors font-bold text-secondary-700 hover:text-orange-600 flex items-center gap-2">
                        <div className="w-2 h-2 rounded-full bg-orange-500"></div> Physics by Sunil Gola
-                     </Link>
+                     </a>
                    </div>
                 </div>
               </div>
-              <Link className="hover:text-primary-600 transition-colors" to="/blogs">Blog</Link>
-              <Link className="hover:text-primary-600 transition-colors" to="/about">About Us</Link>
-              <Link className="hover:text-primary-600 transition-colors" to="/join-faculty">Join as Faculty</Link>
+              <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
+              <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
+              <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
               <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer">Contact Us</button>
               <a href="tel:8800880028" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"><Phone className="w-4 h-4" /> 8800 8800 28</a>
             </nav>
@@ -75,51 +74,51 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-slate-100 bg-offwhite/95 backdrop-blur-lg">
             <nav className="flex flex-col gap-1 px-6 py-4 text-sm font-bold text-slate-600">
-              <Link 
+              <a 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                to="/"
+                href="/"
               >
                 Home
-              </Link>
+              </a>
               <div className="px-4 py-3">
-                <Link 
+                <a 
                   className="hover:text-primary-600 transition-colors flex items-center gap-2"
-                  to="/courses"
+                  href="/courses"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Courses
-                </Link>
+                </a>
                 <div className="mt-2 ml-4 space-y-2 border-l border-slate-200 pl-4">
-                  <Link to="/courses/iit" className="block hover:text-secondary-600 transition-colors text-xs font-semibold">IIT-JEE</Link>
-                  <Link to="/courses/neet" className="block hover:text-primary-600 transition-colors text-xs font-semibold">NEET-UG</Link>
-                  <Link to="/courses/prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</Link>
-                  <Link to="/courses/foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</Link>
-                  <Link to="/courses" className="block hover:text-primary-600 transition-colors text-xs font-semibold">Online Courses</Link>
-                  <Link to="/physics-classes-sunil-gola" className="block hover:text-orange-600 transition-colors text-xs font-semibold">Physics by Sunil Gola</Link>
+                  <a href="/courses/iit" className="block hover:text-secondary-600 transition-colors text-xs font-semibold">IIT-JEE</a>
+                  <a href="/courses/neet" className="block hover:text-primary-600 transition-colors text-xs font-semibold">NEET-UG</a>
+                  <a href="/courses/prefoundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Pre-Foundation</a>
+                  <a href="/courses/foundation" className="block hover:text-amber-600 transition-colors text-xs font-semibold">Foundation</a>
+                  <a href="/courses" className="block hover:text-primary-600 transition-colors text-xs font-semibold">Online Courses</a>
+                  <a href="/physics-classes-sunil-gola" className="block hover:text-orange-600 transition-colors text-xs font-semibold">Physics by Sunil Gola</a>
                 </div>
               </div>
-              <Link 
+              <a 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                to="/blogs"
+                href="/blogs"
               >
                 Blog
-              </Link>
-              <Link 
+              </a>
+              <a 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                to="/about"
+                href="/about"
               >
                 About Us
-              </Link>
-              <Link 
+              </a>
+              <a 
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50" 
-                to="/join-faculty"
+                href="/join-faculty"
               >
                 Join as Faculty
-              </Link>
+              </a>
               <button 
                 onClick={() => {
                   setIsModalOpen(true);

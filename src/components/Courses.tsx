@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, 
   GraduationCap, 
@@ -12,9 +11,7 @@ import {
 
 import { courseTabs, coursesData, streams } from '../data/courses';
 
-export default function Courses() {
-  const { stream } = useParams();
-  const navigate = useNavigate();
+export default function Courses({ stream }: { stream?: string }) {
   
   const initialStream = streams.find(s => s.id === stream) ? (stream as string) : 'iit';
   const [activeStream, setActiveStream] = useState(initialStream);
@@ -30,7 +27,6 @@ export default function Courses() {
         setActiveTab(newAvailableTabs[0]?.id || '');
       }
     } else if (!stream) {
-      // Default to iit if no stream is provided in URL
       setActiveStream('iit');
     }
   }, [stream, activeTab]);
@@ -44,7 +40,7 @@ export default function Courses() {
 
   const handleStreamChange = (streamId: string) => {
     setActiveStream(streamId);
-    navigate(`/courses/${streamId}`);
+    window.location.href = `/courses/${streamId}`;
   };
 
   return (
@@ -237,15 +233,15 @@ export default function Courses() {
                   </div>
 
                   {/* Button */}
-                  <Link 
-                    to={`/course/${course.id}`}
+                  <a 
+                    href={`/course/${course.id}`}
                     className={`w-full py-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-colors ${
                       activeStream === 'iit' 
                         ? 'border-secondary-200 text-secondary-600 hover:bg-secondary-50 group-hover:border-secondary-600 group-hover:bg-secondary-600 group-hover:text-white' 
                         : 'border-primary-200 text-primary-600 hover:bg-primary-50 group-hover:border-primary-600 group-hover:bg-primary-600 group-hover:text-secondary-900'
                     }`}>
                     View Details <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </a>
 
                 </div>
               </motion.div>

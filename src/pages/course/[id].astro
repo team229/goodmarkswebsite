@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseDetail from '../../components/CourseDetail';
+
+export async function getStaticPaths() {
+  // Import course data to generate paths
+  const mod = await import('../../data/courses');
+  const coursesData = mod.coursesData;
+  const ids: string[] = [];
+  for (const category of Object.values(coursesData)) {
+    for (const course of category as any[]) {
+      ids.push(course.id);
+    }
+  }
+  return ids.map(id => ({ params: { id } }));
+}
+
+const { id } = Astro.params;
+---
+<BaseLayout title="Course Details | GoodMarks Classes" description="View course details, schedule, and features for this program at GoodMarks Classes in Gurgaon.">
+  <CourseDetail id={id} client:load />
+</BaseLayout>

@@ -6,7 +6,7 @@ const testimonials = [
     initials: "LS",
     name: "Lakshya Soni",
     title: "IIT Hyderabad Alumnus",
-    quote: "Great teachers who make complex topics easy to understand and fun to learn. They taught me during my foundation years, and I eventually went on to pursue my bachelor’s degree at IIT Hyderabad. Highly recommended!",
+    quote: "Great teachers who make complex topics easy to understand and fun to learn. They taught me during my foundation years, and I eventually went on to pursue my bachelor's degree at IIT Hyderabad. Highly recommended!",
     colorClass: "bg-primary-50 border-primary-100 text-secondary",
     iconColorClass: "text-primary-100"
   },
@@ -30,7 +30,7 @@ const testimonials = [
     initials: "TK",
     name: "Tushar Kont",
     title: "Old Student",
-    quote: "Had a great experience learning here. I’m an old student, and the teaching has always been clear and supportive. Concepts are explained in a simple way, and the environment is very motivating.",
+    quote: "Had a great experience learning here. I'm an old student, and the teaching has always been clear and supportive. Concepts are explained in a simple way, and the environment is very motivating.",
     colorClass: "bg-orange-50 border-orange-100 text-orange-600",
     iconColorClass: "text-orange-100"
   },

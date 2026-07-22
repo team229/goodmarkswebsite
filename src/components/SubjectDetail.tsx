@@ -1,10 +1,9 @@
 import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
-import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, Atom, FlaskConical, Calculator, Dna, CheckCircle, Calendar, Users, GraduationCap, MapPin } from 'lucide-react';
 import { coursesData } from '../data/courses';
 
-export default function SubjectDetail() {
+export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
   const { submitForm, isSubmitting, isSuccess } = useFormSubmit('SubjectDetail');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -13,8 +12,6 @@ export default function SubjectDetail() {
     const data = Object.fromEntries(formData.entries());
     await submitForm(data);
   };
-
-  const { subjectId } = useParams();
 
   // Basic configuration per subject
   const subjectConfigs: Record<string, any> = {
@@ -158,12 +155,12 @@ export default function SubjectDetail() {
                            <MapPin className="w-4 h-4" /> <span>Offline / Online</span>
                         </div>
                       </div>
-                      <Link 
-                        to={`/course/${course.id}`}
+                      <a 
+                        href={`/course/${course.id}`}
                         className={`w-full py-3 rounded-xl font-bold text-white text-center bg-gradient-to-r ${config.gradient} shadow-md transition-transform hover:-translate-y-0.5`}
                       >
                         View Details
-                      </Link>
+                      </a>
                   </div>
                 ))}
                 

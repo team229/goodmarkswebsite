@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost';
+
+export async function getStaticPaths() {
+  const mod = await import('../../data/blog');
+  const posts = mod.blogPosts;
+  return posts.map(post => ({ params: { slug: post.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+<BaseLayout title="Blog | Good Marks Classes" description="Read our latest blog post">
+  <BlogPost slug={slug} client:load />
+</BaseLayout>

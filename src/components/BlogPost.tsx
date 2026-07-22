@@ -1,17 +1,14 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blog';
 import { Calendar, ChevronLeft, Share2 } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
-export default function BlogPost() {
-  const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
+export default function BlogPost({ slug }: { slug?: string }) {
   const post = blogPosts.find(p => p.slug === slug);
 
   useEffect(() => {
     if (!post) {
-      navigate('/blogs');
+      window.location.href = '/blogs';
       return;
     }
 
@@ -24,19 +21,19 @@ export default function BlogPost() {
     return () => {
       document.head.removeChild(script);
     };
-  }, [post, navigate]);
+  }, [post]);
 
   if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <Link
-          to="/blogs"
+        <a
+          href="/blogs"
           className="inline-flex items-center gap-2 text-slate-500 hover:text-primary-600 transition-colors mb-8 font-bold text-sm"
         >
           <ChevronLeft className="w-4 h-4" /> Back to Blogs
-        </Link>
+        </a>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

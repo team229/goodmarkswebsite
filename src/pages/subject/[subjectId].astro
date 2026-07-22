@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SubjectDetail from '../../components/SubjectDetail';
+
+export async function getStaticPaths() {
+  const subjects = ['physics', 'chemistry', 'mathematics', 'biology'];
+  return subjects.map(subjectId => ({ params: { subjectId } }));
+}
+
+const { subjectId } = Astro.params;
+const meta: Record<string, { title: string; description: string }> = {
+  biology: { title: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram.' },
+  chemistry: { title: 'Chemistry Tuition for Class 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Get expert chemistry coaching in Gurgaon for Class 11 and 12 board exams. GoodMarks Classes offers CBSE-aligned chemistry tuition with concept-focused and exam-ready teaching.' },
+  mathematics: { title: 'Maths Coaching for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Struggling with maths? GoodMarks Classes offers CBSE and ICSE maths tuition in Gurgaon for Class 10, 11, and 12 with a patient, concept-first approach.' },
+  physics: { title: 'Physics Tuition for Class 9, 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Find the best physics tutor in Gurgaon for CBSE board exams and competitive prep. GoodMarks Classes provides quality physics tuition for Class 9 to 12 students.' }
+};
+---
+<BaseLayout title={meta[subjectId]?.title || 'Subject | GoodMarks Classes'} description={meta[subjectId]?.description || ''}>
+  <SubjectDetail subjectId={subjectId} client:load />
+</BaseLayout>

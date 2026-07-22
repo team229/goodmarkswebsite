@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import { motion } from 'motion/react';
-import TestimonialCarousel from '../components/TestimonialCarousel';
-import { Link } from 'react-router-dom';
+import TestimonialCarousel from './TestimonialCarousel';
 import { coursesData } from '../data/courses';
 import { 
   Users, 
@@ -145,9 +144,9 @@ export default function Home() {
                   Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
                 </p>
                 <p className="max-w-xl" id="hero-physics-link">
-                  <Link to="/physics-classes-sunil-gola" aria-label="Explore Physics Classes by Sunil Gola" className="text-primary-700 font-label-bold underline hover:text-primary-800 transition-colors">
+                  <a href="/physics-classes-sunil-gola" aria-label="Explore Physics Classes by Sunil Gola" className="text-primary-700 font-label-bold underline hover:text-primary-800 transition-colors">
                     Explore Physics Classes by Sunil Gola
-                  </Link>
+                  </a>
                 </p>
                 <p className="text-sm text-slate-500 max-w-xl">
                   Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning.
@@ -302,14 +301,14 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div className="max-w-2xl">
                 <h2 className="font-h2 mb-4">Explore Our NEET & IIT JEE Coaching Programs</h2>
-                <p className="text-on-surface-variant text-body-md">Subject-wise batches for Class 11 & 12 — offline in Gurgaon, online across India. <Link to="/courses" className="text-secondary font-bold inline-flex items-center gap-1">See All Courses <ArrowRight className="w-4 h-4" /></Link></p>
+                <p className="text-on-surface-variant text-body-md">Subject-wise batches for Class 11 & 12 — offline in Gurgaon, online across India. <a href="/courses" className="text-secondary font-bold inline-flex items-center gap-1">See All Courses <ArrowRight className="w-4 h-4" /></a></p>
               </div>
               <div className="flex gap-4 overflow-x-auto pb-4 md:pb-0 w-full md:w-auto snap-x">
-                <Link to="/courses" className="px-6 py-2 rounded-full bg-secondary-900 text-white font-label-bold whitespace-nowrap snap-start hover:bg-secondary-800 transition-colors">All Programs</Link>
-                <Link to="/courses/iit" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">IIT JEE</Link>
-                <Link to="/courses/neet" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">NEET</Link>
-                <Link to="/courses/prefoundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Pre-Foundation</Link>
-                <Link to="/courses/foundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Foundation</Link>
+                <a href="/courses" className="px-6 py-2 rounded-full bg-secondary-900 text-white font-label-bold whitespace-nowrap snap-start hover:bg-secondary-800 transition-colors">All Programs</a>
+                <a href="/courses/iit" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">IIT JEE</a>
+                <a href="/courses/neet" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">NEET</a>
+                <a href="/courses/prefoundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Pre-Foundation</a>
+                <a href="/courses/foundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Foundation</a>
               </div>
             </div>
             
@@ -335,9 +334,9 @@ export default function Home() {
                     <div>
                       <span className="block text-xs text-slate-500 mb-1">{course.subtitle}</span>
                     </div>
-                    <Link to={`/course/${course.id}`} className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-secondary-900 group-hover:bg-secondary-900 group-hover:text-white transition-all">
+                    <a href={`/course/${course.id}`} className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-secondary-900 group-hover:bg-secondary-900 group-hover:text-white transition-all">
                       <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -356,7 +355,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Physics */}
-              <Link to="/subject/physics" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
+              <a href="/subject/physics" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
                 <div className="bg-gradient-to-br from-amber-400 to-orange-500 p-8 flex flex-col items-center text-center gap-4">
                   <div className="w-20 h-20 bg-offwhite rounded-full flex items-center justify-center shrink-0 shadow-inner mb-2 group-hover:scale-110 transition-transform">
                     <Atom className="w-10 h-10 text-orange-500" />
@@ -372,10 +371,10 @@ export default function Home() {
                     View Course Details <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
+              </a>
 
               {/* Chemistry */}
-              <Link to="/subject/chemistry" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
+              <a href="/subject/chemistry" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
                 <div className="bg-gradient-to-br from-orange-400 to-red-500 p-8 flex flex-col items-center text-center gap-4">
                   <div className="w-20 h-20 bg-offwhite rounded-full flex items-center justify-center shrink-0 shadow-inner mb-2 group-hover:scale-110 transition-transform">
                     <FlaskConical className="w-10 h-10 text-red-500" />
@@ -391,10 +390,10 @@ export default function Home() {
                     View Course Details <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
+              </a>
 
               {/* Mathematics */}
-              <Link to="/subject/mathematics" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
+              <a href="/subject/mathematics" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
                 <div className="bg-gradient-to-br from-primary-500 to-secondary-600 p-8 flex flex-col items-center text-center gap-4">
                   <div className="w-20 h-20 bg-offwhite rounded-full flex items-center justify-center shrink-0 shadow-inner mb-2 group-hover:scale-110 transition-transform">
                     <Calculator className="w-10 h-10 text-secondary-500" />
@@ -410,10 +409,10 @@ export default function Home() {
                     View Course Details <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
+              </a>
 
               {/* Biology */}
-              <Link to="/subject/biology" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
+              <a href="/subject/biology" className="bg-offwhite rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col group block">
                 <div className="bg-gradient-to-br from-primary-400 to-primary-600 p-8 flex flex-col items-center text-center gap-4">
                   <div className="w-20 h-20 bg-offwhite rounded-full flex items-center justify-center shrink-0 shadow-inner mb-2 group-hover:scale-110 transition-transform">
                     <Dna className="w-10 h-10 text-primary-600" />
@@ -429,7 +428,7 @@ export default function Home() {
                     View Course Details <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -455,7 +454,7 @@ export default function Home() {
                   <li>Study plan built around your schedule & gaps</li>
                   <li>Seamlessly covers School Boards and Competitive prep together</li>
                 </ul>
-                <Link to="/home-tuition" className="text-secondary-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Book a Home Tutor <ArrowRight className="w-4 h-4"/></Link>
+                <a href="/home-tuition" className="text-secondary-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Book a Home Tutor <ArrowRight className="w-4 h-4"/></a>
               </div>
 
               {/* Olympiad */}
@@ -470,7 +469,7 @@ export default function Home() {
                   <li>Logical reasoning & advanced problem-solving for Olympiads</li>
                   <li>Builds the exact analytical skills JEE & NEET demand</li>
                 </ul>
-                <Link to="/olympiad" className="text-primary-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Learn More <ArrowRight className="w-4 h-4"/></Link>
+                <a href="/olympiad" className="text-primary-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Learn More <ArrowRight className="w-4 h-4"/></a>
               </div>
 
               {/* Doubt Clearing */}
@@ -485,7 +484,7 @@ export default function Home() {
                   <li>Available for both Board & competitive exam students</li>
                 </ul>
                 <p className="text-slate-600 text-sm mb-4 leading-relaxed font-semibold mt-4">Stuck at a Problem?</p>
-                <Link to="/doubt-sessions" className="text-amber-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Book a Doubt Session Today <ArrowRight className="w-4 h-4"/></Link>
+                <a href="/doubt-sessions" className="text-amber-600 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Book a Doubt Session Today <ArrowRight className="w-4 h-4"/></a>
               </div>
             </div>
           </div>

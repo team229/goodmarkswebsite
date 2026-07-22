@@ -1,5 +1,4 @@
 import { Atom, CheckCircle2, GraduationCap, Calendar, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { coursesData } from '../data/courses';
 
 export default function PhysicsClassesSunilGola() {
@@ -63,9 +62,9 @@ export default function PhysicsClassesSunilGola() {
                 <div className="mt-auto mb-5 rounded-xl border border-slate-100 p-3 bg-offwhite flex items-center gap-2 text-sm font-semibold text-slate-700">
                   <Calendar className="w-4 h-4 text-secondary-700" /> Target: {course.target}
                 </div>
-                <Link to={`/course/${course.id}`} className="w-full py-3 rounded-xl bg-secondary-600 hover:bg-secondary-700 text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors">
+                <a href={`/course/${course.id}`} className="w-full py-3 rounded-xl bg-secondary-600 hover:bg-secondary-700 text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors">
                   View Course Details <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </article>
             ))}
           </div>

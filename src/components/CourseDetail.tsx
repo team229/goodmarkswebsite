@@ -1,11 +1,8 @@
-import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2 } from 'lucide-react';
 import { coursesData } from '../data/courses';
 
-export default function CourseDetail() {
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+export default function CourseDetail({ id }: { id?: string }) {
   
   // Find course data
   let currentCourse = null;
@@ -21,9 +18,9 @@ export default function CourseDetail() {
     return (
       <main className="pt-32 pb-20 text-center min-h-screen bg-offwhite">
         <h1 className="text-3xl font-bold text-secondary-900 mb-4">Course Not Found</h1>
-        <Link to="/courses" className="text-secondary-600 hover:underline">
+        <a href="/courses" className="text-secondary-600 hover:underline">
           Return to Courses
-        </Link>
+        </a>
       </main>
     );
   }
@@ -42,9 +39,9 @@ export default function CourseDetail() {
   return (
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
-        <Link to="/courses" className="inline-flex items-center gap-2 text-slate-500 hover:text-secondary-600 font-medium mb-8 transition-colors">
+        <a href="/courses" className="inline-flex items-center gap-2 text-slate-500 hover:text-secondary-600 font-medium mb-8 transition-colors">
           <ChevronLeft className="w-4 h-4" /> Back to Courses
-        </Link>
+        </a>
 
         {/* Header Header */}
         <motion.div 
@@ -207,7 +204,7 @@ export default function CourseDetail() {
                 <h3 className="text-2xl font-bold mb-2">Ready to start your preparation?</h3>
                 <p className="text-secondary-100">Enroll now and take the first step towards your engineering dream.</p>
               </div>
-              <button onClick={() => navigate('/')} className="bg-offwhite text-secondary-600 py-3.5 px-8 rounded-xl font-bold whitespace-nowrap hover:bg-offwhite transition-colors shadow-lg">
+              <button onClick={() => window.location.href = '/'} className="bg-offwhite text-secondary-600 py-3.5 px-8 rounded-xl font-bold whitespace-nowrap hover:bg-offwhite transition-colors shadow-lg">
                 Book a Free Demo
               </button>
             </motion.div>
