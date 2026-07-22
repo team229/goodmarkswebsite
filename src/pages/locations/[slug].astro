@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LocationPage from '../../components/LocationPage';
+import { locationPages } from '../../data/locations';
+
+export async function getStaticPaths() {
+  return locationPages.map(page => ({
+    params: { slug: page.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const page = locationPages.find(p => p.slug === slug);
+---
+<BaseLayout title={`${page?.title || 'Location'} | Good Marks Classes`} description={`${page?.title} — expert faculty, small batches, proven results.`}>
+  <LocationPage slug={slug} client:load />
+</BaseLayout>

@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 import { MapPin, GraduationCap, ChevronRight } from 'lucide-react';
 import { locationPages } from '../data/locations';
 
@@ -11,9 +11,8 @@ function getArea(title: string): string {
 }
 
 export default function LocationsList() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const activeType = searchParams.get('type') || 'All';
-  const activeArea = searchParams.get('area') || 'All';
+  const [activeType, setActiveType] = useState('All');
+  const [activeArea, setActiveArea] = useState('All');
 
   const filtered = locationPages.filter(p => {
     if (activeType !== 'All' && p.type !== activeType) return false;
@@ -27,16 +26,6 @@ export default function LocationsList() {
     acc[key].push(page);
     return acc;
   }, {} as Record<string, typeof locationPages>);
-
-  const setFilter = (key: string, value: string) => {
-    const params = new URLSearchParams(searchParams);
-    if (value === 'All') {
-      params.delete(key);
-    } else {
-      params.set(key, value);
-    }
-    setSearchParams(params);
-  };
 
   return (
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
@@ -57,7 +46,7 @@ export default function LocationsList() {
             {types.map(t => (
               <button
                 key={t}
-                onClick={() => setFilter('type', t)}
+                onClick={() => setActiveType(t)}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeType === t
                     ? 'bg-secondary-600 text-white shadow-md'
@@ -73,7 +62,7 @@ export default function LocationsList() {
             {areas.map(a => (
               <button
                 key={a}
-                onClick={() => setFilter('area', a)}
+                onClick={() => setActiveArea(a)}
                 className={`px-4 py-2 rounded-xl text-sm font-bold transition-all cursor-pointer ${
                   activeArea === a
                     ? 'bg-secondary-600 text-white shadow-md'
@@ -109,9 +98,9 @@ export default function LocationsList() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {pages.map(page => (
-                    <Link
+                    <a
                       key={page.slug}
-                      to={`/location/${page.slug}`}
+                      href={`/locations/${page.slug}`}
                       className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all group"
                     >
                       <div className="flex items-center gap-3">
@@ -123,7 +112,7 @@ export default function LocationsList() {
                         </span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-primary-500 transition-colors" />
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>

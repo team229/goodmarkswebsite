@@ -1,12 +1,14 @@
-import { useParams, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, X, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
 import { locationPages } from '../data/locations';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
-export default function LocationPage() {
-  const { slug } = useParams<{ slug: string }>();
+interface LocationPageProps {
+  slug: string;
+}
+
+export default function LocationPage({ slug }: LocationPageProps) {
   const page = locationPages.find(p => p.slug === slug);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { submitForm, isSubmitting, isSuccess } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
@@ -24,9 +26,9 @@ export default function LocationPage() {
         <div className="max-w-container-max mx-auto px-6 text-center py-20">
           <h1 className="text-3xl font-black text-secondary-900 mb-4">Location Not Found</h1>
           <p className="text-slate-500 mb-8">The page you're looking for doesn't exist.</p>
-          <Link to="/locations" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:underline">
+          <a href="/locations" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:underline">
             <ArrowLeft className="w-4 h-4" /> Browse All Locations
-          </Link>
+          </a>
         </div>
       </main>
     );
@@ -59,9 +61,9 @@ export default function LocationPage() {
       <section className={`bg-gradient-to-r ${typeColor} pt-32 lg:pt-40 pb-20 relative overflow-hidden`}>
         <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
         <div className="max-w-container-max mx-auto px-6 relative z-10">
-          <Link to="/locations" className="inline-flex items-center gap-2 text-white/80 hover:text-white font-semibold text-sm mb-8 transition-colors">
+          <a href="/locations" className="inline-flex items-center gap-2 text-white/80 hover:text-white font-semibold text-sm mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to all locations
-          </Link>
+          </a>
 
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4">
@@ -102,10 +104,10 @@ export default function LocationPage() {
                 })}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
+                <a href="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
                   <GraduationCap className="w-4 h-4" />
                   View Programs
-                </Link>
+                </a>
                 <button onClick={() => setIsModalOpen(true)} className="inline-flex items-center gap-2 bg-offwhite border-2 border-secondary-200 hover:border-secondary-300 text-secondary-800 px-6 py-3 rounded-xl font-bold text-sm transition-all">
                   Book Free Demo
                 </button>

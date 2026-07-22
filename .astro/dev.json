@@ -1,18 +1,18 @@
 {
-	"pid": 671214,
-	"port": 3001,
-	"url": "http://localhost:3001",
+	"pid": 686828,
+	"port": 3002,
+	"url": "http://localhost:3002",
 	"urls": {
 		"local": [
-			"http://localhost:3001/"
+			"http://localhost:3002/"
 		],
 		"network": [
-			"http://192.168.1.7:3001/",
-			"http://172.17.0.1:3001/",
-			"http://172.21.0.1:3001/",
-			"http://172.22.0.1:3001/"
+			"http://192.168.1.7:3002/",
+			"http://172.17.0.1:3002/",
+			"http://172.21.0.1:3002/",
+			"http://172.22.0.1:3002/"
 		]
 	},
-	"background": false,
-	"startedAt": "2026-07-22T18:09:30.754Z"
+	"background": true,
+	"startedAt": "2026-07-22T21:07:19.149Z"
 }
