@@ -2,6 +2,8 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
+import WhatsApp from '../components/WhatsApp';
+import MobileCTA from '../components/MobileCTA';
 import '../styles/global.css';
 
 export interface Props {
@@ -10,7 +12,10 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
+const siteUrl = 'https://goodmarksclasses.com';
+const ogImage = `${siteUrl}/good-marks-logo.png`;
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,13 +23,31 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <ScrollToTop client:load />
   </head>
-  <body class="bg-background text-on-background font-body-md scroll-smooth selection:bg-secondary/20 selection:text-secondary flex flex-col min-h-screen">
+  <body class="bg-background text-on-background font-body-md scroll-smooth selection:bg-secondary/20 selection:text-secondary flex flex-col min-h-screen pb-16 lg:pb-0">
     <Navbar client:load />
     <div class="flex-1">
       <slot />
     </div>
     <Footer client:load />
+    <WhatsApp client:load />
+    <MobileCTA client:load />
   </body>
 </html>

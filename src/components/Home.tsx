@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import { motion } from 'motion/react';
 import TestimonialCarousel from './TestimonialCarousel';
@@ -49,11 +49,9 @@ import {
   Atom,
   Dna,
   Calendar,
-  X
 } from 'lucide-react';
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { submitForm, isSubmitting } = useFormSubmit('Home Demo Request');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -109,6 +107,9 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* Hero Section */}
         <section className="relative pt-32 lg:pt-40 pb-20 px-6 overflow-hidden min-h-[90vh] flex items-center bg-gradient-to-br from-primary-50/50 via-white to-primary-50/30">
+          <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-0 w-1/2 pointer-events-none opacity-[0.07] justify-center px-8">
+            <img src="/good-marks-logo.png" alt="" className="w-[600px] h-auto object-contain" />
+          </div>
           <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full opacity-30 pointer-events-none">
             {/* Background decoration */}
             <div className="absolute blur-[100px] bg-primary-400/20 w-96 h-96 rounded-full top-20 right-20"></div>
@@ -153,7 +154,7 @@ export default function Home() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <button onClick={() => setIsModalOpen(true)} className="btn-gradient px-8 py-4 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
+                  <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-8 py-4 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
                     Book your Free Demo Class Today
                     <ArrowRight className="w-5 h-5" />
                   </button>
@@ -395,7 +396,7 @@ export default function Home() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow bg-offwhite/50 justify-between">
                   <p className="text-slate-600 text-center mb-8">Build rigorous problem-solving skills and mathematical thinking for top exams.</p>
-                  <div className="mt-auto flex justify-center text-secondary-600 font-bold items-center gap-2 group-hover:gap-3 transition-all">
+                  <div className="mt-auto flex justify-center text-primary-600 font-bold items-center gap-2 group-hover:gap-3 transition-all">
                     View Course Details <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -524,7 +525,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <button className="mt-12 btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-label-bold">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="mt-12 btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-label-bold">
                   Book Your Free Demo
                 </button>
               </div>
@@ -591,7 +592,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <button className="btn-gradient px-8 py-3 rounded-xl text-secondary-900 font-label-bold mt-4 shadow-lg shadow-primary-500/20">Book a Demo</button>
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-8 py-3 rounded-xl text-secondary-900 font-label-bold mt-4 shadow-lg shadow-primary-500/20">Book a Demo</button>
               </div>
             </div>
           </div>
@@ -751,82 +752,43 @@ export default function Home() {
         </section>
 
 
+        {/* Google Reviews */}
+        <section className="py-16 bg-offwhite/80 border-t border-slate-100">
+          <div className="max-w-container-max mx-auto px-6 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-secondary font-label-bold text-xs uppercase tracking-widest shadow-sm mb-6">
+              <Star className="w-4 h-4 text-yellow-500 fill-current" /> Google Reviews
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">What Our Students Say on Google</h2>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-8">Join 500+ happy students and parents who trust Good Marks Classes.</p>
+            <a
+              href="https://share.google/bcu2WvORegDmZQ5az"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white border-2 border-slate-200 hover:border-yellow-400 hover:shadow-lg px-8 py-4 rounded-2xl font-bold text-secondary-900 transition-all group"
+            >
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-current" />
+                ))}
+              </div>
+              <span className="text-lg">4.8 Average Rating</span>
+              <ArrowRight className="w-5 h-5 text-slate-400 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </section>
+
+
         {/* Final CTA */}
         <section className="py-24 bg-secondary-900 text-white rounded-t-[40px] md:rounded-t-[80px] mt-[-40px] relative z-20">
           <div className="max-w-container-max mx-auto px-6 text-center">
             <h2 className="font-h1 text-5xl md:text-6xl mb-6">Still Deciding?</h2>
             <p className="font-body-lg text-slate-400 mb-10 max-w-2xl mx-auto text-lg">Don't commit yet. Just attend a full week of classes — strictly free. See the difference that real, focused attention makes to your academic career.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="btn-gradient px-12 py-5 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">Start Free Demo</button>
+              <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-12 py-5 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40">Start Free Demo</button>
               <a href="tel:8800880028" className="px-10 py-5 rounded-xl border border-secondary-700 text-slate-300 font-bold text-lg hover:bg-secondary-800 transition-colors flex items-center justify-center gap-2"><Phone className="w-5 h-5"/> 8800 8800 28</a>
             </div>
           </div>
         </section>
-
-        {/* Demo Booking Modal */}
-        {isModalOpen && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <div 
-              className="absolute inset-0 bg-secondary-900/40 backdrop-blur-sm" 
-              onClick={() => setIsModalOpen(false)}
-            ></div>
-            <div className="relative bg-offwhite rounded-3xl shadow-2xl p-8 max-w-md w-full" style={{ animation: 'fadeIn 0.2s ease-out' }}>
-              <button 
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-              
-              <div className="mb-6">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-2">Book Your Free Demo Class</h2>
-                <p className="text-slate-500 text-sm">Fill the form below to schedule your free demo session with our mentors.</p>
-              </div>
-
-              <form className="space-y-4" onSubmit={(e) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                const data = Object.fromEntries(formData.entries());
-                submitForm(data);
-              }}>
-                <div>
-                  <input 
-                    type="text" 
-                    name="name"
-                    placeholder="Student Name" 
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm"
-                    required
-                  />
-                </div>
-                <div>
-                  <input 
-                    type="tel" 
-                    name="phone"
-                    placeholder="Mobile Number" 
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm"
-                    required
-                  />
-                </div>
-                <div>
-                  <select name="course" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all appearance-none bg-offwhite text-sm" required defaultValue="">
-                    <option value="" disabled hidden>Select Course</option>
-                    <option value="iit-jee">IIT-JEE</option>
-                    <option value="neet">NEET-UG</option>
-                    <option value="foundation">Foundation</option>
-                    <option value="cbse">CBSE</option>
-                  </select>
-                </div>
-                <button 
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full mt-6 btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-md shadow-primary-500/20 hover:shadow-primary-500/40 transition-all disabled:opacity-50"
-                >
-                  {isSubmitting ? 'Booking...' : 'Book Free Demo'}
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
 
       </main>
   );
