@@ -15,7 +15,7 @@ export default function Footer() {
         </iframe>
       </div>
       <footer className="bg-secondary-950 w-full py-16 px-8 text-slate-400">
-      <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12">
+      <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
         <div className="col-span-1 lg:col-span-2">
           <div className="flex items-center gap-3 mb-4">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-10 w-auto object-contain rounded-lg" />
@@ -24,7 +24,7 @@ export default function Footer() {
           <p className="text-sm font-sans mb-6 opacity-80 leading-relaxed">
             Small batches. Real attention. No student gets lost.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 mb-8">
             <a href="https://www.instagram.com/goodmarksclassesgurgaon/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary-900 flex items-center justify-center hover:bg-primary-600 hover:text-secondary-900 transition-colors">
               <Instagram className="w-4 h-4" />
             </a>
@@ -35,6 +35,34 @@ export default function Footer() {
               <Youtube className="w-4 h-4" />
             </a>
           </div>
+
+          <h4 className="font-label-bold mb-4 text-white uppercase tracking-wider text-xs">Stay Updated</h4>
+          <p className="text-sm text-slate-400 mb-4">Get exam tips, updates & free resources straight to your inbox.</p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const data = new FormData(form);
+              fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(data)),
+              }).then(() => { form.reset(); alert('Thanks for subscribing!'); });
+            }}
+            className="flex flex-col gap-2 max-w-xs"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              required
+              className="w-full px-4 py-2.5 rounded-xl bg-secondary-900 text-white border border-secondary-700 placeholder:text-slate-500 text-sm focus:outline-none focus:border-primary-500 transition-colors"
+            />
+            <input type="hidden" name="type" value="newsletter" />
+            <button type="submit" className="w-full bg-primary-600 hover:bg-primary-500 text-secondary-900 font-bold py-2.5 rounded-xl text-sm transition-all">
+              Subscribe
+            </button>
+          </form>
         </div>
         
         <div className="col-span-1">
@@ -64,8 +92,8 @@ export default function Footer() {
             <p><a href="tel:8800880028" className="hover:text-white transition-colors">8800 8800 28</a></p>
           </div>
         </div>
-        
-        <div className="col-span-1 border-l border-secondary-800 lg:pl-8">
+
+        <div className="col-span-1 lg:border-l border-secondary-800 lg:pl-8">
           <h4 className="font-label-bold mb-6 text-white uppercase tracking-wider text-xs flex items-center gap-2">
             Service Areas
           </h4>
