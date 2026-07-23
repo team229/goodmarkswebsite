@@ -640,6 +640,52 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Comparison Section */}
+        <section className="py-section-padding-lg bg-secondary-950 text-white">
+          <div className="max-w-container-max mx-auto px-6">
+            <div className="text-center mb-14 max-w-3xl mx-auto">
+              <h2 className="font-h2 text-white mb-4">Good Marks vs The Big Players</h2>
+              <p className="text-slate-400 text-lg">See how we compare against large coaching chains on what actually matters for your child.</p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr>
+                    <th className="py-4 px-5 text-sm font-bold text-slate-300 border-b border-secondary-800 w-[200px]">Parameter</th>
+                    <th className="py-4 px-5 text-sm font-bold bg-primary-600/20 text-primary-400 border-b border-primary-600/30 rounded-tl-xl rounded-tr-xl">Good Marks Classes</th>
+                    <th className="py-4 px-5 text-sm font-bold text-slate-500 border-b border-secondary-800">Allen / FIITJEE / Aakash</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { param: "Batch Size", us: "10-25 students (individual attention)", them: "40-100+ students per batch" },
+                    { param: "Doubt Resolution", us: "Same-day doubt clearing cell", them: "Limited due to large batches" },
+                    { param: "Curriculum Focus", us: "CBSE syllabus first, then competitive", them: "Competitive exam focused, CBSE as add-on" },
+                    { param: "Faculty Accessibility", us: "Direct access — teachers share personal numbers", them: "Limited interaction with senior faculty" },
+                    { param: "Parent Involvement", us: "Regular PTMs & individual performance reports", them: "Annual parent meetings only" },
+                    { param: "Cost", us: "Affordable — quality education for all", them: "Premium pricing (₹1-2 Lakh+ per year)" },
+                    { param: "Location", us: "Local — near your home in Gurgaon/Manesar", them: "Central locations, long commute" },
+                    { param: "Study Material", us: "Research-oriented, custom curated", them: "Standardised material across all centres" },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-b border-secondary-800/50 hover:bg-secondary-900/50 transition-colors">
+                      <td className="py-4 px-5 text-sm font-semibold text-slate-300">{row.param}</td>
+                      <td className="py-4 px-5 text-sm text-primary-300"><span className="inline-flex items-center gap-1.5"><svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-primary-400"><path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" /></svg> {row.us}</span></td>
+                      <td className="py-4 px-5 text-sm text-slate-500">{row.them}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="text-center mt-10">
+              <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-10 py-4 rounded-xl font-bold text-secondary-900 shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">
+                Experience the Difference — Enquire Now
+              </button>
+            </div>
+          </div>
+        </section>
+
         {/* Expectations Section */}
         <section className="pt-12 pb-section-padding-lg bg-offwhite/50" id="expectations">
           <div className="max-w-container-max mx-auto px-6">
@@ -771,7 +817,7 @@ export default function Home() {
                   <Star key={i} className="w-5 h-5 fill-current" />
                 ))}
               </div>
-              <span className="text-lg">4.8 Average Rating</span>
+              <span className="text-lg">5.0 Average Rating</span>
               <ArrowRight className="w-5 h-5 text-slate-400 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
