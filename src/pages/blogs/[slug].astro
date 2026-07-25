@@ -1,15 +1,30 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost';
 
 export async function getStaticPaths() {
-  const mod = await import('../../data/blog');
-  const posts = mod.blogPosts;
-  return posts.map(post => ({ params: { slug: post.slug } }));
+  const posts = await getCollection('blog');
+  return posts.map(post => ({ params: { slug: post.id } }));
 }
 
 const { slug } = Astro.params;
+const posts = await getCollection('blog');
+const entry = posts.find(p => p.id === slug);
+const { data, body } = entry!;
+const metaTitle = data.metaTitle;
+const metaDescription = data.metaDescription;
 ---
-<BaseLayout title="Blog | Good Marks Classes" description="Read our latest blog post">
-  <BlogPost slug={slug} client:load />
+<BaseLayout title={metaTitle} description={metaDescription}>
+  <BlogPost client:load post={{
+    slug: entry!.id,
+    title: data.title,
+    excerpt: data.excerpt,
+    content: body,
+    date: data.date,
+    image: data.image,
+    metaTitle: data.metaTitle,
+    metaDescription: data.metaDescription,
+    category: data.category,
+  }} />
 </BaseLayout>

@@ -1,29 +1,31 @@
 import React, { useEffect } from 'react';
-import { blogPosts } from '../data/blog';
 import { Calendar, ChevronLeft, Share2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import { generateBlogSchema } from '../lib/blogSchema';
 
-export default function BlogPost({ slug }: { slug?: string }) {
-  const post = blogPosts.find(p => p.slug === slug);
+export interface BlogPostData {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  date: string;
+  image: string;
+  metaTitle: string;
+  metaDescription: string;
+  category?: string;
+}
 
+export default function BlogPost({ post }: { post: BlogPostData }) {
   useEffect(() => {
-    if (!post) {
-      window.location.href = '/blogs';
-      return;
-    }
-
-    // Add JSON-LD schema
     const script = document.createElement('script');
     script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(post.schema);
+    script.innerHTML = JSON.stringify(generateBlogSchema(post));
     document.head.appendChild(script);
 
     return () => {
       document.head.removeChild(script);
     };
   }, [post]);
-
-  if (!post) return null;
 
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">

@@ -12,6 +12,6 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const page = locationPages.find(p => p.slug === slug);
 ---
-<BaseLayout title={`${page?.title || 'Location'} | Good Marks Classes`} description={`${page?.title} — expert faculty, small batches, proven results.`}>
+<BaseLayout title={page?.metaTitle ?? `${page?.title || 'Location'} | Good Marks Classes`} description={page?.metaDescription ?? `${page?.title} — expert faculty, small batches, proven results.`}>
   <LocationPage slug={slug} client:load />
 </BaseLayout>
