@@ -8,16 +8,16 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
-        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
+          <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3 flex-nowrap">
           <a href="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
             <span className="text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
-            <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-slate-600">
-              <a className="hover:text-primary-600 transition-colors" href="/">Home</a>
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-bold text-slate-600 flex-nowrap">
+              <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/">Home</a>
                <div className="relative group py-6 -my-6 flex items-center">
-                <a className="hover:text-primary-600 transition-colors flex items-center gap-1" href="/courses">
+                <a className="hover:text-primary-600 transition-colors flex items-center gap-1 whitespace-nowrap" href="/courses">
                   Courses
                   <svg className="w-4 h-4 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </a>
@@ -44,19 +44,19 @@ export default function Navbar() {
                    </div>
                 </div>
               </div>
-               <a className="hover:text-primary-600 transition-colors" href="/blogs">Blog</a>
-               <a className="hover:text-primary-600 transition-colors" href="/locations">Locations</a>
-               <a className="hover:text-primary-600 transition-colors" href="/about">About Us</a>
-               <a className="hover:text-primary-600 transition-colors" href="/join-faculty">Join as Faculty</a>
-              <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer">Contact Us</button>
-              <a href="tel:8800880028" className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"><Phone className="w-4 h-4" /> 8800 8800 28</a>
+                <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/blogs">Blog</a>
+                <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/locations">Locations</a>
+                <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/about">About Us</a>
+                <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/join-faculty">Join as Faculty</a>
+              <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer whitespace-nowrap">Contact Us</button>
+              <a href="tel:8800880028" className="flex items-center gap-1.5 px-2 lg:px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors shrink-0 whitespace-nowrap"><Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" /><span className="hidden xl:inline">8800 8800 28</span><span className="xl:hidden">8800880028</span></a>
             </nav>
             
             <a
               href="https://goodmarksclasses.classpro.in/people/sign_in"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2"
+              className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-4 lg:px-6 py-2 rounded-xl font-bold text-xs lg:text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2 shrink-0 whitespace-nowrap"
             >
               Student Login
             </a>
