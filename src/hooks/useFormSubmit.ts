@@ -15,8 +15,7 @@ export function useFormSubmit(formName: string) {
     try {
       await fetch("https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
     } catch {}

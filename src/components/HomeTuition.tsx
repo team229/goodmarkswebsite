@@ -3,7 +3,7 @@ import { Home, CheckCircle, ArrowRight } from 'lucide-react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 
 export default function HomeTuition() {
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('Home Tuition Page');
+  const { submitForm, isSubmitting } = useFormSubmit('Home Tuition Page');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,13 +58,8 @@ export default function HomeTuition() {
             <div className="bg-offwhite p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50">
               <h3 className="text-2xl font-bold mb-6 text-secondary-900">Book a Home Tutor</h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold">
-                    Thanks for your request! We'll get in touch with you shortly.
-                  </div>
-                )}
                 <div>
-                  <label className="block text-sm font-bold text-secondary-700 mb-1">Student Name</label>
+                  <label className="block text-sm font-bold text-secondary-700 mb-1">Full Name</label>
                   <input type="text" name="name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-secondary-500/20 focus:border-secondary-500 transition-all" placeholder="Enter your name" required />
                 </div>
                 <div>

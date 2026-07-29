@@ -4,7 +4,7 @@ import { ArrowRight, Atom, FlaskConical, Calculator, Dna, CheckCircle, Calendar,
 import { coursesData } from '../data/courses';
 
 export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('SubjectDetail');
+  const { submitForm, isSubmitting } = useFormSubmit('SubjectDetail');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -179,11 +179,7 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
               <p className="text-slate-600 mb-6">Experience our teaching methodology before you commit to a full course.</p>
               
               <form onSubmit={handleSubmit} className="space-y-4">
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-4">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
+                
                 <div>
                   <label className="block text-sm font-bold text-secondary-700 mb-1">Full Name</label>
                   <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-slate-400 outline-none transition-all focus:border-slate-400" name="studentname" placeholder="Student Name" />

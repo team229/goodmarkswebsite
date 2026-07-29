@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
 import { coursesData } from '../data/courses';
 
 export default function CourseDetail({ id }: { id?: string }) {
@@ -192,7 +193,22 @@ export default function CourseDetail({ id }: { id?: string }) {
                 </div>
               </motion.div>
             )}
-            
+
+            {/* FAQ */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="bg-offwhite rounded-3xl p-8 lg:p-10 shadow-sm border border-slate-100"
+            >
+              <h2 className="text-xl font-bold text-secondary-900 mb-6 border-b border-slate-100 pb-3">Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {getFaqs(currentCourse).map((faq, idx) => (
+                  <FaqItem key={idx} question={faq.q} answer={faq.a} />
+                ))}
+              </div>
+            </motion.div>
+
             {/* CTA */}
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
@@ -204,7 +220,7 @@ export default function CourseDetail({ id }: { id?: string }) {
                 <h3 className="text-2xl font-bold mb-2">Ready to start your preparation?</h3>
                 <p className="text-secondary-100">Enroll now and take the first step towards your engineering dream.</p>
               </div>
-              <button onClick={() => window.location.href = '/'} className="bg-offwhite text-secondary-600 py-3.5 px-8 rounded-xl font-bold whitespace-nowrap hover:bg-offwhite transition-colors shadow-lg">
+              <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="bg-offwhite text-secondary-600 py-3.5 px-8 rounded-xl font-bold whitespace-nowrap hover:bg-offwhite transition-colors shadow-lg">
                 Book a Free Demo
               </button>
             </motion.div>
@@ -213,4 +229,71 @@ export default function CourseDetail({ id }: { id?: string }) {
       </div>
     </main>
   );
+}
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border border-slate-200 rounded-2xl overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left font-semibold text-secondary-900 hover:bg-slate-50 transition-colors text-sm"
+      >
+        <span>{question}</span>
+        <ChevronDown className={`w-4 h-4 text-slate-400 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">{answer}</div>
+      )}
+    </div>
+  );
+}
+
+function getFaqs(course: any) {
+  const isJee = course.tag === 'IIT-JEE';
+  const isNeet = course.tag === 'NEET';
+  const isFoundation = course.stream === 'foundation';
+  const isPreFoundation = course.stream === 'prefoundation';
+  const isDropper = course.id?.includes('extended');
+
+  const common = [
+    { q: 'What is the class schedule and frequency?', a: 'Classes are held throughout the week as per the schedule mentioned above. Each session is designed to maximise learning while allowing time for self-study and revision.' },
+    { q: 'Are there any demo classes available?', a: 'Yes, we offer free demo classes. Click "Book a Free Demo" above or contact us to schedule one at your convenience.' },
+    { q: 'How are doubts handled?', a: 'We have a dedicated doubt clearing cell. Students can get their doubts resolved the same day through Special Doubt Clearing Classes (SDCC) after each topic.' },
+    { q: 'What study material is provided?', a: 'Research-oriented, custom-curated study material based on NCERT curriculum, updated regularly to align with the latest exam patterns.' },
+  ];
+
+  if (isJee) {
+    return [
+      ...common,
+      { q: 'How does this programme prepare me for JEE Main & Advanced?', a: 'The curriculum covers extensive JEE-specific topics, with All India Test Series (AITS), Special Rank Improvement Program (SRIP), and NCERT Exemplar focusing on JEE (Main & Advanced), BITSAT & KVPY patterns.' },
+      { q: `What is the duration of the ${course.title.toLowerCase()}?`, a: `The total programme hours are ${course.details?.hours || 'specified in the schedule above'}, spread across the academic session with regular tests and discussions.` },
+    ];
+  }
+
+  if (isNeet) {
+    return [
+      ...common,
+      { q: 'Does this programme cover both Class 11/12 Board and NEET syllabus?', a: 'Yes, the programme is designed to simultaneously prepare students for their CBSE Board exams and NEET/AIIMS. We prioritise CBSE syllabus first, then build competitive exam readiness.' },
+      { q: 'How are Biology practicals handled?', a: 'Practical sessions are integrated into the curriculum. Our lab facilities and experienced faculty ensure hands-on learning alongside theory.' },
+    ];
+  }
+
+  if (isFoundation) {
+    return [
+      ...common,
+      { q: 'How does this help my child prepare for competitive exams early?', a: 'The foundation programme builds strong fundamentals in Science and Mathematics from Class 9-10, creating a solid base for JEE/NEET preparation in higher classes. We focus on conceptual clarity and problem-solving skills.' },
+      { q: 'What is the class size for foundation courses?', a: 'We maintain small batch sizes (10-25 students) to ensure individual attention, especially important at the foundational level.' },
+    ];
+  }
+
+  if (isPreFoundation) {
+    return [
+      ...common,
+      { q: 'Is this programme suitable for building interest in science?', a: 'Absolutely. The pre-foundation programme is designed to make learning enjoyable while building strong fundamentals. We use interactive teaching methods to spark curiosity in Science and Mathematics.' },
+      { q: 'How early should my child start preparing?', a: 'Starting in Class 7-8 gives students a significant advantage. It allows ample time to build concepts without pressure and develop a genuine interest in the subjects.' },
+    ];
+  }
+
+  return common;
 }

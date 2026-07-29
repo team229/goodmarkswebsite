@@ -1,45 +1,21 @@
 User-agent: *
-
-Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
-
-Sitemap: https://www.goodmarksclasses.com/sitemap_index.xml
-
-User-agent: Googlebot
 Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+Sitemap: https://goodmarksclasses.com/sitemap.xml
 
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: ChatGPT-User
-Allow: /
+Disallow: /
 
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 User-agent: anthropic-ai
-Allow: /
+Disallow: /
 
 User-agent: Claude-Web
-Allow: /
+Disallow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Googlebot
-Disallow: /wp-includes/*
-Disallow: /wp-content/uploads/elementor/*
-Disallow: /wp-content/plugins/*
-Disallow: /wp-content/themes/*
+Disallow: /

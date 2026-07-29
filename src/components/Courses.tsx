@@ -6,7 +6,17 @@ import {
   Calendar, 
   CheckCircle2,
   Trophy,
-  BookOpen
+  BookOpen,
+  Atom,
+  Stethoscope,
+  Calculator,
+  Dna,
+  Sparkles,
+  Target,
+  UserCheck,
+  School,
+  Lightbulb,
+  FlaskConical
 } from 'lucide-react';
 
 import { courseTabs, coursesData, streams } from '../data/courses';
@@ -146,38 +156,6 @@ export default function Courses({ stream }: { stream?: string }) {
                 </p>
               )}
             </div>
-
-            {(activeStream === 'prefoundation') && (
-              <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 md:min-w-64">
-                <p className="text-xs font-bold text-amber-800 uppercase tracking-widest mb-3">Programme Directors</p>
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <p className="text-sm font-bold text-secondary-900">Dr. Deepak Gola</p>
-                    <p className="text-xs text-slate-500">PhD, IIT Delhi (Director)</p>
-                  </div>
-                  <div>
-                     <p className="text-sm font-bold text-secondary-900">Mr. Amit Gupta</p>
-                     <p className="text-xs text-slate-500">PhD, IIT Delhi (Associate Director)</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {(activeStream === 'foundation') && (
-              <div className="bg-amber-50 p-4 rounded-xl border border-amber-100 md:min-w-64">
-                <p className="text-xs font-bold text-amber-800 uppercase tracking-widest mb-3">Programme Directors</p>
-                <div className="flex flex-col gap-3">
-                  <div>
-                    <p className="text-sm font-bold text-secondary-900">Ms. Geetanjali</p>
-                    <p className="text-xs text-slate-500">M.Sc, Sri Venkateswara College (DU) (Director)</p>
-                  </div>
-                  <div>
-                     <p className="text-sm font-bold text-secondary-900">Dr. Deepak Gola</p>
-                     <p className="text-xs text-slate-500">PhD, IIT Delhi (Associate Director)</p>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Cards Grid */}
@@ -248,6 +226,128 @@ export default function Courses({ stream }: { stream?: string }) {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* SEO Content */}
+      <section className="max-w-4xl mx-auto px-6 mt-20 space-y-16">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="w-12 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full mx-auto mb-6" />
+          <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4 leading-tight">Courses at Good Marks Classes – Building Strong Foundations for IIT JEE, NEET & School Success</h2>
+          <p className="text-slate-600 text-lg leading-relaxed">
+            At Good Marks Classes, we believe every student needs a place where concepts actually make sense, doubts get answered without hesitation, and progress can be seen and measured. Our courses suit students who are serious about their goals — be it cracking IIT JEE, qualifying NEET UG, building a base in early secondary school, or improving school exam scores. Each program centers on consistent practice, individual attention, and teachers who care about how students actually perform.
+          </p>
+        </div>
+
+        <div className="space-y-8">
+          {/* IIT JEE */}
+          <div className="bg-gradient-to-br from-secondary-50/50 to-secondary-100/30 border border-secondary-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary-500 to-primary-500 flex items-center justify-center shrink-0">
+                <Atom className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">IIT JEE Preparation Programme</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">Cracking IIT JEE takes more than effort alone — it needs the right strategy, steady practice, and real command over Physics, Chemistry, and Mathematics. This programme is built for students aiming at top engineering colleges.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">We spend real time on basics before jumping into tough problems. A lot of students rush into JEE-level questions without nailing the fundamentals first, and that catches up with them later. Here, we do it the other way around — every student gets comfortable with core concepts in a chapter before tackling competitive-level problems.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Our JEE batches run on regular class tests, chapter-wise assignments, and full-length mocks built to mirror the actual exam. After each test, students get feedback that goes beyond "you got this wrong" — it explains why, and what to do differently. Doubt sessions happen regularly so nobody falls behind over something that could've been cleared up in five minutes.</p>
+            <p className="text-slate-600 leading-relaxed">Speed, accuracy, and time management are the three things we keep circling back to. With steady practice and regular performance reviews, students build the confidence to handle exam pressure when it counts.</p>
+          </div>
+
+          {/* NEET UG */}
+          <div className="bg-gradient-to-br from-primary-50/50 to-primary-100/30 border border-primary-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 flex items-center justify-center shrink-0">
+                <Stethoscope className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">NEET UG Preparation Programme</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">For students who want to become doctors, NEET UG is the door — and getting through it takes commitment, proper guidance, and a plan that holds up over time. This programme gives equal weight to Physics, Chemistry, and Biology, since all three matter for the final score.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Biology, which carries a heavy weight in NEET, is taught with close attention to NCERT textbooks, since most NEET questions trace back to NCERT content. Our teachers push students past rote memorization toward actual understanding — which pays off when assertion-reasoning and application-based questions show up.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Physics and Chemistry sessions build both problem-solving skills and theory side by side. Numerical topics get heavy practice, with guidance on how to approach each question type step by step.</p>
+            <p className="text-slate-600 leading-relaxed">NEET batches include regular tests based on the current exam pattern, performance tracking, and study plans tailored to each student's strengths and gaps. Closer to the exam, we run revision sessions to help students pull everything together and walk in confident.</p>
+          </div>
+
+          {/* Pre-Foundation */}
+          <div className="bg-gradient-to-br from-amber-50/50 to-orange-100/30 border border-amber-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shrink-0">
+                <Lightbulb className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">Pre-Foundation Courses</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">Pre-Foundation courses are for younger students just starting to build their academic base. The focus is on strengthening core Math and Science concepts while developing analytical thinking and problem-solving habits early on.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">The logic is simple: students who build a solid base early find it much easier to handle tougher material later — in school exams now, and in JEE or NEET down the road.</p>
+            <p className="text-slate-600 leading-relaxed">These classes aim to make learning enjoyable rather than overwhelming. Concepts come through real-life examples, discussions, and regular practice — building curiosity and logical thinking alongside better school performance. Regular assessments track each student's progress, and parents get periodic updates on how their child is doing.</p>
+          </div>
+
+          {/* Foundation */}
+          <div className="bg-gradient-to-br from-orange-50/50 to-red-100/30 border border-orange-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center shrink-0">
+                <School className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">Foundation Courses</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">Foundation courses prepare students for the move into higher secondary school while keeping future competitive exams in view. They bridge the gap between school-level learning and the more demanding, application-based learning that JEE and NEET require.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">These courses cover Math and Science in depth, focusing on both conceptual clarity and problem-solving speed. Students work through a range of question types — basic to slightly advanced — so they get comfortable across difficulty levels.</p>
+            <p className="text-slate-600 leading-relaxed">We also work on study habits here — regular revision, self-assessment, time management — habits that carry students through school exams and beyond. Foundation batches stay relatively small so every student gets individual attention. Regular tests and doubt sessions keep students on track through the year.</p>
+          </div>
+
+          {/* Class 9th */}
+          <div className="bg-gradient-to-br from-rose-50/50 to-pink-100/30 border border-rose-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center shrink-0">
+                <Calendar className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">Class 9th Courses – 2 Year Regular Classroom Programme</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">Class 9th is a pivotal year — it's when habits, concepts, and confidence start shaping how students perform in board exams and beyond. Our Class 9th courses are part of a 2-year regular classroom programme covering Class 9th and 10th together.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">The programme covers all major subjects with a strong focus on Math and Science, building a foundation that supports students through boards and beyond. Spreading the syllabus over two years means no last-minute scramble — students get real time for revision, practice, and clearing doubts.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Regular classroom sessions keep learning disciplined and consistent. Students follow a set timetable, take regular tests, and get continuous feedback. This reduces exam-time stress because preparation happens steadily over two years instead of cramming in the final months.</p>
+            <p className="text-slate-600 leading-relaxed">By the end of these two years, students are ready for boards and have a conceptual base that supports whatever competitive exam path they choose next.</p>
+          </div>
+
+          {/* Physics by Sunil Gola */}
+          <div className="bg-gradient-to-br from-cyan-50/50 to-blue-100/30 border border-cyan-100 rounded-3xl p-8 lg:p-10">
+            <div className="w-10 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full mb-4" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shrink-0">
+                <FlaskConical className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-black text-secondary-900">Physics Classes by Sunil Gola Sir</h3>
+            </div>
+            <p className="text-slate-600 leading-relaxed mb-3">One of the standout parts of Good Marks Classes is our Physics programme led by Sunil Gola Sir, known for making even the trickiest Physics topics easy to follow.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Physics trips up a lot of students because it mixes theory with math. Sunil Gola Sir breaks each concept down into simple, relatable terms before moving to numericals and applications. His classes build a strong conceptual base first. Instead of rushing through formulas, students learn the logic behind each concept — which makes it much easier to apply later, whether in school exams or in JEE and NEET.</p>
+            <p className="text-slate-600 leading-relaxed">Doubt-clearing is central to how he teaches — students are encouraged to ask anything, no matter how small, in an environment where that feels normal. Whether a student is in Foundation, prepping for boards, or aiming for JEE and NEET, Sunil Gola Sir's Physics classes offer concept-first teaching built for the long run, not just the next test.</p>
+          </div>
+
+          {/* Why Choose */}
+          <div className="bg-gradient-to-br from-secondary-900 to-secondary-950 text-white rounded-3xl p-8 lg:p-10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary-500/5 rounded-full blur-3xl" />
+            <div className="w-10 h-1 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full mb-4 relative z-10" />
+            <div className="flex items-center gap-3 mb-4 relative z-10">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shrink-0">
+                <Sparkles className="w-5 h-5 text-secondary-900" />
+              </div>
+              <h3 className="text-2xl font-black text-white">Why Choose Good Marks Classes</h3>
+            </div>
+            <p className="text-slate-300 leading-relaxed mb-3 relative z-10">What makes us different is that we treat each student as an individual, not a number. There's no one-size-fits-all here — every course, from IIT JEE and NEET UG to Pre-Foundation, Foundation, and the 2-year Class 9th programme, is built on the idea that students learn best when they truly understand concepts and practice regularly.</p>
+            <p className="text-slate-300 leading-relaxed mb-3 relative z-10">Our experienced faculty — including subject experts like Sunil Gola Sir for Physics — bring years of teaching experience and a genuine investment in student outcomes. Regular tests, personal feedback, doubt sessions, and a structured academic calendar keep students on track.</p>
+            <p className="text-slate-300 leading-relaxed relative z-10">If you're looking for a place that combines strong academics with genuine personal attention, Good Marks Classes is here to support your child — from the early foundation years through the most competitive exams in the country.</p>
+          </div>
+        </div>
+
+        <div className="text-center pb-8">
+          <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-10 py-4 rounded-xl font-bold text-secondary-900 shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">
+            Enquire Now — Start Your Journey
+          </button>
         </div>
       </section>
     </main>

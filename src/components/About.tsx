@@ -75,7 +75,7 @@ export default function About() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button onClick={() => window.location.href = '/courses'} className="btn-gradient px-8 py-3.5 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-8 py-3.5 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
                   Enquire Now <ArrowRight className="w-5 h-5"/>
                 </button>
                 <a href="tel:+919876543210" className="px-8 py-3.5 rounded-xl border-2 border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite hover:border-slate-300 transition-colors flex items-center justify-center gap-2">
@@ -303,7 +303,7 @@ export default function About() {
              <h3 className="font-h2 text-3xl font-black text-yellow-400 mb-2">GET IN TOUCH</h3>
              <p className="text-xl font-medium">Putting students first, always — Experience the difference.</p>
            </div>
-           <button onClick={() => window.location.href = '/courses'} className="bg-offwhite/20 hover:bg-offwhite/30 backdrop-blur-md border border-white/40 text-white px-8 py-4 rounded-xl font-bold transition-all w-full md:w-auto text-center">
+           <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="bg-offwhite/20 hover:bg-offwhite/30 backdrop-blur-md border border-white/40 text-white px-8 py-4 rounded-xl font-bold transition-all w-full md:w-auto text-center">
              Enquire Now
            </button>
          </div>

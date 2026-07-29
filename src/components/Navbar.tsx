@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { X, Phone, Menu, ChevronDown, Loader2 } from 'lucide-react';
 
 const courses = [
@@ -13,10 +13,16 @@ const courses = [
 export default function Navbar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading'>('idle');
 
   const closeMobile = useCallback(() => setIsMobileMenuOpen(false), []);
+
+  useEffect(() => {
+    const handler = () => setIsModalOpen(true);
+    window.addEventListener('open-contact-modal', handler);
+    return () => window.removeEventListener('open-contact-modal', handler);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,12 +30,11 @@ export default function Navbar() {
     try {
       await fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
     } catch {}
-    setForm({ name: '', email: '', message: '' });
+    setForm({ name: '', email: '', phone: '', message: '' });
     setIsModalOpen(false);
     window.location.href = '/thank-you';
   };
@@ -37,10 +42,10 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100">
-        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3">
+        <div className="flex justify-between items-center pl-2 sm:pl-4 lg:pl-6 pr-4 sm:pr-6 lg:pr-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-8">
           <a href="/" className="text-lg sm:text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
-            <span className="hidden sm:inline text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
+            <span className="inline text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
             <nav className="hidden lg:flex items-center gap-4 xl:gap-8 text-sm font-bold text-slate-600 whitespace-nowrap">
@@ -71,24 +76,24 @@ export default function Navbar() {
               href="https://goodmarksclasses.classpro.in/people/sign_in"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2"
+              className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-4 py-2 rounded-xl font-bold text-xs shadow-md shadow-primary-500/20 transition-all items-center gap-2"
             >
               Student Login
             </a>
 
             <button
               onClick={() => setIsMobileMenuOpen((p) => !p)}
-              className="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors shrink-0"
+              className="lg:hidden p-2.5 hover:bg-slate-100 rounded-xl transition-colors shrink-0 active:scale-95"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
 
-        {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-100 bg-offwhite/95 backdrop-blur-lg">
-            <nav className="flex flex-col gap-1 px-6 py-4 text-sm font-bold text-slate-600">
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="border-t border-slate-100 bg-offwhite/95 backdrop-blur-lg">
+            <nav className="flex flex-col gap-1 px-4 py-4 text-sm font-bold text-slate-600">
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Courses', href: '/courses', sub: courses },
@@ -98,13 +103,13 @@ export default function Navbar() {
                 { label: 'Join as Faculty', href: '/join-faculty' },
               ].map((item) => (
                 <div key={item.href}>
-                  <a onClick={closeMobile} href={item.href} className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50 block">
+                  <a onClick={closeMobile} href={item.href} className="hover:text-primary-600 transition-colors px-4 py-3.5 rounded-xl hover:bg-slate-50 block active:bg-slate-100">
                     {item.label}
                   </a>
                   {item.sub && (
-                    <div className="ml-4 space-y-1 border-l border-slate-200 pl-4 mb-1">
+                    <div className="ml-4 space-y-0.5 border-l-2 border-slate-200 pl-4 mb-1">
                       {item.sub.map((s) => (
-                        <a key={s.href} onClick={closeMobile} href={s.href} className="block hover:text-primary-600 transition-colors px-4 py-2 text-xs font-semibold rounded-lg hover:bg-slate-50">
+                        <a key={s.href} onClick={closeMobile} href={s.href} className="block hover:text-primary-600 transition-colors px-4 py-2.5 text-xs font-semibold rounded-xl hover:bg-slate-50 active:bg-slate-100">
                           {s.label}
                         </a>
                       ))}
@@ -112,20 +117,21 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              <button onClick={() => { setIsModalOpen(true); closeMobile(); }} className="hover:text-primary-600 transition-colors px-4 py-3 rounded-lg hover:bg-slate-50 text-left">
+              <button onClick={() => { setIsModalOpen(true); closeMobile(); }} className="hover:text-primary-600 transition-colors px-4 py-3.5 rounded-xl hover:bg-slate-50 text-left active:bg-slate-100">
                 Contact Us
               </button>
-              <a href="tel:8800880028" className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-slate-50 text-primary-700 font-semibold">
+              <div className="border-t border-slate-100 my-3"></div>
+              <a href="tel:8800880028" className="flex items-center gap-2 px-4 py-3.5 rounded-xl hover:bg-slate-50 text-primary-700 font-semibold active:bg-slate-100">
                 <Phone className="w-4 h-4" /> 8800 8800 28
               </a>
               <a onClick={closeMobile} href="https://goodmarksclasses.classpro.in/people/sign_in" target="_blank" rel="noopener noreferrer"
-                className="bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-2.5 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all text-center mt-2"
+                className="bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-3 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all text-center mt-1 active:scale-[0.98]"
               >
                 Student Login
               </a>
             </nav>
           </div>
-        )}
+        </div>
       </header>
 
       {/* Contact Us Modal */}
@@ -163,6 +169,14 @@ export default function Navbar() {
                   required
                   value={form.email}
                   onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  required
+                  value={form.phone}
+                  onChange={(e) => setForm((p) => ({ ...p, phone: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
                 <textarea

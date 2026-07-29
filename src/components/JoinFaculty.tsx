@@ -3,7 +3,7 @@ import { useFormSubmit } from '../hooks/useFormSubmit';
 import { UserPlus, ArrowRight, CheckCircle, BookOpen, Clock, Presentation } from "lucide-react";
 
 export default function JoinFaculty() {
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('JoinFaculty');
+  const { submitForm, isSubmitting } = useFormSubmit('JoinFaculty');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -106,11 +106,7 @@ export default function JoinFaculty() {
             <p className="text-slate-600 mb-8">Fill out the details below and our team will get back to you shortly.</p>
             
             <form onSubmit={handleSubmit} className="space-y-5">
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-4">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
+                
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-sm font-bold text-secondary-700 mb-1.5">First Name</label>

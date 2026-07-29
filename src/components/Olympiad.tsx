@@ -3,7 +3,7 @@ import { useFormSubmit } from '../hooks/useFormSubmit';
 import { Medal, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function Olympiad() {
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('Olympiad');
+  const { submitForm, isSubmitting } = useFormSubmit('Olympiad');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,11 +57,7 @@ export default function Olympiad() {
             <div className="bg-offwhite p-8 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50">
               <h3 className="text-2xl font-bold mb-6 text-secondary-900">Join Olympiad Batch</h3>
               <form className="space-y-4" onSubmit={handleSubmit}>
-                {isSuccess && (
-                  <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-4">
-                    Thanks! We will contact you soon.
-                  </div>
-                )}
+                
                 <div>
                   <label className="block text-sm font-bold text-secondary-700 mb-1">Student Name</label>
                   <input type="text" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all" name="name" placeholder="Enter your name" required />

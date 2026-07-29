@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, X, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
+import React from 'react';
+import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
 import { locationPages } from '../data/locations';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import TestimonialCarousel from '../components/TestimonialCarousel';
@@ -10,7 +10,6 @@ interface LocationPageProps {
 
 export default function LocationPage({ slug }: LocationPageProps) {
   const page = locationPages.find(p => p.slug === slug);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { submitForm, isSubmitting } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -108,7 +107,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
                   <GraduationCap className="w-4 h-4" />
                   View Programs
                 </a>
-                <button onClick={() => setIsModalOpen(true)} className="inline-flex items-center gap-2 bg-offwhite border-2 border-secondary-200 hover:border-secondary-300 text-secondary-800 px-6 py-3 rounded-xl font-bold text-sm transition-all">
+                <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="inline-flex items-center gap-2 bg-offwhite border-2 border-secondary-200 hover:border-secondary-300 text-secondary-800 px-6 py-3 rounded-xl font-bold text-sm transition-all">
                   Book Free Demo
                 </button>
               </div>
@@ -289,7 +288,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
           <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Crack IIT?</h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Join Good Marks Classes in {areaName} and get expert guidance every step of the way. Limited seats available.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button onClick={() => setIsModalOpen(true)} className="btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">
+            <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">
               Book Free Demo Class
             </button>
             <a href="tel:8800880028" className="px-10 py-4 rounded-xl border border-secondary-700 text-slate-300 font-bold text-lg hover:bg-secondary-800 transition-colors flex items-center justify-center gap-2">
@@ -298,61 +297,6 @@ export default function LocationPage({ slug }: LocationPageProps) {
           </div>
         </div>
       </section>
-
-      {/* Demo Booking Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-secondary-900/40 backdrop-blur-sm"
-            onClick={() => setIsModalOpen(false)}
-          ></div>
-          <div className="relative bg-offwhite rounded-3xl shadow-2xl p-8 max-w-md w-full" style={{ animation: 'fadeIn 0.2s ease-out' }}>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-secondary-900 mb-2">Book Your Free Demo Class</h2>
-              <p className="text-slate-500 text-sm">Fill the form below to schedule your free demo session with our mentors.</p>
-            </div>
-            <form className="space-y-4" onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const data = Object.fromEntries(formData.entries());
-              submitForm(data);
-              setTimeout(() => {
-                setIsModalOpen(false);
-              }, 2000);
-            }}>
-              {isSuccess && (
-                <div className="bg-green-100 text-green-700 p-3 rounded-xl text-sm font-bold">
-                  Thanks! We will contact you soon.
-                </div>
-              )}
-              <div>
-                <input type="text" name="name" placeholder="Student Name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm" required />
-              </div>
-              <div>
-                <input type="tel" name="phone" placeholder="Mobile Number" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all placeholder:text-slate-400 text-sm" required />
-              </div>
-              <div>
-                <select name="course" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-600 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all appearance-none bg-offwhite text-sm" required defaultValue="">
-                  <option value="" disabled hidden>Select Course</option>
-                  <option value="iit-jee">IIT-JEE</option>
-                  <option value="neet">NEET-UG</option>
-                  <option value="foundation">Foundation</option>
-                  <option value="cbse">CBSE</option>
-                </select>
-              </div>
-              <button type="submit" disabled={isSubmitting} className="w-full mt-6 btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-md shadow-primary-500/20 hover:shadow-primary-500/40 transition-all disabled:opacity-50">
-                {isSubmitting ? 'Booking...' : 'Book Free Demo'}
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
