@@ -54,7 +54,7 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  const { submitForm, isSubmitting } = useFormSubmit('Home Demo Request');
+  const { submitForm, isSubmitting, isSuccess, setIsSuccess } = useFormSubmit('Home Demo Request');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
