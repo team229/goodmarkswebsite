@@ -1,9 +1,17 @@
 import React from 'react';
-import { blogPosts } from '../data/blog';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export default function BlogList() {
+export interface BlogPostSummary {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  image: string;
+  category?: string;
+}
+
+export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-12">
@@ -19,7 +27,7 @@ export default function BlogList() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}

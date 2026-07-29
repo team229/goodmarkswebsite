@@ -1,7 +1,18 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogList from '../../components/BlogList';
+
+const posts = await getCollection('blog');
+posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
 ---
-<BaseLayout title="Our Blog | Expert Insights & Guides | Good Marks Classes Gurgaon" description="Read the latest insights, study tips, and guides from Good Marks Classes. Expert advice on JEE, NEET, and board exam preparation to help you succeed.">
-  <BlogList client:load />
+<BaseLayout title="Our Blog | Good Marks Classes" description="Insights, guides, and tips from our expert educators to help you excel in your academic journey.">
+  <BlogList client:load posts={posts.map(p => ({
+    slug: p.id,
+    title: p.data.title,
+    excerpt: p.data.excerpt,
+    date: p.data.date,
+    image: p.data.image,
+    category: p.data.category,
+  }))} />
 </BaseLayout>

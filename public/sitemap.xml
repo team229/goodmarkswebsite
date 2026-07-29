@@ -1,519 +1,593 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Homepage -->
   <url>
-    <loc>https://goodmarksclasses.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+       <loc>https://www.goodmarksclasses.com/</loc>
+       <lastmod>2026-07-23T10:50:15+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
   </url>
-
-  <!-- About -->
   <url>
-    <loc>https://goodmarksclasses.com/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/courses</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Course Stream Pages -->
   <url>
-    <loc>https://goodmarksclasses.com/courses</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://www.goodmarksclasses.com/courses/iit</loc>
+       <lastmod>2026-07-23T10:50:31+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/courses/iit</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://www.goodmarksclasses.com/courses/neet</loc>
+       <lastmod>2026-07-23T10:50:31+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/courses/neet</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://www.goodmarksclasses.com/courses/prefoundation</loc>
+       <lastmod>2026-07-23T10:50:31+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/courses/foundation</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/courses/foundation</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/courses/prefoundation</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/physics-classes-sunil-gola</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Individual Course Pages -->
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-integrated-regular</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/blogs</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-integrated-spark</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/locations</loc>
+       <lastmod>2026-07-23T10:50:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-integrated-regular-neet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/about</loc>
+       <lastmod>2026-07-23T10:50:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-integrated-spark-neet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/join-faculty</loc>
+       <lastmod>2026-07-23T10:50:25+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-regular-12</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-integrated-regular</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-regular-12-neet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-integrated-regular-neet</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-extended-classroom-jee</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-regular-12</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-extended-classroom-neet</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-regular-12-neet</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-classroom-class-7</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-regular-class-9</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-classroom-class-8</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-regular-class-10</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/2-year-regular-class-9</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/subject/physics</loc>
+       <lastmod>2026-07-23T10:50:45+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/course/1-year-regular-class-10</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/subject/chemistry</loc>
+       <lastmod>2026-07-23T10:50:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Subject Pages -->
   <url>
-    <loc>https://goodmarksclasses.com/subject/physics</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/subject/mathematics</loc>
+       <lastmod>2026-07-23T10:50:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/subject/chemistry</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/subject/biology</loc>
+       <lastmod>2026-07-23T10:50:46+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/subject/mathematics</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/home-tuition</loc>
+       <lastmod>2026-07-23T10:50:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/subject/biology</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/olympiad</loc>
+       <lastmod>2026-07-23T10:50:25+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
-
-  <!-- Service Pages -->
   <url>
-    <loc>https://goodmarksclasses.com/home-tuition</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/doubt-sessions</loc>
+       <lastmod>2026-07-23T10:50:24+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.8000</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/olympiad</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-integrated-spark</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/doubt-sessions</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-integrated-spark-neet</loc>
+       <lastmod>2026-07-23T10:50:30+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/join-faculty</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+       <loc>https://www.goodmarksclasses.com/course/2-year-classroom-class-7</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/physics-classes-sunil-gola</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-extended-classroom-jee</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/thank-you</loc>
-    <changefreq>never</changefreq>
-    <priority>0.1</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-extended-classroom-neet</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
-  <!-- Blog Index -->
   <url>
-    <loc>https://goodmarksclasses.com/blogs</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/struggling-with-class-10-biology-before-boards</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
-  <!-- Blog Posts -->
   <url>
-    <loc>https://goodmarksclasses.com/blogs/struggling-with-class-10-biology-before-boards</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/why-class-11-biology-feels-like-a-different-subject</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/why-class-11-biology-feels-like-a-different-subject</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/class-11-chemistry-tougher-than-expected</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/class-11-chemistry-tougher-than-expected</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/chemistry-boards-stressing-gurgaon-students</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/chemistry-boards-stressing-gurgaon-students</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/class-10-maths-harder-than-it-should</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/class-10-maths-harder-than-it-should</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/class-11-maths-catches-students-off-guard</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/class-11-maths-catches-students-off-guard</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/physics-boards-sneak-up-on-class-10-students</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/physics-boards-sneak-up-on-class-10-students</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/class-12-physics-doesnt-ease-you-in</loc>
+       <lastmod>2026-07-23T10:50:27+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/class-12-physics-doesnt-ease-you-in</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/best-physics-coaching-for-class-11-near-me</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/best-physics-coaching-for-class-11-near-me</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/biology-tutor-class-10-gurgaon-boards</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/biology-tutor-class-10-gurgaon-boards</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/physics-tuition-in-gurgaon-what-to-look-for-and-why-most-students-wait-too-long-to-get-help</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/physics-tuition-in-gurgaon-what-to-look-for-and-why-most-students-wait-too-long-to-get-help</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/one-year-neet-coaching-gurgaon</loc>
+       <lastmod>2026-07-23T10:50:26+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/one-year-neet-coaching-gurgaon</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/one-year-for-jee-in-gurgaon-honest-answers-to-the-questions-students-actually-have</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/one-year-for-jee-in-gurgaon-honest-answers-to-the-questions-students-actually-have</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/blogs/2-year-iit-jee-program-in-gurgaon-everything-you-need-to-know-before-you-enroll</loc>
+       <lastmod>2026-07-23T10:50:28+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/blogs/2-year-iit-jee-program-in-gurgaon-everything-you-need-to-know-before-you-enroll</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-78</loc>
+       <lastmod>2026-07-23T10:50:40+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
-  <!-- Location Index -->
   <url>
-    <loc>https://goodmarksclasses.com/locations</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-79</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
-  <!-- Location Pages -->
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-78</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-80</loc>
+       <lastmod>2026-07-23T10:50:35+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-79</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-81</loc>
+       <lastmod>2026-07-23T10:50:36+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-80</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-82</loc>
+       <lastmod>2026-07-23T10:50:41+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-81</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-83</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-82</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-84</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-83</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-85</loc>
+       <lastmod>2026-07-23T10:50:40+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-84</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-86</loc>
+       <lastmod>2026-07-23T10:50:36+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-85</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-87</loc>
+       <lastmod>2026-07-23T10:50:35+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-86</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-88</loc>
+       <lastmod>2026-07-23T10:50:36+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-87</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-89</loc>
+       <lastmod>2026-07-23T10:50:35+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-88</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-90</loc>
+       <lastmod>2026-07-23T10:50:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-89</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-91</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-90</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-92</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-91</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-93</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-92</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-94</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-93</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-95</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-94</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-96</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-95</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-97</loc>
+       <lastmod>2026-07-23T10:50:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-96</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-98</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-97</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-99</loc>
+       <lastmod>2026-07-23T10:50:44+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-98</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-1</loc>
+       <lastmod>2026-07-23T10:50:35+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-gurgaon-sector-99</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-2</loc>
+       <lastmod>2026-07-23T10:50:40+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-3</loc>
+       <lastmod>2026-07-23T10:50:41+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-4</loc>
+       <lastmod>2026-07-23T10:50:41+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-5</loc>
+       <lastmod>2026-07-23T10:50:40+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-4</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-78</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/iit-coaching-in-manesar-sector-5</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-79</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-78</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-80</loc>
+       <lastmod>2026-07-23T10:50:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-79</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-81</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-80</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-82</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-81</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-83</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-82</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-84</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-83</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-85</loc>
+       <lastmod>2026-07-23T10:50:37+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-84</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-86</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-85</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-87</loc>
+       <lastmod>2026-07-23T10:50:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-86</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-88</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-87</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-89</loc>
+       <lastmod>2026-07-23T10:50:43+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-88</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-90</loc>
+       <lastmod>2026-07-23T10:50:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-89</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-91</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-90</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-92</loc>
+       <lastmod>2026-07-23T10:50:42+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-91</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-93</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-92</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-94</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-93</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-95</loc>
+       <lastmod>2026-07-23T10:50:41+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-94</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-96</loc>
+       <lastmod>2026-07-23T10:50:36+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-95</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-97</loc>
+       <lastmod>2026-07-23T10:50:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-96</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-98</loc>
+       <lastmod>2026-07-23T10:50:35+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-97</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-99</loc>
+       <lastmod>2026-07-23T10:50:34+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-98</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-1</loc>
+       <lastmod>2026-07-23T10:50:36+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-gurgaon-sector-99</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-2</loc>
+       <lastmod>2026-07-23T10:50:41+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-1</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-3</loc>
+       <lastmod>2026-07-23T10:50:38+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-2</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-4</loc>
+       <lastmod>2026-07-23T10:50:39+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-3</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-5</loc>
+       <lastmod>2026-07-23T10:50:40+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
   <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-4</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+       <loc>https://www.goodmarksclasses.com/course/1-year-classroom-class-8</loc>
+       <lastmod>2026-07-23T10:50:29+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-  <url>
-    <loc>https://goodmarksclasses.com/locations/jee-coaching-in-manesar-sector-5</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
 </urlset>
