@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://www.goodmarksclasses.com/sitemap_index.xml
+Sitemap: https://www.goodmarksclasses.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
