@@ -9,9 +9,10 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noindex } = Astro.props;
 const siteUrl = 'https://goodmarksclasses.com';
 const ogImage = `${siteUrl}/good-marks-logo.png`;
 ---
@@ -23,6 +24,7 @@ const ogImage = `${siteUrl}/good-marks-logo.png`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

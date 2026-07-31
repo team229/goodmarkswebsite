@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Courses', href: '/courses' },
+  { label: 'Blog', href: '/blogs' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'About Us', href: '/about' },
+];
+
+const upRightArrow = 'M7 17L17 7M9 7h8v8';
+---
+
+<BaseLayout
+  title="Page Not Found | Good Marks Classes"
+  description="The page you're looking for doesn't exist. Go back to Good Marks Classes in Gurgaon for IIT-JEE, NEET, and foundation coaching."
+  noindex
+>
+  <section class="dark-section min-h-screen flex items-center pt-28 pb-20">
+    <div class="max-w-container-max mx-auto px-6 w-full text-center">
+      <p class="font-label-bold uppercase tracking-widest text-primary-400 mb-6">Error 404</p>
+
+      <div class="flex items-start justify-center gap-1 sm:gap-2 mb-8" aria-hidden="true">
+        <span class="font-heading font-black leading-none text-white text-[clamp(88px,24vw,190px)] tracking-tight">4</span>
+        <span class="font-heading font-black leading-none text-primary-400 text-[clamp(88px,24vw,190px)] tracking-tight">0</span>
+        <span class="font-heading font-black leading-none text-white text-[clamp(88px,24vw,190px)] tracking-tight">4</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+        This page is skipping class today.
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-300/90 max-w-xl mx-auto mt-5 leading-relaxed">
+        The link you followed was moved or never existed. No marks lost, though — the right page is one click away.
+      </p>
+
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-400 text-secondary-900 font-bold px-8 py-3.5 rounded-xl mt-9 transition-colors"
+      >
+        Back to Home
+      </a>
+
+      <nav class="mt-14" aria-label="Popular pages">
+        <p class="font-label-bold uppercase tracking-widest text-slate-400 text-xs mb-6">Good places to start</p>
+        <div class="flex flex-wrap justify-center gap-x-9 gap-y-4">
+          {
+            quickLinks.map((link) => (
+              <a
+                href={link.href}
+                class="group inline-flex items-center gap-1.5 text-slate-200 hover:text-primary-400 font-bold text-sm transition-colors"
+              >
+                {link.label}
+                <svg
+                  class="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d={upRightArrow} />
+                </svg>
+              </a>
+            ))
+          }
+        </div>
+      </nav>
+
+      <a
+        href="tel:8800880028"
+        class="mt-12 inline-flex items-baseline gap-2 text-slate-400 hover:text-white text-sm transition-colors"
+      >
+        Prefer a real person? Call
+        <span class="text-primary-400 font-bold text-base">8800 8800 28</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
