@@ -70,7 +70,7 @@ export default function Navbar() {
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/about">About Us</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/join-faculty">Join as Faculty</a>
               <button onClick={() => setIsModalOpen(true)} className="hover:text-primary-600 transition-colors cursor-pointer whitespace-nowrap">Contact Us</button>
-              <a href="tel:8800880028" className="flex items-center gap-1.5 px-2 lg:px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors shrink-0 whitespace-nowrap"><Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" /><span className="hidden xl:inline">8800 8800 28</span><span className="xl:hidden">8800880028</span></a>
+              <a href="tel:8800880028" className="hidden sm:flex bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-4 lg:px-6 py-2 rounded-xl font-bold text-xs lg:text-sm shadow-md shadow-primary-500/20 transition-all items-center gap-2 shrink-0 whitespace-nowrap"><Phone className="w-3.5 h-3.5 lg:w-4 lg:h-4" /><span className="hidden lg:inline">8800 8800 28</span><span className="lg:hidden">8800880028</span></a>
             </nav>
 
             <a

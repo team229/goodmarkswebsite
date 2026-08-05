@@ -115,11 +115,11 @@ export default function CourseDetail({ id }: { id?: string }) {
                   </div>
                   <h2 className="text-xl font-bold text-secondary-900">Class Schedule</h2>
                 </div>
-                <div className="text-slate-600 whitespace-pre-wrap text-sm leading-relaxed mb-6">
+                <div className="text-slate-600 whitespace-pre-wrap text-sm leading-relaxed">
                   {details.schedule}
                 </div>
 
-                <div className="mt-auto">
+                <div className="mt-6">
                   <h3 className="text-sm font-bold text-secondary-900 mb-2 flex items-center gap-2">
                     <Clock className="w-4 h-4 text-slate-400" /> Programme Hours
                   </h3>

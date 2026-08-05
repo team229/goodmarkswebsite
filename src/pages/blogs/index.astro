@@ -5,6 +5,13 @@ import BlogList from '../../components/BlogList';
 
 const posts = await getCollection('blog');
 posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+
+const toPrimaryCategory = (post: (typeof posts)[number]): 'CBSE' | 'IIT JEE' | 'NEET' => {
+  const haystack = `${post.id} ${post.data.title} ${post.data.category ?? ''}`.toLowerCase();
+  if (haystack.includes('neet')) return 'NEET';
+  if (haystack.includes('iit') || haystack.includes('jee')) return 'IIT JEE';
+  return 'CBSE';
+};
 ---
 <BaseLayout title="Our Blog | Good Marks Classes" description="Insights, guides, and tips from our expert educators to help you excel in your academic journey.">
   <BlogList client:load posts={posts.map(p => ({
@@ -14,5 +21,6 @@ posts.sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).val
     date: p.data.date,
     image: p.data.image,
     category: p.data.category,
+    primaryCategory: toPrimaryCategory(p),
   }))} />
 </BaseLayout>

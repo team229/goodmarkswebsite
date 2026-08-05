@@ -686,7 +686,7 @@ export default function Home() {
                   <tr>
                     <th className="py-4 px-5 text-sm font-bold text-slate-300 border-b border-secondary-800 w-[200px]">Parameter</th>
                     <th className="py-4 px-5 text-sm font-bold bg-primary-600/20 text-primary-400 border-b border-primary-600/30 rounded-tl-xl rounded-tr-xl">Good Marks Classes</th>
-                    <th className="py-4 px-5 text-sm font-bold text-slate-500 border-b border-secondary-800">Allen / FIITJEE / Aakash</th>
+                    <th className="py-4 px-5 text-sm font-bold text-slate-500 border-b border-secondary-800">Other Coaching Institutes</th>
                   </tr>
                 </thead>
                 <tbody>

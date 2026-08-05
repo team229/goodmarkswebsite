@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -9,16 +9,23 @@ export interface BlogPostSummary {
   date: string;
   image: string;
   category?: string;
+  primaryCategory?: 'CBSE' | 'IIT JEE' | 'NEET';
 }
 
+const CATEGORIES = ['All', 'CBSE', 'IIT JEE', 'NEET'] as const;
+type Category = (typeof CATEGORIES)[number];
+
 export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
+  const [active, setActive] = useState<Category>('All');
+  const filtered = active === 'All' ? posts : posts.filter(p => p.primaryCategory === active);
+
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-container-max mx-auto px-4 sm:px-6 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-5xl font-black text-secondary-900 mb-6">Our Blog</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
@@ -26,8 +33,25 @@ export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
           </p>
         </motion.div>
 
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {CATEGORIES.map(cat => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setActive(cat)}
+              className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 border ${
+                active === cat
+                  ? 'bg-primary-600 text-white border-primary-600 shadow-lg'
+                  : 'bg-white text-slate-700 border-slate-200 hover:border-primary-300 hover:text-primary-600'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
+          {filtered.map((post, index) => (
             <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}

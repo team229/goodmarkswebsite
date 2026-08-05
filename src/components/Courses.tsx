@@ -4,7 +4,6 @@ import {
   ArrowRight, 
   GraduationCap, 
   Calendar, 
-  CheckCircle2,
   Trophy,
   BookOpen,
   Atom,
@@ -159,14 +158,14 @@ export default function Courses({ stream }: { stream?: string }) {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {coursesData[activeTab]?.filter(c => c.stream === activeStream || c.stream === 'all').map((course, idx) => (
               <motion.div 
                 key={course.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: idx * 0.1 }}
-                className="bg-offwhite rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group"
+                className="bg-offwhite rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
               >
                 {/* Placeholder Image Graphic */}
                 <div className={`h-48 w-full m-2 rounded-xl bg-gradient-to-br ${course.imageGrad} flex items-center justify-center relative overflow-hidden`}>
@@ -204,10 +203,10 @@ export default function Courses({ stream }: { stream?: string }) {
                     </div>
                   </div>
 
-                  {/* Admission Status */}
-                  <div className="bg-primary-50 border border-primary-100 rounded-xl p-3 flex items-center gap-2 mb-6 mt-auto">
-                    <CheckCircle2 className="w-4 h-4 text-primary-600" />
-                    <span className="text-xs font-bold text-primary-700">Admission Open</span>
+                  {/* Ideal Programme For - highlighted */}
+                  <div className={`rounded-xl border-2 p-4 mb-5 ${activeStream === 'iit' ? 'bg-gradient-to-br from-secondary-50 to-primary-50/50 border-secondary-200 shadow-md shadow-secondary-100' : 'bg-gradient-to-br from-primary-50 to-cyan-50/50 border-primary-200 shadow-md shadow-primary-100'}`}>
+                    <span className={`text-[10px] uppercase font-bold flex items-center gap-1 mb-1.5 ${activeStream === 'iit' ? 'text-secondary-500' : 'text-primary-500'}`}><Target className="w-3 h-3"/> Ideal Programme For</span>
+                    <p className={`text-xs font-medium leading-relaxed ${activeStream === 'iit' ? 'text-secondary-700' : 'text-primary-700'}`}>{course.details?.idealFor}</p>
                   </div>
 
                   {/* Button */}
