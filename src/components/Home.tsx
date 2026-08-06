@@ -146,7 +146,7 @@ export default function Home() {
                   </span>
                 </h1>
                 <p className="font-body-lg text-slate-600 max-w-xl text-lg leading-relaxed">
-                  Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 6–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
+                  Led by Sunil Gola Sir (DTU), we offer CBSE coaching (Classes 8–12) integrated with IIT JEE & NEET preparation across offline, online, hybrid, and home tutoring formats - all in one place.
                 </p>
                 <p className="max-w-xl" id="hero-physics-link">
                   <a href="/physics-classes-sunil-gola" aria-label="Explore Physics Classes by Sunil Gola" className="text-primary-700 font-label-bold underline hover:text-primary-800 transition-colors">
@@ -339,8 +339,8 @@ export default function Home() {
           <div className="max-w-container-max mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div className="max-w-2xl">
-                <h2 className="font-h2 mb-4">Explore Our NEET & IIT JEE Coaching Programs</h2>
-                <p className="text-on-surface-variant text-body-md">Subject-wise batches for Class 11 & 12 — offline in Gurgaon, online across India. <a href="/courses" className="text-secondary font-bold inline-flex items-center gap-1">See All Courses <ArrowRight className="w-4 h-4" /></a></p>
+                <h2 className="font-h2 mb-4">Explore Our IIT JEE, NEET Coaching & CBSE Tuition Programs</h2>
+                <p className="text-on-surface-variant text-body-md"><a href="/courses" className="text-secondary font-bold inline-flex items-center gap-1">See All Courses <ArrowRight className="w-4 h-4" /></a></p>
               </div>
               <div className="flex gap-4 overflow-x-auto pb-4 md:pb-0 w-full md:w-auto snap-x">
                 <a href="/courses" className="px-6 py-2 rounded-full bg-secondary-900 text-white font-label-bold whitespace-nowrap snap-start hover:bg-secondary-800 transition-colors">All Programs</a>
@@ -355,9 +355,7 @@ export default function Home() {
                 coursesData.class11.find(c => c.id === '2-year-integrated-regular'),     // IIT 2-year
                 coursesData.class11.find(c => c.id === '2-year-integrated-regular-neet'),     // NEET 2-year
                 coursesData.class12.find(c => c.id === '1-year-regular-12'),     // IIT 1-year
-                coursesData.class12.find(c => c.id === '1-year-regular-12-neet'),     // NEET 1-year
-                coursesData.class9.find(c => c.id === '2-year-regular-class-9'),      // Foundation 2-year Class 9
-                coursesData.class10.find(c => c.id === '1-year-regular-class-10')      // Foundation 1-year Class 10
+                coursesData.class12.find(c => c.id === '1-year-regular-12-neet')     // NEET 1-year
               ].map((course, idx) => course && (
                 <div key={idx} className="bg-offwhite rounded-[24px] p-8 shadow-sm border border-slate-100 flex flex-col group hover:shadow-xl transition-all">
                   <div className="mb-6 flex justify-between items-start">
@@ -378,6 +376,42 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+
+              {/* CBSE Tuitions card */}
+              <a href="/courses/cbse" className="bg-offwhite rounded-[24px] p-8 shadow-sm border border-slate-100 flex flex-col group hover:shadow-xl transition-all">
+                <div className="mb-6 flex justify-between items-start">
+                  <span className="px-3 py-1 bg-amber-100/50 text-amber-700 text-caption rounded-full font-label-bold uppercase tracking-wider">CBSE Tuition</span>
+                  <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold border border-orange-200">Classes 8–12</span>
+                </div>
+                <h3 className="font-h3 mt-2 group-hover:text-amber-600 transition-colors mb-3">CBSE Tuitions for Classes 8 to 12</h3>
+                <p className="text-sm text-slate-600 mb-6 flex-grow line-clamp-3">NCERT-first tuition with weekly worksheet tests, olympiad & NTSE preparation, and intensive subjective writing practice across Physics, Chemistry, Maths and Biology.</p>
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                  <div>
+                    <span className="block text-xs text-slate-500 mb-1">Weekday + Weekend Batches</span>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-secondary-900 group-hover:bg-secondary-900 group-hover:text-white transition-all">
+                    <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform" />
+                  </div>
+                </div>
+              </a>
+
+              {/* Physics by Sunil Gola card */}
+              <a href="/physics-classes-sunil-gola" className="bg-offwhite rounded-[24px] p-8 shadow-sm border border-slate-100 flex flex-col group hover:shadow-xl transition-all">
+                <div className="mb-6 flex justify-between items-start">
+                  <span className="px-3 py-1 bg-cyan-100/50 text-cyan-700 text-caption rounded-full font-label-bold uppercase tracking-wider">Physics Classes</span>
+                  <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold border border-orange-200">11th & 12th</span>
+                </div>
+                <h3 className="font-h3 mt-2 group-hover:text-cyan-600 transition-colors mb-3">Physics Classes by Sunil Gola Sir</h3>
+                <p className="text-sm text-slate-600 mb-6 flex-grow line-clamp-3">Concept-first Physics taught personally by Sunil Gola Sir (DTU) for CBSE, IIT JEE & NEET — with numerical drills, doubt-clearing and personal mentorship.</p>
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                  <div>
+                    <span className="block text-xs text-slate-500 mb-1">Offline in Gurgaon • Online across India</span>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-secondary-900 group-hover:bg-secondary-900 group-hover:text-white transition-all">
+                    <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform" />
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -486,9 +520,9 @@ export default function Home() {
                   <HomeIcon className="w-7 h-7 text-secondary-600" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-secondary-900">Home Tuition In Gurgaon</h3>
-                <p className="text-slate-600 text-sm mb-4 leading-relaxed font-semibold">CBSE 6th to 12th, NEET & IIT JEE — One-to-one sessions with subject experts</p>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed font-semibold">CBSE 8th to 12th, NEET & IIT JEE — One-to-one sessions with subject experts</p>
                 <ul className="text-slate-600 text-sm mb-6 leading-relaxed list-disc pl-5 space-y-1">
-                  <li>Dedicated subject classes for CBSE (6th to 12th), IIT JEE & NEET</li>
+                  <li>Dedicated subject classes for CBSE (8th to 12th), IIT JEE & NEET</li>
                   <li>Study plan built around your schedule & gaps</li>
                   <li>Seamlessly covers School Boards and Competitive prep together</li>
                 </ul>

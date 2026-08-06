@@ -23,10 +23,10 @@ export default function HomeTuition() {
             </div>
             <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Home Tuition In Gurgaon</h1>
           </div>
-          <h2 className="text-2xl font-bold text-secondary-700 mb-6">CBSE (6th to 12th), NEET & IIT JEE Preparation</h2>
+          <h2 className="text-2xl font-bold text-secondary-700 mb-6">CBSE (8th to 12th), NEET & IIT JEE Preparation</h2>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
             Get personalized, one-to-one tutoring from subject matter experts right at your home. 
-            We provide dedicated subject classes for IIT JEE & NEET, along with comprehensive CBSE coverage for classes 6th to 12th.
+            We provide dedicated subject classes for IIT JEE & NEET, along with comprehensive CBSE coverage for classes 8th to 12th.
           </p>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function HomeTuition() {
               {[
                 "One-to-one sessions with our highly qualified subject experts.",
                 "Customized study plan aimed at addressing your specific weaknesses and supercharging your preparation.",
-                "Dedicated subject classes for CBSE (6th to 12th), IIT JEE, and NEET.",
+                "Dedicated subject classes for CBSE (8th to 12th), IIT JEE, and NEET.",
                 "Simultaneous preparation for School Boards and Competitive Exams without splitting focus.",
                 "Regular assessments and progress tracking directly reported to parents."
               ].map((feature, idx) => (

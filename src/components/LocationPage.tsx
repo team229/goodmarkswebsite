@@ -66,9 +66,41 @@ export default function LocationPage({ slug }: LocationPageProps) {
     }))
   };
 
+  const isManesar = slug.includes('manesar');
+  const area = isManesar ? 'Manesar' : 'Gurgaon';
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.goodmarksclasses.com/locations' },
+      { '@type': 'ListItem', position: 3, name: page.title, item: `https://www.goodmarksclasses.com/locations/${slug}` }
+    ]
+  };
+
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    '@id': `https://www.goodmarksclasses.com/locations/${slug}#organization`,
+    name: `Good Marks Classes — ${page.title}`,
+    url: `https://www.goodmarksclasses.com/locations/${slug}`,
+    parentOrganization: { '@id': 'https://www.goodmarksclasses.com/#organization' },
+    telephone: '+91-8800880028',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: area,
+      addressRegion: 'Haryana',
+      addressCountry: 'IN'
+    },
+    areaServed: area
+  };
+
   return (
     <main className="bg-offwhite min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
 
       {/* Hero Section */}
       <section className={`bg-gradient-to-r ${typeColor} pt-32 lg:pt-40 pb-20 relative overflow-hidden`}>

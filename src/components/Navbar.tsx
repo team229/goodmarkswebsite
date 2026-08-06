@@ -5,7 +5,6 @@ const courses = [
   { label: 'IIT-JEE', href: '/courses/iit', color: 'bg-secondary-500', hover: 'hover:bg-secondary-50', textHover: 'hover:text-secondary-600' },
   { label: 'NEET-UG', href: '/courses/neet', color: 'bg-primary-500', hover: 'hover:bg-primary-50', textHover: 'hover:text-primary-600' },
   { label: 'CBSE Tuitions', href: '/courses/cbse', color: 'bg-amber-500', hover: 'hover:bg-amber-50', textHover: 'hover:text-amber-600' },
-  { label: 'Online Courses', href: '/courses', color: 'bg-primary-500', hover: 'hover:bg-primary-50', textHover: 'hover:text-primary-600' },
   { label: 'Physics by Sunil Gola', href: '/physics-classes-sunil-gola', color: 'bg-orange-500', hover: 'hover:bg-orange-50', textHover: 'hover:text-orange-600' },
 ];
 

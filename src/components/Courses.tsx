@@ -44,10 +44,15 @@ export default function Courses({ stream }: { stream?: string }) {
   const streamHeadings: Record<string, string> = {
     iit: 'IIT JEE Coaching in Gurgaon',
     neet: 'NEET Coaching in Gurgaon',
-    cbse: 'CBSE Tuitions in Gurgaon for Classes 8 to 12'
+    cbse: 'CBSE Tuitions in Gurgaon for Classes 8 to 12',
+    physics: 'Physics Classes by Sunil Gola Sir in Gurgaon'
   };
 
   const handleStreamChange = (streamId: string) => {
+    if (streamId === 'physics') {
+      setActiveStream('physics');
+      return;
+    }
     setActiveStream(streamId);
     window.location.href = `/courses/${streamId}`;
   };
@@ -137,11 +142,13 @@ export default function Courses({ stream }: { stream?: string }) {
                   }`} />
                 </div>
                 <h2 className="text-2xl font-bold text-secondary-900">
-                  {availableTabs.find(t => t.id === activeTab)?.label} {
-                    activeStream === 'cbse' 
-                      ? 'CBSE Tuition Course'
-                      : `Courses for ${streams.find(s => s.id === activeStream)?.label}`
-                  }
+                  {activeStream === 'physics'
+                    ? 'Physics Classes by Sunil Gola Sir'
+                    : `${availableTabs.find(t => t.id === activeTab)?.label} ${
+                        activeStream === 'cbse' 
+                          ? 'CBSE Tuition Course'
+                          : `Courses for ${streams.find(s => s.id === activeStream)?.label}`
+                      }`}
                 </h2>
               </div>
               {activeStream === 'cbse' && (
@@ -149,13 +156,69 @@ export default function Courses({ stream }: { stream?: string }) {
                   "Education is the most powerful weapon which you can use to change the world." - Nelson Mandela
                 </p>
               )}
+              {activeStream === 'physics' && (
+                <p className="text-sm font-medium text-slate-500 italic ml-14 max-w-xl">
+                  Learn Physics directly from Sunil Gola Sir (DTU) — concept-first teaching for CBSE, IIT JEE & NEET aspirants.
+                </p>
+              )}
             </div>
           </div>
 
           {/* Cards Grid */}
           <div className="flex flex-wrap justify-center gap-8">
-            {coursesData[activeTab]?.filter(c => c.stream === activeStream || c.stream === 'all').map((course, idx) => (
-              <motion.div 
+            {activeStream === 'physics' ? (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-offwhite rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all overflow-hidden flex flex-col group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
+              >
+                <div className="h-48 w-full m-2 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-offwhite/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/4"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full blur-xl translate-y-1/4 -translate-x-1/4"></div>
+                  <h3 className="text-4xl font-black text-white italic tracking-tighter drop-shadow-md z-10 font-heading text-center px-4">
+                    PHYSICS
+                  </h3>
+                </div>
+
+                <div className="p-6 flex flex-col flex-grow">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 bg-cyan-50">
+                      <FlaskConical className="w-4 h-4 text-cyan-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-secondary-900 text-lg leading-tight mb-1">Physics Classes by Sunil Gola Sir</h4>
+                      <p className="text-xs text-slate-500 font-semibold">CBSE • IIT JEE • NEET</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="bg-offwhite rounded-xl p-3 border border-slate-100 flex flex-col gap-1">
+                      <span className="text-[10px] uppercase font-bold text-slate-400 flex items-center gap-1"><BookOpen className="w-3 h-3"/> Class</span>
+                      <span className="font-bold text-secondary-900 text-sm">11th & 12th</span>
+                    </div>
+                    <div className="bg-cyan-50/50 border-cyan-50 rounded-xl p-3 border flex flex-col gap-1">
+                      <span className="text-[10px] uppercase font-bold flex items-center gap-1 text-cyan-500"><Calendar className="w-3 h-3"/> Target</span>
+                      <span className="font-bold text-sm text-cyan-900">Board + JEE/NEET</span>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border-2 p-4 mb-5 bg-gradient-to-br from-cyan-50 to-blue-50/50 border-cyan-200 shadow-md shadow-cyan-100">
+                    <span className="text-[10px] uppercase font-bold flex items-center gap-1 mb-1.5 text-cyan-600"><Target className="w-3 h-3"/> Ideal Programme For</span>
+                    <p className="text-xs font-medium leading-relaxed text-cyan-700">Students who want to master Physics with concept-first teaching, numerical problem-solving drills and personal mentorship for boards, IIT JEE, NEET and foundation pathways.</p>
+                  </div>
+
+                  <a
+                    href="/physics-classes-sunil-gola"
+                    className="w-full py-3.5 rounded-xl border font-bold text-sm flex items-center justify-center gap-2 transition-colors border-cyan-200 text-cyan-600 hover:bg-cyan-50 group-hover:border-cyan-600 group-hover:bg-cyan-600 group-hover:text-white"
+                  >
+                    View Details <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </motion.div>
+            ) : (
+              coursesData[activeTab]?.filter(c => c.stream === activeStream || c.stream === 'all').map((course, idx) => (
+              <motion.div
                 key={course.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -217,7 +280,8 @@ export default function Courses({ stream }: { stream?: string }) {
 
                 </div>
               </motion.div>
-            ))}
+              ))
+            )}
           </div>
 
         </div>

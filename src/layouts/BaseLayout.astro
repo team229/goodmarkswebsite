@@ -9,12 +9,34 @@ import '../styles/global.css';
 export interface Props {
   title: string;
   description: string;
-  noindex?: boolean;
+  robots?: string;
 }
 
-const { title, description, noindex } = Astro.props;
-const siteUrl = 'https://goodmarksclasses.com';
+const { title, description, robots } = Astro.props;
+const siteUrl = 'https://www.goodmarksclasses.com';
 const ogImage = `${siteUrl}/good-marks-logo.png`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  '@id': `${siteUrl}/#organization`,
+  name: 'Good Marks Classes',
+  url: siteUrl,
+  logo: `${siteUrl}/good-marks-logo.png`,
+  telephone: '+91-8800880028',
+  email: 'info@goodmarksclasses.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Gurgaon',
+    addressRegion: 'Haryana',
+    addressCountry: 'IN'
+  },
+  sameAs: [
+    'https://www.instagram.com/goodmarksclassesgurgaon/',
+    'https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ'
+  ]
+};
 ---
 
 <!DOCTYPE html>
@@ -24,11 +46,16 @@ const ogImage = `${siteUrl}/good-marks-logo.png`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="robots" content={robots ?? 'index, follow'} />
+    <meta name="theme-color" content="#233D66" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/png" href="/good-marks-logo.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="Good Marks Classes" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
@@ -40,6 +67,9 @@ const ogImage = `${siteUrl}/good-marks-logo.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
 
     <ScrollToTop client:load />
   </head>

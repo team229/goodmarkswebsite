@@ -1,7 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import LocationsList from '../components/LocationsList';
+import { locationPages } from '../data/locations';
+
+const title = 'Our Locations | Good Marks Classes';
+const description = 'Find Good Marks Classes coaching centers near you. Expert IIT-JEE and NEET coaching in Gurgaon and Manesar.';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.goodmarksclasses.com/locations' }
+  ]
+};
+
+const listSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Good Marks Classes Locations',
+  itemListElement: locationPages.map((page, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: page.title,
+    url: `https://www.goodmarksclasses.com/locations/${page.slug}`
+  }))
+};
 ---
-<BaseLayout title="Our Locations | Good Marks Classes" description="Find Good Marks Classes coaching centers near you. Expert IIT-JEE and NEET coaching in Gurgaon and Manesar.">
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(listSchema)} />
   <LocationsList client:load />
 </BaseLayout>

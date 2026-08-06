@@ -15,7 +15,36 @@ const meta: Record<string, { title: string; description: string }> = {
   neet: { title: 'Best NEET Coaching in Gurgaon | Repeaters Batch Available | GoodMarks Classes', description: 'Searching for the best NEET coaching in Gurgaon? GoodMarks Classes offers expert-led NEET preparation with regular and repeater batches, full syllabus coverage, and mock tests designed for NEET success.' },
   cbse: { title: 'Best CBSE Tuition in Gurgaon for Classes 8 to 12 | GoodMarks Classes', description: 'CBSE tuition in Gurgaon for Classes 8 to 12 at Good Marks Classes — weekend & weekday batches, NCERT-first teaching, olympiad & NTSE preparation, worksheet tests and subjective writing practice. Book a free demo class.' }
 };
+
+const streamName: Record<string, string> = {
+  iit: 'IIT JEE Coaching',
+  neet: 'NEET Coaching',
+  cbse: 'CBSE Tuition Classes'
+};
+
+const streamMeta = meta[stream];
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/courses' },
+    { '@type': 'ListItem', position: 3, name: streamName[stream] || 'Courses', item: `https://www.goodmarksclasses.com/courses/${stream}` }
+  ]
+};
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: streamMeta?.title.split('|')[0].trim() || streamName[stream],
+  description: streamMeta?.description || '',
+  url: `https://www.goodmarksclasses.com/courses/${stream}`,
+  isPartOf: { '@type': 'WebSite', name: 'Good Marks Classes', url: 'https://www.goodmarksclasses.com/' }
+};
 ---
-<BaseLayout title={meta[stream]?.title || 'Courses'} description={meta[stream]?.description || ''}>
+<BaseLayout title={streamMeta?.title || 'Courses'} description={streamMeta?.description || ''}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
   <Courses stream={stream} client:load />
 </BaseLayout>

@@ -1,7 +1,8 @@
 export const streams = [
   { id: 'iit', label: 'IIT-JEE' },
   { id: 'neet', label: 'NEET-UG' },
-  { id: 'cbse', label: 'CBSE Tuitions' }
+  { id: 'cbse', label: 'CBSE Tuitions' },
+  { id: 'physics', label: 'Physics Classes by Sunil Gola' }
 ];
 
 export const courseTabs: Record<string, {id: string, label: string}[]> = {
