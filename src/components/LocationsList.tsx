@@ -47,8 +47,8 @@ export default function LocationsList() {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-3 mb-8">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm font-bold text-slate-500">Type:</span>
             {types.map(t => (
               <button
@@ -64,7 +64,7 @@ export default function LocationsList() {
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-sm font-bold text-slate-500">Area:</span>
             {areas.map(a => (
               <button
