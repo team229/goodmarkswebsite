@@ -3,7 +3,13 @@ import { MapPin, GraduationCap, ChevronRight } from 'lucide-react';
 import { locationPages } from '../data/locations';
 
 const areas = ['All', 'Gurgaon', 'Manesar'];
-const types = ['All', 'IIT', 'JEE'];
+const types = ['All', 'IITJEE', 'NEET'];
+
+type TypeMeta = { label: string; prefix: string; icon: string; iconBg: string; iconFg: string };
+const TYPE_META: Record<string, TypeMeta> = {
+  IITJEE: { label: 'IIT-JEE Main & Advanced', prefix: 'IIT-JEE Main & Advanced Coaching in ', icon: 'bg-blue-100 text-blue-600', iconBg: 'bg-blue-50', iconFg: 'text-blue-500' },
+  NEET: { label: 'NEET', prefix: 'NEET Coaching in ', icon: 'bg-emerald-100 text-emerald-600', iconBg: 'bg-emerald-50', iconFg: 'text-emerald-500' },
+};
 
 function getArea(title: string): string {
   if (title.toLowerCase().includes('manesar')) return 'Manesar';
@@ -53,7 +59,7 @@ export default function LocationsList() {
                     : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
                 }`}
               >
-                {t === 'All' ? 'All Types' : t === 'IIT' ? 'IIT-JEE' : 'JEE'}
+                {t === 'All' ? 'All Types' : TYPE_META[t]?.label || t}
               </button>
             ))}
           </div>
@@ -83,16 +89,17 @@ export default function LocationsList() {
           </div>
         ) : (
           Object.entries(grouped).map(([group, pages]) => {
-            const [type, area] = group.split(' - ');
-            const isIIT = type === 'IIT';
+            const area = group.split(' - ')[1];
+            const type = group.split(' - ')[0];
+            const meta = TYPE_META[type] || { label: type, prefix: '', icon: 'bg-secondary-100 text-secondary-600', iconBg: 'bg-secondary-50', iconFg: 'text-secondary-500' };
             return (
               <div key={group} className="mb-10">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isIIT ? 'bg-blue-100' : 'bg-emerald-100'}`}>
-                    <GraduationCap className={`w-5 h-5 ${isIIT ? 'text-blue-600' : 'text-emerald-600'}`} />
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${meta.icon}`}>
+                    <GraduationCap className={`w-5 h-5 ${meta.icon.split(' ')[1]}`} />
                   </div>
                   <h2 className="text-2xl font-black text-secondary-900">
-                    {type} Coaching in {area}
+                    {meta.label} Coaching in {area}
                   </h2>
                   <span className="text-sm text-slate-400 font-semibold">({pages.length} locations)</span>
                 </div>
@@ -104,11 +111,11 @@ export default function LocationsList() {
                       className="flex items-center justify-between p-4 rounded-xl bg-white border border-slate-100 hover:border-slate-200 hover:shadow-md transition-all group"
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${isIIT ? 'bg-blue-50' : 'bg-emerald-50'}`}>
-                          <MapPin className={`w-4 h-4 ${isIIT ? 'text-blue-500' : 'text-emerald-500'}`} />
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${meta.iconBg}`}>
+                          <MapPin className={`w-4 h-4 ${meta.iconFg}`} />
                         </div>
                         <span className="font-bold text-secondary-700 text-sm group-hover:text-primary-600 transition-colors">
-                          {page.title.replace(`${type} Coaching in `, '')}
+                          {page.title.replace(meta.prefix, '')}
                         </span>
                       </div>
                       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-primary-500 transition-colors" />

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
-import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2, ChevronDown, Target } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 import { coursesData } from '../data/courses';
 
 export default function CourseDetail({ id }: { id?: string }) {
@@ -28,6 +28,14 @@ export default function CourseDetail({ id }: { id?: string }) {
 
   const { details } = currentCourse;
 
+  const idealForRef = useRef<HTMLDivElement>(null);
+  const [highlight, setHighlight] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setHighlight(false), 2600);
+    return () => clearTimeout(timer);
+  }, []);
+
   const seoHeadingByCourseId: Record<string, string> = {
     '1-year-regular-12': '1 Year JEE Coaching in Gurgaon',
     '1-year-regular-12-neet': '1 Year NEET Coaching in Gurgaon',
@@ -36,6 +44,14 @@ export default function CourseDetail({ id }: { id?: string }) {
   };
 
   const courseHeading = seoHeadingByCourseId[currentCourse.id] || currentCourse.title;
+
+  const subjectList: string[] = (details?.subjects || '')
+    .split(',')
+    .flatMap((s: string) => s.split(/ and | & |, /))
+    .map((s: string) => s.replace(/\.$/, '').trim())
+    .filter(Boolean);
+
+  const [hoursLead, ...hoursRest] = (details?.hours || '').split('\n');
 
   return (
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
@@ -95,10 +111,27 @@ export default function CourseDetail({ id }: { id?: string }) {
                 {details.description}
               </p>
               
-              <div className="bg-secondary-50/50 rounded-2xl p-6 border border-secondary-100">
-                 <h3 className="font-bold text-secondary-900 mb-2">Ideal Programme For</h3>
-                 <p className="text-secondary-800 text-sm">{details.idealFor}</p>
-              </div>
+              <motion.div
+                ref={idealForRef}
+                id="ideal-programme-for"
+                initial={{ opacity: 0, y: 12, x: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                animate={highlight ? { boxShadow: ['0 12px 30px -8px rgba(253,196,17,0.35)', '0 10px 24px -10px rgba(253,196,17,0.15)'] } : {}}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+                className="relative overflow-hidden rounded-2xl border-2 border-primary-300 bg-gradient-to-br from-primary-50 via-white to-cyan-50/50 shadow-lg"
+              >
+                <div className="absolute inset-y-0 left-0 w-1.5 bg-gradient-to-b from-primary-500 to-cyan-400"></div>
+                <div className="p-6 pl-7">
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <span className="flex items-center gap-1.5 rounded-full bg-primary-100 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary-700">
+                      <Target className="w-3.5 h-3.5" /> Ideal Programme For
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-bold text-secondary-900 mb-1.5">Who is this programme for?</h3>
+                  <p className="text-secondary-800 leading-relaxed">{details.idealFor}</p>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Schedule & Subjects */}
@@ -108,43 +141,68 @@ export default function CourseDetail({ id }: { id?: string }) {
               transition={{ delay: 0.2 }}
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
             >
-              <div className="bg-offwhite rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col">
-                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-3">
-                  <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
-                    <Calendar className="w-4 h-4 text-orange-600" />
+              {/* Class Schedule card */}
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-secondary-600 to-primary-500 flex items-center justify-center shadow-md">
+                    <Calendar className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-xl font-bold text-secondary-900">Class Schedule</h2>
+                  <div>
+                    <h2 className="text-lg font-bold text-secondary-900 leading-tight">Class Schedule</h2>
+                    <p className="text-xs text-slate-400 font-medium">Weekly plan & timings</p>
+                  </div>
                 </div>
-                <div className="text-slate-600 whitespace-pre-wrap text-sm leading-relaxed">
+                <div className="rounded-2xl bg-secondary-50/60 border border-secondary-100 p-5 text-secondary-700 whitespace-pre-wrap text-sm leading-relaxed">
                   {details.schedule}
                 </div>
 
-                <div className="mt-6">
-                  <h3 className="text-sm font-bold text-secondary-900 mb-2 flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-slate-400" /> Programme Hours
+                <div className="mt-6 rounded-2xl bg-gradient-to-br from-primary-50 to-amber-50/60 border-2 border-primary-200 p-5">
+                  <h3 className="font-bold text-secondary-900 mb-2.5 flex items-center gap-2">
+                    <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-primary-100 text-primary-700"><Clock className="w-3.5 h-3.5" /></span>
+                    Programme Hours
                   </h3>
-                  <div className="text-slate-500 text-sm whitespace-pre-wrap pl-6 border-l-2 border-slate-200">
-                    {details.hours}
+                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span className="text-2xl font-black text-secondary-900">{hoursLead}</span>
+                    {hoursRest.length > 0 && (
+                      <div className="w-full text-xs text-secondary-700 font-medium whitespace-pre-wrap leading-relaxed">
+                        {hoursRest.join('\n')}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
 
-              <div className="bg-offwhite rounded-3xl p-8 shadow-sm border border-slate-100">
-                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-3">
-                  <div className="w-8 h-8 rounded-full bg-primary-50 flex items-center justify-center">
-                    <BookOpen className="w-4 h-4 text-primary-600" />
+              {/* Subjects Taught card */}
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100 flex flex-col hover:shadow-lg transition-shadow">
+                <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 flex items-center justify-center shadow-md">
+                    <BookOpen className="w-5 h-5 text-white" />
                   </div>
-                  <h2 className="text-xl font-bold text-secondary-900">Subjects Taught</h2>
+                  <div>
+                    <h2 className="text-lg font-bold text-secondary-900 leading-tight">Subjects Taught</h2>
+                    <p className="text-xs text-slate-400 font-medium">Core curriculum</p>
+                  </div>
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed mb-8">
-                  {details.subjects}
-                </p>
+                <div className="flex flex-wrap gap-2.5 mb-8">
+                  {subjectList.map((subject, idx) => (
+                    <span key={idx} className="px-4 py-2 rounded-xl bg-gradient-to-br from-secondary-50 to-secondary-100/60 border border-secondary-100 text-secondary-800 text-sm font-bold">
+                      {subject}
+                    </span>
+                  ))}
+                </div>
 
-                <h2 className="text-xl font-bold text-secondary-900 mb-4 border-b border-slate-100 pb-3">Key Features</h2>
-                <ul className="space-y-3">
+                <h2 className="text-lg font-bold text-secondary-900 mb-4 flex items-center gap-3 border-b border-slate-100 pb-4">
+                  <span className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center text-primary-600">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </span>
+                  Key Features
+                </h2>
+                <ul className="space-y-3 mt-1">
                   {details.features.map((feature: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3 text-slate-600 text-sm">
-                      <CheckCircle2 className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
+                    <li key={idx} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
+                      <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-primary-100 flex items-center justify-center">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-primary-600" />
+                      </span>
                       <span>{feature}</span>
                     </li>
                   ))}

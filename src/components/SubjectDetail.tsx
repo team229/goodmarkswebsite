@@ -194,7 +194,7 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
                     <option value="">Select Class</option>
                     <option value="11">Class 11</option>
                     <option value="12">Class 12</option>
-                    <option value="dropper">Dropper</option>
+                    <option value="dropper">Repeaters</option>
                   </select>
                 </div>
                 <button type="submit" disabled={isSubmitting} className={`w-full py-4 rounded-xl font-bold text-white text-center bg-gradient-to-r ${config.gradient} shadow-lg transition-transform hover:-translate-y-0.5 mt-4`}>

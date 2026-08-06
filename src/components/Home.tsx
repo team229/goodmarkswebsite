@@ -51,6 +51,8 @@ import {
   Calendar,
   X,
   User,
+  Mail,
+  MessageSquare,
 } from 'lucide-react';
 
 export default function Home() {
@@ -207,15 +209,15 @@ export default function Home() {
                       )}
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-primary-600 pointer-events-none" />
-                        <input type="text" id="mobile-name" name="name" placeholder="Your full name" className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
+                        <input type="text" id="mobile-name" name="name" placeholder="Your full name" className="w-full pl-9 pr-3 py-2 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
                       </div>
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-primary-600 pointer-events-none" />
-                        <input type="tel" id="mobile-phone" name="phone" placeholder="Your phone number" className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
+                        <input type="tel" id="mobile-phone" name="phone" placeholder="Your phone number" className="w-full pl-9 pr-3 py-2 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
                       </div>
                       <div className="relative">
                         <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-primary-600 pointer-events-none" />
-                        <select name="course" id="mobile-course" defaultValue="" className="w-full pl-9 pr-8 py-2.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm appearance-none shadow-sm" required>
+                        <select name="course" id="mobile-course" defaultValue="" className="w-full pl-9 pr-8 py-2 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm appearance-none shadow-sm" required>
                           <option value="" disabled>Select your course</option>
                           <option value="jee">IIT JEE Coaching</option>
                           <option value="neet">NEET Coaching</option>
@@ -228,6 +230,9 @@ export default function Home() {
                         {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
+                      <p className="text-[10px] text-slate-500 text-center mt-1">
+                        By submitting, you agree to our <a href="#" className="underline hover:text-primary-600">Privacy Policy</a>.
+                      </p>
                     </form>
                   </div>
                 </motion.div>
@@ -241,28 +246,32 @@ export default function Home() {
                   className="relative"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-400/35 via-primary-300/25 to-primary-500/25 rounded-[40px] blur-[60px] -translate-y-4 translate-x-2"></div>
-                  <div className="relative bg-gradient-to-br from-primary-100 via-primary-50 to-white p-8 rounded-[32px] shadow-[0_20px_60px_-12px_rgba(12,32,67,0.2),0_8px_24px_-6px_rgba(253,196,17,0.15)] border-2 border-primary-300/60 flex flex-col z-20">
+                  <div className="relative bg-gradient-to-br from-primary-100 via-primary-50 to-white p-8 rounded-[32px] shadow-[0_20px_60px_-12px_rgba(12,32,67,0.2),0_8px_24px_-6px_rgba(253,196,17,0.15)] border-2 border-primary-300/60 z-20">
                     <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-secondary-900 mb-1">Book Your Free Session</h3>
+                      <h3 className="text-xl font-bold text-secondary-900 mb-1">Book Your Free Session</h3>
                       <p className="text-sm text-slate-600">Expert guidance for JEE, NEET & CBSE prep</p>
                     </div>
-                    <form className="space-y-4" onSubmit={handleSubmit}>
+                    <form className="space-y-3" onSubmit={handleSubmit}>
                   {isSuccess && (
-                    <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-4">
+                    <div className="bg-green-100 text-green-700 p-4 rounded-xl text-sm font-bold mb-3">
                       Thanks! We will contact you soon.
                     </div>
                   )}
                       <div className="relative">
                         <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
-                        <input type="text" id="name" name="name" placeholder="Your full name" className="w-full pl-10 pr-4 py-3.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
+                        <input type="text" id="name" name="name" placeholder="Your full name" className="w-full pl-10 pr-4 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
                       </div>
                       <div className="relative">
                         <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
-                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" className="w-full pl-10 pr-4 py-3.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
+                        <input type="tel" id="phone" name="phone" placeholder="Your phone number" className="w-full pl-10 pr-4 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" required />
+                      </div>
+                      <div className="relative">
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
+                        <input type="email" id="email" name="email" placeholder="Your email address" className="w-full pl-10 pr-4 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm" />
                       </div>
                       <div className="relative">
                         <BookOpen className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
-                        <select name="course" id="course" defaultValue="" className="w-full pl-10 pr-10 py-3.5 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm appearance-none shadow-sm" required>
+                        <select name="course" id="course" defaultValue="" className="w-full pl-10 pr-10 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm appearance-none shadow-sm" required>
                           <option value="" disabled>Select your course</option>
                           <option value="jee">IIT JEE Coaching</option>
                           <option value="neet">NEET Coaching</option>
@@ -271,10 +280,17 @@ export default function Home() {
                         </select>
                         <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
                       </div>
-                      <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 py-3.5 rounded-xl text-secondary-900 font-label-bold shadow-[0_8px_20px_-4px_rgba(253,196,17,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(253,196,17,0.5)] hover:scale-[1.02] mt-2 transition-all duration-200 flex items-center justify-center gap-2">
+                      <div className="relative">
+                        <MessageSquare className="absolute left-3.5 top-4 w-4 h-4 text-primary-600 pointer-events-none" />
+                        <textarea id="message" name="message" rows={2} placeholder="Tell us about your goal / current class (optional)" className="w-full pl-10 pr-4 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm resize-none" />
+                      </div>
+                      <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 py-3 rounded-xl text-secondary-900 font-label-bold shadow-[0_8px_20px_-4px_rgba(253,196,17,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(253,196,17,0.5)] hover:scale-[1.02] mt-1 transition-all duration-200 flex items-center justify-center gap-2">
                         {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                         <ArrowRight className="w-4 h-4" />
                       </button>
+                      <p className="text-[11px] text-slate-500 text-center mt-2">
+                        By submitting, you agree to our <a href="#" className="underline hover:text-primary-600">Privacy Policy</a>.
+                      </p>
                     </form>
                   </div>
                 </motion.div>

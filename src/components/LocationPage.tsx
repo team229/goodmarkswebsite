@@ -34,10 +34,19 @@ export default function LocationPage({ slug }: LocationPageProps) {
   }
 
   const paragraphs = page.content.split(/\n\n/).filter(Boolean);
-  const areaName = page.title.replace('IIT Coaching in ', '').replace('JEE Coaching in ', '');
+  const areaName = page.title
+    .replace('IIT-JEE Main & Advanced Coaching in ', '')
+    .replace('IIT Coaching in ', '')
+    .replace('JEE Coaching in ', '')
+    .replace('NEET Coaching in ', '');
 
-  const typeColor = page.type === 'IIT' ? 'from-blue-500 via-indigo-500 to-purple-500' : 'from-emerald-500 via-teal-500 to-cyan-500';
-  const typeLabel = page.type === 'IIT' ? 'IIT-JEE' : 'JEE Main & Advanced';
+  const isIEEJEE = page.type === 'IITJEE';
+  const typeColor = isIEEJEE ? 'from-blue-500 via-indigo-500 to-purple-500' : 'from-emerald-500 via-teal-500 to-cyan-500';
+  const typeLabel = isIEEJEE ? 'IIT-JEE Main & Advanced' : 'NEET';
+  const typeShort = isIEEJEE ? 'IIT-JEE Main & Advanced Coaching' : 'NEET Coaching';
+  const typeStudent = isIEEJEE ? 'IIT JEE aspirants' : 'NEET aspirants';
+  const typeJourney = isIEEJEE ? 'Start Your IIT Journey Today' : 'Start Your NEET Journey Today';
+  const typeCrack = isIEEJEE ? 'Ready to Crack IIT?' : 'Ready to Crack NEET?';
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -75,7 +84,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">{page.title}</h1>
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-8">
-              {page.type} coaching at Good Marks Classes — expert faculty, small batches, and proven results for students in {areaName}
+              {typeShort} at Good Marks Classes — expert faculty, small batches, and proven results for students in {areaName}
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">{typeLabel}</span>
@@ -92,7 +101,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             <div className="lg:col-span-3">
               <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-6">
-                {page.type} Coaching in {areaName}
+                {typeLabel} Coaching in {areaName}
               </h2>
               <div className="prose prose-slate max-w-none">
                 {paragraphs.map((para, i) => {
@@ -150,7 +159,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
         <div className="max-w-container-max mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">Why Choose Good Marks Classes for {typeLabel} in {areaName}</h2>
-            <p className="text-slate-600 text-lg max-w-3xl mx-auto">The key differentiators that make us the preferred choice for IIT JEE aspirants.</p>
+            <p className="text-slate-600 text-lg max-w-3xl mx-auto">The key differentiators that make us the preferred choice for {typeStudent}.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
@@ -214,7 +223,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
       <section className="py-16 md:py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">Student Success Stories</h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Hear from our students who achieved their IIT dreams with Good Marks Classes.</p>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Hear from our students who achieved their {isIEEJEE ? 'IIT' : 'NEET'} dreams with Good Marks Classes.</p>
         </div>
         <TestimonialCarousel />
       </section>
@@ -223,7 +232,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
       <section className="py-16 md:py-20 bg-primary-50/30 border-y border-slate-100">
         <div className="max-w-container-max mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">Start Your IIT Journey Today</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">{typeJourney}</h2>
             <p className="text-slate-600 text-lg">Fill in your details and our academic counselors will guide you through the best program for your goals.</p>
           </div>
           <div className="max-w-lg mx-auto">
@@ -261,7 +270,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">FAQs — {typeLabel} Coaching in {areaName}</h2>
-            <p className="text-slate-600 text-lg">Everything you need to know about our IIT JEE coaching program in {areaName}.</p>
+            <p className="text-slate-600 text-lg">Everything you need to know about our {typeLabel} coaching program in {areaName}.</p>
           </div>
           <div className="flex flex-col gap-4">
             {page.faqs.map((faq, idx) => (
@@ -285,7 +294,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
       <section className="py-20 bg-secondary-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary-900/20 to-transparent pointer-events-none"></div>
         <div className="max-w-container-max mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Crack IIT?</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">{typeCrack}</h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Join Good Marks Classes in {areaName} and get expert guidance every step of the way. Limited seats available.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">

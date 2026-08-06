@@ -9,12 +9,12 @@ export const courseTabs: Record<string, {id: string, label: string}[]> = {
   iit: [
     { id: 'class11', label: 'Class 11th' },
     { id: 'class12', label: 'Class 12th' },
-    { id: 'dropper', label: 'Dropper' },
+    { id: 'dropper', label: 'Repeaters Batch' },
   ],
   neet: [
     { id: 'class11', label: 'Class 11th' },
     { id: 'class12', label: 'Class 12th' },
-    { id: 'dropper', label: 'Dropper' },
+    { id: 'dropper', label: 'Repeaters Batch' },
   ],
   prefoundation: [
     { id: 'class7', label: 'Class 7th' },
@@ -207,7 +207,7 @@ export const coursesData: Record<string, any[]> = {
       target: '2026',
       tag: 'IIT-JEE',
       imageGrad: 'from-amber-500 to-orange-600',
-      imageText: 'DROPPER',
+      imageText: 'REPEATERS',
       details: {
          description: "This program by Good Marks Classes is for IIT-JEE aspirants. NTA conducts JEE Main and JEE Advanced exams for admission into prestigious engineering colleges like IITs and NITs across India. For these exams students need targeted guidance by expert faculty. Good Marks Classes offers a 1 year extended Classroom Program for JEE (Main + Advanced).\n\nThe curriculum is specifically designed for the repeater JEE aspirants. To strengthen the foundation, conceptual knowledge and improve competition rank this course is the best option.",
          schedule: "To be announced",
@@ -229,12 +229,12 @@ export const coursesData: Record<string, any[]> = {
       id: '1-year-extended-classroom-neet',
       stream: 'neet',
       title: '1-Year Extended Classroom Program for NEET-UG',
-      subtitle: 'NEET-UG Dropper',
+      subtitle: 'NEET-UG Repeaters',
       classLabel: '12th Passout',
       target: '2026',
       tag: 'NEET',
       imageGrad: 'from-primary-600 to-secondary-700',
-      imageText: 'DROPPER',
+      imageText: 'REPEATERS',
       details: {
          description: "For repeater students seeking another opportunity to excel in the NEET UG examination, our 1-year Extended Classroom Program is meticulously designed to meet their specific needs. With the guidance of experienced faculty, a personalized learning approach, and a comprehensive curriculum, this program provides the necessary edge for a successful comeback.\n\nStudents gain access to top-quality study materials, rigorous mock tests, and structured learning modules, all aimed at reinforcing their foundation, strengthening conceptual understanding, and improving their competitive rank. With a proven track record of successful candidates, this program is the ideal choice for students striving to achieve their dream of a fulfilling medical career and NEET UG success in their second attempt.",
          schedule: "To be announced",
