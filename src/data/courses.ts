@@ -6,21 +6,21 @@ export const streams = [
 
 export const courseTabs: Record<string, {id: string, label: string}[]> = {
   iit: [
-    { id: 'class11', label: 'Class 11th' },
     { id: 'class12', label: 'Class 12th' },
+    { id: 'class11', label: 'Class 11th' },
     { id: 'dropper', label: 'Repeaters Batch' },
   ],
   neet: [
-    { id: 'class11', label: 'Class 11th' },
     { id: 'class12', label: 'Class 12th' },
+    { id: 'class11', label: 'Class 11th' },
     { id: 'dropper', label: 'Repeaters Batch' },
   ],
   cbse: [
-    { id: 'class8', label: 'Class 8th' },
-    { id: 'class9', label: 'Class 9th' },
-    { id: 'class10', label: 'Class 10th' },
+    { id: 'class12', label: 'Class 12th' },
     { id: 'class11', label: 'Class 11th' },
-    { id: 'class12', label: 'Class 12th' }
+    { id: 'class10', label: 'Class 10th' },
+    { id: 'class9', label: 'Class 9th' },
+    { id: 'class8', label: 'Class 8th' }
   ]
 };
 

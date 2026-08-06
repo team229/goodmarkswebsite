@@ -38,15 +38,20 @@ export default function LocationPage({ slug }: LocationPageProps) {
     .replace('IIT-JEE Main & Advanced Coaching in ', '')
     .replace('IIT Coaching in ', '')
     .replace('JEE Coaching in ', '')
-    .replace('NEET Coaching in ', '');
+    .replace('NEET Coaching in ', '')
+    .replace('CBSE Tuition in ', '');
 
-  const isIEEJEE = page.type === 'IITJEE';
-  const typeColor = isIEEJEE ? 'from-blue-500 via-indigo-500 to-purple-500' : 'from-emerald-500 via-teal-500 to-cyan-500';
-  const typeLabel = isIEEJEE ? 'IIT-JEE Main & Advanced' : 'NEET';
-  const typeShort = isIEEJEE ? 'IIT-JEE Main & Advanced Coaching' : 'NEET Coaching';
-  const typeStudent = isIEEJEE ? 'IIT JEE aspirants' : 'NEET aspirants';
-  const typeJourney = isIEEJEE ? 'Start Your IIT Journey Today' : 'Start Your NEET Journey Today';
-  const typeCrack = isIEEJEE ? 'Ready to Crack IIT?' : 'Ready to Crack NEET?';
+  const isIITJEE = page.type === 'IITJEE';
+  const isNEET = page.type === 'NEET';
+  const typeColor = isIITJEE ? 'from-blue-500 via-indigo-500 to-purple-500'
+    : isNEET ? 'from-emerald-500 via-teal-500 to-cyan-500'
+    : 'from-amber-400 via-orange-500 to-red-500';
+  const typeLabel = isIITJEE ? 'IIT-JEE Main & Advanced' : isNEET ? 'NEET' : 'CBSE Tuition';
+  const typeShort = isIITJEE ? 'IIT-JEE Main & Advanced Coaching' : isNEET ? 'NEET Coaching' : 'CBSE Tuition';
+  const typeStudent = isIITJEE ? 'IIT JEE aspirants' : isNEET ? 'NEET aspirants' : 'CBSE students';
+  const typeJourney = isIITJEE ? 'Start Your IIT Journey Today' : isNEET ? 'Start Your NEET Journey Today' : 'Start Your CBSE Journey Today';
+  const typeCrack = isIITJEE ? 'Ready to Crack IIT?' : isNEET ? 'Ready to Crack NEET?' : 'Ready to Ace Your Boards?';
+  const typeDream = isIITJEE ? 'IIT' : isNEET ? 'NEET' : 'academic';
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -223,7 +228,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
       <section className="py-16 md:py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-black text-secondary-900 mb-4">Student Success Stories</h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Hear from our students who achieved their {isIEEJEE ? 'IIT' : 'NEET'} dreams with Good Marks Classes.</p>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">Hear from our students who achieved their {typeDream} dreams with Good Marks Classes.</p>
         </div>
         <TestimonialCarousel />
       </section>

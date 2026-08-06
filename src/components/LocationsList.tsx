@@ -3,12 +3,13 @@ import { MapPin, GraduationCap, ChevronRight } from 'lucide-react';
 import { locationPages } from '../data/locations';
 
 const areas = ['All', 'Gurgaon', 'Manesar'];
-const types = ['All', 'IITJEE', 'NEET'];
+const types = ['All', 'IITJEE', 'NEET', 'CBSE'];
 
-type TypeMeta = { label: string; prefix: string; icon: string; iconBg: string; iconFg: string };
+type TypeMeta = { label: string; prefix: string; heading: string; icon: string; iconBg: string; iconFg: string };
 const TYPE_META: Record<string, TypeMeta> = {
-  IITJEE: { label: 'IIT-JEE Main & Advanced', prefix: 'IIT-JEE Main & Advanced Coaching in ', icon: 'bg-blue-100 text-blue-600', iconBg: 'bg-blue-50', iconFg: 'text-blue-500' },
-  NEET: { label: 'NEET', prefix: 'NEET Coaching in ', icon: 'bg-emerald-100 text-emerald-600', iconBg: 'bg-emerald-50', iconFg: 'text-emerald-500' },
+  IITJEE: { label: 'IIT-JEE Main & Advanced', prefix: 'IIT-JEE Main & Advanced Coaching in ', heading: 'IIT-JEE Main & Advanced Coaching', icon: 'bg-blue-100 text-blue-600', iconBg: 'bg-blue-50', iconFg: 'text-blue-500' },
+  NEET: { label: 'NEET', prefix: 'NEET Coaching in ', heading: 'NEET Coaching', icon: 'bg-emerald-100 text-emerald-600', iconBg: 'bg-emerald-50', iconFg: 'text-emerald-500' },
+  CBSE: { label: 'CBSE Tuition', prefix: 'CBSE Tuition in ', heading: 'CBSE Tuition', icon: 'bg-amber-100 text-amber-600', iconBg: 'bg-amber-50', iconFg: 'text-amber-500' },
 };
 
 function getArea(title: string): string {
@@ -91,7 +92,7 @@ export default function LocationsList() {
           Object.entries(grouped).map(([group, pages]) => {
             const area = group.split(' - ')[1];
             const type = group.split(' - ')[0];
-            const meta = TYPE_META[type] || { label: type, prefix: '', icon: 'bg-secondary-100 text-secondary-600', iconBg: 'bg-secondary-50', iconFg: 'text-secondary-500' };
+            const meta = TYPE_META[type] || { label: type, prefix: '', heading: `${type} Coaching`, icon: 'bg-secondary-100 text-secondary-600', iconBg: 'bg-secondary-50', iconFg: 'text-secondary-500' };
             return (
               <div key={group} className="mb-10">
                 <div className="flex items-center gap-3 mb-4">
@@ -99,7 +100,7 @@ export default function LocationsList() {
                     <GraduationCap className={`w-5 h-5 ${meta.icon.split(' ')[1]}`} />
                   </div>
                   <h2 className="text-2xl font-black text-secondary-900">
-                    {meta.label} Coaching in {area}
+                    {meta.heading} in {area}
                   </h2>
                   <span className="text-sm text-slate-400 font-semibold">({pages.length} locations)</span>
                 </div>
