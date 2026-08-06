@@ -140,7 +140,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
                       <option value="" disabled>Select a course</option>
                       <option value="jee">IIT JEE Coaching</option>
                       <option value="neet">NEET Coaching</option>
-                      <option value="foundation">Class 8-10 Foundation</option>
+                      <option value="cbse">Class 8-12 CBSE Tuition</option>
                       <option value="tuition">Subject-wise Tuition</option>
                     </select>
                   </div>
@@ -252,7 +252,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
                     <option value="" disabled>Select a course</option>
                     <option value="jee">IIT JEE Coaching</option>
                     <option value="neet">NEET Coaching</option>
-                    <option value="foundation">Class 8-10 Foundation</option>
+                    <option value="cbse">Class 8-12 CBSE Tuition</option>
                     <option value="tuition">Subject-wise Tuition</option>
                   </select>
                 </div>

@@ -40,7 +40,12 @@ export default function CourseDetail({ id }: { id?: string }) {
     '1-year-regular-12': '1 Year JEE Coaching in Gurgaon',
     '1-year-regular-12-neet': '1 Year NEET Coaching in Gurgaon',
     '2-year-integrated-regular': '2 Year IIT JEE Coaching Program in Gurgaon',
-    '2-year-integrated-regular-neet': '2 Year NEET Coaching in Gurgaon'
+    '2-year-integrated-regular-neet': '2 Year NEET Coaching in Gurgaon',
+    'cbse-tuition-class-8': 'Class 8 CBSE Tuition in Gurgaon',
+    'cbse-tuition-class-9': 'Class 9 CBSE Tuition in Gurgaon',
+    'cbse-tuition-class-10': 'Class 10 CBSE Tuition in Gurgaon',
+    'cbse-tuition-class-11': 'Class 11 CBSE Tuition in Gurgaon (PCMB)',
+    'cbse-tuition-class-12': 'Class 12 CBSE Tuition in Gurgaon (PCMB)'
   };
 
   const courseHeading = seoHeadingByCourseId[currentCourse.id] || currentCourse.title;
@@ -276,7 +281,7 @@ export default function CourseDetail({ id }: { id?: string }) {
             >
               <div>
                 <h3 className="text-2xl font-bold mb-2">Ready to start your preparation?</h3>
-                <p className="text-secondary-100">Enroll now and take the first step towards your engineering dream.</p>
+                <p className="text-secondary-100">{currentCourse.stream === 'cbse' ? 'Enroll now and build a strong foundation for board success.' : 'Enroll now and take the first step towards your engineering dream.'}</p>
               </div>
               <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="bg-offwhite text-secondary-600 py-3.5 px-8 rounded-xl font-bold whitespace-nowrap hover:bg-offwhite transition-colors shadow-lg">
                 Book a Free Demo
@@ -310,16 +315,25 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 function getFaqs(course: any) {
   const isJee = course.tag === 'IIT-JEE';
   const isNeet = course.tag === 'NEET';
-  const isFoundation = course.stream === 'foundation';
-  const isPreFoundation = course.stream === 'prefoundation';
+  const isCbse = course.stream === 'cbse';
   const isDropper = course.id?.includes('extended');
 
   const common = [
-    { q: 'What is the class schedule and frequency?', a: 'Classes are held throughout the week as per the schedule mentioned above. Each session is designed to maximise learning while allowing time for self-study and revision.' },
+    { q: 'What is the class schedule and frequency?', a: 'Classes are held as per the schedule mentioned above. Each session is designed to maximise learning while allowing time for self-study and revision.' },
     { q: 'Are there any demo classes available?', a: 'Yes, we offer free demo classes. Click "Book a Free Demo" above or contact us to schedule one at your convenience.' },
-    { q: 'How are doubts handled?', a: 'We have a dedicated doubt clearing cell. Students can get their doubts resolved the same day through Special Doubt Clearing Classes (SDCC) after each topic.' },
-    { q: 'What study material is provided?', a: 'Research-oriented, custom-curated study material based on NCERT curriculum, updated regularly to align with the latest exam patterns.' },
+    { q: 'How are doubts handled?', a: 'We have a dedicated doubt clearing cell. Students can get their doubts resolved the same day through scheduled doubt sessions after each topic.' },
+    { q: 'What study material is provided?', a: 'Research-oriented, custom-curated study material based on the NCERT / CBSE curriculum, updated regularly to align with the latest board and exam patterns.' },
   ];
+
+  if (isCbse) {
+    return [
+      ...common,
+      { q: 'When do classes for Class 8 run?', a: 'Class 8 CBSE tuition runs on a weekend-only timetable — Saturday evening and Sunday morning-to-afternoon — so it never clashes with weekday school and activities.' },
+      { q: 'Do the Class 9 & 10 batches run on weekdays too?', a: 'Yes. Class 9 and 10 CBSE tuition runs on weekdays as well as weekends, giving more classroom contact across the week while staying manageable alongside school.' },
+      { q: 'What subjects are covered for Class 11 & 12?', a: 'For Class 11 and 12, the programme focuses on Physics, Chemistry, Mathematics and Biology (PCMB), taught by subject-specialist faculty with board-focused preparation.' },
+      { q: 'How is the class size for CBSE tuitions?', a: 'We maintain small batches so every student gets individual attention, teacher tracking and regular feedback.' },
+    ];
+  }
 
   if (isJee) {
     return [
@@ -334,22 +348,6 @@ function getFaqs(course: any) {
       ...common,
       { q: 'Does this programme cover both Class 11/12 Board and NEET syllabus?', a: 'Yes, the programme is designed to simultaneously prepare students for their CBSE Board exams and NEET/AIIMS. We prioritise CBSE syllabus first, then build competitive exam readiness.' },
       { q: 'How are Biology practicals handled?', a: 'Practical sessions are integrated into the curriculum. Our lab facilities and experienced faculty ensure hands-on learning alongside theory.' },
-    ];
-  }
-
-  if (isFoundation) {
-    return [
-      ...common,
-      { q: 'How does this help my child prepare for competitive exams early?', a: 'The foundation programme builds strong fundamentals in Science and Mathematics from Class 9-10, creating a solid base for JEE/NEET preparation in higher classes. We focus on conceptual clarity and problem-solving skills.' },
-      { q: 'What is the class size for foundation courses?', a: 'We maintain small batch sizes (10-25 students) to ensure individual attention, especially important at the foundational level.' },
-    ];
-  }
-
-  if (isPreFoundation) {
-    return [
-      ...common,
-      { q: 'Is this programme suitable for building interest in science?', a: 'Absolutely. The pre-foundation programme is designed to make learning enjoyable while building strong fundamentals. We use interactive teaching methods to spark curiosity in Science and Mathematics.' },
-      { q: 'How early should my child start preparing?', a: 'Starting in Class 7-8 gives students a significant advantage. It allows ample time to build concepts without pressure and develop a genuine interest in the subjects.' },
     ];
   }
 

@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Courses from '../../components/Courses';
 
 export async function getStaticPaths() {
-  const streams = ['iit', 'neet', 'foundation', 'prefoundation'];
+  const streams = ['iit', 'neet', 'cbse'];
   return streams.map(stream => ({
     params: { stream },
   }));
@@ -13,8 +13,7 @@ const { stream } = Astro.params;
 const meta: Record<string, { title: string; description: string }> = {
   iit: { title: 'Best IIT JEE Coaching in Gurgaon | Repeaters Batch Available | GoodMarks Classes', description: 'Join the best IIT JEE coaching institute in Gurgaon. GoodMarks Classes offers regular batches and a dedicated JEE repeater course with focused revision, test series, and personalized guidance to boost your rank.' },
   neet: { title: 'Best NEET Coaching in Gurgaon | Repeaters Batch Available | GoodMarks Classes', description: 'Searching for the best NEET coaching in Gurgaon? GoodMarks Classes offers expert-led NEET preparation with regular and repeater batches, full syllabus coverage, and mock tests designed for NEET success.' },
-  foundation: { title: 'IIT JEE & NEET Foundation Course in Gurgaon | GoodMarks Classes', description: 'Prepare early for IIT JEE and NEET with our foundation course in Gurgaon. GoodMarks Classes offers expert coaching in Physics, Chemistry, Maths, and Biology for Class 9 and 10 students.' },
-  prefoundation: { title: 'Pre-Foundation Course in Gurgaon | Build Early, Rank Higher | GoodMarks Classes', description: 'Give your child the competitive edge from Class 8 itself. Our pre-foundation program in Gurgaon builds the concepts that top JEE & NEET rankers swear by. Book a free counselling session today!' }
+  cbse: { title: 'Best CBSE Tuition in Gurgaon for Classes 8 to 12 | GoodMarks Classes', description: 'CBSE tuition in Gurgaon for Classes 8 to 12 at Good Marks Classes — weekend & weekday batches, NCERT-first teaching, olympiad & NTSE preparation, worksheet tests and subjective writing practice. Book a free demo class.' }
 };
 ---
 <BaseLayout title={meta[stream]?.title || 'Courses'} description={meta[stream]?.description || ''}>

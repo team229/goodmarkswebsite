@@ -221,7 +221,7 @@ export default function Home() {
                           <option value="" disabled>Select your course</option>
                           <option value="jee">IIT JEE Coaching</option>
                           <option value="neet">NEET Coaching</option>
-                          <option value="foundation">Class 8-10 Foundation</option>
+                          <option value="cbse">Class 8-12 CBSE Tuition</option>
                           <option value="tuition">Subject-wise Tuition</option>
                         </select>
                         <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-primary-600 pointer-events-none" />
@@ -275,7 +275,7 @@ export default function Home() {
                           <option value="" disabled>Select your course</option>
                           <option value="jee">IIT JEE Coaching</option>
                           <option value="neet">NEET Coaching</option>
-                          <option value="foundation">Class 8-10 Foundation</option>
+                          <option value="cbse">Class 8-12 CBSE Tuition</option>
                           <option value="tuition">Subject-wise Tuition</option>
                         </select>
                         <ChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
@@ -346,8 +346,7 @@ export default function Home() {
                 <a href="/courses" className="px-6 py-2 rounded-full bg-secondary-900 text-white font-label-bold whitespace-nowrap snap-start hover:bg-secondary-800 transition-colors">All Programs</a>
                 <a href="/courses/iit" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">IIT JEE</a>
                 <a href="/courses/neet" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">NEET</a>
-                <a href="/courses/prefoundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Pre-Foundation</a>
-                <a href="/courses/foundation" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">Foundation</a>
+                <a href="/courses/cbse" className="px-6 py-2 rounded-full bg-offwhite border border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite transition-colors whitespace-nowrap snap-start">CBSE Tuitions</a>
               </div>
             </div>
             

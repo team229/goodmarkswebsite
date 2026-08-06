@@ -1,8 +1,7 @@
 export const streams = [
   { id: 'iit', label: 'IIT-JEE' },
   { id: 'neet', label: 'NEET-UG' },
-  { id: 'prefoundation', label: 'Pre-Foundation' },
-  { id: 'foundation', label: 'Foundation' }
+  { id: 'cbse', label: 'CBSE Tuitions' }
 ];
 
 export const courseTabs: Record<string, {id: string, label: string}[]> = {
@@ -16,13 +15,12 @@ export const courseTabs: Record<string, {id: string, label: string}[]> = {
     { id: 'class12', label: 'Class 12th' },
     { id: 'dropper', label: 'Repeaters Batch' },
   ],
-  prefoundation: [
-    { id: 'class7', label: 'Class 7th' },
-    { id: 'class8', label: 'Class 8th' }
-  ],
-  foundation: [
+  cbse: [
+    { id: 'class8', label: 'Class 8th' },
     { id: 'class9', label: 'Class 9th' },
-    { id: 'class10', label: 'Class 10th' }
+    { id: 'class10', label: 'Class 10th' },
+    { id: 'class11', label: 'Class 11th' },
+    { id: 'class12', label: 'Class 12th' }
   ]
 };
 
@@ -135,7 +133,34 @@ export const coursesData: Record<string, any[]> = {
            "Special CBSE Reckoner Series based on the pattern of Class XI & XII Board",
            "Class Learning Improvement Program (CLIP) through regular review & monitoring",
            "All India Test Series (AITS) based on NEET & AIIMS Patterns",
-           "Students' Mentorship Programme (SMP) under the guidance of dedicated faculty members"
+"Students' Mentorship Programme (SMP) under the guidance of dedicated faculty members"
+          ]
+       }
+     },
+    {
+      id: 'cbse-tuition-class-11',
+      stream: 'cbse',
+      title: 'CBSE Tuition for Class 11 (PCMB)',
+      subtitle: 'Physics, Chemistry, Mathematics & Biology',
+      classLabel: '11th',
+      target: 'CBSE Boards',
+      tag: 'CBSE Tuition',
+      imageGrad: 'from-amber-400 to-orange-500',
+      imageText: 'CLASS XI',
+      details: {
+         description: "Class 11 is the year where school Science suddenly stops being easy, and students who drift through it pay for it in Class 12. Our CBSE Tuition for Class 11 is built around getting Physics, Chemistry, Mathematics and Biology right the first time, with subject-specialist faculty, NCERT-first teaching and continuous worksheet testing.\n\nEvery chapter is taught for understanding, not just completion, because Class 11 marks the step-up from 'learning what the textbook says' to 'using it to solve unfamiliar problems'.\n\nProgramme Objective:\nThe focus of the programme is to help Class 11 CBSE Science students master the core subjects of Physics, Chemistry, Mathematics and Biology while building the study habits, subjective writing skills and test temperament that Class 12 boards and competitive exams later demand.",
+         schedule: "Weekdays: 2-3 evening classes a week\nTuesday, Wednesday & Friday\n\nWeekends: Saturday (2 classes) & Sunday (2 classes)\n(Total 6-7 classes per week)",
+         hours: "~450 hours in the academic year (Including 'Tests & Worksheet Tests').",
+         idealFor: "For Class 11 CBSE Science students (PCM, PCB or PCMB) who want genuine conceptual command over Physics, Chemistry, Mathematics and Biology, along with strong subjective writing skills and board-level problem-solving.",
+         subjects: "Physics, Chemistry, Mathematics and Biology.",
+         features: [
+           "Subject-specialist faculty for each of Physics, Chemistry, Maths and Biology",
+           "NCERT-first teaching with CBSE board-pattern practice built in",
+           "Weekly worksheet tests covering concepts, numericals and assertion-reasoning",
+           "Subjective writing practice and answer-framing sessions for board marks",
+           "Regular doubt-clearing sessions scheduled into the timetable",
+           "Small batches so every student is tracked individually",
+           "Periodic progress reports to parents"
          ]
       }
     }
@@ -191,8 +216,35 @@ export const coursesData: Record<string, any[]> = {
            "'Special Doubt Clearing Classes' (SDCC) after the completion of each topic",
            "Class Learning Improvement Program (CLIP) through gradual monitoring",
            "Special Rank Improvement Program (SRIP), 3 months before NEET",
-           "All India Test Series (AITS) based on NEET & AIIMS Patterns",
-           "Students' Mentorship Programme (SMP) under the guidance of dedicated faculty members"
+"All India Test Series (AITS) based on NEET & AIIMS Patterns",
+            "Students' Mentorship Programme (SMP) under the guidance of dedicated faculty members"
+          ]
+       }
+     },
+    {
+      id: 'cbse-tuition-class-12',
+      stream: 'cbse',
+      title: 'CBSE Tuition for Class 12 (PCMB)',
+      subtitle: 'Physics, Chemistry, Mathematics & Biology',
+      classLabel: '12th',
+      target: 'CBSE Boards',
+      tag: 'CBSE Tuition',
+      imageGrad: 'from-amber-500 to-orange-600',
+      imageText: 'CLASS XII',
+      details: {
+         description: "Class 12 boards carry a weight that decides admission into colleges, and preparation here can't afford to be last-minute. Our CBSE Tuition for Class 12 is a focused board-preparation programme covering Physics, Chemistry, Mathematics and Biology with NCERT-first teaching, rigorous worksheet tests and intensive subjective writing practice.\n\nWe train students to frame answers the way CBSE examiners award marks, frame them cleanly, label diagrams, show method steps and write to the word limit.\n\nProgramme Objective:\nThe focus of the programme is to help Class 12 CBSE Science students maximise their board scores in Physics, Chemistry, Mathematics and Biology while converting their Class 11 groundwork into marks through consistent revision, board-pattern practice and mock examinations.",
+         schedule: "Weekdays: 2-3 evening classes a week\nTuesday, Wednesday & Friday\n\nWeekends: Saturday (2 classes) & Sunday (2 classes)\n(Total 6-7 classes per week)",
+         hours: "~420 hours in the academic year (Including 'Tests & Worksheet Tests').",
+         idealFor: "For Class 12 CBSE Science students (PCM, PCB or PCMB) preparing for board exams who want subject-specialist teaching in Physics, Chemistry, Mathematics and Biology, targeted revision, and strong subjective writing skills for maximum board score.",
+         subjects: "Physics, Chemistry, Mathematics and Biology.",
+         features: [
+           "Board-focused syllabus coverage across Physics, Chemistry, Maths and Biology",
+           "Subjective writing and answer-framing workshops for board pattern",
+           "Weekly worksheet tests, mock board papers and time-bound practice",
+           "NCERT-first preparation with previous-year board paper analysis",
+           "Sample-paper solving and examiner-style marking feedback",
+           "Doubt-clearing sessions and individual follow-up in small batches",
+           "Periodic progress reports to parents"
          ]
       }
     }
@@ -252,122 +304,90 @@ export const coursesData: Record<string, any[]> = {
          ]
       }
     }
-  ],
-  class7: [
-    {
-      id: '2-year-classroom-class-7',
-      stream: 'prefoundation',
-      title: '2 Year Classroom Programme',
-      subtitle: 'For Class VII',
-      classLabel: '7th',
-      target: 'Olympiads',
-      tag: 'Pre-Foundation',
-      imageGrad: 'from-amber-400 to-yellow-500',
-      imageText: 'CLASS VII',
-      details: {
-         description: "This programme aims at laying a strong foundation in school students for competitive exams and developing 'Logical & Scientific Thinking'.\n\nProgramme Objective:\nThe focus of the programme is to prepare the students for:\n• Science Talent Search Exam (STSE)\n• National Science Olympiad (NSO)\n• Mathematics Talent Search Exam (MTSE)\n• International English Olympiad (IEO)",
-         schedule: "2-days in a week for 7.5 hrs\nSaturday & Sunday",
-         hours: "600 hours (Including 'Tests & Discussions').",
-         idealFor: "For Class VII students, who wish to prepare for NTSE, Olympiads and other School Level Scholarship Tests.",
-         subjects: "Science, Mathematics, Mental Ability, English & Social Studies.",
-         features: [
-           "Mental Ability Classes to sharpen students' IQ",
-           "Topic-wise Subjective and Objective Tests",
-           "Conceptual clarity, in-depth analysis of doubts and problem solving skill development",
-           "Special Tutorial Classes during Olympiads and School Exams",
-           "A team of IITians as faculty members, employs an innovative teaching methodology",
-           "Early Competitive Exams Orientation (ECEO) – an added advantage",
-           "Subjective Tests and writing practice on regular basis",
-           "Every year IIT-Delhi campus visit to see the innovation in science at 'Open House'"
-         ]
-      }
-    }
-  ],
+],
   class8: [
     {
-      id: '1-year-classroom-class-8',
-      stream: 'prefoundation',
-      title: '1 Year Classroom Programme',
-      subtitle: 'For Class VIII',
+      id: 'cbse-tuition-class-8',
+      stream: 'cbse',
+      title: 'CBSE Tuition for Class 8',
+      subtitle: 'Weekend Programme',
       classLabel: '8th',
-      target: 'Olympiads',
-      tag: 'Pre-Foundation',
+      target: 'CBSE + Olympiads',
+      tag: 'CBSE Tuition',
       imageGrad: 'from-amber-400 to-yellow-500',
       imageText: 'CLASS VIII',
       details: {
-         description: "This programme focuses on developing certain attributes in students such as Rational thinking, Scientific temperament, Mathematical aptitude, Reasoning skills & problem solving aptitude, besides inculcating early awareness of competitive exams.\n\nProgramme Objective:\nThe programme helps students in training their brain to think logically and also sharpens their IQs to inculcate scientific temper, life-skills and common aptitude.",
-         schedule: "2-day in a week for 7.5 hrs\nSaturday & Sunday",
-         hours: "300 hours (Including 'Tests & Discussions').",
-         idealFor: "For Class VIII students, who wish to prepare for NTSE, Olympiads and other School Level Scholarship Tests.",
-         subjects: "Science, Mathematics, Mental Ability, English & Social Studies.",
+         description: "Class 8 is where science and maths start getting genuinely interesting, and also where small gaps start showing. Our CBSE Tuition for Class 8 is a weekend-only programme designed not to disturb weekday school and activities, covering Science, Mathematics, English and Social Studies with clear conceptual teaching.\n\nThe focus is on mastering the CBSE Class 8 syllabus, preparing for science and maths olympiads, and building the reasoning and subjective writing skills that Class 9 and 10 will depend on.\n\nProgramme Objective:\nThe focus of the programme is to get the Class 8 CBSE basics rock-solid, nurture olympiad and reasoning skills, and build confident, structured writing habits, all within a weekend timetable.",
+         schedule: "Weekends only — 5 classes a week\nSaturday: 2 classes (evening)\nSunday: 3 classes (morning to afternoon)",
+         hours: "~200 hours in the academic year (Including 'Tests & Worksheets').",
+         idealFor: "For Class 8 CBSE students who want to master Science, Maths, English and SST, prepare for olympiads, and build strong writing and reasoning skills, without sacrificing weekday studies or activities.",
+         subjects: "Science, Mathematics, English and Social Studies.",
          features: [
-           "A scientifically designed programme aims to develop analytical skills & rational thinking",
-           "Creating synergy between the preparation of school curriculum & competitive exams",
-           "Sharpens latent skills of students and prepares them to face the challenges ahead in life",
-           "Students get friendly environment for personal exploration and common skill enhancement",
-           "Advantages of early starters for having more time before the actual competitive exams",
-           "A team of IITians as faculty member employs innovative teaching methodology",
-           "Every year IIT-Delhi campus visit to see the innovation in science at 'Open House'"
+           "CBSE Class 8 syllabus covered thoroughly with NCERT-first teaching",
+           "Olympiad preparation (NSO, IMO) with topic-wise worksheet tests",
+           "Mental ability and reasoning sessions to sharpen analytical thinking",
+           "Subjective writing practice and answer-framing for school exams",
+           "Weekly worksheet tests to track understanding honestly",
+           "Small batches with dedicated doubt-clearing time",
+           "Periodic progress reports to parents"
          ]
       }
     }
   ],
-  class9: [
+class9: [
     {
-      id: '2-year-regular-class-9',
-      stream: 'foundation',
-      title: '2 Year Regular Classroom Programme',
-      subtitle: 'For Class IX',
+      id: 'cbse-tuition-class-9',
+      stream: 'cbse',
+      title: 'CBSE Tuition for Class 9',
+      subtitle: 'Weekday + Weekend Programme',
       classLabel: '9th',
-      target: 'NTSE',
-      tag: 'Foundation',
-      imageGrad: 'from-primary-500 to-secondary-600',
+      target: 'CBSE + Olympiads + NTSE',
+      tag: 'CBSE Tuition',
+      imageGrad: 'from-amber-400 to-orange-500',
       imageText: 'CLASS IX',
       details: {
-         description: "This programme focuses on Class X Board Exam right from Class IX with special emphasis on NTSE and other scholarship exams offering long-term scholarships.",
-         schedule: "Weekdays: 3-days in a week (Total 6 classes/week)\nTuesday, Wednesday & Friday\n\nWeekends: 2-days in a week (Total 6 classes/week)\nSaturday & Sunday\n(Thursday is meant for doubts, discussions & back-up classes)",
-         hours: "600 hours (Including 'Tests & Discussions').",
-         idealFor: "For Class IX students, who wish to outperform in Class X Board and crack NTSE besides building a sound base for JEE (Main & Advanced), (NEET/AIIMS) and other competitive exams.",
-         subjects: "Physics, Chemistry, Biology, Maths, Mental Ability, English & Social Studies.",
+         description: "Class 9 marks the first real shift toward board-level, application-based learning, and the concepts built here carry straight into Class 10 boards. Our CBSE Tuition for Class 9 runs on weekdays as well as weekends, covering Physics, Chemistry, Biology, Mathematics, English and Social Studies.\n\nBeyond the CBSE syllabus, the programme trains students for olympiads, NTSE and scholarship exams while building the subjective writing skills and reasoning that decide school exam scores.\n\nProgramme Objective:\nThe focus of the programme is to make Class 9 CBSE fundamentals genuinely solid, prepare for olympiads and NTSE, and develop worksheet-based testing, subjective writing and problem-solving habits before the pressure of Class 10 boards.",
+         schedule: "Weekdays: 2-3 evening classes a week\nTuesday, Wednesday & Friday\n\nWeekends: Saturday (2 classes) & Sunday (2-3 classes)\n(Total 6-7 classes per week)",
+         hours: "~350 hours in the academic year (Including 'Tests & Worksheet Tests').",
+         idealFor: "For Class 9 CBSE students who want to master Science and Maths, prepare for olympiads and NTSE, and build the subjective writing and reasoning skills that decide board performance in Class 10.",
+         subjects: "Physics, Chemistry, Biology, Mathematics, English and Social Studies.",
          features: [
-           "Covers School Boards & Competitive Exams syllabi simultaneously",
-           "Prepare for STSE, NTSE, NSO, MTSE, IMO, Science & Maths Olympiad Exams",
-           "Imparts first level competency to succeed in IIT, NEET, AIIMS & other competitive exams",
-           "Lays strong foundation for school boards and emphasis on conceptual clarity",
-           "A team of IITians as faculty member employs innovative teaching methodology",
-           "Every year IIT-Delhi campus visit to see the innovation in science at 'Open House'",
-           "Create synergy between the preparation of school curriculum & competitive exams",
-           "Focus on NTSE through NCERT Exemplar along with IQ booster"
+           "CBSE Class 9 syllabus covered with NCERT-first teaching",
+           "Olympiad and NTSE preparation with topic-wise worksheet tests",
+           "Subjective writing practice and answer-framing for school exams",
+           "Weekly worksheet and chapter tests to track progress honestly",
+           "Conceptual clarity with application-based problem solving",
+           "Small batches with dedicated doubt-clearing time",
+           "Periodic progress reports to parents"
          ]
       }
     }
   ],
-  class10: [
+class10: [
     {
-      id: '1-year-regular-class-10',
-      stream: 'foundation',
-      title: '1 Year Regular Classroom Programme',
-      subtitle: 'For Class X',
+      id: 'cbse-tuition-class-10',
+      stream: 'cbse',
+      title: 'CBSE Tuition for Class 10',
+      subtitle: 'Weekday + Weekend Programme (Board Focus)',
       classLabel: '10th',
-      target: 'NTSE & Boards',
-      tag: 'Foundation',
-      imageGrad: 'from-primary-500 to-secondary-600',
+      target: 'CBSE Boards + Olympiads',
+      tag: 'CBSE Tuition',
+      imageGrad: 'from-amber-500 to-orange-600',
       imageText: 'CLASS X',
       details: {
-         description: "This programme focuses on Class X Board Exam right from Class X with special emphasis on NTSE & other scholarship exams offering long-term scholarships & also lays the foundation for JEE (Main & Advanced), NEET & AIIMS.",
-         schedule: "Weekdays: 3-days in a week (Total 6 classes/week)\nTuesday, Wednesday & Friday\n\nWeekends: 2-days in a week (Total 6 classes/week)\nSaturday & Sunday\n(Thursday is meant for doubts, discussions & back-up classes)",
-         hours: "450 hours (Including 'Tests & Discussions').",
-         idealFor: "For Class X students, who wish to outperform in Class X Board and crack NTSE besides building a sound base for JEE (Main & Advanced), (NEET & AIIMS) and NDA, CLAT etc.",
-         subjects: "Physics, Chemistry, Biology, Maths, Mental Ability, English & Social Studies.",
+         description: "Class 10 boards are the first high-stakes exam a student faces, and a good score depends on mastering the syllabus AND learning to present answers the examiners reward. Our CBSE Tuition for Class 10 runs on weekdays as well as weekends, covering Physics, Chemistry, Biology, Mathematics, English and Social Studies with a board-first focus.\n\nAlongside board preparation, the programme keeps olympiad and scholarship-exam readiness alive, so students hold strong subject command whatever they choose in Class 11.\n\nProgramme Objective:\nThe focus of the programme is to maximise Class 10 CBSE board scores through complete syllabus coverage, intensive subjective writing practice, previous-year paper work and worksheet-based testing, while keeping olympiad preparation intact.",
+         schedule: "Weekdays: 2-3 evening classes a week\nTuesday, Wednesday & Friday\n\nWeekends: Saturday (2 classes) & Sunday (2-3 classes)\n(Total 6-7 classes per week)",
+         hours: "~350 hours in the academic year (Including 'Tests & Worksheet Tests').",
+         idealFor: "For Class 10 CBSE students preparing for board exams who want subject-specialist teaching, intensive subjective writing practice, and strong foundational command that also supports future JEE and NEET preparation.",
+         subjects: "Physics, Chemistry, Biology, Mathematics, English and Social Studies.",
          features: [
-           "Special Session for Class X Board Exam with CBSE Reckoner Series",
-           "Covers School Board & Competitive Exams syllabi simultaneously focusing on class X board",
-           "Prepare for STSE, NTSE, NSO, MTSE, IMO, Science & Maths Olympiad Exams",
-           "Imparts competency to succeed in IIT/Medical & other Competitive Exams",
-           "Integrated Comprehensive Study Material covers 'Board and Competitive Exam' syllabi",
-           "Early Competitive Exams Orientation (ECEO) turns fruitful, giving excellent results",
-           "Every year IIT-Delhi campus visit to see the innovation in science at 'Open House'",
-           "Subjective Tests followed by regular writing practice"
+           "Board-first CBSE Class 10 syllabus coverage across all subjects",
+           "Intensive subjective writing and answer-framing for board pattern",
+           "Previous-year board papers and mock-style worksheet tests",
+           "Olympiad preparation alongside board readiness",
+           "NCERT-first teaching with examiner-style feedback",
+           "Small batches with dedicated doubt-clearing time",
+           "Periodic progress reports to parents"
          ]
       }
     }

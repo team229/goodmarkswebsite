@@ -44,7 +44,7 @@ export default function Courses({ stream }: { stream?: string }) {
   const streamHeadings: Record<string, string> = {
     iit: 'IIT JEE Coaching in Gurgaon',
     neet: 'NEET Coaching in Gurgaon',
-    foundation: 'IIT JEE & NEET Foundation Course in Gurgaon'
+    cbse: 'CBSE Tuitions in Gurgaon for Classes 8 to 12'
   };
 
   const handleStreamChange = (streamId: string) => {
@@ -57,7 +57,7 @@ export default function Courses({ stream }: { stream?: string }) {
       {/* Header text */}
       <section className="px-6 relative z-10 text-center mb-10">
          <h1 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-3">{streamHeadings[activeStream] || 'All Courses | JEE & NEET Coaching Programs in Gurgaon'}</h1>
-         <p className="text-slate-500 font-semibold mb-2">Choose your preparation path and unlock your engineering dreams</p>
+         <p className="text-slate-500 font-semibold mb-2">Choose your preparation path and unlock your dreams</p>
       </section>
 
       {/* Tabs UI */}
@@ -74,7 +74,7 @@ export default function Courses({ stream }: { stream?: string }) {
                     activeStream === stream.id 
                       ? stream.id === 'neet' 
                         ? 'bg-offwhite text-primary-700 shadow border border-primary-100'
-                        : stream.id === 'prefoundation' || stream.id === 'foundation'
+                        : stream.id === 'cbse'
                           ? 'bg-offwhite text-amber-600 shadow border border-amber-100'
                           : 'bg-offwhite text-secondary-700 shadow border border-secondary-100'
                       : 'text-slate-600 hover:text-secondary-900'
@@ -137,21 +137,16 @@ export default function Courses({ stream }: { stream?: string }) {
                   }`} />
                 </div>
                 <h2 className="text-2xl font-bold text-secondary-900">
-                  {availableTabs.find(t => t.id === activeTab)?.label} Courses {
-                    activeStream === 'foundation' || activeStream === 'prefoundation' 
-                      ? '' 
-                      : `for ${streams.find(s => s.id === activeStream)?.label}`
+                  {availableTabs.find(t => t.id === activeTab)?.label} {
+                    activeStream === 'cbse' 
+                      ? 'CBSE Tuition Course'
+                      : `Courses for ${streams.find(s => s.id === activeStream)?.label}`
                   }
                 </h2>
               </div>
-              {activeStream === 'prefoundation' && (
-                <p className="text-sm font-medium text-slate-500 italic ml-14">
-                  "A good education is a foundation for a better future" - Elizabeth Warren
-                </p>
-              )}
-              {activeStream === 'foundation' && (
-                <p className="text-sm font-medium text-slate-500 italic ml-14 max-w-lg">
-                  "No other investment yields as great a return as the investment in education. An educated workforce is the foundation of every community and the future of every economy." - Brad Henry
+              {activeStream === 'cbse' && (
+                <p className="text-sm font-medium text-slate-500 italic ml-14 max-w-xl">
+                  "Education is the most powerful weapon which you can use to change the world." - Nelson Mandela
                 </p>
               )}
             </div>
@@ -276,40 +271,25 @@ export default function Courses({ stream }: { stream?: string }) {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shrink-0">
                 <Lightbulb className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-secondary-900">Pre-Foundation Courses</h3>
+              <h3 className="text-2xl font-black text-secondary-900">CBSE Tuitions for Classes 8 to 10</h3>
             </div>
-            <p className="text-slate-600 leading-relaxed mb-3">Pre-Foundation courses are for younger students just starting to build their academic base. The focus is on strengthening core Math and Science concepts while developing analytical thinking and problem-solving habits early on.</p>
-            <p className="text-slate-600 leading-relaxed mb-3">The logic is simple: students who build a solid base early find it much easier to handle tougher material later — in school exams now, and in JEE or NEET down the road.</p>
-            <p className="text-slate-600 leading-relaxed">These classes aim to make learning enjoyable rather than overwhelming. Concepts come through real-life examples, discussions, and regular practice — building curiosity and logical thinking alongside better school performance. Regular assessments track each student's progress, and parents get periodic updates on how their child is doing.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Our CBSE Tuitions for Class 8 to 10 are built to do what school alone often can't — make concepts genuinely clear, keep students tested, and build the writing and reasoning skills that CBSE rewards. Classes 9 and 10 run on weekdays as well as weekends, while Class 8 runs on a weekend-only timetable so younger students never lose their weekday routine.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Beyond the CBSE syllabus, these programmes prepare students for science and maths olympiads, NTSE and other scholarship exams, and put a strong emphasis on worksheet tests and subjective writing practice — the two things that decide how well a student actually performs in school examinations.</p>
+            <p className="text-slate-600 leading-relaxed">Small batches keep every student visible to the teacher, weekly worksheets make progress measurable, and regular doubt sessions mean nobody quietly falls behind. Parents receive periodic updates on how their child is performing throughout the year.</p>
           </div>
 
-          {/* Foundation */}
+          {/* CBSE Tuitions Class 11 & 12 */}
           <div className="bg-gradient-to-br from-orange-50/50 to-red-100/30 border border-orange-100 rounded-3xl p-8 lg:p-10">
             <div className="w-10 h-1 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mb-4" />
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center shrink-0">
                 <School className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-black text-secondary-900">Foundation Courses</h3>
+              <h3 className="text-2xl font-black text-secondary-900">CBSE Tuitions for Classes 11 & 12 (PCMB)</h3>
             </div>
-            <p className="text-slate-600 leading-relaxed mb-3">Foundation courses prepare students for the move into higher secondary school while keeping future competitive exams in view. They bridge the gap between school-level learning and the more demanding, application-based learning that JEE and NEET require.</p>
-            <p className="text-slate-600 leading-relaxed mb-3">These courses cover Math and Science in depth, focusing on both conceptual clarity and problem-solving speed. Students work through a range of question types — basic to slightly advanced — so they get comfortable across difficulty levels.</p>
-            <p className="text-slate-600 leading-relaxed">We also work on study habits here — regular revision, self-assessment, time management — habits that carry students through school exams and beyond. Foundation batches stay relatively small so every student gets individual attention. Regular tests and doubt sessions keep students on track through the year.</p>
-          </div>
-
-          {/* Class 9th */}
-          <div className="bg-gradient-to-br from-rose-50/50 to-pink-100/30 border border-rose-100 rounded-3xl p-8 lg:p-10">
-            <div className="w-10 h-1 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full mb-4" />
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-pink-500 flex items-center justify-center shrink-0">
-                <Calendar className="w-5 h-5 text-white" />
-              </div>
-              <h3 className="text-2xl font-black text-secondary-900">Class 9th Courses – 2 Year Regular Classroom Programme</h3>
-            </div>
-            <p className="text-slate-600 leading-relaxed mb-3">Class 9th is a pivotal year — it's when habits, concepts, and confidence start shaping how students perform in board exams and beyond. Our Class 9th courses are part of a 2-year regular classroom programme covering Class 9th and 10th together.</p>
-            <p className="text-slate-600 leading-relaxed mb-3">The programme covers all major subjects with a strong focus on Math and Science, building a foundation that supports students through boards and beyond. Spreading the syllabus over two years means no last-minute scramble — students get real time for revision, practice, and clearing doubts.</p>
-            <p className="text-slate-600 leading-relaxed mb-3">Regular classroom sessions keep learning disciplined and consistent. Students follow a set timetable, take regular tests, and get continuous feedback. This reduces exam-time stress because preparation happens steadily over two years instead of cramming in the final months.</p>
-            <p className="text-slate-600 leading-relaxed">By the end of these two years, students are ready for boards and have a conceptual base that supports whatever competitive exam path they choose next.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">For Class 11 and 12, our CBSE Tuition programme centres on Physics, Chemistry, Mathematics and Biology — the four subjects that decide Science stream board scores and, later, JEE and NEET performance. Subject-specialist faculty teach each one, so a Physics doubt gets a Physics teacher's answer, not a general one.</p>
+            <p className="text-slate-600 leading-relaxed mb-3">Preparation here is NCERT-first with board-pattern practice built into every chapter. Beyond completing the syllabus, we train students to frame answers the way examiners award marks, show method steps, label diagrams and write to the word limit. Worksheet tests and mock board papers keep students exam-ready rather than just content-ready.</p>
+            <p className="text-slate-600 leading-relaxed">Because batches stay small, faculty track each student individually, and regular testing surfaces weak areas before they become marks lost. The result is a Class 11 and 12 student who walks into board exams with genuine command over the subject, not last-minute panic.</p>
           </div>
 
           {/* Physics by Sunil Gola */}
@@ -337,7 +317,7 @@ export default function Courses({ stream }: { stream?: string }) {
               </div>
               <h3 className="text-2xl font-black text-white">Why Choose Good Marks Classes</h3>
             </div>
-            <p className="text-slate-300 leading-relaxed mb-3 relative z-10">What makes us different is that we treat each student as an individual, not a number. There's no one-size-fits-all here — every course, from IIT JEE and NEET UG to Pre-Foundation, Foundation, and the 2-year Class 9th programme, is built on the idea that students learn best when they truly understand concepts and practice regularly.</p>
+            <p className="text-slate-300 leading-relaxed mb-3 relative z-10">What makes us different is that we treat each student as an individual, not a number. There's no one-size-fits-all here — every course, from IIT JEE and NEET UG to CBSE Tuitions for Classes 8 to 12, is built on the idea that students learn best when they truly understand concepts and practice regularly.</p>
             <p className="text-slate-300 leading-relaxed mb-3 relative z-10">Our experienced faculty — including subject experts like Sunil Gola Sir for Physics — bring years of teaching experience and a genuine investment in student outcomes. Regular tests, personal feedback, doubt sessions, and a structured academic calendar keep students on track.</p>
             <p className="text-slate-300 leading-relaxed relative z-10">If you're looking for a place that combines strong academics with genuine personal attention, Good Marks Classes is here to support your child — from the early foundation years through the most competitive exams in the country.</p>
           </div>

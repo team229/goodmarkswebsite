@@ -16,7 +16,38 @@ export async function getStaticPaths() {
 }
 
 const { id } = Astro.params;
+
+const mod = await import('../../data/courses');
+let course: any = null;
+for (const category of Object.values(mod.coursesData)) {
+  const found = (category as any[]).find((c) => c.id === id);
+  if (found) { course = found; break; }
+}
+
+function seoTitle(c: any): string {
+  if (!c) return 'Course Details | GoodMarks Classes';
+  const headings: Record<string, string> = {
+    'cbse-tuition-class-8': 'Class 8 CBSE Tuition in Gurgaon | Weekend Classes | GoodMarks Classes',
+    'cbse-tuition-class-9': 'Class 9 CBSE Tuition in Gurgaon | More GoodMarks Classes',
+    'cbse-tuition-class-10': 'Class 10 CBSE Tuition in Gurgaon | Board Prep | GoodMarks Classes',
+    'cbse-tuition-class-11': 'Class 11 CBSE Tuition in Gurgaon (PCMB) | GoodMarks Classes',
+    'cbse-tuition-class-12': 'Class 12 CBSE Tuition in Gurgaon (PCMB) | GoodMarks Classes'
+  };
+  if (headings[c.id]) return headings[c.id];
+  if (c.tag === 'IIT-JEE') return `${c.title} | IIT JEE Coaching in Gurgaon | GoodMarks Classes`;
+  if (c.tag === 'NEET') return `${c.title} | NEET Coaching in Gurgaon | GoodMarks Classes`;
+  return `${c.title} | GoodMarks Classes`;
+}
+
+function seoDesc(c: any): string {
+  if (!c) return 'View course details, schedule, and features for this program at GoodMarks Classes in Gurgaon.';
+  const short = (c.course?.subject || c.details?.subjects || 'Physics, Chemistry & Maths').slice(0, 120);
+  return `${c.title} at GoodMarks Classes in Gurgaon — ${c.details?.schedule || ''} Learn more about the schedule, subjects, features and how to enrol.`;
+}
+
+const pageTitle = seoTitle(course);
+const pageDesc = seoDesc(course);
 ---
-<BaseLayout title="Course Details | GoodMarks Classes" description="View course details, schedule, and features for this program at GoodMarks Classes in Gurgaon.">
+<BaseLayout title={pageTitle} description={pageDesc}>
   <CourseDetail id={id} client:load />
 </BaseLayout>

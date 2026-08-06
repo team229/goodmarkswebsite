@@ -9,6 +9,9 @@ for (const loc of locations) {
   redirects[`/locations/iit-coaching-${loc}`] = `/locations/jee-coaching-${loc}`;
 }
 
+redirects['/courses/prefoundation'] = '/courses/cbse';
+redirects['/courses/foundation'] = '/courses/cbse';
+
 export default defineConfig({
   integrations: [react()],
   vite: {
