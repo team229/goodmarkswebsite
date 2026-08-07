@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TuitionPage from '../../components/TuitionPage';
+import { tuitionPages } from '../../data/tuition';
+
+export async function getStaticPaths() {
+  return tuitionPages.map(page => ({
+    params: { slug: page.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const page = tuitionPages.find(p => p.slug === slug);
+---
+<BaseLayout title={page?.metaTitle ?? `${page?.title || 'Tuition'} | Good Marks Classes`} description={page?.metaDescription ?? `${page?.title} — expert faculty, small batches, proven results.`}>
+  <TuitionPage slug={slug} client:load />
+</BaseLayout>
