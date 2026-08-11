@@ -11,7 +11,6 @@ for (const loc of locations) {
 }
 
 redirects['/courses/prefoundation'] = '/courses/cbse';
-redirects['/courses/foundation'] = '/courses/cbse';
 
 export default defineConfig({
   site: 'https://www.goodmarksclasses.com',

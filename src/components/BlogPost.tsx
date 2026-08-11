@@ -71,7 +71,6 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
               className="prose prose-lg prose-slate max-w-none
                 prose-headings:text-secondary-900 prose-headings:font-black
                 prose-p:text-slate-600 prose-p:leading-relaxed
-                prose-a:text-primary-600 prose-a:font-bold prose-a:no-underline hover:prose-a:underline
                 prose-li:text-slate-600
                 prose-strong:text-secondary-900"
               dangerouslySetInnerHTML={{ __html: post.content }}

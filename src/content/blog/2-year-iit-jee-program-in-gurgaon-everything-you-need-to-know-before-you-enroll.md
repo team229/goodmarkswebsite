@@ -13,7 +13,7 @@ metaDescription: Looking for a reliable 2-year IIT JEE program in Gurgaon? Our g
 
 <p>Getting into the Indian Institutes of Technology is one of the most competitive academic goals a student can set in India. The road to clearing JEE Main and JEE Advanced requires not just hard work but also a well-structured, long-term preparation plan. That is why thousands of families across Delhi-NCR are now actively looking for a reliable 2 year IIT JEE program in Gurgaon that can give their child a real shot at success.</p><br />
 
-<p>If you are a student currently in Class 10 or about to enter Class 11, this guide is for you. We will walk you through what a <a href="https://goodmarksclasses.com/course/2-year-integrated-regular">2 year IIT JEE program in Gurgaon</a> actually looks like, what to expect, how to choose the right coaching institute, and why starting early makes such a massive difference in your final result.</p><br />
+<p>If you are a student currently in Class 10 or about to enter Class 11, this guide is for you. We will walk you through what a <a href="/course/2-year-integrated-regular/">2 year IIT JEE program in Gurgaon</a> actually looks like, what to expect, how to choose the right coaching institute, and why starting early makes such a massive difference in your final result.</p><br />
 
 <h2>Why Choose a 2 Year IIT JEE Program?</h2>
 <p>Many students make the mistake of starting their JEE preparation only in Class 12, which leaves them with barely 10 to 12 months to cover an enormous syllabus. A 2 year IIT JEE program in Gurgaon solves this problem by beginning serious preparation from Class 11 itself.</p><br />

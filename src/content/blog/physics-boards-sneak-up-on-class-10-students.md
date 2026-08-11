@@ -11,7 +11,7 @@ metaDescription: Physics boards sneak up on Class 10 students every year. Get ex
 category: Class 10 Physics
 ---
 
-<p>There's a specific kind of panic that kicks in once physics stops feeling like "just another class" and starts feeling like a board subject. Numericals suddenly carry real weight. Diagrams need to be exact — not roughly right, exact. And concepts that felt solid enough during regular classwork start feeling shaky the closer exams get, for reasons students can't always explain. That shift is basically why so many Gurugram students start looking into class 10 physics tuition Gurugram board exam prep well before the pressure actually hits its peak.</p><br />
+<p>There's a specific kind of panic that kicks in once physics stops feeling like "just another class" and starts feeling like a board subject. Numericals suddenly carry real weight. Diagrams need to be exact — not roughly right, exact. And concepts that felt solid enough during regular classwork start feeling shaky the closer exams get, for reasons students can't always explain. That shift is basically why so many Gurugram students start looking into <a href="/subject/physics/">class 10 physics tuition Gurugram</a> board exam prep well before the pressure actually hits its peak.</p><br />
 
 <h2><strong>Why Physics Gets Harder the Closer Boards Get</strong></h2><br />
 

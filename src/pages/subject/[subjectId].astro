@@ -38,9 +38,462 @@ const subjectBreadcrumbSchema = {
     { '@type': 'ListItem', position: 3, name: subjectMeta?.title.split('|')[0].trim() || 'Coaching Classes', item: `https://www.goodmarksclasses.com/subject/${subjectId}` }
   ]
 };
+
+const subjectFaqSchemas: Record<string, any> = {
+  physics: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What\'s the actual difference between the Regular Programme and the Spark Batch for Class 11?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The Regular Programme is built purely around IIT-JEE or NEET pacing, while the Spark Batch is designed to run closely alongside the school syllabus, for students who need both board preparation and competitive exam coaching moving together without one falling behind.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is the 1-Year Extended Classroom Program only for students repeating a year after Class 12?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, this track is specifically for Class 12 passout students preparing for another attempt at JEE or NEET, and it assumes existing conceptual knowledge rather than starting physics from the basics again.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can a student switch from online to offline batches partway through the programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'In most cases, yes, depending on batch availability at the time. It is best to discuss this directly with the counselling team before enrolling if flexibility matters to you.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do the Foundation batches for Class 9 and 10 also prepare students for future JEE or NEET coaching?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, foundation batches are structured to build habits and conceptual clarity that carry directly into Class 11 JEE and NEET batches, rather than treating Class 9 and 10 Physics as disconnected from what comes after.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I decide which physics batch is right for my child if I\'m unsure of their current level?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The best way is to attend a free demo class and have a short discussion with the faculty, who can recommend the right batch based on the child\'s current understanding rather than just their grade.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/subject/physics',
+      url: 'https://www.goodmarksclasses.com/subject/physics',
+      name: 'Physics Tuition for Class 9, 10, 11 & 12 in Gurgaon | GoodMarks Classes',
+      description: 'Find the best physics tutor in Gurgaon for CBSE board exams and competitive prep. GoodMarks Classes provides quality physics tuition for Class 9 to 12 students across Gurugram, including Sector 85, with experienced and dedicated teachers.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'Class 9 Physics Tuition',
+          description: 'Physics tuition for Class 9 students in Gurgaon, building strong conceptual fundamentals for school and board exams.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 10 Physics Tuition',
+          description: 'Physics tuition for Class 10 students in Gurugram, focused on CBSE board exam preparation with regular practice and doubt-solving.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 11 Physics Tuition',
+          description: 'CBSE physics tutoring for Class 11 students in Gurgaon, building the conceptual foundation needed for board exams and competitive tests.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 12 Physics Tuition',
+          description: 'Physics tuition for Class 12 students in Gurgaon by experienced teachers, focused on board exam performance and concept mastery.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Subjects', item: 'https://www.goodmarksclasses.com/subject' },
+          { '@type': 'ListItem', position: 3, name: 'Physics Tuition Gurgaon', item: 'https://www.goodmarksclasses.com/subject/physics' }
+        ]
+      }
+    }
+  },
+  chemistry: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'How is organic chemistry taught differently across the Regular and Spark batches?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The Regular Programme moves at IIT-JEE or NEET pace right from the start, while the Spark Batch introduces organic reaction logic more gradually, timed to stay in step with the school syllabus so students are not juggling two separate paces.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is the Class 12 Passout programme suitable for a student who was weak in physical chemistry the first time around?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The passout programme specifically targets weak areas through focused practice and repeated testing rather than reteaching the entire syllabus from scratch, making it suitable for students who need to strengthen gaps in physical chemistry.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do the online chemistry batches include the same lab-based or reaction demonstration content as offline batches?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Core teaching content and testing remain consistent across both formats, although some demonstrations naturally suit the offline setting better. The counselling team can provide specific details for a particular batch.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'At what stage should a Class 9 or 10 student start focused chemistry coaching instead of relying on school alone?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'It depends on the individual student. Foundation batches generally work well when started early enough to build comfort with core concepts such as the mole concept and periodic trends before Class 11 chemistry becomes more demanding.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I know which chemistry batch matches my child\'s current preparation level?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The most reliable approach is to attend a free demo class, where faculty can assess the student\'s current preparation level and recommend an appropriate batch instead of selecting one based only on grade.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/subject/chemistry',
+      url: 'https://www.goodmarksclasses.com/subject/chemistry',
+      name: 'Chemistry Tuition for Class 11 & 12 in Gurgaon | GoodMarks Classes',
+      description: 'Get expert chemistry coaching in Gurgaon for Class 11 and 12 board exams. GoodMarks Classes offers CBSE-aligned chemistry tuition near Sector 85 and across Gurugram with concept-focused and exam-ready teaching.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'Class 11 Chemistry Coaching',
+          description: 'Chemistry coaching for Class 11 students in Gurgaon, building strong conceptual fundamentals across Physical, Organic, and Inorganic Chemistry.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 12 CBSE Chemistry Tuition',
+          description: 'CBSE-aligned chemistry tuition for Class 12 students in Gurgaon, focused on exam-ready preparation for board exams.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Chemistry Tuition for Board Exams',
+          description: 'Concept-focused chemistry tuition in Gurgaon designed specifically to prepare students for board exam success.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: ['Gurgaon', 'Gurugram', 'Sector 85 Gurgaon']
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Subjects', item: 'https://www.goodmarksclasses.com/subject' },
+          { '@type': 'ListItem', position: 3, name: 'Chemistry Tuition Gurgaon', item: 'https://www.goodmarksclasses.com/subject/chemistry' }
+        ]
+      }
+    }
+  },
+  mathematics: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Why start Pre-Foundation maths as early as Class 7 instead of waiting until Class 9 or 10?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Concepts like algebraic thinking and number sense, once built solidly early, make a real difference in how comfortably a student handles Class 11 maths later. This is why the Pre-Foundation track starts at Class 7 rather than waiting until Class 9 or 10.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the Class 12 Passout programme reteach the entire maths syllabus from scratch?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No, it assumes a working base already exists from the first attempt and instead focuses on closing specific weak areas, improving speed, and building consistency through repeated testing rather than starting over from Class 11 basics.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'My child is comfortable with algebra but struggles with geometry and mensuration. Can that gap be addressed directly?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Since batches stay small, teachers can identify a specific weak area like geometry and give it targeted attention without slowing down the rest of the group\'s progress.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is there a difference in the level of numerical practice between the Regular and Spark batches for Class 11?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The Regular Programme moves at full JEE pace from the outset, while the Spark Batch builds numerical difficulty more gradually, timed to stay aligned with school coursework.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can a student join the Class 12 Regular Programme mid-year if they\'re switching from another coaching centre?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'It depends on how far the batch has progressed and where the student currently stands. The team evaluates this directly during a free demo class rather than making assumptions beforehand.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/subject/mathematics',
+      url: 'https://www.goodmarksclasses.com/subject/mathematics',
+      name: 'Maths Coaching for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes',
+      description: 'Struggling with maths? GoodMarks Classes offers CBSE and ICSE maths tuition in Gurgaon for Class 10, 11, and 12. Our patient, concept-first approach is especially effective for students who need extra support.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'Class 10 Maths Coaching (CBSE & ICSE)',
+          description: 'Maths coaching for Class 10 CBSE and ICSE students in Gurgaon, with a concept-first approach designed to strengthen fundamentals before board exams.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 11 Maths Coaching',
+          description: 'Maths coaching for Class 11 students in Gurgaon, building a strong foundation in core topics for board and competitive exam readiness.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 12 Maths Coaching',
+          description: 'Maths coaching for Class 12 students in Gurgaon, focused on board exam performance with regular practice and doubt resolution.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Maths Tuition for Weak Students',
+          description: 'Patient, concept-first maths tuition in Gurgaon designed specifically for students who struggle with the subject and need extra support to catch up.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Subjects', item: 'https://www.goodmarksclasses.com/subject' },
+          { '@type': 'ListItem', position: 3, name: 'Maths Coaching Gurgaon', item: 'https://www.goodmarksclasses.com/subject/mathematics' }
+        ]
+      }
+    }
+  },
+  biology: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'My child is a NEET repeater and already scored reasonably well in biology last year. Is the Passout programme still useful?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Even students with a decent score often have specific, fixable gaps, such as a consistently weak chapter or a pattern of careless errors. The Passout programme is designed to identify and correct these gaps rather than starting from zero again.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Why is there a Foundation batch for Class 9 biology specifically, rather than waiting until Class 11?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Concepts introduced properly at Class 9, especially around cell biology and basic life processes, can make Class 11 biology easier to understand later. Students become familiar with underlying ideas before encountering them at a higher level.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the Class 10 Foundation batch prepare students for board exams, NEET readiness, or both?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The Class 10 Foundation batch supports both objectives. Board exam performance is the immediate focus, while concept learning and diagram practice help develop habits that can support future NEET preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is the online format for the NEET Passout biology batch as effective as attending offline?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Core teaching content, testing, and doubt-clearing remain consistent across both formats. The choice largely depends on the student\'s routine, learning preferences, and ability to maintain discipline for self-study at home.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How is progress tracked for a student in the NEET Passout batch over the year?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Progress is tracked through regular chapter-wise tests, full-length mock exams, and detailed performance reviews that identify specific weak areas. This allows students and faculty to monitor measurable improvement throughout the programme.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/subject/biology',
+      url: 'https://www.goodmarksclasses.com/subject/biology',
+      name: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes',
+      description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'Class 10 Biology Tuition',
+          description: 'Biology tuition for Class 10 students in Gurgaon, focused on CBSE board exam preparation with concept learning and diagram practice.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'Class 11 Biology Coaching',
+          description: 'Biology coaching for Class 11 students in Gurgaon, building strong conceptual fundamentals for board exams and NEET preparation.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'NEET Biology Preparation',
+          description: 'Comprehensive NEET Biology coaching in Gurgaon, covering the full syllabus with regular tests and doubt-clearing sessions.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Subjects', item: 'https://www.goodmarksclasses.com/subject' },
+          { '@type': 'ListItem', position: 3, name: 'Biology Tuition Gurgaon', item: 'https://www.goodmarksclasses.com/subject/biology' }
+        ]
+      }
+    }
+  }
+};
+
+const subjectFaq = subjectFaqSchemas[subjectId] || null;
 ---
 <BaseLayout title={subjectMeta?.title || 'Subject | Good Marks Classes'} description={subjectMeta?.description || ''}>
   <script type="application/ld+json" set:html={JSON.stringify(subjectSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(subjectBreadcrumbSchema)} />
+  {subjectFaq && <script type="application/ld+json" set:html={JSON.stringify(subjectFaq.faqSchema)} />}
+  {subjectFaq && <script type="application/ld+json" set:html={JSON.stringify(subjectFaq.webPageSchema)} />}
   <SubjectDetail subjectId={subjectId} client:load />
 </BaseLayout>

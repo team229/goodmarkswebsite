@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CourseDetail from '../../components/CourseDetail';
 
 export async function getStaticPaths() {
-  // Import course data to generate paths
   const mod = await import('../../data/courses');
   const coursesData = mod.coursesData;
   const ids: string[] = [];
@@ -75,9 +74,334 @@ const courseBreadcrumbSchema = course ? {
     { '@type': 'ListItem', position: 3, name: course.title, item: `https://www.goodmarksclasses.com/course/${course.id}` }
   ]
 } : null;
+
+const courseFaqSchemas: Record<string, any> = {
+  '1-year-regular-12': {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is the class schedule and frequency?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Classes are held throughout the week as per the schedule mentioned above. Each session is designed to maximise learning while allowing time for self-study and revision.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Are there any demo classes available?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, we offer free demo classes. Click "Book a Free Demo" above or contact us to schedule one at your convenience.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How are doubts handled?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We have a dedicated doubt clearing cell. Students can get their doubts resolved the same day through Special Doubt Clearing Classes (SDCC) after each topic.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What study material is provided?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Research-oriented, custom-curated study material based on NCERT curriculum, updated regularly to align with the latest exam patterns.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How does this programme prepare me for JEE Main & Advanced?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The curriculum covers extensive JEE-specific topics, with All India Test Series (AITS), Special Rank Improvement Program (SRIP), and NCERT Exemplar focusing on JEE (Main & Advanced), BITSAT & KVPY patterns.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the duration of the 1 year regular programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The total programme hours are 450 hours, including Tests & Discussions, spread across the academic session with regular tests and discussions.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/course/1-year-regular-12',
+      url: 'https://www.goodmarksclasses.com/course/1-year-regular-12',
+      name: '1 Year JEE Coaching in Gurgaon | GoodMarks Classes',
+      description: 'Looking for focused 1 year JEE coaching in Gurgaon? GoodMarks Classes offers structured classroom programs, expert faculty, and proven results to help you crack IIT JEE in one year.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: {
+        '@type': 'Course',
+        name: '1 Year JEE Coaching Program',
+        description: 'A structured 1 year classroom program for IIT JEE preparation offered in Gurgaon by GoodMarks Classes, delivered by expert faculty.',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'GoodMarks Classes',
+          url: 'https://www.goodmarksclasses.com/',
+          areaServed: 'Gurgaon'
+        }
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/course' },
+          { '@type': 'ListItem', position: 3, name: '1 Year JEE Coaching Gurgaon', item: 'https://www.goodmarksclasses.com/course/1-year-regular-12' }
+        ]
+      }
+    }
+  },
+  '1-year-regular-12-neet': {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Who is the 1 Year NEET Coaching programme in Gurgaon for?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme is designed for Class XI passed students entering Class XII who want to prepare for NEET while also performing well in their Class XII Board examinations.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How does this programme prepare students for NEET?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme focuses on conceptual clarity and strong fundamentals in Physics, Chemistry, Zoology, and Botany. It provides extensive NEET topic coverage, NCERT-based study material, regular tests, doubt-clearing sessions, and rank improvement support.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What subjects are taught in the 1 Year NEET Coaching programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive comprehensive coaching in Physics, Chemistry, Zoology, and Botany, with emphasis on the Class XI syllabus and preparation for NEET.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How many hours does the 1 Year NEET programme include?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme includes 450 hours, including Tests & Discussions, spread throughout the academic session.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How are student doubts handled during the programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive dedicated Special Doubt Clearing Classes (SDCC) after the completion of each topic. Thursday is also reserved for doubts, discussions, and backup classes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What tests and study material are provided for NEET preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive comprehensive study material based on the NCERT curriculum, along with an All India Test Series (AITS) based on NEET patterns. The programme also includes the Special Rank Improvement Program (SRIP) before NEET.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme include mentorship for NEET preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The Students\' Mentorship Programme (SMP) provides guidance from dedicated faculty members and supports students through regular monitoring and academic improvement.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the class schedule for the 1 Year NEET Coaching programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Classes are conducted six days a week. Weekday classes are held on Tuesday, Wednesday, and Friday, while Saturday and Sunday are used for weekend classes. Thursday is reserved for doubts, discussions, and backup classes.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/course/1-year-regular-12-neet',
+      url: 'https://www.goodmarksclasses.com/course/1-year-regular-12-neet',
+      name: '1 Year NEET Coaching in Gurgaon | GoodMarks Classes',
+      description: 'Prepare for NEET in one year with GoodMarks Classes in Gurgaon. Our intensive 1 year NEET coaching program covers Biology, Chemistry, and Physics with dedicated mentorship and regular mock tests.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: {
+        '@type': 'Course',
+        name: '1 Year NEET Coaching Program',
+        description: 'A structured 1 year classroom program for NEET preparation offered in Gurgaon by GoodMarks Classes, covering Biology, Chemistry, and Physics with dedicated mentorship and regular mock tests.',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'GoodMarks Classes',
+          url: 'https://www.goodmarksclasses.com/',
+          areaServed: 'Gurgaon'
+        }
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/course' },
+          { '@type': 'ListItem', position: 3, name: '1 Year NEET Coaching Gurgaon', item: 'https://www.goodmarksclasses.com/course/1-year-regular-12-neet' }
+        ]
+      }
+    }
+  },
+  '2-year-integrated-regular': {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Who is the 2 Year IIT JEE Coaching Program in Gurgaon designed for?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme is designed for Class X passed students who want to prepare for JEE Main and Advanced while strengthening their Class XI and XII Board fundamentals.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme cover both JEE Main and JEE Advanced?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The programme provides comprehensive preparation for both JEE Main and JEE Advanced, with extensive coverage of relevant concepts, regular testing, and rank improvement support.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme also prepare students for BITSAT and KVPY?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The curriculum includes preparation for BITSAT and KVPY patterns along with JEE Main and Advanced preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How long is the 2 Year IIT JEE programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme covers Classes XI and XII and includes 900 hours, including Tests & Discussions. It provides 450 hours in Class XI and 450 hours in Class XII.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What subjects are taught in the 2 Year IIT JEE programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive comprehensive coaching in Physics, Chemistry, and Mathematics.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How are doubts handled during the programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Special Doubt Clearing Classes (SDCC) are conducted after the completion of each topic. Thursday is also dedicated to doubts, discussions, and backup classes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What study material is provided to students?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive comprehensive and regularly updated study material based on the NCERT curriculum. NCERT Exemplar material is also used for JEE Main, JEE Advanced, BITSAT, and KVPY preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme include regular tests and rank improvement support?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Students participate in the All India Test Series (AITS), designed around JEE Main, JEE Advanced, and BITSAT patterns. The Special Rank Improvement Program (SRIP) is conducted two months before JEE Main and Advanced.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is mentorship included in the 2 Year IIT JEE Coaching Program?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The Students\' Mentorship Programme (SMP) provides guidance from dedicated faculty members throughout the programme.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the class schedule for the 2 Year IIT JEE programme?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Classes are conducted six days a week. Weekday classes are held on Tuesday, Wednesday, and Friday. Saturday and Sunday are used for weekend classes. Thursday is reserved for doubts, discussions, and backup classes.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/course/2-year-integrated-regular',
+      url: 'https://www.goodmarksclasses.com/course/2-year-integrated-regular',
+      name: '2 Year IIT JEE Coaching Program in Gurgaon | GoodMarks Classes',
+      description: 'Build a strong foundation with our 2 year IIT JEE program in Gurgaon. GoodMarks Classes offers comprehensive study plans, experienced faculty, and consistent practice to maximize your JEE score.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: {
+        '@type': 'Course',
+        name: '2 Year Integrated IIT JEE Program',
+        description: 'A comprehensive 2 year integrated classroom program for IIT JEE preparation offered in Gurgaon by GoodMarks Classes, covering foundational to advanced concepts with experienced faculty and consistent practice.',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'GoodMarks Classes',
+          url: 'https://www.goodmarksclasses.com/',
+          areaServed: 'Gurgaon'
+        }
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/course' },
+          { '@type': 'ListItem', position: 3, name: '2 Year IIT JEE Program Gurgaon', item: 'https://www.goodmarksclasses.com/course/2-year-integrated-regular' }
+        ]
+      }
+    }
+  }
+};
+
+const courseFaq = course && courseFaqSchemas[course.id] ? courseFaqSchemas[course.id] : null;
 ---
 <BaseLayout title={pageTitle} description={pageDesc}>
   {courseSchema && <script type="application/ld+json" set:html={JSON.stringify(courseSchema)} />}
   {courseBreadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(courseBreadcrumbSchema)} />}
+  {courseFaq && <script type="application/ld+json" set:html={JSON.stringify(courseFaq.faqSchema)} />}
+  {courseFaq && <script type="application/ld+json" set:html={JSON.stringify(courseFaq.webPageSchema)} />}
   <CourseDetail id={id} client:load />
 </BaseLayout>

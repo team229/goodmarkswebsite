@@ -90,6 +90,20 @@
   --spacing-gutter: 24px;
 }
 
+/* Blog content link styling - outside layer for higher specificity */
+.prose a,
+.prose-lg a {
+  color: #E2AF0F !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+.prose a:hover,
+.prose-lg a:hover {
+  text-decoration: underline !important;
+  color: #C1960D !important;
+}
+
 @layer utilities {
   .font-h1 {
     font-family: var(--font-heading);

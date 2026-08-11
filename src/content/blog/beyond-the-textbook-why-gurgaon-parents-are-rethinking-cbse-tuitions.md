@@ -8,11 +8,11 @@ metaDescription: "Why Gurgaon parents are rethinking CBSE tuitions in 2026. Good
 category: CBSE Tuition
 ---
 
-<p>Scroll through any parent WhatsApp group in Gurgaon during exam season and the same question resurfaces every few weeks, worded slightly differently each time: which tuition should I put my child into? It used to be a fairly casual decision — ask a neighbor, pick whoever's closest. That's changed. Gurgaon has turned into one of India's more competitive school towns, and the tuition market has grown right alongside it, with new centers opening every year, each claiming better results than the one down the road.</p><br />
+<p>Scroll through any parent WhatsApp group in Gurgaon during exam season and the same question resurfaces every few weeks, worded slightly differently each time: which tuition should I put my child into? It used to be a fairly casual decision — ask a neighbor, pick whoever's closest. That's changed. Gurgaon has turned into one of India's more competitive school towns, and the <a href="/courses/cbse">tuition market</a> has grown right alongside it, with new centers opening every year, each claiming better results than the one down the road.</p><br />
 
 <p>But results don't come from hours logged in a classroom. They come from who's actually teaching, how the material is sequenced, and whether the coaching is preparing a child for what's three years away, not just next month's unit test.</p><br />
 
-<p>That's the gap Good Marks Classes has tried to close. Run by Sunil Gola Sir, an engineering graduate from Delhi Technological University, the institute is built around a fairly simple premise: CBSE coaching shouldn't stop at the board exam. It should be quietly setting a student up for IIT JEE and NEET the whole time, so there's no last-minute scramble when Class 11 arrives.</p><br />
+<p>That's the gap Good Marks Classes has tried to close. Run by Sunil Gola Sir, an engineering graduate from Delhi Technological University, the institute is built around a fairly simple premise: CBSE coaching shouldn't stop at the board exam. It should be quietly setting a student up for IIT JEE and NEET the whole time, so there's no last-minute scramble when Class 11 arrives. Which is exactly why families who've looked beyond the usual <a href="/courses/cbse/">CBSE coaching in Gurgaon</a> options often find their way here.</p><br />
 
 <h2><strong>The Problem with How Most Tuition Is Structured</strong></h2><br />
 
@@ -20,7 +20,7 @@ category: CBSE Tuition
 
 <p>It's inefficient, and it's genuinely stressful for the student, who isn't just absorbing new material — they're relearning old material under a different system, at a moment when the stakes have already gone up.</p><br />
 
-<p>Good Marks Classes was built to sidestep this entirely. Physics, Chemistry, and Math aren't taught once for boards and then again for competitive exams. A student working through Class 10 board prep is, often without realizing it, building the exact foundation they'll need in Class 11 and 12. Nothing gets discarded and rebuilt from scratch later.</p><br />
+<p>Good Marks Classes was built to sidestep this entirely. <a href="/subject/physics">Physics</a>, <a href="/subject/chemistry">Chemistry</a>, and <a href="/subject/mathematics">Math</a> aren't taught once for boards and then again for competitive exams. A student working through Class 10 board prep is, often without realizing it, building the exact foundation they'll need in Class 11 and 12. Nothing gets discarded and rebuilt from scratch later.</p><br />
 
 <h2><strong>What Actually Sets This Apart</strong></h2><br />
 

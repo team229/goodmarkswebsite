@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Courses from '../../components/Courses';
 
 export async function getStaticPaths() {
-  const streams = ['iit', 'neet', 'cbse'];
+  const streams = ['iit', 'neet', 'cbse', 'foundation'];
   return streams.map(stream => ({
     params: { stream },
   }));
@@ -13,13 +13,15 @@ const { stream } = Astro.params;
 const meta: Record<string, { title: string; description: string }> = {
   iit: { title: 'Best IIT JEE Coaching in Gurgaon | Repeaters Batch Available | GoodMarks Classes', description: 'Join the best IIT JEE coaching institute in Gurgaon. GoodMarks Classes offers regular batches and a dedicated JEE repeater course with focused revision, test series, and personalized guidance to boost your rank.' },
   neet: { title: 'Best NEET Coaching in Gurgaon | Repeaters Batch Available | GoodMarks Classes', description: 'Searching for the best NEET coaching in Gurgaon? GoodMarks Classes offers expert-led NEET preparation with regular and repeater batches, full syllabus coverage, and mock tests designed for NEET success.' },
-  cbse: { title: 'Best CBSE Tuition in Gurgaon for Classes 8 to 12 | GoodMarks Classes', description: 'CBSE tuition in Gurgaon for Classes 8 to 12 at Good Marks Classes — weekend & weekday batches, NCERT-first teaching, olympiad & NTSE preparation, worksheet tests and subjective writing practice. Book a free demo class.' }
+  cbse: { title: 'Best CBSE Tuition in Gurgaon for Classes 8 to 12 | GoodMarks Classes', description: 'CBSE tuition in Gurgaon for Classes 8 to 12 at Good Marks Classes — weekend & weekday batches, NCERT-first teaching, olympiad & NTSE preparation, worksheet tests and subjective writing practice. Book a free demo class.' },
+  foundation: { title: 'IIT JEE & NEET Foundation Course in Gurgaon | GoodMarks Classes', description: 'Prepare early for IIT JEE and NEET with our foundation course in Gurgaon. GoodMarks Classes offers expert coaching in Physics, Chemistry, Maths, and Biology for Class 9 and 10 students.' }
 };
 
 const streamName: Record<string, string> = {
   iit: 'IIT JEE Coaching',
   neet: 'NEET Coaching',
-  cbse: 'CBSE Tuition Classes'
+  cbse: 'CBSE Tuition Classes',
+  foundation: 'Foundation Courses'
 };
 
 const streamMeta = meta[stream];
@@ -42,9 +44,405 @@ const collectionSchema = {
   url: `https://www.goodmarksclasses.com/courses/${stream}`,
   isPartOf: { '@type': 'WebSite', name: 'Good Marks Classes', url: 'https://www.goodmarksclasses.com/' }
 };
+
+const streamFaqSchemas: Record<string, any> = {
+  foundation: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What are Foundation Courses in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Foundation Courses are designed to strengthen students\' Math and Science fundamentals while preparing them for higher secondary studies and future competitive exams such as JEE and NEET.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Who should join an IIT JEE Foundation Course in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The IIT JEE Foundation Course is suitable for school students who want to build strong concepts in Mathematics and Science before beginning advanced JEE preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Who can benefit from a NEET Foundation Course in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students who want to pursue medical entrance examinations can benefit from a NEET Foundation Course. It helps develop strong Science fundamentals and problem-solving skills for future NEET preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What subjects are covered in the Foundation Courses?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The courses focus mainly on Mathematics and Science. Students develop conceptual understanding and practice different types of questions, ranging from basic to slightly advanced levels.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do Foundation Courses help with JEE and NEET preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Foundation Courses bridge the gap between school-level learning and competitive exam preparation. Students develop stronger concepts, problem-solving abilities, speed, revision habits, and time-management skills.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do Foundation Courses include regular tests?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Regular tests help students assess their progress, identify areas that need improvement, and become comfortable with different question types and difficulty levels.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Are doubt-clearing sessions available in Foundation Courses?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Regular doubt sessions are included so students can clarify concepts and address learning difficulties throughout the academic year.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Do students receive individual attention in Foundation batches?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Foundation batches are kept relatively small to provide students with more individual attention and support from faculty members.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What study habits do students develop through Foundation Courses?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students work on regular revision, self-assessment, time management, and consistent study practices. These habits can support both school examinations and future competitive exam preparation.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/courses/foundation',
+      url: 'https://www.goodmarksclasses.com/courses/foundation',
+      name: 'IIT JEE & NEET Foundation Course in Gurgaon | GoodMarks Classes',
+      description: 'Prepare early for IIT JEE and NEET with our foundation course in Gurgaon. GoodMarks Classes offers expert coaching in Physics, Chemistry, Maths, and Biology for Class 9 and 10 students.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'IIT JEE Foundation Course',
+          description: 'A foundation course for Class 9 and 10 students in Gurgaon, building strong fundamentals in Physics, Chemistry, and Maths for future IIT JEE preparation.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'NEET Foundation Course',
+          description: 'A foundation course for Class 9 and 10 students in Gurgaon, building strong fundamentals in Physics, Chemistry, and Biology for future NEET preparation.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/courses' },
+          { '@type': 'ListItem', position: 3, name: 'IIT JEE & NEET Foundation Course Gurgaon', item: 'https://www.goodmarksclasses.com/courses/foundation' }
+        ]
+      }
+    }
+  },
+  iit: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the IIT JEE coaching programme in Gurgaon cover?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme focuses on Physics, Chemistry, and Mathematics. It builds strong fundamentals before moving to competitive-level JEE problems.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Who should join IIT JEE coaching in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme is suitable for students aiming for IITs and other top engineering colleges. It supports students who want structured learning, regular practice, and focused JEE preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How does the programme strengthen JEE fundamentals?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students first develop a clear understanding of core concepts in each chapter. They then progress to application-based and competitive-level problems.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the IIT JEE programme include regular tests?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Students take regular class tests, chapter-wise assignments, and full-length mock tests designed to reflect the actual JEE examination pattern.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do students receive feedback after tests?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Students receive performance-based feedback that identifies mistakes and explains how they can improve their approach, accuracy, and problem-solving skills.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Are doubt-clearing sessions available during JEE preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Regular doubt sessions help students resolve questions and clarify difficult concepts before they become learning gaps.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme help students improve speed and accuracy?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The programme gives consistent attention to speed, accuracy, and time management through regular practice, tests, and performance reviews.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is this programme suitable for JEE droppers in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Students taking another attempt at JEE can benefit from structured preparation, focused revision, regular testing, and performance analysis. The approach can help identify and improve areas that affected their previous attempt.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a JEE dropper course in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A JEE dropper course is a focused preparation programme for students who have completed Class XII and are preparing for another JEE attempt. It typically emphasizes concept revision, problem-solving, mock tests, and exam strategy.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/courses/iit',
+      url: 'https://www.goodmarksclasses.com/courses/iit',
+      name: 'Best IIT JEE Coaching in Gurgaon | Dropper Batch Available | GoodMarks Classes',
+      description: 'Join the best IIT JEE coaching institute in Gurgaon. GoodMarks Classes offers regular batches and a dedicated JEE dropper course with focused revision, test series, and personalized guidance to boost your rank.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'IIT JEE Regular Coaching',
+          description: 'Comprehensive classroom coaching for IIT JEE aspirants in Gurgaon, delivered by experienced faculty with structured study plans and regular practice.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'JEE Dropper Course',
+          description: 'A dedicated dropper batch in Gurgaon for repeater students, offering focused revision, extensive test series, and personalized guidance to boost JEE rank.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/courses' },
+          { '@type': 'ListItem', position: 3, name: 'IIT JEE Coaching & Dropper Course Gurgaon', item: 'https://www.goodmarksclasses.com/courses/iit' }
+        ]
+      }
+    }
+  },
+  neet: {
+    faqSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What does the NEET coaching programme in Gurgaon cover?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme provides focused preparation in Physics, Chemistry, and Biology. It combines conceptual learning, problem-solving practice, NCERT-focused Biology preparation, regular tests, and revision.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Who should join NEET coaching in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'The programme is suitable for students preparing for NEET UG who want structured guidance, regular practice, performance tracking, and a focused study plan.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How important is NCERT for NEET Biology preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'NCERT is an important part of NEET Biology preparation. The programme gives close attention to NCERT textbooks while helping students understand concepts instead of relying only on memorization.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How are Physics and Chemistry taught for NEET?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Physics and Chemistry are taught through a combination of theory and problem-solving. Students practice numerical questions and learn step-by-step approaches for different question types.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the NEET programme include regular tests?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Students take regular tests based on the current NEET exam pattern. These tests help evaluate preparation and identify topics that require additional practice.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How is student performance tracked during NEET preparation?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Student performance is monitored through tests and regular assessments. The results help identify individual strengths and learning gaps so students can adjust their preparation accordingly.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Are study plans tailored to individual students?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Study plans can be tailored around a student\'s strengths and gaps. This helps students focus more time on topics that require additional attention.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is this programme suitable for NEET droppers in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. The programme can support students preparing for another NEET attempt through structured revision, regular testing, performance tracking, and focused preparation.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What is a NEET dropper course in Gurgaon?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'A NEET dropper course is a dedicated preparation programme for students who have completed Class XII and are preparing for another NEET attempt. It generally focuses on concept revision, extensive practice, mock tests, performance analysis, and exam strategy.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Does the programme include revision before NEET?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes. Dedicated revision sessions are conducted closer to the examination to help students consolidate important concepts, review their preparation, and improve confidence before NEET.'
+          }
+        }
+      ]
+    },
+    webPageSchema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://www.goodmarksclasses.com/courses/neet',
+      url: 'https://www.goodmarksclasses.com/courses/neet',
+      name: 'Best NEET Coaching in Gurgaon | Dropper Batch Available | GoodMarks Classes',
+      description: 'Searching for the best NEET coaching in Gurgaon? GoodMarks Classes offers expert-led NEET preparation with regular and dropper batches, full syllabus coverage, and mock tests designed for NEET success.',
+      inLanguage: 'en-IN',
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://www.goodmarksclasses.com/#website',
+        url: 'https://www.goodmarksclasses.com/',
+        name: 'GoodMarks Classes'
+      },
+      about: [
+        {
+          '@type': 'Course',
+          name: 'NEET Regular Coaching',
+          description: 'Expert-led classroom coaching for NEET aspirants in Gurgaon, covering the full Biology, Chemistry, and Physics syllabus with regular mock tests.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        },
+        {
+          '@type': 'Course',
+          name: 'NEET Dropper Course',
+          description: 'A dedicated dropper batch in Gurgaon for repeater students, offering focused revision, extensive test series, and personalized guidance for NEET success.',
+          provider: {
+            '@type': 'EducationalOrganization',
+            name: 'GoodMarks Classes',
+            url: 'https://www.goodmarksclasses.com/',
+            areaServed: 'Gurgaon'
+          }
+        }
+      ],
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: 'https://www.goodmarksclasses.com/courses' },
+          { '@type': 'ListItem', position: 3, name: 'NEET Coaching & Dropper Course Gurgaon', item: 'https://www.goodmarksclasses.com/courses/neet' }
+        ]
+      }
+    }
+  }
+};
+
+const streamFaq = streamFaqSchemas[stream] || null;
 ---
 <BaseLayout title={streamMeta?.title || 'Courses'} description={streamMeta?.description || ''}>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  {streamFaq && <script type="application/ld+json" set:html={JSON.stringify(streamFaq.faqSchema)} />}
+  {streamFaq && <script type="application/ld+json" set:html={JSON.stringify(streamFaq.webPageSchema)} />}
   <Courses stream={stream} client:load />
 </BaseLayout>

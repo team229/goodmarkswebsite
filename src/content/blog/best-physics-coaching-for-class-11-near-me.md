@@ -11,15 +11,15 @@ metaDescription: Looking for expert physics coaching for Class 11 near you? Good
 category: Class 11 Physics
 ---
 
-<p>Class 11 Physics hits differently than anything students have dealt with before. That's not an exaggeration — it's one of the most consistent things students say when they walk into coaching for the first time. Kinematics, Laws of Motion, Rotational Dynamics, Thermodynamics — these aren't just harder versions of Class 10 topics. They're a different kind of thinking altogether. More abstract, more mathematical, and far less forgiving when the foundation isn't solid.</p><br />
+<p><a href="/subject/physics">Class 11 Physics</a> hits differently than anything students have dealt with before. That's not an exaggeration — it's one of the most consistent things students say when they walk into coaching for the first time. Kinematics, Laws of Motion, Rotational Dynamics, Thermodynamics — these aren't just harder versions of Class 10 topics. They're a different kind of thinking altogether. More abstract, more mathematical, and far less forgiving when the foundation isn't solid.</p><br />
 
-<p>If you've been searching for physics tutor for class 11 CBSE Gurgaon, or specifically CBSE physics tuition that actually explains things rather than just covering the syllabus and moving on — here's what Good Marks Classes offers, and why students here tend to stick around.</p><br />
+<p>If you've been searching for <a href="/subject/physics/">physics tutor for class 11 CBSE Gurgaon</a>, or specifically CBSE physics tuition that actually explains things rather than just covering the syllabus and moving on — here's what Good Marks Classes offers, and why students here tend to stick around.</p><br />
 
 <h2><strong>Why Class 11 Is the Year That Matters Most</strong></h2><br />
 
 <p>Students and parents sometimes treat Class 11 as the "practice year" before the boards. That's a costly misconception.</p><br />
 
-<p>Everything taught in Class 11 Physics — the mechanics, the energy concepts, the wave properties — comes back in Class 12, in board exams, and in JEE and NEET. A student who gets through Class 11 without really understanding Newton's Laws will spend Class 12 constantly backtracking. A student who genuinely understood them in Class 11 finds Class 12 surprisingly manageable by comparison.</p><br />
+<p>Everything taught in Class 11 Physics — the mechanics, the energy concepts, the wave properties — comes back in Class 12, in board exams, and in <a href="/courses/iit">JEE</a> and <a href="/courses/neet">NEET</a>. A student who gets through Class 11 without really understanding Newton's Laws will spend Class 12 constantly backtracking. A student who genuinely understood them in Class 11 finds Class 12 surprisingly manageable by comparison.</p><br />
 
 <p>This is why coaching that prioritises conceptual clarity over speed matters at this stage. Moving fast through a chapter students don't understand isn't teaching — it's covering.</p><br />
 

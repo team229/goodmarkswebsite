@@ -14,23 +14,23 @@ metaDescription: Looking for the best physics tuition classes in Gurgaon? Good M
 
 <p>Which is fine. But the students who do best are usually the ones who came in before the wheels fully came off, not after.</p><br />
 
-<p>If you're already searching for physics tuition classes in Gurgaon, you're probably somewhere in that zone — things aren't going badly enough to panic, but they're not going well enough to feel confident either. So let's talk about what actually matters when you're choosing where to go.</p><br />
+<p>If you're already searching for <a href="/subject/physics/">physics tuition classes in Gurgaon</a>, you're probably somewhere in that zone — things aren't going badly enough to panic, but they're not going well enough to feel confident either. So let's talk about what actually matters when you're choosing where to go.</p><br />
 
 <h2><strong>The Physics Problem Isn't What Most People Think It Is</strong></h2><br />
 
 <p>Students — and honestly, some parents — tend to assume that struggling with physics means the student isn't smart enough or isn't trying hard enough. Neither of those is usually the issue.</p><br />
 
-<p>Physics at the Class 11 and 12 level, and especially for JEE and NEET, demands something school teaching rarely builds: the ability to look at an unfamiliar situation and figure out which concept applies, then apply it correctly under time pressure. That's not a knowledge problem. It's a thinking problem. And it's built through a specific kind of practice that most students aren't doing on their own.</p><br />
+<p>Physics at the <a href="/courses/cbse">Class 11 and 12</a> level, and especially for <a href="/courses/iit">JEE</a> and <a href="/courses/neet">NEET</a>, demands something school teaching rarely builds: the ability to look at an unfamiliar situation and figure out which concept applies, then apply it correctly under time pressure. That's not a knowledge problem. It's a thinking problem. And it's built through a specific kind of practice that most students aren't doing on their own.</p><br />
 
 <p>Rote memorisation of formulas without understanding what they represent produces students who can solve the exact problems they've seen and freeze on the ones they haven't. That's the pattern. Breaking it requires a teacher who starts with the concept before ever putting a formula on the board — and enough practice problems that the thinking eventually becomes instinct.</p><br />
 
 <h2><strong>What Good Marks Classes Actually Does Differently</strong></h2><br />
 
-<p>The institute covers the full range — Class 9 through Class 12, plus JEE and NEET preparation — but what students consistently mention isn't the breadth. It's the pace and the attention.</p><br />
+<p>The institute covers the full range — <a href="/course/2-year-regular-class-9">Class 9</a> through <a href="/course/1-year-regular-12">Class 12</a>, plus <a href="/courses/iit">JEE</a> and <a href="/courses/neet">NEET</a> preparation — but what students consistently mention isn't the breadth. It's the pace and the attention.</p><br />
 
 <p>Small batches mean teachers actually know where each student is. Not in a vague general sense, but specifically — which student got projectile motion but is shaky on circular motion, which one can do the numerical but can't write the derivation cleanly. That kind of tracking is impossible in a class of 50. In a small batch, it's just what teaching looks like.</p><br />
 
-<p>The doubt sessions here are scheduled, not improvised. There's a meaningful difference between "you can always come find me" and having a dedicated slot where students know they can bring the thing they've been confused about for three days without feeling like they're holding anyone up. Students who are shy — and a lot of Class 11 and 12 students are genuinely shy about asking questions — use those sessions in ways they'd never flag a confusion mid-lecture.</p><br />
+<p>The <a href="/doubt-sessions">doubt sessions</a> here are scheduled, not improvised. There's a meaningful difference between "you can always come find me" and having a dedicated slot where students know they can bring the thing they've been confused about for three days without feeling like they're holding anyone up. Students who are shy — and a lot of Class 11 and 12 students are genuinely shy about asking questions — use those sessions in ways they'd never flag a confusion mid-lecture.</p><br />
 
 <p>Testing happens chapter by chapter, right after each topic is done. Then cumulatively every month. Then full mocks as the exam approaches. The structure isn't arbitrary — testing shortly after learning is one of the most consistently supported methods for actually retaining content. Students who get tested weekly on fresh chapters remember those chapters months later. Students who only revise before the exam are mostly re-learning, not recalling.</p><br />
 
@@ -66,7 +66,7 @@ metaDescription: Looking for the best physics tuition classes in Gurgaon? Good M
 
 <h2><strong>Getting Started</strong></h2><br />
 
-<p>If you're looking for physics tuition classes in Gurgaon for boards, JEE, or NEET, visit Good Marks Classes in person. Book a free demo class — attend an actual session, not just a centre tour — before committing. Talk to students who are currently enrolled if you get the chance.</p><br />
+<p>If you're looking for physics tuition classes in Gurgaon for boards, <a href="/courses/iit">JEE</a>, or <a href="/courses/neet">NEET</a>, visit <a href="/about">Good Marks Classes</a> in person. Book a free demo class — attend an actual session, not just a centre tour — before committing. Talk to students who are currently enrolled if you get the chance.</p><br />
 
 <p>The programme is open to students across the full range of starting points, from students who are already reasonably confident in physics and want to sharpen for competitive exams, to students who feel like the subject has never made sense to them. The teaching approach adapts to where students actually are, not where they're expected to be by this point in the year.</p><br />
 
