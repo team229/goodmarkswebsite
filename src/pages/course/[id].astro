@@ -23,8 +23,28 @@ for (const category of Object.values(mod.coursesData)) {
   if (found) { course = found; break; }
 }
 
+const seoOverrides: Record<string, { title: string; description: string }> = {
+  '1-year-regular-12': {
+    title: '1 Year JEE Coaching in Gurgaon | GoodMarks Classes',
+    description: 'Looking for focused 1 year JEE coaching in Gurgaon? GoodMarks Classes offers structured classroom programs, expert faculty, and proven results to help you crack IIT JEE in one year.'
+  },
+  '1-year-regular-12-neet': {
+    title: '1 Year NEET Coaching in Gurgaon | GoodMarks Classes',
+    description: 'Prepare for NEET in one year with GoodMarks Classes in Gurgaon. Our intensive 1 year NEET coaching program covers Biology, Chemistry, and Physics with dedicated mentorship and regular mock tests.'
+  },
+  '2-year-integrated-regular': {
+    title: '2 Year IIT JEE Coaching Program in Gurgaon | GoodMarks Classes',
+    description: 'Build a strong foundation with our 2 year IIT JEE program in Gurgaon. GoodMarks Classes offers comprehensive study plans, experienced faculty, and consistent practice to maximize your JEE score.'
+  },
+  '2-year-integrated-regular-neet': {
+    title: '2 Year NEET Coaching in Gurgaon | GoodMarks Classes',
+    description: 'Get a head start with our 2 year NEET coaching program in Gurgaon. GoodMarks Classes provides in-depth subject coverage, NCERT-based teaching, and continuous assessment to help you qualify NEET with confidence.'
+  }
+};
+
 function seoTitle(c: any): string {
   if (!c) return 'Course Details | GoodMarks Classes';
+  if (seoOverrides[c.id]) return seoOverrides[c.id].title;
   const headings: Record<string, string> = {
     'cbse-tuition-class-8': 'Class 8 CBSE Tuition in Gurgaon | Weekend Classes | GoodMarks Classes',
     'cbse-tuition-class-9': 'Class 9 CBSE Tuition in Gurgaon | More GoodMarks Classes',
@@ -40,6 +60,7 @@ function seoTitle(c: any): string {
 
 function seoDesc(c: any): string {
   if (!c) return 'View course details, schedule, and features for this program at GoodMarks Classes in Gurgaon.';
+  if (seoOverrides[c.id]) return seoOverrides[c.id].description;
   const short = (c.course?.subject || c.details?.subjects || 'Physics, Chemistry & Maths').slice(0, 120);
   return `${c.title} at GoodMarks Classes in Gurgaon — ${c.details?.schedule || ''} Learn more about the schedule, subjects, features and how to enrol.`;
 }

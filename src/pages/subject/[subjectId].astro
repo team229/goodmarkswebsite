@@ -9,10 +9,10 @@ export async function getStaticPaths() {
 
 const { subjectId } = Astro.params;
 const meta: Record<string, { title: string; description: string }> = {
-  biology: { title: 'Biology Coaching Classes for NEET & Foundation | Good Marks Classes', description: 'Explore Biology Coaching Classes at Good Marks Classes for NEET Class 12th Passout and Foundation batches for Class 9 & 10. Offline and online options available.' },
-  chemistry: { title: 'Chemistry Coaching Classes for IIT-JEE, NEET & Foundation | Good Marks Classes', description: 'Explore Chemistry Coaching Classes at Good Marks Classes for IIT-JEE, NEET, and Foundation batches from Class 9 to 12th Passout. Offline and online options available.' },
-  mathematics: { title: 'Mathematics Coaching Classes for IIT-JEE & Pre-Foundation | Good Marks Classes', description: 'Explore Mathematics Coaching Classes at Good Marks Classes for IIT-JEE batches from Class 11 to 12th Passout, plus Pre-Foundation programmes for Class 7 & 8. Offline and online options available.' },
-  physics: { title: 'Physics Coaching Classes for IIT-JEE, NEET & Foundation | Good Marks Classes', description: 'Explore Physics Coaching Classes at Good Marks Classes for IIT-JEE, NEET, and Foundation batches from Class 9 to 12th Passout. Offline and online options available.' }
+  biology: { title: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram, including near Sohna Road.' },
+  chemistry: { title: 'Chemistry Tuition for Class 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Get expert chemistry coaching in Gurgaon for Class 11 and 12 board exams. GoodMarks Classes offers CBSE-aligned chemistry tuition near Sector 85 and across Gurugram with concept-focused and exam-ready teaching.' },
+  mathematics: { title: 'Maths Coaching for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Struggling with maths? GoodMarks Classes offers CBSE and ICSE maths tuition in Gurgaon for Class 10, 11, and 12. Our patient, concept-first approach is especially effective for students who need extra support.' },
+  physics: { title: 'Physics Tuition for Class 9, 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Find the best physics tutor in Gurgaon for CBSE board exams and competitive prep. GoodMarks Classes provides quality physics tuition for Class 9 to 12 students across Gurugram, including Sector 85, with experienced and dedicated teachers.' }
 };
 
 const subjectMeta = meta[subjectId];
@@ -433,7 +433,7 @@ const subjectFaqSchemas: Record<string, any> = {
       '@id': 'https://www.goodmarksclasses.com/subject/biology',
       url: 'https://www.goodmarksclasses.com/subject/biology',
       name: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes',
-      description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram.',
+      description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram, including near Sohna Road.',
       inLanguage: 'en-IN',
       isPartOf: {
         '@type': 'WebSite',

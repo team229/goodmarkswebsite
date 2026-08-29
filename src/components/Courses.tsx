@@ -20,6 +20,33 @@ import {
 
 import { courseTabs, coursesData, streams } from '../data/courses';
 
+const streamSeo: Record<string, { title: string; description: string }> = {
+  iit: {
+    title: 'Best IIT JEE Coaching in Gurgaon | Dropper Batch Available | GoodMarks Classes',
+    description: 'Join the best IIT JEE coaching institute in Gurgaon. GoodMarks Classes offers regular batches and a dedicated JEE dropper course with focused revision, test series, and personalized guidance to boost your rank.'
+  },
+  neet: {
+    title: 'Best NEET Coaching in Gurgaon | Dropper Batch Available | GoodMarks Classes',
+    description: 'Searching for the best NEET coaching in Gurgaon? GoodMarks Classes offers expert-led NEET preparation with regular and dropper batches, full syllabus coverage, and mock tests designed for NEET success.'
+  },
+  cbse: {
+    title: 'Best CBSE Tuition in Gurgaon for Classes 8 to 12 | GoodMarks Classes',
+    description: 'CBSE tuition in Gurgaon for Classes 8 to 12 at Good Marks Classes — weekend & weekday batches, NCERT-first teaching, olympiad & NTSE preparation, worksheet tests and subjective writing practice. Book a free demo class.'
+  },
+  foundation: {
+    title: 'IIT JEE & NEET Foundation Course in Gurgaon | GoodMarks Classes',
+    description: 'Prepare early for IIT JEE and NEET with our foundation course in Gurgaon. GoodMarks Classes offers expert coaching in Physics, Chemistry, Maths, and Biology for Class 9 and 10 students.'
+  },
+  prefoundation: {
+    title: 'Pre-Foundation Course in Gurgaon | Build Early, Rank Higher | GoodMarks Classes',
+    description: 'Give your child the competitive edge from Class 8 itself. Our pre-foundation program in Gurgaon builds the concepts that top JEE & NEET rankers swear by. Book a free counselling session today!'
+  },
+  physics: {
+    title: 'Physics Classes by Sunil Gola Sir in Gurgaon | GoodMarks Classes',
+    description: 'Learn Physics from Sunil Gola Sir in Gurgaon. Focused IIT JEE and NEET Physics coaching with concept-first teaching, regular tests, and personalised doubt-clearing.'
+  }
+};
+
 export default function Courses({ stream }: { stream?: string }) {
   
   const initialStream = streams.find(s => s.id === stream) ? (stream as string) : 'iit';
@@ -40,12 +67,34 @@ export default function Courses({ stream }: { stream?: string }) {
     }
   }, [stream, activeTab]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const queryStream = new URLSearchParams(window.location.search).get('stream');
+    const seo = queryStream ? streamSeo[queryStream] : undefined;
+    if (!seo) return;
+    const url = `https://www.goodmarksclasses.com/courses/${queryStream}`;
+    document.title = seo.title;
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector<HTMLMetaElement>(selector);
+      if (el) el.setAttribute(attr, value);
+    };
+    setMeta('meta[name="description"]', 'content', seo.description);
+    setMeta('meta[property="og:title"]', 'content', seo.title);
+    setMeta('meta[property="og:description"]', 'content', seo.description);
+    setMeta('meta[property="og:url"]', 'content', url);
+    setMeta('meta[name="twitter:title"]', 'content', seo.title);
+    setMeta('meta[name="twitter:description"]', 'content', seo.description);
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', url);
+  }, []);
+
 
   const streamHeadings: Record<string, string> = {
     iit: 'IIT JEE Coaching in Gurgaon',
     neet: 'NEET Coaching in Gurgaon',
     cbse: 'CBSE Tuitions in Gurgaon for Classes 8 to 12',
-    physics: 'Physics Classes by Sunil Gola Sir in Gurgaon'
+    physics: 'Physics Classes by Sunil Gola Sir in Gurgaon',
+    foundation: 'IIT JEE & NEET Foundation Courses in Gurgaon',
+    prefoundation: 'Pre-Foundation Courses in Gurgaon for Class 8'
   };
 
   const handleStreamChange = (streamId: string) => {
