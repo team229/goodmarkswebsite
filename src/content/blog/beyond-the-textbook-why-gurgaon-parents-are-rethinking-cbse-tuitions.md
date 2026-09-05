@@ -1,7 +1,7 @@
 ---
 title: "Beyond the Textbook: Why Gurgaon Parents Are Rethinking CBSE Tuitions in 2026"
 excerpt: "Scroll through any parent WhatsApp group in Gurgaon during exam season and the same question resurfaces every few weeks: which tuition should I put my child into? It used to be a casual decision — ask a neighbor, pick whoever is closest. That has changed."
-date: "2026-07-30"
+date: "2026-08-10"
 image: /images/blog/beyond-the-textbook-cbse-tuitions-2026.jpg
 metaTitle: "Beyond the Textbook: Why Gurgaon Parents Are Rethinking CBSE Tuitions"
 metaDescription: "Why Gurgaon parents are rethinking CBSE tuitions in 2026. Good Marks Classes offers integrated CBSE-JEE-NEET coaching from Class 6 to 12 with offline, online, hybrid and home tuition options."
@@ -12,7 +12,7 @@ category: CBSE Tuition
 
 <p>But results don't come from hours logged in a classroom. They come from who's actually teaching, how the material is sequenced, and whether the coaching is preparing a child for what's three years away, not just next month's unit test.</p><br />
 
-<p>That's the gap Good Marks Classes has tried to close. Run by Sunil Gola Sir, an engineering graduate from Delhi Technological University, the institute is built around a fairly simple premise: CBSE coaching shouldn't stop at the board exam. It should be quietly setting a student up for IIT JEE and NEET the whole time, so there's no last-minute scramble when Class 11 arrives. Which is exactly why families who've looked beyond the usual <a href="/courses/cbse/">CBSE coaching in Gurgaon</a> options often find their way here.</p><br />
+<p>That's the gap <a href="/">Good Marks Classes</a> has tried to close. Run by Sunil Gola Sir, an engineering graduate from Delhi Technological University, the institute is built around a fairly simple premise: CBSE coaching shouldn't stop at the board exam. It should be quietly setting a student up for <a href="/courses/iit">IIT JEE</a> and <a href="/courses/neet">NEET</a> the whole time, so there's no last-minute scramble when Class 11 arrives. Which is exactly why families who've looked beyond the usual <a href="/courses/cbse/">CBSE coaching in Gurgaon</a> options often find their way here.</p><br />
 
 <h2><strong>The Problem with How Most Tuition Is Structured</strong></h2><br />
 
