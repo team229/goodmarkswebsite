@@ -154,7 +154,7 @@ export default function Home() {
                   </a>
                 </p>
                 <p className="text-sm text-slate-500 max-w-xl">
-                  Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning.
+                  Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning. Students can start with <a href="/courses/iit" className="text-primary-700 underline hover:text-primary-800 transition-colors">IIT JEE coaching in Gurgaon</a> or <a href="/courses/neet" className="text-primary-700 underline hover:text-primary-800 transition-colors">NEET coaching in Gurgaon</a> and get placed in the right batch.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">

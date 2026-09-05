@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Calendar, ChevronLeft, Share2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { generateBlogSchema } from '../lib/blogSchema';
+import { injectLinks } from '../lib/internalLinks';
+import { blogLinks } from '../data/blogLinks';
 
 export interface BlogPostData {
   slug: string;
@@ -15,6 +17,27 @@ export interface BlogPostData {
   category?: string;
 }
 
+function injectBlogLinks(body: string, slug: string): string {
+  const links = blogLinks[slug];
+  if (!links || links.length === 0) return body;
+
+  // Split content into HTML blocks on element boundaries.
+  const nodes = body.split(/<br\s*\/?>[\s]*/).map((s) => s.trim()).filter(Boolean);
+
+  // Identify prose paragraph blocks (<p>...</p>).
+  const paraIdx = nodes
+    .map((n, i) => i)
+    .filter((i) => /^<p>/u.test(nodes[i]) && /<\/p>$/u.test(nodes[i]));
+
+  const inner = paraIdx.map((i) => nodes[i].replace(/^<p>/, '').replace(/<\/p>$/, ''));
+  const injected = injectLinks(inner, links);
+  paraIdx.forEach((i, k) => {
+    nodes[i] = `<p>${injected[k]}</p>`;
+  });
+
+  return nodes.join('<br />');
+}
+
 export default function BlogPost({ post }: { post: BlogPostData }) {
   useEffect(() => {
     const script = document.createElement('script');
@@ -26,6 +49,8 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
       document.head.removeChild(script);
     };
   }, [post]);
+
+  const linkedContent = injectBlogLinks(post.content, post.slug);
 
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">
@@ -73,7 +98,7 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
                 prose-p:text-slate-600 prose-p:leading-relaxed
                 prose-li:text-slate-600
                 prose-strong:text-secondary-900"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{ __html: linkedContent }}
             />
 
             <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-6">

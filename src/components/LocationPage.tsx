@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
 import { locationPages } from '../data/locations';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import { injectLinks, InternalLink, renderContent } from '../lib/internalLinks';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
 interface LocationPageProps {
@@ -69,7 +70,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
   const isManesar = slug.includes('manesar');
   const area = isManesar ? 'Manesar' : 'Gurgaon';
 
-  const typeLinks: { kw: string; href: string }[] = isIITJEE ? [
+  const typeLinks: InternalLink[] = isIITJEE ? [
     { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
     { kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' },
     { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
@@ -155,25 +156,13 @@ export default function LocationPage({ slug }: LocationPageProps) {
                 {typeLabel} Coaching in {areaName}
               </h2>
               <div className="prose prose-slate max-w-none">
-                {paragraphs.map((para, i) => {
-                  if (para.length < 55) {
-                    return <h3 key={i} className="text-xl font-black text-secondary-900 mt-8 mb-3">{para.trim()}</h3>;
+                {injectLinks(paragraphs, typeLinks).map((para, i) => {
+                  if (para.length < 55 && !para.includes('<a ')) {
+                    return <h3 key={i} className="text-xl font-black text-secondary-900 mt-8 mb-3">{renderContent(para).trim()}</h3>;
                   }
-                  return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3">{para.trim()}</p>;
+                  return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3" dangerouslySetInnerHTML={{ __html: para }} />;
                 })}
               </div>
-              {typeLinks.length > 0 && (
-                <div className="mt-6 rounded-2xl border border-slate-100 bg-offwhite p-5">
-                  <p className="text-sm font-bold text-secondary-800 mb-3">Explore related {typeLabel} programmes:</p>
-                  <div className="flex flex-wrap gap-3">
-                    {typeLinks.map((link) => (
-                      <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-secondary-50 hover:border-secondary-300 transition-colors">
-                        {link.kw}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
                   <GraduationCap className="w-4 h-4" />

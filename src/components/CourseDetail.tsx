@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ChevronLeft, GraduationCap, Clock, Calendar, BookOpen, CheckCircle2, ChevronDown, Target } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { coursesData } from '../data/courses';
+import { injectLinks, InternalLink } from '../lib/internalLinks';
 
 export default function CourseDetail({ id }: { id?: string }) {
   
@@ -58,7 +59,7 @@ export default function CourseDetail({ id }: { id?: string }) {
 
   const [hoursLead, ...hoursRest] = (details?.hours || '').split('\n');
 
-  const relatedLinks: { kw: string; href: string }[] = [];
+  const relatedLinks: InternalLink[] = [];
   if (currentCourse.stream === 'iit') {
     relatedLinks.push({ kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' });
     relatedLinks.push({ kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' });
@@ -159,9 +160,15 @@ export default function CourseDetail({ id }: { id?: string }) {
               className="bg-offwhite rounded-3xl p-8 lg:p-10 shadow-sm border border-slate-100"
             >
               <h2 className="text-xl font-bold text-secondary-900 mb-4 border-b border-slate-100 pb-3">Programme Overview</h2>
-              <p className="text-slate-600 leading-relaxed mb-8 text-lg">
-                {details.description}
-              </p>
+              <div className="text-slate-600 leading-relaxed mb-8 text-lg space-y-4">
+                {(() => {
+                  const paras = (details.description || '').split(/\n\n/).filter(Boolean);
+                  const injected = injectLinks(paras, relatedLinks);
+                  return injected.map((para, i) => (
+                    <p key={i} dangerouslySetInnerHTML={{ __html: para.trim() }} />
+                  ));
+                })()}
+              </div>
               
               <motion.div
                 ref={idealForRef}
@@ -318,26 +325,6 @@ export default function CourseDetail({ id }: { id?: string }) {
                 ))}
               </div>
             </motion.div>
-
-            {/* Related Programmes */}
-            {relatedLinks.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.38 }}
-                className="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-slate-100"
-              >
-                <h2 className="text-xl font-bold text-secondary-900 mb-2 border-b border-slate-100 pb-3">Explore Related Programmes</h2>
-                <p className="text-slate-600 text-sm mb-4">Students exploring this batch often check these related options too:</p>
-                <div className="flex flex-wrap gap-3">
-                  {relatedLinks.map((link) => (
-                    <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-secondary-50 border border-secondary-100 text-secondary-800 text-sm font-bold hover:bg-secondary-100 hover:text-secondary-900 transition-colors">
-                      {link.kw}
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-            )}
 
             {/* CTA */}
             <motion.div 

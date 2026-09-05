@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import { ArrowRight, Atom, FlaskConical, Calculator, Dna, CheckCircle, Calendar, Users, GraduationCap, MapPin, ChevronDown } from 'lucide-react';
 import { coursesData } from '../data/courses';
+import { injectLinks, InternalLink } from '../lib/internalLinks';
 
 const subjectContent: Record<string, {
   name: string;
@@ -190,8 +191,8 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
     course.details && course.details.subjects && course.details.subjects.toLowerCase().includes(config.name.toLowerCase())
   );
 
-  const subjectLinks: { kw: string; href: string }[] = (() => {
-    const base: Record<string, { kw: string; href: string }[]> = {
+  const subjectLinks: InternalLink[] = (() => {
+    const base: Record<string, InternalLink[]> = {
       physics: [
         { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
         { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
@@ -242,23 +243,8 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
           <div className="lg:col-span-2 space-y-12">
             {/* Overview */}
             <section className="bg-offwhite rounded-3xl p-8 border border-slate-200 shadow-sm">
-              <p className="text-secondary-700 leading-relaxed text-lg">{config.overview}</p>
+              <p className="text-secondary-700 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: injectLinks([config.overview], subjectLinks)[0] }} />
             </section>
-
-            {/* Explore Related Programmes */}
-            {subjectLinks.length > 0 && (
-              <section className="bg-offwhite rounded-3xl p-8 border border-slate-200 shadow-sm">
-                <h2 className="text-2xl font-black text-secondary-900 mb-2">Explore Related Programmes</h2>
-                <p className="text-secondary-600 text-sm mb-4">Students preparing {config.name} also explore these coaching programmes at Good Marks Classes:</p>
-                <div className="flex flex-wrap gap-3">
-                  {subjectLinks.map((link) => (
-                    <a key={link.href + link.kw} href={link.href} className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl ${config.bgLight} ${config.textColor} border border-slate-200 text-sm font-bold hover:opacity-80 transition-opacity`}>
-                      {link.kw}
-                    </a>
-                  ))}
-                </div>
-              </section>
-            )}
 
             {/* Available Batches */}
             <section>

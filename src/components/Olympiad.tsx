@@ -25,7 +25,7 @@ export default function Olympiad() {
           </div>
           <h2 className="text-2xl font-bold text-secondary-700 mb-6">Science & Maths Olympiad Coaching</h2>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            Foster a deeper understanding of academic subjects early on. Our Olympiad preparation hones logical reasoning and advanced problem-solving capabilities in young learners, giving them a head start for future competitive exams.
+            Foster a deeper understanding of academic subjects early on. Our Olympiad preparation hones logical reasoning and advanced problem-solving capabilities in young learners, giving them a head start for future competitive exams — the same foundation our <a href="/courses/foundation" className="text-primary-600 font-semibold hover:underline">IIT JEE foundation course Gurgaon</a> and <a href="/courses/foundation" className="text-primary-600 font-semibold hover:underline">NEET foundation course Gurgaon</a> tracks are built on, with strong <a href="/subject/mathematics" className="text-primary-600 font-semibold hover:underline">maths coaching for class 10 in Gurgaon</a> for early comfort with numbers.
           </p>
         </div>
       </section>
@@ -51,14 +51,6 @@ export default function Olympiad() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-offwhite p-5">
-              <p className="text-sm font-bold text-secondary-800 mb-3">Explore related programmes:</p>
-              <div className="flex flex-wrap gap-3">
-                <a href="/courses/foundation" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">IIT JEE foundation course Gurgaon</a>
-                <a href="/courses/foundation" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">NEET foundation course Gurgaon</a>
-                <a href="/subject/mathematics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">maths coaching for class 10 in Gurgaon</a>
-              </div>
-            </div>
           </div>
           
           <div>

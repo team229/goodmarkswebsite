@@ -25,7 +25,7 @@ export default function DoubtSessions() {
           </div>
           <h2 className="text-2xl font-bold text-secondary-700 mb-6">Stuck at a Problem? Let Us Help.</h2>
           <p className="text-lg text-slate-600 max-w-3xl leading-relaxed">
-            Get your questions answered rapidly with our one-to-one doubt clearing sessions. Available both online and offline to ensure your learning never hits a roadblock.
+            Get your questions answered rapidly with our one-to-one doubt clearing sessions. Available both online and offline to ensure your learning never hits a roadblock. Whether you need <a href="/subject/physics" className="text-primary-600 font-semibold hover:underline">physics tuition for class 9 Gurgaon</a>, <a href="/subject/chemistry" className="text-primary-600 font-semibold hover:underline">chemistry tuition classes in Gurgaon</a>, or focused <a href="/subject/mathematics" className="text-primary-600 font-semibold hover:underline">maths tuition for weak students Gurgaon</a>, our experts plug the gaps fast.
           </p>
         </div>
       </section>
@@ -51,14 +51,6 @@ export default function DoubtSessions() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-2xl border border-slate-200 bg-offwhite p-5">
-              <p className="text-sm font-bold text-secondary-800 mb-3">Explore subject-wise coaching:</p>
-              <div className="flex flex-wrap gap-3">
-                <a href="/subject/physics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-amber-50 hover:border-amber-200 transition-colors">physics tuition for class 9 Gurgaon</a>
-                <a href="/subject/chemistry" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-amber-50 hover:border-amber-200 transition-colors">chemistry tuition classes in Gurgaon</a>
-                <a href="/subject/mathematics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-amber-50 hover:border-amber-200 transition-colors">maths tuition for weak students Gurgaon</a>
-              </div>
-            </div>
           </div>
           
           <div>

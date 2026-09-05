@@ -12,3 +12,6 @@ coverage/
 .env*
 !.env.example
 .playwright-mcp/
+.env*
+AGENTS.md
+CLAUDE.md

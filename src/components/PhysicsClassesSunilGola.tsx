@@ -21,7 +21,7 @@ export default function PhysicsClassesSunilGola() {
                 <h1 className="text-3xl md:text-5xl font-black">Physics Classes by Sunil Gola Sir</h1>
                 <p className="text-white/90 mt-3 max-w-3xl text-lg">
                   Learn Physics directly from Sunil Gola Sir (DTU) with concept-first teaching, exam-focused practice,
-                  and personal mentorship for CBSE, IIT JEE, and NEET aspirants.
+                  and personal mentorship for CBSE, IIT JEE, and NEET aspirants — widely regarded as the <a href="/subject/physics" className="underline font-semibold decoration-amber-200 underline-offset-2 hover:text-amber-100 transition-colors">best physics teacher in Gurgaon for class 12</a>, and a trusted <a href="/subject/physics" className="underline font-semibold decoration-amber-200 underline-offset-2 hover:text-amber-100 transition-colors">physics tutor Sector 85 Gurgaon</a> families rely on, with full support inside our <a href="/course/2-year-integrated-regular" className="underline font-semibold decoration-amber-200 underline-offset-2 hover:text-amber-100 transition-colors">2 year IIT JEE program Gurgaon</a>.
                 </p>
               </div>
             </div>
@@ -43,16 +43,6 @@ export default function PhysicsClassesSunilGola() {
             ))}
           </div>
 
-          <div className="px-8 md:px-10 pb-8 md:pb-10">
-            <div className="rounded-2xl border border-orange-100 bg-orange-50/40 p-5">
-              <p className="text-sm font-bold text-secondary-800 mb-3">Looking for focused subject-wise coaching? Explore:</p>
-              <div className="flex flex-wrap gap-3">
-                <a href="/subject/physics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-orange-200 text-orange-700 text-sm font-bold hover:bg-orange-100 transition-colors">best physics teacher in Gurgaon for class 12</a>
-                <a href="/subject/physics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-orange-200 text-orange-700 text-sm font-bold hover:bg-orange-100 transition-colors">physics tutor Sector 85 Gurgaon</a>
-                <a href="/course/2-year-integrated-regular" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-orange-200 text-orange-700 text-sm font-bold hover:bg-orange-100 transition-colors">2 year IIT JEE program Gurgaon</a>
-              </div>
-            </div>
-          </div>
         </div>
 
         <section>

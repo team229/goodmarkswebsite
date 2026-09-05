@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowLeft, GraduationCap, ChevronDown, Award, CheckCircle2, Phone, BookText, Users as Users2, Target, Clock, MessageCircleQuestion, Activity, Flame, Atom, FlaskConical, Calculator, Dna } from 'lucide-react';
 import { tuitionPages, TuitionPage } from '../data/tuition';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import { injectLinks, renderContent } from '../lib/internalLinks';
+import type { InternalLink } from '../lib/internalLinks';
 import TestimonialCarousel from './TestimonialCarousel';
 
 interface TuitionPageProps {
@@ -74,8 +76,8 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
   const subjectName = config.name;
   const location = page.location;
 
-  const tuitionLinks: { kw: string; href: string }[] = (() => {
-    const sets: Record<string, { kw: string; href: string }[]> = {
+  const tuitionLinks: InternalLink[] = (() => {
+    const sets: Record<string, InternalLink[]> = {
       physics: [
         { kw: 'physics tutor Sector 85 Gurgaon', href: '/subject/physics' },
         { kw: 'physics tuition for class 9 Gurgaon', href: '/subject/physics' },
@@ -99,6 +101,8 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
     };
     return sets[page.subject] || [];
   })();
+
+  const subjectLinks = tuitionLinks;
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -165,25 +169,13 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                 {subjectName} Tuition Classes in {location}
               </h2>
               <div className="prose prose-slate max-w-none">
-                {paragraphs.map((para, i) => {
-                  if (para.length < 55) {
-                    return <h3 key={i} className="text-xl font-black text-secondary-900 mt-8 mb-3">{para.trim()}</h3>;
+                {injectLinks(paragraphs, tuitionLinks).map((para, i) => {
+                  if (para.length < 55 && !para.includes('<a ')) {
+                    return <h3 key={i} className="text-xl font-black text-secondary-900 mt-8 mb-3">{renderContent(para).trim()}</h3>;
                   }
-                  return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3">{para.trim()}</p>;
+                  return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3" dangerouslySetInnerHTML={{ __html: para }} />;
                 })}
               </div>
-              {tuitionLinks.length > 0 && (
-                <div className="mt-6 rounded-2xl border border-slate-100 bg-offwhite p-5">
-                  <p className="text-sm font-bold text-secondary-800 mb-3">Explore related tuition & coaching programmes:</p>
-                  <div className="flex flex-wrap gap-3">
-                    {tuitionLinks.map((link) => (
-                      <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-50 border border-primary-100 text-primary-700 text-sm font-bold hover:bg-primary-100 transition-colors">
-                        {link.kw}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
                   <GraduationCap className="w-4 h-4" />
