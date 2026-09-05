@@ -66,7 +66,7 @@ export default function JoinFaculty() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-black text-secondary-900 mb-4">Requirements & Expectations</h2>
-              <p className="text-slate-600 text-lg mb-8">We expect our faculty to be deeply committed to student success, delivering clear concepts, and providing regular doubt support.</p>
+              <p className="text-slate-600 text-lg mb-8">We expect our faculty to be deeply committed to student success, delivering clear concepts, and providing regular doubt support. If you enjoy teaching, our <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a> and <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> batches are a great place to start.</p>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-4">

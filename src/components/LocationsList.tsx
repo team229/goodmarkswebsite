@@ -43,7 +43,7 @@ export default function LocationsList() {
           </div>
           <div>
             <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Our Locations</h1>
-            <p className="text-slate-500 mt-1">Find Good Marks Classes coaching near you</p>
+            <p className="text-slate-500 mt-1">Find Good Marks Classes coaching near you — pick between <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> or <a href="/courses" className="text-primary-600 font-semibold hover:underline">subject-wise tuition</a>.</p>
           </div>
         </div>
 

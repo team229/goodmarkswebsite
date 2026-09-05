@@ -50,6 +50,7 @@ export const blogLinks: Record<string, InternalLink[]> = {
   'one-year-neet-coaching-gurgaon-plan': [
     { kw: '1 year NEET coaching Gurgaon', href: '/course/1-year-regular-12-neet' },
     { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
+    { kw: 'NEET dropper course Gurgaon', href: '/courses/neet' },
   ],
   'best-physics-coaching-for-class-11-near-me': [
     { kw: 'physics tutor for class 11 CBSE Gurgaon', href: '/subject/physics' },

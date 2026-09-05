@@ -8,8 +8,11 @@ export default function ThankYou() {
           <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
         <h1 className="text-3xl font-bold text-secondary-900 mb-3">Thank You!</h1>
-        <p className="text-slate-500 mb-8">
+        <p className="text-slate-500 mb-3">
           Your enquiry has been submitted successfully. Our team will get back to you shortly.
+        </p>
+        <p className="text-slate-500 mb-8">
+          Meanwhile, you can explore our <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a> or <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> pages.
         </p>
         <a
           href="/"

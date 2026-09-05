@@ -29,7 +29,7 @@ export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
         >
           <h1 className="text-4xl md:text-5xl font-black text-secondary-900 mb-6">Our Blog</h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Insights, guides, and tips from our expert educators to help you excel in your academic journey.
+            Insights, guides, and tips from our expert educators to help you excel in your academic journey — from <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a> to <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a>.
           </p>
         </motion.div>
 

@@ -38,31 +38,21 @@ export function injectLinks(paragraphs: string[], links: InternalLink[], count: 
 
   const perSlot = Math.min(links.length, slots.length);
   for (let k = 0; k < perSlot; k++) {
-    const idx = slots[k];
-    const applied = applyLink(result, idx, links[k]);
-    // applyLink mutates result in place and returns true/false for appended-fallback marker
-    applied.flag = applied.flag;
+    applyLinkAt(result, slots[k], links[k]);
   }
 
   const fallback = links.slice(perSlot);
   if (fallback.length > 0 && slots.length > 0) {
     const last = slots[slots.length - 1];
-    const already: string[] = [];
+    const orphan: string[] = [];
     for (const link of fallback) {
-      if (containsKeyword(result.join('\n'), link.kw)) {
-        // Keyword exists naturally somewhere in the copy — wrap it there.
-        const where = findKeywordIndex(result, link.kw);
-        if (where !== -1) {
-          result[where] = wrapKeywordAt(result[where], link.kw, linkMarker(link));
-          continue;
-        }
-      }
-      already.push(linkMarker(link));
+      const placed = applyLinkIn(result, link);
+      if (!placed) orphan.push(linkMarker(link));
     }
-    if (already.length > 0) {
+    if (orphan.length > 0) {
       result[last] +=
         ' Students comparing options also come across ' +
-        already.join(', ') +
+        orphan.join(', ') +
         '.';
     }
   }
@@ -70,17 +60,61 @@ export function injectLinks(paragraphs: string[], links: InternalLink[], count: 
   return result.map((p) => renderContent(p));
 }
 
+/**
+ * Assign `link` to prose slot at `idx`: wraps the keyword at its first natural
+ * (non-anchored) occurrence in that slot; otherwise searches every paragraph;
+ * otherwise appends a fallback clause so the keyword is always anchored.
+ */
+function applyLinkAt(paragraphs: string[], idx: number, link: InternalLink): boolean {
+  if (alreadyAnchoredAnywhere(paragraphs, link)) return true;
+  const slot = tryWrap(paragraphs[idx], link);
+  if (slot !== null) {
+    paragraphs[idx] = slot;
+    return true;
+  }
+  if (applyLinkIn(paragraphs, link)) return true;
+  paragraphs[idx] += ` Students comparing options also come across ${linkMarker(link)}.`;
+  return true;
+}
+
+/** Wraps `link` at its first natural (non-anchored) occurrence across all paragraphs. */
+function applyLinkIn(paragraphs: string[], link: InternalLink): boolean {
+  for (let i = 0; i < paragraphs.length; i++) {
+    const wrapped = tryWrap(paragraphs[i], link);
+    if (wrapped !== null) {
+      paragraphs[i] = wrapped;
+      return true;
+    }
+  }
+  return false;
+}
+
+/** True if `link`'s keyword already appears inside an anchor anywhere in the copy. */
+function alreadyAnchoredAnywhere(paragraphs: string[], link: InternalLink): boolean {
+  const kwLower = link.kw.toLowerCase();
+  for (const para of paragraphs) {
+    let from = 0;
+    while (true) {
+      const idx = para.toLowerCase().indexOf(kwLower, from);
+      if (idx === -1) break;
+      if (insideAnchor(para, idx)) return true;
+      from = idx + kwLower.length;
+    }
+  }
+  return false;
+}
+
 /** Wraps `kw` at its first occurrence in `text` that is not already inside an anchor. */
-function wrapKeywordAt(text: string, kw: string, marker: string): string {
-  const kwLower = kw.toLowerCase();
+function tryWrap(text: string, link: InternalLink): string | null {
+  const kwLower = link.kw.toLowerCase();
   let from = 0;
   while (true) {
     const idx = text.toLowerCase().indexOf(kwLower, from);
-    if (idx === -1) return text;
+    if (idx === -1) return null;
     if (!insideAnchor(text, idx)) {
-      return text.slice(0, idx) + marker + text.slice(idx + kw.length);
+      return text.slice(0, idx) + linkMarker(link) + text.slice(idx + link.kw.length);
     }
-    from = idx + kw.length;
+    from = idx + link.kw.length;
   }
 }
 
@@ -90,37 +124,6 @@ function insideAnchor(text: string, pos: number): boolean {
   const opens = (before.match(/<a\s/gi) || []).length;
   const closes = (before.match(/<\/a>/gi) || []).length;
   return opens > closes;
-}
-
-function containsKeyword(text: string, kw: string): boolean {
-  return text.toLowerCase().indexOf(kw.toLowerCase()) !== -1;
-}
-
-/** Finds the paragraph index containing `kw`, preferring the earliest prose slot. */
-function findKeywordIndex(paragraphs: string[], kw: string): number {
-  for (let i = 0; i < paragraphs.length; i++) {
-    if (containsKeyword(paragraphs[i], kw)) return i;
-  }
-  return -1;
-}
-
-/**
- * Assign `link` to prose slot at `idx`. Wraps the keyword at its first natural
- * occurrence in that paragraph; if absent there but present elsewhere in the
- * content, wraps it at that natural spot; otherwise appends a fallback clause.
- */
-function applyLink(paragraphs: string[], idx: number, link: InternalLink): { flag: boolean } {
-  if (containsKeyword(paragraphs[idx], link.kw)) {
-    paragraphs[idx] = wrapKeywordAt(paragraphs[idx], link.kw, linkMarker(link));
-    return { flag: false };
-  }
-  const where = findKeywordIndex(paragraphs, link.kw);
-  if (where !== -1 && where !== idx) {
-    paragraphs[where] = wrapKeywordAt(paragraphs[where], link.kw, linkMarker(link));
-    return { flag: false };
-  }
-  paragraphs[idx] += ` Students comparing options also come across ${linkMarker(link)}.`;
-  return { flag: true };
 }
 
 function linkMarker(link: InternalLink): string {

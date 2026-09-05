@@ -20,7 +20,7 @@ category: Foundation Course
 
 <p>Kids who walk straight into Class 11 coaching without any groundwork? They struggle. Not because they're not smart — usually the opposite, actually — but because nobody ever taught them to think the JEE way. Their Class 8-10 years were spent on school exams, which (let's face it) test something completely different.</p><br />
 
-<p>A good <a href="/courses/foundation"><strong>IIT JEE foundation course Gurgaon</strong></a> parents choose tries to fix exactly this. It takes the same NCERT-level concepts kids already know and reframes them — application-first, not memorization-first. Slowly. Over years, not weeks. And that slow build is precisely why students who start early tend to outperform the ones who cram later (even the genuinely bright ones).</p><br />
+<p>A good <strong>IIT JEE foundation course Gurgaon</strong> parents choose tries to fix exactly this. It takes the same NCERT-level concepts kids already know and reframes them — application-first, not memorization-first. Slowly. Over years, not weeks. And that slow build is precisely why students who start early tend to outperform the ones who cram later (even the genuinely bright ones).</p><br />
 
 <h2><strong>What Separates a Good Program From a Mediocre One</strong></h2><br />
 
@@ -40,7 +40,7 @@ category: Foundation Course
 
 <p>Gurgaon's a bit of an outlier as cities go. Loads of working professionals, a good chunk of them from engineering or tech backgrounds themselves, and a school culture (CBSE, ICSE mostly) that's already fairly rigorous. Put those together and you get parents who spot the value of early coaching faster than most.</p><br />
 
-<p>Naturally, demand for a solid <a href="/courses/foundation"><strong>IIT JEE foundation course Gurgaon</strong></a> has shot up. Problem is, demand always attracts noise — institutes that promise the world but don't have the faculty depth or the track record to back it up. Worth checking: how transparent is the institute about actual results? Are the teachers experienced with JEE-pattern teaching, or just repurposed school tutors? Small details, but they matter enormously over three years.</p><br />
+<p>Naturally, demand for a solid <strong>IIT JEE foundation course Gurgaon</strong> has shot up. Problem is, demand always attracts noise — institutes that promise the world but don't have the faculty depth or the track record to back it up. Worth checking: how transparent is the institute about actual results? Are the teachers experienced with JEE-pattern teaching, or just repurposed school tutors? Small details, but they matter enormously over three years.</p><br />
 
 <h2><strong>How Good Marks Classes Handles Foundation-Level Teaching</strong></h2><br />
 
@@ -73,13 +73,13 @@ category: Foundation Course
   <li>Prefers steady, guided learning over last-minute panic-mode cramming</li>
 </ul><br />
 
-<p>Parents hunting for a dependable <a href="/courses/foundation"><strong>IIT JEE foundation course Gurgaon</strong></a> should remember: the point right now isn't exam success. That comes later, almost as a byproduct. The point is building the base that makes exam success possible in the first place.</p><br />
+<p>Parents hunting for a dependable <strong>IIT JEE foundation course Gurgaon</strong> should remember: the point right now isn't exam success. That comes later, almost as a byproduct. The point is building the base that makes exam success possible in the first place.</p><br />
 
 <h2><strong>Bottom Line: Why Good Marks Classes</strong></h2><br />
 
-<p>Coaching institutes are everywhere in Gurgaon these days — that part's not exactly a secret. What sets <a href="/"><strong>Good Marks Classes</strong></a>' <a href="/courses/foundation"><strong>IIT JEE foundation course Gurgaon</strong></a> batches apart isn't louder marketing; it's smaller batches, experienced faculty who actually understand JEE-pattern teaching, and a curriculum that gets updated as exam patterns shift (rather than staying frozen for a decade).</p><br />
+<p>Coaching institutes are everywhere in Gurgaon these days — that part's not exactly a secret. What sets <a href="/"><strong>Good Marks Classes</strong></a>' <strong>IIT JEE foundation course Gurgaon</strong> batches apart isn't louder marketing; it's smaller batches, experienced faculty who actually understand JEE-pattern teaching, and a curriculum that gets updated as exam patterns shift (rather than staying frozen for a decade).</p><br />
 
-<p>For families searching for a reliable <a href="/courses/foundation"><strong>IIT JEE foundation course Gurgaon</strong></a> with a genuine long-term track record — not just flashy hoardings — Good Marks Classes is worth a serious look.</p><br />
+<p>For families searching for a reliable <strong>IIT JEE foundation course Gurgaon</strong> with a genuine long-term track record — not just flashy hoardings — Good Marks Classes is worth a serious look.</p><br />
 
 <h2><strong>Frequently Asked Questions</strong></h2><br />
 
