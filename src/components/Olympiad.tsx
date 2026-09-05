@@ -51,6 +51,14 @@ export default function Olympiad() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-offwhite p-5">
+              <p className="text-sm font-bold text-secondary-800 mb-3">Explore related programmes:</p>
+              <div className="flex flex-wrap gap-3">
+                <a href="/courses/foundation" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">IIT JEE foundation course Gurgaon</a>
+                <a href="/courses/foundation" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">NEET foundation course Gurgaon</a>
+                <a href="/subject/mathematics" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-primary-50 hover:border-primary-200 transition-colors">maths coaching for class 10 in Gurgaon</a>
+              </div>
+            </div>
           </div>
           
           <div>

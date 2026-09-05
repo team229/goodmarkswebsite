@@ -114,7 +114,7 @@ export default function About() {
                   Education in the 21st century moves fast. Exam patterns change, syllabi get updated, and the competition gets tougher every year. At Good Marks Classes, we stay ahead of that — constantly refining how we teach so our students are never caught off guard on exam day.
                 </p>
                 <p>
-                  Our students come from all backgrounds. Our commitment to every single one of them is the same: strong fundamentals, honest guidance, and coaching that genuinely prepares them — not just for the next exam, but for everything that comes after.
+                  Our students come from all backgrounds. Some walk in looking for dedicated <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, others for focused <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a>, and younger students for our early-start <a href="/courses/foundation" className="text-primary-600 font-semibold hover:underline">IIT JEE foundation course Gurgaon</a>. Our commitment to every single one of them is the same: strong fundamentals, honest guidance, and coaching that genuinely prepares them — not just for the next exam, but for everything that comes after.
                 </p>
               </div>
             </div>

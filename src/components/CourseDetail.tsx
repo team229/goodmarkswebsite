@@ -58,6 +58,53 @@ export default function CourseDetail({ id }: { id?: string }) {
 
   const [hoursLead, ...hoursRest] = (details?.hours || '').split('\n');
 
+  const relatedLinks: { kw: string; href: string }[] = [];
+  if (currentCourse.stream === 'iit') {
+    relatedLinks.push({ kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' });
+    relatedLinks.push({ kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' });
+    if (currentCourse.id?.includes('extended')) {
+      relatedLinks.push({ kw: 'JEE dropper course Gurgaon', href: '/courses/iit' });
+    } else if (currentCourse.id?.includes('1-year')) {
+      relatedLinks.push({ kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' });
+    } else if (currentCourse.id?.includes('2-year')) {
+      relatedLinks.push({ kw: '1 year JEE coaching Gurgaon', href: '/course/1-year-regular-12' });
+    }
+  }
+  if (currentCourse.stream === 'neet') {
+    relatedLinks.push({ kw: 'NEET coaching in Gurgaon', href: '/courses/neet' });
+    relatedLinks.push({ kw: 'NEET foundation course Gurgaon', href: '/courses/foundation' });
+    if (currentCourse.id?.includes('extended')) {
+      relatedLinks.push({ kw: 'NEET dropper course Gurgaon', href: '/courses/neet' });
+    } else if (currentCourse.id?.includes('1-year')) {
+      relatedLinks.push({ kw: '2 year NEET coaching Gurgaon', href: '/course/2-year-integrated-regular-neet' });
+    } else if (currentCourse.id?.includes('2-year')) {
+      relatedLinks.push({ kw: '1 year NEET coaching Gurgaon', href: '/course/1-year-regular-12-neet' });
+    }
+  }
+  if (currentCourse.stream === 'cbse') {
+    if (currentCourse.id?.includes('class-10')) {
+      relatedLinks.push({ kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' });
+      relatedLinks.push({ kw: 'class 10 physics tuition Gurugram board exam', href: '/subject/physics' });
+      relatedLinks.push({ kw: 'biology tutor class 10 Gurgaon board exam', href: '/subject/biology' });
+    } else if (currentCourse.id?.includes('class-9')) {
+      relatedLinks.push({ kw: 'physics tuition for class 9 Gurgaon', href: '/subject/physics' });
+      relatedLinks.push({ kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' });
+      relatedLinks.push({ kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' });
+    } else if (currentCourse.id?.includes('class-8')) {
+      relatedLinks.push({ kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' });
+      relatedLinks.push({ kw: 'NEET foundation course Gurgaon', href: '/courses/foundation' });
+      relatedLinks.push({ kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' });
+    } else if (currentCourse.id?.includes('class-11')) {
+      relatedLinks.push({ kw: 'chemistry coaching for class 11 Gurgaon', href: '/subject/chemistry' });
+      relatedLinks.push({ kw: 'maths coaching for class 11 in Gurgaon', href: '/subject/mathematics' });
+      relatedLinks.push({ kw: 'physics tutor for class 11 CBSE Gurgaon', href: '/subject/physics' });
+    } else {
+      relatedLinks.push({ kw: 'CBSE chemistry tuition class 12 Gurgaon', href: '/subject/chemistry' });
+      relatedLinks.push({ kw: 'maths coaching for class 12 Gurgaon', href: '/subject/mathematics' });
+      relatedLinks.push({ kw: 'best physics teacher in Gurgaon for class 12', href: '/subject/physics' });
+    }
+  }
+
   return (
     <main className="pt-24 lg:pt-32 pb-20 bg-offwhite min-h-screen">
       <div className="max-w-4xl mx-auto px-6">
@@ -271,6 +318,26 @@ export default function CourseDetail({ id }: { id?: string }) {
                 ))}
               </div>
             </motion.div>
+
+            {/* Related Programmes */}
+            {relatedLinks.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.38 }}
+                className="bg-white rounded-3xl p-8 lg:p-10 shadow-sm border border-slate-100"
+              >
+                <h2 className="text-xl font-bold text-secondary-900 mb-2 border-b border-slate-100 pb-3">Explore Related Programmes</h2>
+                <p className="text-slate-600 text-sm mb-4">Students exploring this batch often check these related options too:</p>
+                <div className="flex flex-wrap gap-3">
+                  {relatedLinks.map((link) => (
+                    <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-secondary-50 border border-secondary-100 text-secondary-800 text-sm font-bold hover:bg-secondary-100 hover:text-secondary-900 transition-colors">
+                      {link.kw}
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
 
             {/* CTA */}
             <motion.div 

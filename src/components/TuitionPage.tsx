@@ -74,6 +74,32 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
   const subjectName = config.name;
   const location = page.location;
 
+  const tuitionLinks: { kw: string; href: string }[] = (() => {
+    const sets: Record<string, { kw: string; href: string }[]> = {
+      physics: [
+        { kw: 'physics tutor Sector 85 Gurgaon', href: '/subject/physics' },
+        { kw: 'physics tuition for class 9 Gurgaon', href: '/subject/physics' },
+        { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
+      ],
+      chemistry: [
+        { kw: 'chemistry tutor near gurgaon sector 85', href: '/subject/chemistry' },
+        { kw: 'chemistry tuition classes in Gurgaon', href: '/subject/chemistry' },
+        { kw: '1 year NEET coaching Gurgaon', href: '/course/1-year-regular-12-neet' },
+      ],
+      maths: [
+        { kw: 'ICSE maths tuition Gurgaon class 10', href: '/subject/mathematics' },
+        { kw: 'maths coaching for class 12 Gurgaon', href: '/subject/mathematics' },
+        { kw: '1 year JEE coaching Gurgaon', href: '/course/1-year-regular-12' },
+      ],
+      biology: [
+        { kw: 'biology tuition for class 12 Gurgaon', href: '/subject/biology' },
+        { kw: 'CBSE biology tuition class 12 Gurugram', href: '/subject/biology' },
+        { kw: 'biology coaching near Sohna Road Gurugram', href: '/subject/biology' },
+      ],
+    };
+    return sets[page.subject] || [];
+  })();
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -146,6 +172,18 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                   return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3">{para.trim()}</p>;
                 })}
               </div>
+              {tuitionLinks.length > 0 && (
+                <div className="mt-6 rounded-2xl border border-slate-100 bg-offwhite p-5">
+                  <p className="text-sm font-bold text-secondary-800 mb-3">Explore related tuition & coaching programmes:</p>
+                  <div className="flex flex-wrap gap-3">
+                    {tuitionLinks.map((link) => (
+                      <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary-50 border border-primary-100 text-primary-700 text-sm font-bold hover:bg-primary-100 transition-colors">
+                        {link.kw}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
                   <GraduationCap className="w-4 h-4" />

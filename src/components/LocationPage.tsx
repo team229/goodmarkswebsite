@@ -69,6 +69,20 @@ export default function LocationPage({ slug }: LocationPageProps) {
   const isManesar = slug.includes('manesar');
   const area = isManesar ? 'Manesar' : 'Gurgaon';
 
+  const typeLinks: { kw: string; href: string }[] = isIITJEE ? [
+    { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
+    { kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' },
+    { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
+  ] : isNEET ? [
+    { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
+    { kw: '2 year NEET coaching Gurgaon', href: '/course/2-year-integrated-regular-neet' },
+    { kw: 'NEET foundation course Gurgaon', href: '/courses/foundation' },
+  ] : [
+    { kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' },
+    { kw: 'physics tutor for class 11 CBSE Gurgaon', href: '/subject/physics' },
+    { kw: 'chemistry tuition for board exams Gurgaon', href: '/subject/chemistry' },
+  ];
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -148,6 +162,18 @@ export default function LocationPage({ slug }: LocationPageProps) {
                   return <p key={i} className="text-slate-600 leading-relaxed text-lg mb-3">{para.trim()}</p>;
                 })}
               </div>
+              {typeLinks.length > 0 && (
+                <div className="mt-6 rounded-2xl border border-slate-100 bg-offwhite p-5">
+                  <p className="text-sm font-bold text-secondary-800 mb-3">Explore related {typeLabel} programmes:</p>
+                  <div className="flex flex-wrap gap-3">
+                    {typeLinks.map((link) => (
+                      <a key={link.href + link.kw} href={link.href} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-secondary-50 hover:border-secondary-300 transition-colors">
+                        {link.kw}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="/courses" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary-500/20">
                   <GraduationCap className="w-4 h-4" />

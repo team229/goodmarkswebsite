@@ -52,6 +52,14 @@ export default function HomeTuition() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-offwhite p-5">
+              <p className="text-sm font-bold text-secondary-800 mb-3">Explore classroom programmes:</p>
+              <div className="flex flex-wrap gap-3">
+                <a href="/courses/iit" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-secondary-50 hover:border-secondary-300 transition-colors">IIT JEE coaching in Gurgaon</a>
+                <a href="/courses/neet" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-secondary-50 hover:border-secondary-300 transition-colors">NEET coaching in Gurgaon</a>
+                <a href="/course/1-year-regular-12" className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-secondary-800 text-sm font-bold hover:bg-secondary-50 hover:border-secondary-300 transition-colors">1 year JEE coaching Gurgaon</a>
+              </div>
+            </div>
           </div>
           
           <div>
