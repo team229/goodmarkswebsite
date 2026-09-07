@@ -1,36 +1,88 @@
+# robots.txt for https://www.goodmarksclasses.com
+# Standard crawlers: allow all
 User-agent: *
-
-Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
-
-Sitemap: https://www.goodmarksclasses.com/sitemap.xml
-
-User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
-Allow: /
+# Don't index the student login portal
+Disallow: /people/sign_in
 
-User-agent: Twitterbot
-Allow: /
+# ---- AI crawlers explicitly allowed ----
 
-User-agent: facebookexternalhit
-Allow: /
-
+# OpenAI
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
-User-agent: CCBot
-Disallow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 
-User-agent: Claude-Web
-Disallow: /
+# Google AI
+User-agent: Google-Extended
+Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
-Disallow: /
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl (used to train many AI models)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+
+# Diffbot / You.com
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.goodmarksclasses.com/sitemap.xml
+Sitemap: https://www.goodmarksclasses.com/sitemap.html
