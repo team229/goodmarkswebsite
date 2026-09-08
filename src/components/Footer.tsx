@@ -78,7 +78,7 @@ export default function Footer() {
           <h4 className="font-label-bold mb-4 text-white uppercase tracking-wider text-xs">Support</h4>
           <div className="flex flex-col gap-2.5 text-sm">
             <a className="hover:text-white transition-colors w-fit" href="#">Privacy Policy</a>
-            <a className="hover:text-white transition-colors w-fit" href="#">Contact</a>
+            <a className="hover:text-white transition-colors w-fit" href="/contact">Contact</a>
             <a className="hover:text-white transition-colors w-fit" href="#">Terms of Service</a>
           </div>
         </div>

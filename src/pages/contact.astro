@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/Contact';
+
+const siteUrl = 'https://www.goodmarksclasses.com';
+const url = `${siteUrl}/contact`;
+
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Good Marks Classes | Call 8800 8800 28 for Free Demo',
+  url,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Good Marks Classes',
+    url: siteUrl
+  },
+  mainEntity: {
+    '@type': ['EducationalOrganization', 'LocalBusiness'],
+    name: 'Good Marks Classes',
+    url: siteUrl,
+    telephone: '+918800880028',
+    email: 'info@goodmarksclasses.com',
+    logo: `${siteUrl}/good-marks-logo.png`,
+    image: `${siteUrl}/good-marks-logo.png`,
+    founder: {
+      '@type': 'Person',
+      name: 'Sunil Gola',
+      description: 'Founder, B.Tech, Delhi Technological University (DTU)'
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Gurgaon',
+      addressRegion: 'Haryana',
+      addressCountry: 'IN'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 28.39628499476872,
+      longitude: 76.9489722760682
+    },
+    hasMap: 'https://www.google.com/maps/search/?api=1&query=GOOD+MARKS+CLASSES+28.39628499476872,76.9489722760682',
+    areaServed: [
+      { '@type': 'Place', name: 'Gurgaon Sectors 78 to 99' },
+      { '@type': 'Place', name: 'Manesar Sectors 1 to 5' },
+      { '@type': 'Place', name: 'NSG Manesar' }
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+918800880028',
+      email: 'info@goodmarksclasses.com',
+      contactType: 'Customer Support',
+      availableLanguage: ['en', 'hi']
+    },
+    sameAs: [
+      'https://www.instagram.com/goodmarksclassesgurgaon/',
+      'https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ'
+    ]
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Contact Us',
+      item: url
+    }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How do I book a free demo class at Good Marks Classes Gurgaon?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The fastest way is to fill the enquiry form on the contact page, call us at 8800 8800 28, or send a WhatsApp message to 98680 94265. We offer a free trial period before you commit — including a 1 week free demo for full-time batches.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the contact number of Good Marks Classes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'You can reach the student support desk at 8800 8800 28 (calls) or 98680 94265 (WhatsApp). For written enquiries, email us at info@goodmarksclasses.com.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Where is Good Marks Classes located in Gurgaon?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Good Marks Classes is based in Sector 85, Gurugram (Haryana). We serve students across Gurgaon Sectors 78–99 and Manesar Sectors 1–5 + NSG Manesar.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'What are the batch timings for coaching classes?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Weekday batches run on Tuesday, Wednesday and Friday (evening), while weekend batches run on Saturday and Sunday, with Thursday reserved for doubts. Morning, evening and weekend slots are available.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer online classes or home tuition as well?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. We offer offline classes at our Gurgaon centre, live online batches (max 10 students), hybrid learning, and one-to-one home tuition in Gurgaon for CBSE Classes 8–12, IIT JEE, NEET and subject-wise support.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How quickly does the Good Marks team respond to enquiries?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Calls and WhatsApp messages are answered during batch hours (usually the same day). Form submissions are typically followed up within 24 working hours.'
+      }
+    }
+  ]
+};
+---
+<BaseLayout
+  title="Contact Good Marks Classes | Call 8800 8800 28 for Free Demo Class"
+  description="Contact Good Marks Classes in Gurgaon for IIT JEE, NEET-UG & CBSE tuition. Call 8800 8800 28, WhatsApp 98680 94265, email info@goodmarksclasses.com or book a free demo class online."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <Contact client:load />
+</BaseLayout>
