@@ -96,7 +96,7 @@ export default function Contact() {
             </ol>
           </nav>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-10 xl:gap-16 items-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-secondary font-label-bold text-xs uppercase tracking-widest shadow-sm mb-6">
                 <span className="relative flex h-2 w-2">
@@ -122,14 +122,14 @@ export default function Contact() {
                   <BadgeCheck className="w-4 h-4 text-green-600" /> 1 Week Free Demo
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href={PHONE_TEL} className="btn-gradient px-8 py-4 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
-                  <Phone className="w-5 h-5" /> Call {PHONE_DISPLAY}
+              <div className="flex flex-col sm:flex-row gap-3 lg:gap-2.5 xl:gap-4">
+                <a href={PHONE_TEL} className="btn-gradient px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl text-secondary-900 font-bold text-sm xl:text-base shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2 whitespace-nowrap">
+                  <Phone className="w-4 h-4 xl:w-5 xl:h-5" /> Call {PHONE_DISPLAY}
                 </a>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-green-500 hover:bg-green-600 text-white font-label-bold shadow-lg shadow-green-500/30 transition-all flex items-center justify-center gap-2">
-                  <MessageCircle className="w-5 h-5" /> WhatsApp Us
+                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm xl:text-base shadow-lg shadow-green-500/30 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                  <MessageCircle className="w-4 h-4 xl:w-5 xl:h-5" /> WhatsApp Us
                 </a>
-                <button onClick={scrollToForm} className="px-8 py-4 rounded-xl border border-secondary-200 text-secondary-900 font-label-bold hover:bg-secondary-50 transition-colors flex items-center justify-center gap-2">
+                <button onClick={scrollToForm} className="px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl border border-secondary-200 text-secondary-900 font-bold text-sm xl:text-base hover:bg-secondary-50 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
                   Send Enquiry <ArrowRight className="w-5 h-5" />
                 </button>
               </div>
@@ -419,10 +419,10 @@ export default function Contact() {
           <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Take the First Step?</h2>
           <p className="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">Join Good Marks Classes in Gurgaon and give your JEE, NEET or board prep the attention it deserves. Limited seats — start with a free demo today.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button onClick={scrollToForm} className="btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all">
+            <button onClick={scrollToForm} className="btn-gradient px-10 py-4 rounded-xl text-secondary-900 font-bold text-lg shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 transition-all whitespace-nowrap">
               Book Free Demo Class
             </button>
-            <a href={PHONE_TEL} className="px-10 py-4 rounded-xl border border-secondary-700 text-slate-300 font-bold text-lg hover:bg-secondary-800 transition-colors flex items-center justify-center gap-2">
+            <a href={PHONE_TEL} className="px-10 py-4 rounded-xl border border-secondary-700 text-slate-300 font-bold text-lg hover:bg-secondary-800 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
               <Phone className="w-5 h-5" /> {PHONE_DISPLAY}
             </a>
           </div>
