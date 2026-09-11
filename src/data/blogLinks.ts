@@ -113,6 +113,10 @@ export const blogLinks: Record<string, InternalLink[]> = {
     { kw: 'CBSE chemistry tuition class 12 Gurgaon', href: '/subject/chemistry' },
     { kw: 'CBSE biology tuition class 12 Gurugram', href: '/subject/biology' },
   ],
+  'neet-foundation-course-gurgaon-classes-7-10': [
+    { kw: 'NEET foundation course in Gurgaon', href: '/courses/neet' },
+    { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
+  ],
   'manesars-quiet-coaching-problem-why-board-prep-and-entrance-exam-prep-keep-getting-treated-as-two-different-jobs': [
     { kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' },
     { kw: 'CBSE chemistry tuition class 12 Gurgaon', href: '/subject/chemistry' },

@@ -17,6 +17,37 @@ export interface BlogPostData {
   category?: string;
 }
 
+function stripHtml(html: string): string {
+  return html
+    .replace(/<[^>]*>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .trim();
+}
+
+function parseFaqs(content: string): { q: string; a: string }[] {
+  const questions: string[] = [];
+  const answers: string[] = [];
+
+  const qRe = /class="faq-q">([^<]*)<\/span>/g;
+  const aRe = /class="faq-a[^"]*">[\s\S]*?<p>([\s\S]*?)<\/p>[\s\S]*?<\/details>/g;
+
+  let m;
+  while ((m = qRe.exec(content)) !== null) {
+    questions.push(stripHtml(m[1].replace(/^\d+\.\s*/, '')));
+  }
+  while ((m = aRe.exec(content)) !== null) {
+    answers.push(stripHtml(m[1]));
+  }
+
+  return questions
+    .filter((_, i) => i < answers.length)
+    .map((q, i) => ({ q, a: answers[i] }));
+}
+
 function injectBlogLinks(body: string, slug: string): string {
   const links = blogLinks[slug];
   if (!links || links.length === 0) return body;
@@ -39,6 +70,9 @@ function injectBlogLinks(body: string, slug: string): string {
 }
 
 export default function BlogPost({ post }: { post: BlogPostData }) {
+  const linkedContent = injectBlogLinks(post.content, post.slug);
+  const faqs = parseFaqs(linkedContent);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
@@ -50,10 +84,42 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
     };
   }, [post]);
 
-  const linkedContent = injectBlogLinks(post.content, post.slug);
+  useEffect(() => {
+    const root = document.getElementById('blog-faq-root');
+    if (!root) return;
+    const items = Array.from(root.querySelectorAll<HTMLDetailsElement>('details.faq-item'));
+    const onToggle = (e: Event) => {
+      const target = e.target as HTMLDetailsElement;
+      if (!target.open) return;
+      items.forEach((d) => {
+        if (d !== target && d.open) d.open = false;
+      });
+    };
+    items.forEach((d) => d.addEventListener('toggle', onToggle));
+    return () => items.forEach((d) => d.removeEventListener('toggle', onToggle));
+  }, []);
 
   return (
     <div className="pt-32 pb-20 bg-offwhite min-h-screen">
+      {faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: f.a,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <a
           href="/blogs"
@@ -93,6 +159,7 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
 
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
             <div
+              id="blog-faq-root"
               className="prose prose-lg prose-slate max-w-none
                 prose-headings:text-secondary-900 prose-headings:font-black
                 prose-p:text-slate-600 prose-p:leading-relaxed
