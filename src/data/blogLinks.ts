@@ -117,6 +117,9 @@ export const blogLinks: Record<string, InternalLink[]> = {
     { kw: 'NEET foundation course in Gurgaon', href: '/courses/neet' },
     { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
   ],
+  'maths-coaching-for-class-12-gurgaon': [
+    { kw: 'maths coaching for class 12 in Gurgaon', href: '/subject/mathematics' },
+  ],
   'manesars-quiet-coaching-problem-why-board-prep-and-entrance-exam-prep-keep-getting-treated-as-two-different-jobs': [
     { kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' },
     { kw: 'CBSE chemistry tuition class 12 Gurgaon', href: '/subject/chemistry' },
