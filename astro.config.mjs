@@ -27,4 +27,8 @@ export default defineConfig({
   },
   output: 'static',
   redirects,
+  server: {
+    host: true,
+    allowedHosts: ['.trycloudflare.com', 'web.clickboostmedia.com', '.clickboostmedia.com'],
+  },
 });
