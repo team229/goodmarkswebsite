@@ -99,6 +99,9 @@ export const blogLinks: Record<string, InternalLink[]> = {
     { kw: 'biology tutor class 10 Gurgaon board exam', href: '/subject/biology' },
     { kw: 'biology tuition for class 12 Gurgaon', href: '/subject/biology' },
   ],
+  'class-10-biology-tutor-gurgaon-practical-guide': [
+    { kw: 'biology coaching near Sohna Road Gurugram', href: '/subject/biology' },
+  ],
   'struggling-with-class-10-biology-before-boards': [
     { kw: 'biology tutor class 10 Gurgaon board exam', href: '/subject/biology' },
     { kw: 'CBSE biology tuition class 12 Gurugram', href: '/subject/biology' },
