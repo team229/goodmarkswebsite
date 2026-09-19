@@ -95,6 +95,9 @@ export const blogLinks: Record<string, InternalLink[]> = {
     { kw: 'maths tuition for weak students Gurgaon', href: '/subject/mathematics' },
     { kw: 'maths coaching for class 11 in Gurgaon', href: '/subject/mathematics' },
   ],
+  'maths-tuition-for-weak-students-gurgaon-practical-guide': [
+    { kw: 'maths tuition for weak students in Gurgaon', href: '/subject/mathematics' },
+  ],
   'biology-tutor-class-10-gurgaon-boards': [
     { kw: 'biology tutor class 10 Gurgaon board exam', href: '/subject/biology' },
     { kw: 'biology tuition for class 12 Gurgaon', href: '/subject/biology' },
