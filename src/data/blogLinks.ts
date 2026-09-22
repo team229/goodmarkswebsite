@@ -52,6 +52,14 @@ export const blogLinks: Record<string, InternalLink[]> = {
     { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
     { kw: 'NEET dropper course Gurgaon', href: '/courses/neet' },
   ],
+  'best-physics-teacher-in-gurgaon-for-class-12': [
+    { kw: 'best physics teacher in Gurgaon for class 12', href: '/subject/physics' },
+    { kw: 'board exams', href: '/courses/cbse' },
+  ],
+  'physics-tuition-for-class-9-gurgaon': [
+    { kw: 'physics tuition for class 9 Gurgaon', href: '/subject/physics' },
+    { kw: 'science olympiads', href: '/olympiad' },
+  ],
   'best-physics-coaching-for-class-11-near-me': [
     { kw: 'physics tutor for class 11 CBSE Gurgaon', href: '/subject/physics' },
     { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
