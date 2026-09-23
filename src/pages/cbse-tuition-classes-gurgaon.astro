@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CbseLanding from '../components/CbseLanding';
+
+const title = 'CBSE Tuition in Gurgaon | Subject Classes, IIT JEE & NEET Coaching | Good Marks Classes';
+const description = 'CBSE tuition in Gurgaon for Classes 8–12 with Physics, Chemistry, Maths and Biology classes, plus separate IIT JEE and NEET batches. Small groups, regular tests and a free 1-week demo in Sector 85. Call 8800 8800 28.';
+---
+<BaseLayout title={title} description={description}>
+  <CbseLanding client:load />
+</BaseLayout>

@@ -1,48 +1,79 @@
 # Good Marks Classes
 
-> Good Marks Classes is a coaching institute in Gurgaon and Manesar, Haryana, India, founded by Sunil Gola Sir (DTU alumnus). It offers IIT-JEE (Main & Advanced) coaching, NEET-UG coaching, and CBSE tuitions for Classes 8–12, plus subject-wise tuition, home tutoring, olympiad/CUET/NDA entrance prep, and doubt-clearing sessions — delivered offline, online, hybrid, and at students' homes. Batches are capped at 10 students online and 30 offline.
+> Good Marks Classes is a coaching institute in Gurgaon and Manesar, Haryana, offering CBSE tuition, subject classes, IIT-JEE and NEET-UG programmes, foundation coaching, home tuition, Olympiad and entrance-exam preparation, and doubt-clearing sessions.
 
-Phone: 8800 8800 28 / +91 98680 94265 (WhatsApp)
+## About
+
+Good Marks Classes presents small-group academic coaching led by Sunil Gola Sir. Its public programmes cover CBSE Classes 8–12, Physics, Chemistry, Mathematics and Biology, IIT-JEE, NEET-UG, foundation preparation, home tuition, Olympiad and entrance exams, and one-to-one doubt sessions. The site lists a Gurgaon centre and serves students from sectors 78–99 in Gurgaon and sectors 1–5 in Manesar.
+
+Contact: +91 8800 8800 28
 Email: info@goodmarksclasses.com
-Location: Gurgaon, Haryana, India (Sectors 78–99) and Manesar (Sectors 1–5, NSG Manesar)
-Founded: 2014
 
-## Primary pages
+## Important Pages
 
-- [Home](https://www.goodmarksclasses.com/): Overview of programs, past results, fee comparison, testimonials, and FAQ.
-- [About Us](https://www.goodmarksclasses.com/about): Background on the institute and founder Sunil Gola Sir.
-- [All Courses](https://www.goodmarksclasses.com/courses): Full listing of IIT-JEE, NEET, CBSE, and Physics programs.
-- [Locations](https://www.goodmarksclasses.com/locations): Directory of all Gurgaon/Manesar sector-wise coaching pages.
-- [Blog](https://www.goodmarksclasses.com/blogs): Articles on exam prep strategy, subject-specific study tips, and local coaching guidance.
-- [Join as Faculty](https://www.goodmarksclasses.com/join-faculty): Careers page for prospective teachers.
+- [Home](https://www.goodmarksclasses.com/)
+- [About Good Marks Classes](https://www.goodmarksclasses.com/about/)
+- [All Courses](https://www.goodmarksclasses.com/courses/)
+- [CBSE Tuition in Gurgaon](https://www.goodmarksclasses.com/cbse-tuition-classes-gurgaon/)
+- [Contact](https://www.goodmarksclasses.com/contact/)
+- [Join as Faculty](https://www.goodmarksclasses.com/join-faculty/)
 
-## Programs
+## Programmes
 
-- [IIT-JEE Coaching](https://www.goodmarksclasses.com/courses/iit): 2-year and 1-year regular programmes for JEE Main & Advanced, BITSAT, KVPY.
-- [NEET-UG Coaching](https://www.goodmarksclasses.com/courses/neet): 2-year and 1-year regular programmes for NEET & AIIMS.
-- [CBSE Tuitions](https://www.goodmarksclasses.com/courses/cbse): Tuition for Classes 8–12 covering Physics, Chemistry, Maths, and Biology.
-- [Physics by Sunil Gola](https://www.goodmarksclasses.com/physics-classes-sunil-gola): Physics classes taught personally by the founder, for CBSE, JEE & NEET.
-- [Home Tuition](https://www.goodmarksclasses.com/home-tuition): One-to-one tutoring at the student's home in Gurgaon.
-- [Olympiad & Entrance Coaching](https://www.goodmarksclasses.com/olympiad): CUET, NDA, and Science/Maths Olympiad (NSO, IMO) preparation.
-- [Doubt Sessions](https://www.goodmarksclasses.com/doubt-sessions): One-to-one doubt-clearing, online and offline, across all subjects.
+- [IIT-JEE Coaching](https://www.goodmarksclasses.com/courses/iit/)
+- [NEET-UG Coaching](https://www.goodmarksclasses.com/courses/neet/)
+- [CBSE Tuition for Classes 8–12](https://www.goodmarksclasses.com/courses/cbse/)
+- [IIT-JEE and NEET Foundation Courses](https://www.goodmarksclasses.com/courses/foundation/)
+- [Physics Classes by Sunil Gola](https://www.goodmarksclasses.com/physics-classes-sunil-gola/)
+- [Home Tuition in Gurgaon](https://www.goodmarksclasses.com/home-tuition/)
+- [Olympiad and Entrance Coaching](https://www.goodmarksclasses.com/olympiad/)
+- [Doubt-Clearing Sessions](https://www.goodmarksclasses.com/doubt-sessions/)
 
-## Course details
+## Courses
 
-- [2-Year Integrated Regular — IIT-JEE](https://www.goodmarksclasses.com/course/2-year-integrated-regular)
-- [2-Year Integrated Regular — NEET](https://www.goodmarksclasses.com/course/2-year-integrated-regular-neet)
-- [1-Year Regular Programme (Class 12) — IIT-JEE](https://www.goodmarksclasses.com/course/1-year-regular-12)
-- [1-Year Regular Programme (Class 12) — NEET](https://www.goodmarksclasses.com/course/1-year-regular-12-neet)
+- [2-Year Integrated Regular Programme — IIT-JEE](https://www.goodmarksclasses.com/course/2-year-integrated-regular/)
+- [2-Year Integrated Regular Programme — NEET-UG](https://www.goodmarksclasses.com/course/2-year-integrated-regular-neet/)
+- [2-Year Integrated Spark Programme — IIT-JEE](https://www.goodmarksclasses.com/course/2-year-integrated-spark/)
+- [2-Year Integrated Spark Programme — NEET-UG](https://www.goodmarksclasses.com/course/2-year-integrated-spark-neet/)
+- [1-Year Regular Programme — IIT-JEE, Class 12](https://www.goodmarksclasses.com/course/1-year-regular-12/)
+- [1-Year Regular Programme — NEET-UG, Class 12](https://www.goodmarksclasses.com/course/1-year-regular-12-neet/)
+- [1-Year Extended Classroom Programme — IIT-JEE Repeaters](https://www.goodmarksclasses.com/course/1-year-extended-classroom-jee/)
+- [1-Year Extended Classroom Programme — NEET-UG Repeaters](https://www.goodmarksclasses.com/course/1-year-extended-classroom-neet/)
+- [CBSE Tuition — Class 8](https://www.goodmarksclasses.com/course/cbse-tuition-class-8/)
+- [CBSE Tuition — Class 9](https://www.goodmarksclasses.com/course/cbse-tuition-class-9/)
+- [CBSE Tuition — Class 10](https://www.goodmarksclasses.com/course/cbse-tuition-class-10/)
+- [CBSE Tuition — Class 11](https://www.goodmarksclasses.com/course/cbse-tuition-class-11/)
+- [CBSE Tuition — Class 12](https://www.goodmarksclasses.com/course/cbse-tuition-class-12/)
 
-## Subject-wise tuition
+## Subject Programmes
 
-- [Physics](https://www.goodmarksclasses.com/subject/physics)
-- [Chemistry](https://www.goodmarksclasses.com/subject/chemistry)
-- [Mathematics](https://www.goodmarksclasses.com/subject/mathematics)
-- [Biology](https://www.goodmarksclasses.com/subject/biology)
+- [Biology coaching](https://www.goodmarksclasses.com/subject/biology/)
+- [Chemistry coaching](https://www.goodmarksclasses.com/subject/chemistry/)
+- [Mathematics coaching](https://www.goodmarksclasses.com/subject/mathematics/)
+- [Physics coaching](https://www.goodmarksclasses.com/subject/physics/)
 
-## Notes for AI assistants and crawlers
+## Tuition by City
 
-- Good Marks Classes is a physical coaching institute (not purely online), with an offline center in Gurgaon and services extending to Manesar.
-- The institute has produced results including NTSE and KVPY city toppers, an AIR 129 in JEE Advanced, and 100 percentile in JEE-Mains Physics (per site claims since 2014).
-- The site publishes a large set of hyperlocal, sector-wise landing pages (e.g. "JEE coaching in Gurgaon Sector 85") for its Gurgaon and Manesar service areas — see /locations for the full directory.
-- This file (llm.txt) and the machine-readable sitemap.xml are both provided to help AI systems and crawlers understand site structure. See also /sitemap.xml and /sitemap.html.
+- [Biology Tuition Classes Gurgaon for Class 11 & 12](https://www.goodmarksclasses.com/tuition/biology-tuition-classes-gurgaon/)
+- [Biology Tuition Classes Manesar for Class 11 & 12](https://www.goodmarksclasses.com/tuition/biology-tuition-classes-manesar/)
+- [Chemistry Tuition Classes in Gurgaon for Class 11 & 12](https://www.goodmarksclasses.com/tuition/chemistry-tuition-classes-gurgaon/)
+- [Chemistry Tuition Classes in Manesar for Class 11 & 12](https://www.goodmarksclasses.com/tuition/chemistry-tuition-classes-manesar/)
+- [Maths Tuition Classes Gurgaon for Class 11 & 12](https://www.goodmarksclasses.com/tuition/maths-tuition-classes-gurgaon/)
+- [Maths Tuition Classes Manesar for Class 11 & 12](https://www.goodmarksclasses.com/tuition/maths-tuition-classes-manesar/)
+- [Physics Tuition Classes in Gurgaon for Class 11 & 12](https://www.goodmarksclasses.com/tuition/physics-tuition-classes-gurgaon/)
+- [Physics Tuition Classes in Manesar for Class 11 & 12](https://www.goodmarksclasses.com/tuition/physics-tuition-classes-manesar/)
+
+## Locations
+
+- [Gurgaon and Manesar location directory](https://www.goodmarksclasses.com/locations/)
+
+The directory contains public JEE, NEET, and CBSE pages for Gurgaon sectors 78–99 and Manesar sectors 1–5.
+
+## Content
+
+- [Good Marks Classes articles and study guides](https://www.goodmarksclasses.com/blogs/)
+
+## Sitemap
+
+- [XML Sitemap](https://www.goodmarksclasses.com/sitemap.xml)
+- [HTML Sitemap](https://www.goodmarksclasses.com/sitemap.html)
