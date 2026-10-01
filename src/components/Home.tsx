@@ -635,14 +635,13 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
               <div className="relative">
                 <div className="aspect-[4/5] rounded-[40px] overflow-hidden bg-slate-200 shadow-2xl shadow-secondary-900/10 border-8 border-white relative z-10 flex items-center justify-center text-center">
-                  <img className="w-full h-full object-cover transition-all duration-700 hover:scale-105" 
-                       alt="Sunil Gola" 
-                       src="/sunil-gola.png" 
-                       onError={(e) => {
-                         const target = e.target as HTMLImageElement;
-                         target.onerror = null;
-                         target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop";
-                       }}
+                  <img className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+                       alt="Sunil Gola Sir, founder and Physics faculty at Good Marks Classes coaching institute in Gurgaon"
+                       src="/images/about/sunil-gola-portrait.webp"
+                       width={1122}
+                       height={1402}
+                       loading="lazy"
+                       decoding="async"
                        />
                 </div>
                 <div className="absolute top-10 -left-10 w-full h-full bg-primary-50 rounded-[40px] z-0"></div>
