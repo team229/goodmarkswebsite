@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalDocument from '../components/LegalDocument';
+import { privacyPolicyIntro, privacyPolicyMeta, privacyPolicySections } from '../data/privacyPolicy';
+---
+
+<BaseLayout
+  title={`${privacyPolicyMeta.title} | Good Marks Classes`}
+  description="How Good Marks Classes collects, uses, stores and protects your personal information when you visit our website, submit an enquiry, or enrol in a course. Read our Privacy Policy."
+>
+  <LegalDocument
+    meta={privacyPolicyMeta}
+    intro={privacyPolicyIntro}
+    sections={privacyPolicySections}
+    contactAfter="contact-us"
+  />
+</BaseLayout>

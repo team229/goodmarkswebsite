@@ -231,7 +231,7 @@ export default function Home() {
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                       <p className="text-[10px] text-slate-500 text-center mt-1">
-                        By submitting, you agree to our <a href="#" className="underline hover:text-primary-600">Privacy Policy</a>.
+                        By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                       </p>
                     </form>
                   </div>
@@ -289,7 +289,7 @@ export default function Home() {
                         <ArrowRight className="w-4 h-4" />
                       </button>
                       <p className="text-[11px] text-slate-500 text-center mt-2">
-                        By submitting, you agree to our <a href="#" className="underline hover:text-primary-600">Privacy Policy</a>.
+                        By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                       </p>
                     </form>
                   </div>

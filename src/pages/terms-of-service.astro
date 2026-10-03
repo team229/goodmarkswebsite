@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LegalDocument from '../components/LegalDocument';
+import { termsOfServiceIntro, termsOfServiceMeta, termsOfServiceSections } from '../data/termsOfService';
+---
+
+<BaseLayout
+  title={`${termsOfServiceMeta.title} | Good Marks Classes`}
+  description="The terms that apply when you use the Good Marks Classes website, book a demo class, or enrol in a CBSE, IIT-JEE, NEET, Olympiad or home tuition programme in Gurgaon."
+>
+  <LegalDocument
+    meta={termsOfServiceMeta}
+    intro={termsOfServiceIntro}
+    sections={termsOfServiceSections}
+    contactAfter="contact-us"
+  />
+</BaseLayout>
