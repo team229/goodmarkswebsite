@@ -1,6 +1,16 @@
 import type { InternalLink } from '../lib/internalLinks';
 
 export const blogLinks: Record<string, InternalLink[]> = {
+  'iit-jee-coaching-gurgaon': [
+    { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
+    { kw: '1 year JEE coaching Gurgaon', href: '/course/1-year-regular-12' },
+    { kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' },
+  ],
+  'neet-coaching-gurgaon': [
+    { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
+    { kw: '1 year NEET coaching Gurgaon', href: '/course/1-year-regular-12-neet' },
+    { kw: 'NEET dropper course Gurgaon', href: '/courses/neet' },
+  ],
   '2-year-iit-jee-program-gurgaon-beats-rushed-crash-course': [
     { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
     { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
