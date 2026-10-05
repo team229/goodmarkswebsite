@@ -10,9 +10,10 @@ export interface Props {
   title: string;
   description: string;
   robots?: string;
+  conversionEvent?: string;
 }
 
-const { title, description, robots } = Astro.props;
+const { title, description, robots, conversionEvent } = Astro.props;
 const siteUrl = 'https://www.goodmarksclasses.com';
 const ogImage = `${siteUrl}/good-marks-logo.png`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -52,13 +53,25 @@ const organizationSchema = {
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2P1CJTSKN"></script>
-    <script>
+    <!-- is:inline keeps these as classic scripts in order, so window.gtag exists
+         globally before any conversion event fires and config runs before events. -->
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-J2P1CJTSKN');
+
+      // Google Ads - AW-953167405
+      gtag('config', 'AW-953167405');
     </script>
+    {
+      conversionEvent && (
+        <script is:inline
+          set:html={`gtag('event', 'conversion', {'send_to': '${conversionEvent}'});`}
+        />
+      )
+    }
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="Teii-vXrPy9Lo0CO97Bn1dCm2p5HaImEpsDhVJvzWtc" />
