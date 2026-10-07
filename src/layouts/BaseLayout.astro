@@ -10,6 +10,7 @@ export interface Props {
   title: string;
   description: string;
   robots?: string;
+  /** Google Ads `send_to` value for the conversion event snippet (e.g. AW-xxxx/conversion_id). */
   conversionEvent?: string;
 }
 
@@ -44,7 +45,9 @@ const organizationSchema = {
 <html lang="en">
   <head>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- is:inline is required: without it Astro bundles this into a deferred
+         type="module" script, which delays GTM until after DOMContentLoaded. -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -52,26 +55,25 @@ const organizationSchema = {
     <!-- End Google Tag Manager -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J2P1CJTSKN"></script>
-    <!-- is:inline keeps these as classic scripts in order, so window.gtag exists
-         globally before any conversion event fires and config runs before events. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-953167405"></script>
+    <!-- is:inline keeps this a classic script so it stays in order directly after
+         the gtag.js loader, guaranteeing window.gtag exists before any event fires. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-J2P1CJTSKN');
-
-      // Google Ads - AW-953167405
       gtag('config', 'AW-953167405');
     </script>
+    <!-- End Google tag (gtag.js) -->
     {
+      /* Event snippet for the conversion page — must sit directly after the Google tag. */
       conversionEvent && (
         <script is:inline
           set:html={`gtag('event', 'conversion', {'send_to': '${conversionEvent}'});`}
         />
       )
     }
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="Teii-vXrPy9Lo0CO97Bn1dCm2p5HaImEpsDhVJvzWtc" />
