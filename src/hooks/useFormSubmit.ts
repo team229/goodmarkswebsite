@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import {
-  resetTurnstile,
   stripInternalFields,
   validateSubmission,
 } from "../lib/antispam";
@@ -15,7 +14,7 @@ export function useFormSubmit(formName: string) {
   const submitForm = async (data: Record<string, any>): Promise<boolean> => {
     setFormError(null);
 
-    // Anti-spam gate: honeypot, fill time, phone format, Turnstile token.
+    // Anti-spam gate: honeypot, fill time, phone format, math check.
     const check = validateSubmission(data, Date.now() - mountedAt.current);
     if (!check.ok) {
       setFormError(check.error);
@@ -40,7 +39,6 @@ export function useFormSubmit(formName: string) {
 
       if (response.ok) {
         setIsSuccess(true);
-        resetTurnstile();
         return true;
       }
       setFormError("Something went wrong. Please try again.");

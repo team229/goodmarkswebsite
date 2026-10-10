@@ -5,36 +5,21 @@
  *  1. Honeypot field — invisible to humans, filled by dumb bots.
  *  2. Minimum fill time — bots submit in milliseconds, humans take seconds.
  *  3. Indian mobile validation — rejects garbage phone numbers.
- *  4. Cloudflare Turnstile — bot-detection widget, token must be present.
+ *  4. Simple math check — a fresh "what is A + B?" per form render that bots
+ *     don't answer correctly.
  *
  * NOTE: these stop bots that drive the page. Bots POSTing straight at the
  * bythub endpoint bypass all client-side checks — that half must be handled
  * at bythub (formId rotation / their own rate limits / CAPTCHA).
  */
 
-declare global {
-  interface Window {
-    turnstile?: {
-      reset: (widgetId?: string) => void;
-      render: (...args: unknown[]) => string;
-    };
-  }
-}
-
-/**
- * Cloudflare Turnstile sitekey.
- *
- * Currently the official Cloudflare TEST key (always passes) so the preview
- * can be verified end-to-end. BEFORE DEPLOYING TO PRODUCTION, create a real
- * key at dash.cloudflare.com → Turnstile → Add site, and paste it here.
- */
-export const TURNSTILE_SITE_KEY = '1x00000000000000000000AA';
-
 /** Name of the honeypot input. Must match the field rendered by <SpamGuard/>. */
 export const HONEYPOT_FIELD = 'website';
 
-/** Name of the hidden input Turnstile injects into each form. */
-export const TURNSTILE_RESPONSE_FIELD = 'cf-turnstile-response';
+/** Hidden operands + visible answer input rendered by <SpamGuard/>. */
+export const MATH_A_FIELD = 'math_a';
+export const MATH_B_FIELD = 'math_b';
+export const MATH_ANSWER_FIELD = 'math_answer';
 
 /** Minimum milliseconds between form mount and submit. */
 export const MIN_FILL_TIME_MS = 3000;
@@ -79,11 +64,13 @@ export function validateSubmission(
     };
   }
 
-  const token = data[TURNSTILE_RESPONSE_FIELD];
-  if (typeof token !== 'string' || token.trim() === '') {
+  const a = Number(data[MATH_A_FIELD]);
+  const b = Number(data[MATH_B_FIELD]);
+  const answer = String(data[MATH_ANSWER_FIELD] ?? '').trim();
+  if (!Number.isFinite(a) || !Number.isFinite(b) || answer === '' || Number(answer) !== a + b) {
     return {
       ok: false,
-      error: 'Please complete the human-verification check above, then submit again.',
+      error: 'Please solve the quick math check above, then submit again.',
     };
   }
 
@@ -94,15 +81,8 @@ export function validateSubmission(
 export function stripInternalFields(data: Record<string, unknown>): Record<string, unknown> {
   const clean = { ...data };
   delete clean[HONEYPOT_FIELD];
-  delete clean[TURNSTILE_RESPONSE_FIELD];
+  delete clean[MATH_A_FIELD];
+  delete clean[MATH_B_FIELD];
+  delete clean[MATH_ANSWER_FIELD];
   return clean;
-}
-
-/** Resets every Turnstile widget on the page (call after a successful submit). */
-export function resetTurnstile(): void {
-  try {
-    window.turnstile?.reset();
-  } catch {
-    /* widget API not loaded yet — nothing to reset */
-  }
 }

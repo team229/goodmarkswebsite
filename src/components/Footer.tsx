@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Instagram, Youtube, Globe } from 'lucide-react';
 import SpamGuard from './SpamGuard';
-import { resetTurnstile, stripInternalFields, validateSubmission } from '../lib/antispam';
+import { stripInternalFields, validateSubmission } from '../lib/antispam';
 
 export default function Footer() {
   const [newsletterError, setNewsletterError] = useState<string | null>(null);
@@ -21,7 +21,7 @@ export default function Footer() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ formName: 'Newsletter', ...stripInternalFields(data), sourceUrl: window.location.href }),
-    }).then(() => { form.reset(); resetTurnstile(); alert('Thanks for subscribing!'); });
+    }).then(() => { form.reset(); alert('Thanks for subscribing!'); });
   };
 
   return (
@@ -82,7 +82,7 @@ export default function Footer() {
                 {newsletterError}
               </div>
             )}
-            <div className="mt-2 [&_.cf-turnstile]:justify-start [&_.cf-turnstile]:scale-90 [&_.cf-turnstile]:origin-top-left">
+            <div className="mt-2 flex justify-start">
               <SpamGuard />
             </div>
           </form>

@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { X, Phone, Menu, ChevronDown, Loader2 } from 'lucide-react';
 import SpamGuard from './SpamGuard';
-import { resetTurnstile, stripInternalFields, validateSubmission } from '../lib/antispam';
+import { stripInternalFields, validateSubmission } from '../lib/antispam';
 
 const courses = [
   { label: 'IIT-JEE', href: '/courses/iit', color: 'bg-secondary-500', hover: 'hover:bg-secondary-50', textHover: 'hover:text-secondary-600' },
@@ -29,7 +29,7 @@ export default function Navbar() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormError(null);
-    // Merge controlled state with anti-spam extras (honeypot + Turnstile token).
+    // Merge controlled state with anti-spam extras (honeypot + math check).
     const extras = Object.fromEntries(new FormData(e.target as HTMLFormElement).entries());
     const data: Record<string, unknown> = { ...form, ...extras };
     const check = validateSubmission(data, Date.now() - mountedAt.current);
@@ -44,7 +44,6 @@ export default function Navbar() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ formName: 'Navbar Modal', ...stripInternalFields(data), sourceUrl: window.location.href }),
       });
-      resetTurnstile();
     } catch {}
     setForm({ name: '', email: '', phone: '', message: '' });
     setIsModalOpen(false);
