@@ -156,15 +156,15 @@ export default function JoinFaculty() {
                 <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary-500 outline-none transition-all resize-y" placeholder="Tell us about your teaching methodology and achievements..."></textarea>
               </div>
 
-              <button type="submit" disabled={isSubmitting} className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/20 transition-all focus:ring-4 focus:ring-primary-500/50 mt-4">
-                Submit Application
-              </button>
-              {formError && (
+                            {formError && (
                 <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                   {formError}
                 </div>
               )}
               <SpamGuard />
+<button type="submit" disabled={isSubmitting} className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/20 transition-all focus:ring-4 focus:ring-primary-500/50 mt-4">
+                Submit Application
+              </button>
             </form>
           </div>
 

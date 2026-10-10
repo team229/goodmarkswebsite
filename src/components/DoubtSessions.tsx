@@ -77,15 +77,15 @@ export default function DoubtSessions() {
                     <option value="biology">Biology</option>
                   </select>
                 </div>
-                <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 mt-6">
-                  Book Session Today <ArrowRight className="w-5 h-5" />
-                </button>
-                {formError && (
+                                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
+<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 mt-6">
+                  Book Session Today <ArrowRight className="w-5 h-5" />
+                </button>
               </form>
             </div>
           </div>

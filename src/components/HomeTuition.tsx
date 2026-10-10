@@ -76,15 +76,15 @@ export default function HomeTuition() {
                     <option value="boards">Boards (11th & 12th)</option>
                   </select>
                 </div>
-                <button type="submit" disabled={isSubmitting} className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-secondary-500/20 flex items-center justify-center gap-2 mt-6 disabled:opacity-70">
-                  {isSubmitting ? 'Submitting...' : <>Submit Request <ArrowRight className="w-5 h-5" /></>}
-                </button>
-                {formError && (
+                                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
+<button type="submit" disabled={isSubmitting} className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-secondary-500/20 flex items-center justify-center gap-2 mt-6 disabled:opacity-70">
+                  {isSubmitting ? 'Submitting...' : <>Submit Request <ArrowRight className="w-5 h-5" /></>}
+                </button>
               </form>
             </div>
           </div>

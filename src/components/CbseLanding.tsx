@@ -507,15 +507,15 @@ export default function CbseLanding() {
                     <label htmlFor="ld-message" className="block text-sm font-semibold text-secondary-800 mb-1.5">Message (optional)</label>
                     <textarea id="ld-message" name="message" rows={3} placeholder="Tell us about your goal / current class (optional)" className="w-full pl-4 pr-4 py-3 rounded-xl border border-secondary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm resize-none" />
                   </div>
-                  <button type="submit" disabled={isSubmitting} className="btn-gradient w-full rounded-xl px-7 py-3.5 font-bold text-secondary-900 hover:scale-[1.02] transition disabled:opacity-60">
-                    {isSubmitting ? 'Sending…' : 'Request Free Demo'}
-                  </button>
-                  {formError && (
+                                    {formError && (
                     <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                       {formError}
                     </div>
                   )}
                   <SpamGuard />
+<button type="submit" disabled={isSubmitting} className="btn-gradient w-full rounded-xl px-7 py-3.5 font-bold text-secondary-900 hover:scale-[1.02] transition disabled:opacity-60">
+                    {isSubmitting ? 'Sending…' : 'Request Free Demo'}
+                  </button>
                   <p className="text-xs text-slate-500 text-center">Prefer to talk? Call{' '}
                     <a href={TEL} className="text-primary-700 font-bold">8800 8800 28</a>
                   </p>

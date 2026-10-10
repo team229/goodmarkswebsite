@@ -199,7 +199,13 @@ export default function Navbar() {
                   onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
                 />
-                <button
+                                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
+<button
                   type="submit"
                   disabled={formStatus === 'loading'}
                   className="w-full bg-gradient-to-r from-primary-600 to-primary-600 hover:from-primary-700 hover:to-primary-700 text-secondary-900 px-6 py-3 rounded-xl font-bold text-sm shadow-md shadow-primary-500/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
@@ -207,12 +213,6 @@ export default function Navbar() {
                   {formStatus === 'loading' ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
                   {formStatus === 'loading' ? 'Submitting...' : 'Submit'}
                 </button>
-                {formError && (
-                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
-                    {formError}
-                  </div>
-                )}
-                <SpamGuard />
               </form>
           </div>
         </div>

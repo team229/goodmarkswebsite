@@ -64,6 +64,14 @@ export default function Footer() {
             onSubmit={handleNewsletterSubmit}
             className="max-w-sm"
           >
+            {newsletterError && (
+              <div className="bg-red-950 text-red-300 border border-red-800 p-2.5 rounded-xl text-xs font-bold mb-2">
+                {newsletterError}
+              </div>
+            )}
+            <div className="mb-2 flex justify-start">
+              <SpamGuard />
+            </div>
             <div className="flex gap-2">
               <input
                 type="email"
@@ -76,14 +84,6 @@ export default function Footer() {
               <button type="submit" className="bg-primary-600 hover:bg-primary-500 text-secondary-900 font-bold px-4 py-2 rounded-xl text-sm transition-all shrink-0">
                 Subscribe
               </button>
-            </div>
-            {newsletterError && (
-              <div className="bg-red-950 text-red-300 border border-red-800 p-2.5 rounded-xl text-xs font-bold mt-2">
-                {newsletterError}
-              </div>
-            )}
-            <div className="mt-2 flex justify-start">
-              <SpamGuard />
             </div>
           </form>
         </div>

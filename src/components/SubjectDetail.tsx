@@ -358,15 +358,15 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
                     <option value="dropper">Dropper</option>
                   </select>
                 </div>
-                <button type="submit" disabled={isSubmitting} className={`w-full py-4 rounded-xl font-bold text-white text-center bg-gradient-to-r ${config.gradient} shadow-lg transition-transform hover:-translate-y-0.5 mt-4`}>
-                  Request Callback
-                </button>
-                {formError && (
+                                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
+<button type="submit" disabled={isSubmitting} className={`w-full py-4 rounded-xl font-bold text-white text-center bg-gradient-to-r ${config.gradient} shadow-lg transition-transform hover:-translate-y-0.5 mt-4`}>
+                  Request Callback
+                </button>
               </form>
             </div>
           </div>

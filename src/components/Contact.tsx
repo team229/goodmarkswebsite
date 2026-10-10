@@ -192,16 +192,16 @@ export default function Contact() {
                     <Send className="absolute left-3.5 top-4 w-4 h-4 text-primary-600 pointer-events-none" />
                     <textarea id="contact-message" name="message" rows={2} placeholder="Current class / goal — e.g. Class 11, targeting JEE 2028 (optional)" className="w-full pl-10 pr-4 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm shadow-sm resize-none" />
                   </div>
-                  <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 py-3 rounded-xl text-secondary-900 font-label-bold shadow-[0_8px_20px_-4px_rgba(253,196,17,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(253,196,17,0.5)] hover:scale-[1.02] mt-1 transition-all duration-200 flex items-center justify-center gap-2">
-                    {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                  {formError && (
+                                    {formError && (
                     <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                       {formError}
                     </div>
                   )}
                   <SpamGuard />
+<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-gradient-to-r from-primary-500 via-primary-400 to-primary-500 py-3 rounded-xl text-secondary-900 font-label-bold shadow-[0_8px_20px_-4px_rgba(253,196,17,0.4)] hover:shadow-[0_12px_28px_-4px_rgba(253,196,17,0.5)] hover:scale-[1.02] mt-1 transition-all duration-200 flex items-center justify-center gap-2">
+                    {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                   <p className="text-[11px] text-slate-500 text-center mt-2">
                     By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                   </p>

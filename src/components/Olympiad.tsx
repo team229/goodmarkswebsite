@@ -78,15 +78,15 @@ export default function Olympiad() {
                     <option value="class-10">Class 10</option>
                   </select>
                 </div>
-                <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 mt-6">
-                  Enroll Now <ArrowRight className="w-5 h-5" />
-                </button>
-                {formError && (
+                                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
+<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 font-bold py-4 rounded-xl transition-all shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 mt-6">
+                  Enroll Now <ArrowRight className="w-5 h-5" />
+                </button>
               </form>
             </div>
           </div>
