@@ -1,6 +1,29 @@
+import { useRef, useState } from 'react';
 import { Instagram, Youtube, Globe } from 'lucide-react';
+import SpamGuard from './SpamGuard';
+import { resetTurnstile, stripInternalFields, validateSubmission } from '../lib/antispam';
 
 export default function Footer() {
+  const [newsletterError, setNewsletterError] = useState<string | null>(null);
+  const mountedAt = useRef<number>(Date.now());
+
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNewsletterError(null);
+    const form = e.target as HTMLFormElement;
+    const data = Object.fromEntries(new FormData(form).entries());
+    const check = validateSubmission(data, Date.now() - mountedAt.current);
+    if (!check.ok) {
+      setNewsletterError(check.error);
+      return;
+    }
+    fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ formName: 'Newsletter', ...stripInternalFields(data), sourceUrl: window.location.href }),
+    }).then(() => { form.reset(); resetTurnstile(); alert('Thanks for subscribing!'); });
+  };
+
   return (
     <>
       <div className="w-full h-80 md:h-96">
@@ -38,29 +61,30 @@ export default function Footer() {
 
           <h4 className="font-label-bold mb-3 text-white uppercase tracking-wider text-xs">Stay Updated</h4>
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = e.target as HTMLFormElement;
-              const data = new FormData(form);
-              fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(Object.fromEntries(data)),
-              }).then(() => { form.reset(); alert('Thanks for subscribing!'); });
-            }}
-            className="flex gap-2 max-w-sm"
+            onSubmit={handleNewsletterSubmit}
+            className="max-w-sm"
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              className="flex-1 min-w-0 px-3.5 py-2 rounded-xl bg-secondary-900 text-white border border-secondary-700 placeholder:text-slate-500 text-sm focus:outline-none focus:border-primary-500 transition-colors"
-            />
-            <input type="hidden" name="type" value="newsletter" />
-            <button type="submit" className="bg-primary-600 hover:bg-primary-500 text-secondary-900 font-bold px-4 py-2 rounded-xl text-sm transition-all shrink-0">
-              Subscribe
-            </button>
+            <div className="flex gap-2">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="flex-1 min-w-0 px-3.5 py-2 rounded-xl bg-secondary-900 text-white border border-secondary-700 placeholder:text-slate-500 text-sm focus:outline-none focus:border-primary-500 transition-colors"
+              />
+              <input type="hidden" name="type" value="newsletter" />
+              <button type="submit" className="bg-primary-600 hover:bg-primary-500 text-secondary-900 font-bold px-4 py-2 rounded-xl text-sm transition-all shrink-0">
+                Subscribe
+              </button>
+            </div>
+            {newsletterError && (
+              <div className="bg-red-950 text-red-300 border border-red-800 p-2.5 rounded-xl text-xs font-bold mt-2">
+                {newsletterError}
+              </div>
+            )}
+            <div className="mt-2 [&_.cf-turnstile]:justify-start [&_.cf-turnstile]:scale-90 [&_.cf-turnstile]:origin-top-left">
+              <SpamGuard />
+            </div>
           </form>
         </div>
         

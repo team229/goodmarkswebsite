@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import TestimonialCarousel from './TestimonialCarousel';
 import {
   Phone, CheckCircle2, GraduationCap, Users, Star, Award, HeartPulse,
@@ -129,7 +130,7 @@ function FaqItem({ q, a, open, onToggle, id }: {
 }
 
 export default function CbseLanding() {
-  const { submitForm, isSubmitting, isSuccess, setIsSuccess } = useFormSubmit('CBSE Landing Demo Request');
+  const { submitForm, isSubmitting, isSuccess, setIsSuccess, formError } = useFormSubmit('CBSE Landing Demo Request');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -509,6 +510,12 @@ export default function CbseLanding() {
                   <button type="submit" disabled={isSubmitting} className="btn-gradient w-full rounded-xl px-7 py-3.5 font-bold text-secondary-900 hover:scale-[1.02] transition disabled:opacity-60">
                     {isSubmitting ? 'Sending…' : 'Request Free Demo'}
                   </button>
+                  {formError && (
+                    <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                      {formError}
+                    </div>
+                  )}
+                  <SpamGuard />
                   <p className="text-xs text-slate-500 text-center">Prefer to talk? Call{' '}
                     <a href={TEL} className="text-primary-700 font-bold">8800 8800 28</a>
                   </p>

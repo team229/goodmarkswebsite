@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowLeft, GraduationCap, ChevronDown, Award, CheckCircle2, Phone, BookText, Users as Users2, Target, Clock, MessageCircleQuestion, Activity, Flame, Atom, FlaskConical, Calculator, Dna } from 'lucide-react';
 import { tuitionPages, TuitionPage } from '../data/tuition';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { injectLinks, renderContent } from '../lib/internalLinks';
 import type { InternalLink } from '../lib/internalLinks';
 import TestimonialCarousel from './TestimonialCarousel';
@@ -47,7 +48,7 @@ const subjectConfigs: Record<string, any> = {
 
 export default function TuitionPage({ slug }: TuitionPageProps) {
   const page: TuitionPage | undefined = tuitionPages.find(p => p.slug === slug);
-  const { submitForm, isSubmitting } = useFormSubmit(`Tuition Enquiry - ${page?.title || ''}`);
+  const { submitForm, isSubmitting, formError } = useFormSubmit(`Tuition Enquiry - ${page?.title || ''}`);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -212,6 +213,12 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                   <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
                     Submit Enquiry
                   </button>
+                  {formError && (
+                    <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                      {formError}
+                    </div>
+                  )}
+                  <SpamGuard />
                 </form>
               </div>
             </div>
@@ -323,6 +330,12 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                 <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
                   Submit Enquiry
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
             </div>
           </div>

@@ -2,7 +2,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
-import WhatsApp from '../components/WhatsApp';
 import MobileCTA from '../components/MobileCTA';
 import '../styles/global.css';
 
@@ -65,6 +64,10 @@ const organizationSchema = {
       gtag('config', 'AW-953167405');
     </script>
     <!-- End Google tag (gtag.js) -->
+
+    <!-- Cloudflare Turnstile (form spam protection) — auto-renders every
+         .cf-turnstile widget, including ones mounted later by React islands. -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     {
       /* Event snippet for the conversion page — must sit directly after the Google tag. */
       conversionEvent && (
@@ -116,7 +119,6 @@ const organizationSchema = {
       <slot />
     </div>
     <Footer client:load />
-    <WhatsApp client:load />
     <MobileCTA client:load />
   </body>
 </html>

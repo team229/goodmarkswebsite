@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
 import { locationPages } from '../data/locations';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { injectLinks, InternalLink, renderContent } from '../lib/internalLinks';
 import TestimonialCarousel from '../components/TestimonialCarousel';
 
@@ -11,7 +12,7 @@ interface LocationPageProps {
 
 export default function LocationPage({ slug }: LocationPageProps) {
   const page = locationPages.find(p => p.slug === slug);
-  const { submitForm, isSubmitting } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
+  const { submitForm, isSubmitting, formError } = useFormSubmit(`Location Enquiry - ${page?.title || ''}`);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -199,6 +200,12 @@ export default function LocationPage({ slug }: LocationPageProps) {
                   <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
                     Submit Enquiry
                   </button>
+                  {formError && (
+                    <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                      {formError}
+                    </div>
+                  )}
+                  <SpamGuard />
                 </form>
               </div>
             </div>
@@ -311,6 +318,12 @@ export default function LocationPage({ slug }: LocationPageProps) {
                 <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
                   Submit Enquiry
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
             </div>
           </div>

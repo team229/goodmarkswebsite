@@ -1,9 +1,10 @@
 import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { HelpCircle, CheckCircle, ArrowRight } from 'lucide-react';
 
 export default function DoubtSessions() {
-  const { submitForm, isSubmitting } = useFormSubmit('DoubtSessions');
+  const { submitForm, isSubmitting, formError } = useFormSubmit('DoubtSessions');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,6 +80,12 @@ export default function DoubtSessions() {
                 <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 mt-6">
                   Book Session Today <ArrowRight className="w-5 h-5" />
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
             </div>
           </div>

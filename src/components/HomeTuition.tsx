@@ -1,9 +1,10 @@
 import React from 'react';
 import { Home, CheckCircle, ArrowRight } from 'lucide-react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 
 export default function HomeTuition() {
-  const { submitForm, isSubmitting } = useFormSubmit('Home Tuition Page');
+  const { submitForm, isSubmitting, formError } = useFormSubmit('Home Tuition Page');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -78,6 +79,12 @@ export default function HomeTuition() {
                 <button type="submit" disabled={isSubmitting} className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-secondary-500/20 flex items-center justify-center gap-2 mt-6 disabled:opacity-70">
                   {isSubmitting ? 'Submitting...' : <>Submit Request <ArrowRight className="w-5 h-5" /></>}
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
             </div>
           </div>

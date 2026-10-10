@@ -7,7 +7,7 @@ export default function MobileCTA() {
     <div className="fixed bottom-0 left-0 right-0 z-[99] bg-white border-t border-slate-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] lg:hidden">
       <div className="flex items-center gap-2 px-4 py-2.5 max-w-container-max mx-auto">
         <a
-          href="tel:+919868094265"
+          href="tel:8800880028"
           className="flex-1 flex items-center justify-center gap-2 bg-secondary-600 hover:bg-secondary-700 text-white py-3 rounded-xl font-bold text-sm transition-all active:scale-[0.98]"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">

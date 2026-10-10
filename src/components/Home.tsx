@@ -1,5 +1,6 @@
 import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { motion } from 'motion/react';
 import TestimonialCarousel from './TestimonialCarousel';
 import { coursesData } from '../data/courses';
@@ -56,7 +57,7 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  const { submitForm, isSubmitting, isSuccess, setIsSuccess } = useFormSubmit('Home Demo Request');
+  const { submitForm, isSubmitting, isSuccess, setIsSuccess, formError } = useFormSubmit('Home Demo Request');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -230,6 +231,12 @@ export default function Home() {
                         {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
+                      {formError && (
+                        <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                          {formError}
+                        </div>
+                      )}
+                      <SpamGuard />
                       <p className="text-[10px] text-slate-500 text-center mt-1">
                         By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                       </p>
@@ -288,6 +295,12 @@ export default function Home() {
                         {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                         <ArrowRight className="w-4 h-4" />
                       </button>
+                      {formError && (
+                        <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                          {formError}
+                        </div>
+                      )}
+                      <SpamGuard />
                       <p className="text-[11px] text-slate-500 text-center mt-2">
                         By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                       </p>

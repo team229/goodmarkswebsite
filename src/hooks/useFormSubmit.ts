@@ -1,16 +1,33 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import {
+  resetTurnstile,
+  stripInternalFields,
+  validateSubmission,
+} from "../lib/antispam";
 
 export function useFormSubmit(formName: string) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  // Mount time of the form — bots submit in milliseconds, humans take seconds.
+  const mountedAt = useRef<number>(Date.now());
 
-  const submitForm = async (data: Record<string, any>) => {
+  const submitForm = async (data: Record<string, any>): Promise<boolean> => {
+    setFormError(null);
+
+    // Anti-spam gate: honeypot, fill time, phone format, Turnstile token.
+    const check = validateSubmission(data, Date.now() - mountedAt.current);
+    if (!check.ok) {
+      setFormError(check.error);
+      return false;
+    }
+
     setIsSubmitting(true);
     setIsSuccess(false);
 
     const payload = {
       formName,
-      ...data,
+      ...stripInternalFields(data),
       sourceUrl: window.location.href,
     };
 
@@ -23,11 +40,18 @@ export function useFormSubmit(formName: string) {
 
       if (response.ok) {
         setIsSuccess(true);
+        resetTurnstile();
+        return true;
       }
-    } catch {}
-
-    setIsSubmitting(false);
+      setFormError("Something went wrong. Please try again.");
+      return false;
+    } catch {
+      setFormError("Network error. Please check your connection and try again.");
+      return false;
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  return { submitForm, isSubmitting, isSuccess, setIsSuccess };
+  return { submitForm, isSubmitting, isSuccess, setIsSuccess, formError, setFormError };
 }

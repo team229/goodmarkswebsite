@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import {
   Phone,
-  MessageCircle,
   Mail,
   MapPin,
   Clock,
@@ -28,8 +28,6 @@ import {
 
 const PHONE_DISPLAY = '8800 8800 28';
 const PHONE_TEL = 'tel:8800880028';
-const WHATSAPP_DISPLAY = '98680 94265';
-const WHATSAPP_LINK = 'https://wa.me/919868094265?text=' + encodeURIComponent('Hi Good Marks Classes! I want to know more about your IIT JEE / NEET / CBSE coaching programs.');
 const EMAIL = 'info@goodmarksclasses.com';
 const GOOGLE_MAPS = 'https://share.google/vhB5jd28c0iT57ikX';
 const MAPS_EMBED =
@@ -38,11 +36,11 @@ const MAPS_EMBED =
 const faqItems = [
   {
     q: 'How do I book a free demo class at Good Marks Classes Gurgaon?',
-    a: 'The fastest way is to fill the enquiry form on this page, call us at 8800 8800 28, or send a WhatsApp message to 98680 94265. We offer a free trial period before you commit — including a 1 week free demo for full-time batches — so you can experience our teaching methodology risk-free.',
+    a: 'The fastest way is to fill the enquiry form on this page or call us at 8800 8800 28. We offer a free trial period before you commit — including a 1 week free demo for full-time batches — so you can experience our teaching methodology risk-free.',
   },
   {
     q: 'What is the contact number of Good Marks Classes?',
-    a: 'You can reach the student support desk at 8800 8800 28 (calls) or 98680 94265 (WhatsApp). For written enquiries, email us at info@goodmarksclasses.com and our team usually responds within 24 working hours.',
+    a: 'You can reach the student support desk at 8800 8800 28. For written enquiries, email us at info@goodmarksclasses.com and our team usually responds within 24 working hours.',
   },
   {
     q: 'Where is Good Marks Classes located in Gurgaon?',
@@ -58,12 +56,12 @@ const faqItems = [
   },
   {
     q: 'How quickly does the Good Marks team respond to enquiries?',
-    a: 'Calls and WhatsApp messages are answered during batch hours (usually the same day). Form submissions are typically followed up within 24 working hours. For urgent admission queries, calling 8800 8800 28 is the fastest option.',
+    a: 'Calls are answered during batch hours (usually the same day). Form submissions are typically followed up within 24 working hours. For urgent admission queries, calling 8800 8800 28 is the fastest option.',
   },
 ];
 
 export default function Contact() {
-  const { submitForm, isSubmitting, isSuccess } = useFormSubmit('Contact Page');
+  const { submitForm, isSubmitting, isSuccess, formError } = useFormSubmit('Contact Page');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -125,9 +123,6 @@ export default function Contact() {
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-2.5 xl:gap-4">
                 <a href={PHONE_TEL} className="btn-gradient px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl text-secondary-900 font-bold text-sm xl:text-base shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2 whitespace-nowrap">
                   <Phone className="w-4 h-4 xl:w-5 xl:h-5" /> Call {PHONE_DISPLAY}
-                </a>
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl bg-green-500 hover:bg-green-600 text-white font-bold text-sm xl:text-base shadow-lg shadow-green-500/30 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                  <MessageCircle className="w-4 h-4 xl:w-5 xl:h-5" /> WhatsApp Us
                 </a>
                 <button onClick={scrollToForm} className="px-4 lg:px-2.5 xl:px-7 py-3.5 rounded-xl border border-secondary-200 text-secondary-900 font-bold text-sm xl:text-base hover:bg-secondary-50 transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
                   Send Enquiry <ArrowRight className="w-5 h-5" />
@@ -201,6 +196,12 @@ export default function Contact() {
                     {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
                     <ArrowRight className="w-4 h-4" />
                   </button>
+                  {formError && (
+                    <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                      {formError}
+                    </div>
+                  )}
+                  <SpamGuard />
                   <p className="text-[11px] text-slate-500 text-center mt-2">
                     By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-primary-600">Privacy Policy</a>.
                   </p>
@@ -216,9 +217,9 @@ export default function Contact() {
         <div className="max-w-container-max mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="font-h2 text-secondary-900 mb-3">Reach Us Any Way You Like</h2>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto">Phone, WhatsApp, email or visit us in person — the same fast, honest response across every channel.</p>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto">Phone, email or visit us in person — the same fast, honest response across every channel.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <a href={PHONE_TEL} className="glass-card p-7 rounded-3xl border border-slate-100 hover:border-primary-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-primary-100 flex items-center justify-center mb-5">
                 <Phone className="w-7 h-7 text-primary-600" />
@@ -227,15 +228,6 @@ export default function Contact() {
               <p className="text-2xl font-black text-secondary-900 mb-1">8800 8800 28</p>
               <p className="text-caption text-slate-500 mb-4">Student support desk — fastest response for admissions</p>
               <span className="inline-flex items-center gap-1 text-primary-700 font-bold text-sm">Call Now <ArrowRight className="w-4 h-4" /></span>
-            </a>
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="glass-card p-7 rounded-3xl border border-slate-100 hover:border-green-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white flex flex-col items-center text-center">
-              <div className="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center mb-5">
-                <MessageCircle className="w-7 h-7 text-green-600" />
-              </div>
-              <h3 className="font-bold text-secondary-900 mb-1">WhatsApp</h3>
-              <p className="text-2xl font-black text-secondary-900 mb-1">98680 94265</p>
-              <p className="text-caption text-slate-500 mb-4">Chat with us anytime — share documents or doubts directly</p>
-              <span className="inline-flex items-center gap-1 text-green-600 font-bold text-sm">Message Us <ArrowRight className="w-4 h-4" /></span>
             </a>
             <a href={`mailto:${EMAIL}`} className="glass-card p-7 rounded-3xl border border-slate-100 hover:border-secondary-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white flex flex-col items-center text-center">
               <div className="w-14 h-14 rounded-2xl bg-secondary-50 flex items-center justify-center mb-5">

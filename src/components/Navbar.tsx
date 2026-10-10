@@ -1,5 +1,7 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { X, Phone, Menu, ChevronDown, Loader2 } from 'lucide-react';
+import SpamGuard from './SpamGuard';
+import { resetTurnstile, stripInternalFields, validateSubmission } from '../lib/antispam';
 
 const courses = [
   { label: 'IIT-JEE', href: '/courses/iit', color: 'bg-secondary-500', hover: 'hover:bg-secondary-50', textHover: 'hover:text-secondary-600' },
@@ -13,6 +15,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'loading'>('idle');
+  const [formError, setFormError] = useState<string | null>(null);
+  const mountedAt = useRef<number>(Date.now());
 
   const closeMobile = useCallback(() => setIsMobileMenuOpen(false), []);
 
@@ -24,13 +28,23 @@ export default function Navbar() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError(null);
+    // Merge controlled state with anti-spam extras (honeypot + Turnstile token).
+    const extras = Object.fromEntries(new FormData(e.target as HTMLFormElement).entries());
+    const data: Record<string, unknown> = { ...form, ...extras };
+    const check = validateSubmission(data, Date.now() - mountedAt.current);
+    if (!check.ok) {
+      setFormError(check.error);
+      return;
+    }
     setFormStatus('loading');
     try {
       await fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ formName: 'Navbar Modal', ...stripInternalFields(data), sourceUrl: window.location.href }),
       });
+      resetTurnstile();
     } catch {}
     setForm({ name: '', email: '', phone: '', message: '' });
     setIsModalOpen(false);
@@ -194,6 +208,12 @@ export default function Navbar() {
                   {formStatus === 'loading' ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
                   {formStatus === 'loading' ? 'Submitting...' : 'Submit'}
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
           </div>
         </div>

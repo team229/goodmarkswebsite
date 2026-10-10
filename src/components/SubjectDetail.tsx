@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { ArrowRight, Atom, FlaskConical, Calculator, Dna, CheckCircle, Calendar, Users, GraduationCap, MapPin, ChevronDown } from 'lucide-react';
 import { coursesData } from '../data/courses';
 import { injectLinks, InternalLink } from '../lib/internalLinks';
@@ -164,7 +165,7 @@ If you're unsure whether your child needs the Class 9 or Class 10 Foundation tra
 };
 
 export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
-  const { submitForm, isSubmitting } = useFormSubmit('SubjectDetail');
+  const { submitForm, isSubmitting, formError } = useFormSubmit('SubjectDetail');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -360,6 +361,12 @@ export default function SubjectDetail({ subjectId }: { subjectId?: string }) {
                 <button type="submit" disabled={isSubmitting} className={`w-full py-4 rounded-xl font-bold text-white text-center bg-gradient-to-r ${config.gradient} shadow-lg transition-transform hover:-translate-y-0.5 mt-4`}>
                   Request Callback
                 </button>
+                {formError && (
+                  <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                    {formError}
+                  </div>
+                )}
+                <SpamGuard />
               </form>
             </div>
           </div>

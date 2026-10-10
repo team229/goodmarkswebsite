@@ -1,9 +1,10 @@
 import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
+import SpamGuard from './SpamGuard';
 import { UserPlus, ArrowRight, CheckCircle, BookOpen, Clock, Presentation } from "lucide-react";
 
 export default function JoinFaculty() {
-  const { submitForm, isSubmitting } = useFormSubmit('JoinFaculty');
+  const { submitForm, isSubmitting, formError } = useFormSubmit('JoinFaculty');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -158,6 +159,12 @@ export default function JoinFaculty() {
               <button type="submit" disabled={isSubmitting} className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/20 transition-all focus:ring-4 focus:ring-primary-500/50 mt-4">
                 Submit Application
               </button>
+              {formError && (
+                <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
+                  {formError}
+                </div>
+              )}
+              <SpamGuard />
             </form>
           </div>
 
