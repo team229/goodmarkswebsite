@@ -6,7 +6,7 @@ excerpt: Nobody sits down in Class 11 thinking "I\'ll figure out JEE later." It 
   or you just didn\'t take it seriously until you did. Now you\'re staring at a calendar
   and wondering if one year is actually enough to pull this off.
 date: '2024-06-30'
-image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg
+image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.webp
 metaTitle: One Year for JEE in Gurgaon — Honest Answers
 metaDescription: Is one year enough for JEE preparation? Honest answers about 1-year
   JEE coaching in Gurgaon, syllabus coverage, and choosing the right institute.

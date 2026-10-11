@@ -4,7 +4,7 @@ excerpt: A practical guide for NEET aspirants exploring one-year NEET coaching i
   Gurgaon. Learn who the course is for, how the syllabus is covered, and why Good
   Marks Classes is a trusted choice.
 date: '2026-06-12'
-image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg
+image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.webp
 metaTitle: Good Marks Classes | 1 Year Neet Coaching Gurgaon
 metaDescription: Is 1 Year NEET Coaching Gurgaon enough to crack NEET? Discover what
   works, how to choose the right institute, and expert preparation tips.

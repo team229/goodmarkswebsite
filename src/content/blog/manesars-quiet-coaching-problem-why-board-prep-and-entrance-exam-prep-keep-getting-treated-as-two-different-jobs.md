@@ -3,8 +3,8 @@ title: "Manesar's Quiet Coaching Problem: Why Board Prep and Entrance Exam Prep 
 excerpt: "Manesar has grown fast, but options for serious CBSE coaching haven't kept up. Good Marks Classes closes that gap with integrated CBSE-JEE-NEET prep from Class 6 — without leaving Manesar."
 date: "2026-08-20"
 image: /images/blog/manesar-coaching-problem-cbse.jpg
-metaTitle: "CBSE Coaching in Manesar | Good Marks Classes — Integrated Board & JEE-NEET Prep"
-metaDescription: "Manesar's quiet coaching problem: board prep and entrance exam prep treated as two different jobs. Good Marks Classes offers integrated CBSE coaching in Manesar from Class 6 onward."
+metaTitle: "CBSE Coaching in Manesar | Board + JEE-NEET | Good Marks"
+metaDescription: "Manesar's quiet coaching problem: board prep and entrance exam prep treated as two different jobs. Good Marks Classes offers integrated CBSE coaching in."
 category: CBSE Tuition Manesar
 ---
 

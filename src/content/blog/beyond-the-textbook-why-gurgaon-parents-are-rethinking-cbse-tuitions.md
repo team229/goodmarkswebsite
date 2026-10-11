@@ -2,9 +2,9 @@
 title: "Beyond the Textbook: Why Gurgaon Parents Are Rethinking CBSE Tuitions in 2026"
 excerpt: "Scroll through any parent WhatsApp group in Gurgaon during exam season and the same question resurfaces every few weeks: which tuition should I put my child into? It used to be a casual decision — ask a neighbor, pick whoever is closest. That has changed."
 date: "2026-08-10"
-image: /images/blog/beyond-the-textbook-cbse-tuitions-2026.jpg
-metaTitle: "Beyond the Textbook: Why Gurgaon Parents Are Rethinking CBSE Tuitions"
-metaDescription: "Why Gurgaon parents are rethinking CBSE tuitions in 2026. Good Marks Classes offers integrated CBSE-JEE-NEET coaching from Class 6 to 12 with offline, online, hybrid and home tuition options."
+image: /images/blog/beyond-the-textbook-cbse-tuitions-2026.webp
+metaTitle: "Gurgaon Parents Rethinking CBSE Tuitions | Good Marks"
+metaDescription: "Why Gurgaon parents are rethinking CBSE tuitions in 2026. Good Marks Classes offers integrated CBSE-JEE-NEET coaching from Class 6 to 12 with offline."
 category: CBSE Tuition
 ---
 

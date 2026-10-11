@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeTuition from '../components/HomeTuition';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Which areas in Gurgaon do home tutors cover?', acceptedAnswer: { '@type': 'Answer', text: 'Sectors 78–99, Manesar Sectors 1–5 and nearby areas. Students outside travel range join identical live online batches (max 10 students) with the same faculty.' } },
+    { '@type': 'Question', name: 'Are home tutors subject specialists?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Physics is taught by a physicist, Chemistry by a chemist — never a generalist covering all subjects. Tutors are matched to the student\u2019s class, board and target exam.' } },
+    { '@type': 'Question', name: 'Can home tuition cover JEE/NEET alongside boards?', acceptedAnswer: { '@type': 'Answer', text: 'That is its main strength. Sessions are planned so school syllabus and entrance preparation reinforce each other instead of competing for the student\u2019s evenings.' } },
+    { '@type': 'Question', name: 'How do parents track progress?', acceptedAnswer: { '@type': 'Answer', text: 'Through regular assessments with reports sent directly to parents, plus counsellor check-ins. If the tutor fit is not right, we rematch promptly.' } },
+    { '@type': 'Question', name: 'What are the timings?', acceptedAnswer: { '@type': 'Answer', text: 'Sessions are scheduled around school hours — weekday evenings and weekends — decided mutually at the time of matching. Call 8800 8800 28 to discuss slots.' } },
+    { '@type': 'Question', name: 'Is a trial session available?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. An introductory session is arranged first so the family can judge the tutor fit before committing to a schedule.' } },
+  ]
+};
 ---
-<BaseLayout title="Home Tuition in Gurgaon for Science & Maths | GoodMarks Classes" description="Get personalised home tuition in Gurgaon for Physics, Chemistry, Maths, and Biology. GoodMarks Classes connects students with experienced tutors for one-on-one learning at your convenience.">
+<BaseLayout title="Home Tuition in Gurgaon | Science & Maths | GoodMarks" description="One-to-one home tuition in Gurgaon for Physics, Chemistry, Maths and Biology — experienced tutors, personal attention, at your convenience.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <HomeTuition client:load />
 </BaseLayout>

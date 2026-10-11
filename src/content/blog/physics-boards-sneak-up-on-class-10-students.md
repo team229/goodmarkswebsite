@@ -5,7 +5,7 @@ excerpt: There's a specific kind of panic that kicks in once physics stops feeli
   like "just another class" and starts feeling like a board subject....
 date: '2026-07-06'
 image: /images/blog/physics-boards-sneak-up-on-class-10-students.jpg
-metaTitle: Class 10 Physics Tuition Gurugram for Board Exam | Good Marks Classes
+metaTitle: "Class 10 Physics Tuition Gurgaon | Boards | Good Marks"
 metaDescription: Physics boards sneak up on Class 10 students every year. Get expert
   class 10 physics tuition Gurugram board exam prep with NCERT-focused coaching.
 category: Class 10 Physics

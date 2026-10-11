@@ -5,10 +5,8 @@ excerpt: Class 12 physics doesn't really give you a warm-up period. Electromagne
   induction, optics, modern physics — it all lands at once, and boards...
 date: '2026-07-06'
 image: /images/blog/class-12-physics-doesnt-ease-you-in.jpg
-metaTitle: Best Physics Teacher in Gurgaon for Class 12 | Good Marks Classes
-metaDescription: Class 12 physics does not ease you in. Find the best physics teacher
-  in Gurgaon for class 12 with concept-first teaching, NCERT focus & competitive exam
-  prep.
+metaTitle: "Class 12 Physics Teacher Gurgaon | Good Marks Classes"
+metaDescription: "Class 12 physics does not ease you in. Find the best physics teacher in Gurgaon for class 12 with concept-first teaching, NCERT focus & competitive exam prep."
 category: Class 12 Physics
 ---
 

@@ -5,7 +5,7 @@ excerpt: If you're a parent or student in Gurgaon trying to figure out the right
   tutor class 10 Gurgaon board exam prep, you're probably noticing...
 date: '2026-06-30'
 image: /images/blog/biology-tutor-class-10-gurgaon-boards.jpg
-metaTitle: Biology Tutor Class 10 Gurgaon Board Exam Prep | Good Marks Classes
+metaTitle: "Class 10 Biology Tutor Gurgaon | Board Prep | Good Marks"
 metaDescription: Looking for a biology tutor for class 10 in Gurgaon for board exam
   prep? Good Marks Classes offers NCERT-focused biology coaching with personalized
   attention.

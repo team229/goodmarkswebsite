@@ -70,19 +70,33 @@ export default function LocationPage({ slug }: LocationPageProps) {
 
   const isManesar = slug.includes('manesar');
   const area = isManesar ? 'Manesar' : 'Gurgaon';
+  // Sector extracted from slug (e.g. jee-coaching-gurgaon-sector-78 -> "78").
+  // First link per page uses a sector-specific anchor so 82 pages don't share
+  // identical exact-match anchors; remaining links rotate by course type.
+  const secMatch = slug.match(/sector-(\d+[A-Z]?)/i);
+  const sector = secMatch ? secMatch[1] : '';
+  // Prefer a sector-specific anchor; fall back to the bare sector label on
+  // pages where the full phrase only occurs inside an existing markdown link
+  // (wrapping there would nest anchors, so injectLinks would orphan instead).
+  const fullSectorKw = isIITJEE ? `IIT Coaching in ${area} Sector ${sector}`
+    : isNEET ? `NEET Coaching in ${area} Sector ${sector}`
+    : '';
+  const sectorKw = fullSectorKw && page.content.toLowerCase().includes(fullSectorKw.toLowerCase())
+    ? fullSectorKw
+    : `Sector ${sector}`;
 
   const typeLinks: InternalLink[] = isIITJEE ? [
-    { kw: 'IIT JEE coaching in Gurgaon', href: '/courses/iit' },
-    { kw: 'IIT JEE foundation course Gurgaon', href: '/courses/foundation' },
-    { kw: '2 year IIT JEE program Gurgaon', href: '/course/2-year-integrated-regular' },
+    { kw: sectorKw, href: '/course/2-year-integrated-regular' },
+    { kw: '1 Year Programme', href: '/course/1-year-regular-12' },
+    { kw: '2 Year Programme', href: '/course/2-year-integrated-regular' },
   ] : isNEET ? [
-    { kw: 'NEET coaching in Gurgaon', href: '/courses/neet' },
-    { kw: '2 year NEET coaching Gurgaon', href: '/course/2-year-integrated-regular-neet' },
-    { kw: 'NEET foundation course Gurgaon', href: '/courses/foundation' },
+    { kw: sectorKw, href: '/course/2-year-integrated-regular-neet' },
+    { kw: '1 Year Programme', href: '/course/1-year-regular-12-neet' },
+    { kw: '2 Year Programme', href: '/course/2-year-integrated-regular-neet' },
   ] : [
-    { kw: 'maths coaching for class 10 in Gurgaon', href: '/subject/mathematics' },
-    { kw: 'physics tutor for class 11 CBSE Gurgaon', href: '/subject/physics' },
-    { kw: 'chemistry tuition for board exams Gurgaon', href: '/subject/chemistry' },
+    { kw: 'CBSE Tuition', href: '/courses/cbse' },
+    { kw: 'Physics', href: '/subject/physics' },
+    { kw: 'free demo', href: '/contact' },
   ];
 
   const breadcrumbSchema = {
@@ -197,13 +211,13 @@ export default function LocationPage({ slug }: LocationPageProps) {
                       <option value="tuition">Subject-wise Tuition</option>
                     </select>
                   </div>
-                                    {formError && (
+                  {formError && (
                     <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                       {formError}
                     </div>
                   )}
                   <SpamGuard />
-<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
+                  <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
                     Submit Enquiry
                   </button>
                 </form>
@@ -315,13 +329,13 @@ export default function LocationPage({ slug }: LocationPageProps) {
                     <option value="tuition">Subject-wise Tuition</option>
                   </select>
                 </div>
-                                {formError && (
+                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
-<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
+                <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
                   Submit Enquiry
                 </button>
               </form>

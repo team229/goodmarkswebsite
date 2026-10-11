@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import JoinFaculty from '../components/JoinFaculty';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'What qualifications do you look for?', acceptedAnswer: { '@type': 'Answer', text: 'Deep subject mastery first — typically B.Tech/M.Tech from premier institutes or equivalent expertise — plus the ability to explain complex ideas simply. Prior competitive-exam coaching experience is strongly preferred.' } },
+    { '@type': 'Question', name: 'Is there a demo lecture in selection?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Shortlisted candidates teach a real topic to our academic panel, followed by trial sessions with actual students. Teaching ability is evaluated live, not on paper.' } },
+    { '@type': 'Question', name: 'Full-time or part-time?', acceptedAnswer: { '@type': 'Answer', text: 'Both. Choose offline batches at Sector 85, live online batches, hybrid, or home tuition assignments — full-time and part-time arrangements are available.' } },
+    { '@type': 'Question', name: 'Will I have to teach multiple subjects?', acceptedAnswer: { '@type': 'Answer', text: 'No. One subject per faculty, always. Physics teachers teach Physics; Chemistry teachers teach Chemistry. Specialisation is a core principle here.' } },
+    { '@type': 'Question', name: 'What support do faculty get?', acceptedAnswer: { '@type': 'Answer', text: 'Ready study material, testing systems (weekly tests, AITS), doubt-session structure and mentorship from academic heads — so you can focus purely on teaching.' } },
+    { '@type': 'Question', name: 'How do I apply?', acceptedAnswer: { '@type': 'Answer', text: 'Fill the application form on this page with your background, subject expertise and a resume link. Our team responds to shortlisted candidates shortly.' } },
+  ]
+};
 ---
-<BaseLayout title="Teach at GoodMarks Classes Gurgaon | Faculty Openings | Apply Now" description="Are you an expert educator in Physics, Chemistry, Maths, or Biology? Join a growing coaching institute in Gurgaon that values great teaching. Apply now and make a real impact on students' futures.">
+<BaseLayout title="Teach at GoodMarks Classes Gurgaon | Apply Now" description="Expert educator in Physics, Chemistry, Maths or Biology? Join a growing Gurgaon coaching institute that values great teaching. Apply now.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <JoinFaculty client:load />
 </BaseLayout>

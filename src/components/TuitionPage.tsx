@@ -210,13 +210,13 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                       <option value="tuition">Subject-wise Tuition</option>
                     </select>
                   </div>
-                                    {formError && (
+                  {formError && (
                     <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                       {formError}
                     </div>
                   )}
                   <SpamGuard />
-<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
+                  <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all">
                     Submit Enquiry
                   </button>
                 </form>
@@ -327,13 +327,13 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
                     <option value="tuition">Subject-wise Tuition</option>
                   </select>
                 </div>
-                                {formError && (
+                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
-<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
+                <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full btn-gradient py-3.5 rounded-xl text-secondary-900 font-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 transition-all mt-2">
                   Submit Enquiry
                 </button>
               </form>

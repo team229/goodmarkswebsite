@@ -2,9 +2,9 @@
 title: "One Year to JEE in Gurgaon: What a Well-Built 1-Year Coaching Plan Actually Looks Like"
 excerpt: "Class 12 just started — or a year was dropped somewhere along the way. A focused 1-year JEE coaching plan in Gurgaon isn't about cramming three years into twelve months; it's about doing the right things in the right order."
 date: "2026-08-08"
-image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg
-metaTitle: "1 Year JEE Coaching Gurgaon: What a One-Year Plan Really Involves | Good Marks Classes"
-metaDescription: "Need a focused 1 year JEE coaching in Gurgaon? Learn what a well-structured one-year JEE plan includes — diagnostic tests, weekly mocks, small batches and realistic goal-setting."
+image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.webp
+metaTitle: "1 Year JEE Coaching in Gurgaon | One-Year Plan | Good Marks"
+metaDescription: "Need a focused 1 year JEE coaching in Gurgaon? Learn what a well-structured one-year JEE plan includes — diagnostic tests, weekly mocks, small batches and."
 category: IIT JEE
 ---
 

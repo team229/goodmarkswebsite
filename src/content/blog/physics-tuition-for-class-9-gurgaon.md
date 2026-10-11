@@ -4,7 +4,7 @@ excerpt: "Class 9 physics quietly becomes the turning point for everything that 
 date: "2026-09-22"
 image: /images/blog/physics-tuition-for-class-9-gurgaon.webp
 metaTitle: "Physics Tuition for Class 9 Gurgaon | Good Marks Classes"
-metaDescription: "Physics tuition for class 9 in Gurgaon builds the foundations that make Class 10, 11 and 12 easier. Understand the common struggles and how to choose the right tutor."
+metaDescription: "Physics tuition for class 9 in Gurgaon builds the foundations that make Class 10, 11 and 12 easier. Understand the common struggles and how to choose the."
 category: Class 9 Physics
 ---
 

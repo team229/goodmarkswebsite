@@ -3,8 +3,8 @@ title: "Best Physics Teacher in Gurgaon for Class 12: How Students Can Find the 
 excerpt: "Class 12 physics is tough and the pressure is real. This guide covers what makes a great physics mentor, how to balance boards with JEE and NEET, and the questions parents should ask before enrolling."
 date: "2026-09-22"
 image: /images/blog/best-physics-teacher-in-gurgaon-for-class-12.webp
-metaTitle: "Finding the Best Physics Teacher in Gurgaon for Class 12 | Good Marks Classes"
-metaDescription: "Searching for the best physics teacher in Gurgaon for class 12? Learn the qualities that matter, how to balance boards with JEE and NEET, and the key questions to ask before enrolling."
+metaTitle: "Best Physics Teacher for Class 12 in Gurgaon | Good Marks"
+metaDescription: "Searching for the best physics teacher in Gurgaon for class 12? Learn the qualities that matter, how to balance boards with JEE and NEET, and the key."
 category: Class 12 Physics
 ---
 

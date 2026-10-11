@@ -4,7 +4,7 @@ excerpt: "Missing just one math concept can make every later topic harder to gra
 date: "2026-08-24"
 image: /images/blog/maths-tuition-weak-students-gurgaon.jpg
 metaTitle: "Maths Tuition for Weak Students Gurgaon | Good Marks Classes"
-metaDescription: "Need maths tuition for weak students in Gurgaon? Good Marks Classes offers personalized support that rebuilds foundations, boosts grades and restores confidence."
+metaDescription: "Need maths tuition for weak students in Gurgaon? Good Marks Classes offers personalized support that rebuilds foundations, boosts grades and restores."
 category: Mathematics
 ---
 

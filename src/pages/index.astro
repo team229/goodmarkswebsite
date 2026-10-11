@@ -13,6 +13,11 @@ const organizationLocalSchema = {
     {
       '@type': 'Place',
       name: 'Good Marks Classes – Gurgaon',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 28.39628499476872,
+        longitude: 76.9489722760682
+      },
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Gurugram',
@@ -120,7 +125,7 @@ const webSiteSchema = {
   }
 };
 ---
-<BaseLayout title="#1 JEE & NEET Coaching in Gurgaon | Enroll at GoodMarks Classes" description="Join Gurgaon's most trusted JEE & NEET coaching institute. Expert faculty, proven results, and personalized attention for Class 9–12. Limited seats available — enroll at GoodMarks Classes today!">
+<BaseLayout title="JEE & NEET Coaching in Gurgaon | GoodMarks Classes" description="JEE & NEET coaching in Gurgaon with expert faculty, small batches and personal attention for Class 9–12. Book a free demo class today.">
   <script type="application/ld+json" set:html={JSON.stringify(organizationLocalSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />

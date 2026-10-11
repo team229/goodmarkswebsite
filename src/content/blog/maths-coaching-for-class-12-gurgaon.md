@@ -3,8 +3,8 @@ title: "Maths Coaching for Class 12 Gurgaon: CBSE Board and JEE Maths Batches fo
 excerpt: "Structured maths coaching for Class 12 in Gurgaon covering both CBSE board and JEE tracks: the paper pattern, why Class 11 basics matter, and how small, separate board and JEE batches work at Good Marks Classes, Sector 85."
 date: "2026-09-15"
 image: /images/blog/maths-coaching-for-class-12-gurgaon.webp
-metaTitle: "Maths Coaching for Class 12 Gurgaon | Board & JEE Batches"
-metaDescription: "Small-batch maths coaching for Class 12 in Gurgaon, with CBSE board and JEE tracks plus support for Classes 10 and 11 and weak students. Free 1-week demo. Call 8800 8800 28."
+metaTitle: "Class 12 Maths Coaching Gurgaon | Board & JEE | Good Marks"
+metaDescription: "Small-batch maths coaching for Class 12 in Gurgaon, with CBSE board and JEE tracks plus support for Classes 10 and 11 and weak students. Free 1-week demo."
 category: IIT JEE
 ---
 

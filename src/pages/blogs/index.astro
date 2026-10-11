@@ -13,7 +13,7 @@ const toPrimaryCategory = (post: (typeof posts)[number]): 'CBSE' | 'IIT JEE' | '
   return 'CBSE';
 };
 ---
-<BaseLayout title="Our Blog | Good Marks Classes" description="Insights, guides, and tips from our expert educators to help you excel in your academic journey.">
+<BaseLayout title="Our Blog | Good Marks Classes" description="Guides on JEE, NEET and CBSE prep from GoodMarks Classes educators — batch selection, study plans, doubt strategy and board tips.">
   <BlogList client:load posts={posts.map(p => ({
     slug: p.id,
     title: p.data.title,

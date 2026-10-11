@@ -59,7 +59,7 @@ export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
               transition={{ delay: index * 0.1 }}
               className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 group"
             >
-              <a href={`/blogs/${post.slug}`}>
+              <a href={`/blogs/${post.slug}`} aria-label={post.title}>
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={post.image}
@@ -67,6 +67,7 @@ export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
+              </a>
                 <div className="p-8">
                   <div className="flex items-center gap-2 text-slate-500 text-sm mb-4">
                     <Calendar className="w-4 h-4" />
@@ -77,16 +78,17 @@ export default function BlogList({ posts }: { posts: BlogPostSummary[] }) {
                     })}
                   </div>
                   <h2 className="text-xl font-bold text-secondary-900 mb-4 group-hover:text-primary-600 transition-colors">
-                    {post.title}
+                    <a href={`/blogs/${post.slug}`}>{post.title}</a>
                   </h2>
                   <p className="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
                   <div className="flex items-center gap-2 text-primary-600 font-bold text-sm">
-                    Read More <ArrowRight className="w-4 h-4" />
+                    <a href={`/blogs/${post.slug}`} className="inline-flex items-center gap-2 hover:gap-3 transition-all">
+                      Read More <ArrowRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
-              </a>
             </motion.article>
           ))}
         </div>

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.goodmarksclasses.com/sitemap.xml
+Sitemap: https://www.goodmarksclasses.com/sitemap-index.xml

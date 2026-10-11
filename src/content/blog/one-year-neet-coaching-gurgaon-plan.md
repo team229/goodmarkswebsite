@@ -2,9 +2,9 @@
 title: "One Year to NEET: How a Focused 1-Year NEET Coaching Plan in Gurgaon Is Built"
 excerpt: "Twelve months left and the syllabus still looks huge. A 1-year NEET coaching plan in Gurgaon isn't about cramming three years into twelve months — it's about spending the time you have on what actually moves your score."
 date: "2026-08-08"
-image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.jpg
-metaTitle: "1 Year NEET Coaching in Gurgaon: How a One-Year Plan Actually Works | Good Marks Classes"
-metaDescription: "Searching for a focused 1 year NEET coaching in Gurgaon? Learn how a structured one-year NEET plan works — high-yield NCERT, weekly mocks, small batches and honest pacing."
+image: /images/blog/is-one-year-neet-coaching-gurgaon-enough.webp
+metaTitle: "1 Year NEET Coaching in Gurgaon | Plan | Good Marks Classes"
+metaDescription: "Searching for a focused 1 year NEET coaching in Gurgaon? Learn how a structured one-year NEET plan works — high-yield NCERT, weekly mocks, small batches and."
 category: NEET
 ---
 

@@ -4,7 +4,7 @@ excerpt: '"My daughter understands everything when I explain it at home, but the
   there''s a test, she just blanks." A parent told me something close...'
 date: '2026-07-06'
 image: /images/blog/struggling-with-class-10-biology-before-boards.jpg
-metaTitle: Class 10 Biology Tutor Gurgaon for Board Exam | Good Marks Classes
+metaTitle: "Class 10 Biology Tutor Gurgaon | Boards | Good Marks"
 metaDescription: Struggling with Class 10 Biology before boards? Get expert biology
   tutor class 10 Gurgaon board exam prep with NCERT-focused coaching at Good Marks
   Classes.

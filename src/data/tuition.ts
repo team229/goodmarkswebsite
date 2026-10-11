@@ -18,8 +18,8 @@ export const tuitionPages: TuitionPage[] = [
     location: 'Gurgaon',
     title: 'Physics Tuition Classes in Gurgaon',
     slug: 'physics-tuition-classes-gurgaon',
-    metaTitle: 'Physics Tuition Classes in Gurgaon for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Struggling with Class 11 or 12 physics? Good Marks Classes offers small-batch physics tuition in Gurgaon for CBSE boards, JEE, and NEET. Book a free demo class today.',
+    metaTitle: 'Physics Tuition Class 11–12, Gurgaon | Good Marks Classes',
+    metaDescription: 'Struggling with Class 11 or 12 physics? Good Marks Classes offers small-batch physics tuition in Gurgaon for CBSE boards, JEE, and NEET.',
     content: `Somewhere around mid-Class 11, physics stops being "manageable" for a lot of students. One missed chapter in mechanics and suddenly electrostatics doesn't make sense either. That's usually the point where parents start looking around for extra help, and it's exactly where Good Marks Classes comes in. We run Physics Tuition Classes in Gurgaon specifically for Class 11 and 12 — no other grades, no mixed batches — because these two years genuinely need focused attention, whether it's board exams or JEE/NEET on the line.
 
 What Actually Sets Us Apart
@@ -56,8 +56,8 @@ Class 11 and 12 Physics Tuition Classes in Gurgaon batches usually fill up early
     location: 'Manesar',
     title: 'Physics Tuition Classes in Manesar',
     slug: 'physics-tuition-classes-manesar',
-    metaTitle: 'Physics Tuition Classes in Manesar for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Looking for physics tuition classes in Manesar? Good Marks Classes offers small-batch physics coaching for Class 11 & 12 — CBSE boards, JEE, and NEET. Book a free demo class today.',
+    metaTitle: 'Physics Tuition Class 11–12, Manesar | Good Marks Classes',
+    metaDescription: 'Looking for physics tuition classes in Manesar? Good Marks Classes offers small-batch physics coaching for Class 11 & 12 — CBSE boards, JEE, and NEET.',
     content: `Talk to any Class 11 or 12 student in Manesar and physics usually comes up as the subject that gives them the most trouble — not because it's impossible, but because school moves fast and one missed chapter in mechanics makes electrostatics twice as hard to follow. That's generally the point where parents start asking around for physics tuition classes in Manesar, and it's the exact gap Good Marks Classes was set up to close. We teach physics to Class 11 and 12 students only — CBSE boards, JEE, NEET — with a simple idea driving it: understand the concept first, and the numericals stop being scary.
 
 What Parents Notice First
@@ -94,8 +94,8 @@ Class 11 and 12 Physics Tuition Classes in Manesar batches at Good Marks Classes
     location: 'Gurgaon',
     title: 'Chemistry Tuition Classes in Gurgaon',
     slug: 'chemistry-tuition-classes-gurgaon',
-    metaTitle: 'Chemistry Tuition Classes in Gurgaon for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Looking for chemistry tuition classes in Gurgaon? Good Marks Classes offers small-batch chemistry coaching for Class 11 & 12 — CBSE boards, JEE, and NEET. Book a free demo class today.',
+    metaTitle: 'Chemistry Tuition Class 11–12, Gurgaon | Good Marks Classes',
+    metaDescription: 'Looking for chemistry tuition classes in Gurgaon? Good Marks Classes offers small-batch chemistry coaching for Class 11 & 12 — CBSE boards, JEE, and NEET.',
     content: `Ask a Class 11 or 12 student what confuses them about chemistry and you'll usually get two different answers in the same breath — half of it feels like pure memorization, and then physical chemistry shows up and suddenly it's math. That mix is what trips a lot of students up, and it's around this point that parents start looking for chemistry tuition classes in Gurgaon. Good Marks Classes exists mostly because of this exact problem. We teach chemistry to Class 11 and 12 students only, covering CBSE boards along with JEE and NEET, and we treat organic, inorganic, and physical chemistry as three fairly different skills instead of teaching all three the same way.
 
 Why Gurgaon Parents Keep Coming Back
@@ -136,8 +136,8 @@ Class 11 and 12 Chemistry Tuition Classes in Gurgaon batches at Good Marks Class
     location: 'Manesar',
     title: 'Chemistry Tuition Classes in Manesar',
     slug: 'chemistry-tuition-classes-manesar',
-    metaTitle: 'Chemistry Tuition Classes in Manesar for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Looking for chemistry tuition classes in Manesar? Good Marks Classes offers small-batch chemistry coaching for Class 11 & 12 — CBSE boards, JEE, and NEET. Book a free demo class today.',
+    metaTitle: 'Chemistry Tuition Class 11–12, Manesar | Good Marks Classes',
+    metaDescription: 'Looking for chemistry tuition classes in Manesar? Good Marks Classes offers small-batch chemistry coaching for Class 11 & 12 — CBSE boards, JEE, and NEET.',
     content: `Chemistry tends to split students into two camps by the middle of Class 11 — those who treat it as a memorization subject and get stuck once physical chemistry turns into math, and those who never quite build the habit of memorizing reactions in the first place. Both problems show up a lot around here, which is usually why families start searching for chemistry tuition classes in Manesar. Good Marks Classes was built around fixing exactly this. We teach chemistry to Class 11 and 12 students only, covering CBSE boards along with JEE and NEET, and we treat organic, inorganic, and physical chemistry as three separate skills instead of one subject taught the same way straight through.
 
 Why Families in Manesar Choose Us
@@ -178,8 +178,8 @@ Class 11 and 12 chemistry batches at Good Marks Classes in Manesar tend to fill 
     location: 'Gurgaon',
     title: 'Maths Tuition Classes Gurgaon',
     slug: 'maths-tuition-classes-gurgaon',
-    metaTitle: 'Maths Tuition Classes Gurgaon for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Searching for maths tuition classes Gurgaon parents recommend? Good Marks Classes runs small-batch maths coaching for Class 11 & 12 — CBSE boards and JEE. Book a free demo class today.',
+    metaTitle: 'Maths Tuition Class 11–12, Gurgaon | Good Marks Classes',
+    metaDescription: 'Searching for maths tuition classes Gurgaon parents recommend? Good Marks Classes runs small-batch maths coaching for Class 11 & 12 — CBSE boards and JEE.',
     content: `Maths is the one subject where there's no real partial credit for "sort of" understanding a concept — a student either gets the logic or the whole solution falls apart around step three. That's usually what pushes parents to start looking for maths tuition classes gurgaon families rely on. Good Marks Classes exists mostly because of this exact problem. We teach maths to Class 11 and 12 students only, covering CBSE boards and JEE, and problem-solving gets treated as a skill built up over time rather than a set of tricks memorized the night before an exam.
 
 Why Gurgaon Parents Choose Us
@@ -216,8 +216,8 @@ Class 11 and 12 maths batches at Good Marks Classes tend to fill up early most t
     location: 'Manesar',
     title: 'Maths Tuition Classes Manesar',
     slug: 'maths-tuition-classes-manesar',
-    metaTitle: 'Maths Tuition Classes Manesar for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Searching for maths tuition classes manesar parents recommend? Good Marks Classes runs small-batch maths coaching for Class 11 & 12 — CBSE boards and JEE. Book a free demo class today.',
+    metaTitle: 'Maths Tuition Class 11–12, Manesar | Good Marks Classes',
+    metaDescription: 'Searching for maths tuition classes manesar parents recommend? Good Marks Classes runs small-batch maths coaching for Class 11 & 12 — CBSE boards and JEE.',
     content: `Maths doesn't really allow for "almost understanding" something — a student either follows the logic of a step or the whole solution collapses somewhere down the line. That's usually the point where families start searching for maths tuition classes manesar parents trust, and it's exactly the gap Good Marks Classes was built to close. We teach maths to Class 11 and 12 students only, covering CBSE boards and JEE, with problem-solving treated as a skill built gradually rather than a set of shortcuts memorized right before an exam.
 
 Why Manesar Parents Choose Us
@@ -254,8 +254,8 @@ Class 11 and 12 maths batches at Good Marks Classes in Manesar tend to fill up e
     location: 'Gurgaon',
     title: 'Biology Tuition Classes Gurgaon',
     slug: 'biology-tuition-classes-gurgaon',
-    metaTitle: 'Biology Tuition Classes Gurgaon for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Searching for biology tuition classes gurgaon parents recommend? Good Marks Classes runs small-batch biology coaching for Class 11 & 12 — CBSE boards and NEET. Book a free demo class today.',
+    metaTitle: 'Biology Tuition Class 11–12, Gurgaon | Good Marks Classes',
+    metaDescription: 'Searching for biology tuition classes gurgaon parents recommend? Good Marks Classes runs small-batch biology coaching for Class 11 & 12 — CBSE boards and.',
     content: `Biology looks deceptively easy on paper — no calculus, no reaction mechanisms, mostly diagrams and definitions. Then a NEET-level question shows up, and students realize the subject demands more precision than expected, especially in genetics, physiology, and ecology. That gap between "I've read the chapter" and "I can actually answer a tricky NCERT-based question" is usually what sends parents searching for biology tuition classes gurgaon offers. Good Marks Classes exists to close that gap. We teach biology to Class 11 and 12 students only, covering CBSE boards and NEET, with a focus on retaining detail accurately rather than reading a chapter once and hoping it sticks.
 
 Why Gurgaon Parents Trust Us
@@ -292,8 +292,8 @@ Class 11 and 12 biology batches at Good Marks Classes tend to fill up early most
     location: 'Manesar',
     title: 'Biology Tuition Classes Manesar',
     slug: 'biology-tuition-classes-manesar',
-    metaTitle: 'Biology Tuition Classes Manesar for Class 11 & 12 | Good Marks Classes',
-    metaDescription: 'Searching for biology tuition classes manesar parents recommend? Good Marks Classes runs small-batch biology coaching for Class 11 & 12 — CBSE boards and NEET. Book a free demo class today.',
+    metaTitle: 'Biology Tuition Class 11–12, Manesar | Good Marks Classes',
+    metaDescription: 'Searching for biology tuition classes manesar parents recommend? Good Marks Classes runs small-batch biology coaching for Class 11 & 12 — CBSE boards and.',
     content: `Biology has a reputation for being the "easier" science subject, right up until a NEET-level question forces a student to recall an exact NCERT line rather than a rough summary of it. That gap between knowing the topic and actually scoring on it is usually what sends families searching for biology tuition classes manesar parents talk about. Good Marks Classes was built around closing exactly that gap. We teach biology to Class 11 and 12 students only, covering CBSE boards and NEET, with the focus kept on retaining detail precisely rather than reading a chapter once and moving on.
 
 Why Manesar Parents Choose Us

@@ -3,9 +3,17 @@ import { useFormSubmit } from '../hooks/useFormSubmit';
 import SpamGuard from './SpamGuard';
 import { HelpCircle, CheckCircle, ArrowRight } from 'lucide-react';
 
+const doubtFaqs = [
+  { q: 'Who can book a doubt session?', a: 'Any student in Class 8–12 studying Physics, Chemistry, Maths or Biology — whether enrolled with us or not. Sessions help with school topics as well as JEE and NEET problems.' },
+  { q: 'Are doubt sessions online or offline?', a: 'Both. Choose a live online session from home, or visit our Sector 85 centre in Gurgaon for an in-person sitting. Thursday is additionally reserved every week for doubts and backup classes.' },
+  { q: 'How is this different from asking doubts in class?', a: 'Regular classes move at batch pace. A doubt session is one-to-one time with a subject expert, focused entirely on your questions — including the ones you hesitated to ask in front of classmates.' },
+  { q: 'What should I prepare before the session?', a: 'Just a list of the exact questions or topics troubling you — a photo of your attempt helps the faculty spot where your method diverged. No prior registration beyond the booking form.' },
+  { q: 'How fast can I get a slot?', a: 'Fill the form above or call 8800 8800 28. Slots are usually confirmed the same day, and Thursday doubt hours run every week through the session.' },
+  { q: 'Is there a free demo?', a: 'Yes — new students can start with our free demo experience before committing to any programme. Mention it while booking and we will arrange it.' },
+];
+
 export default function DoubtSessions() {
   const { submitForm, isSubmitting, formError } = useFormSubmit('DoubtSessions');
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -77,17 +85,79 @@ export default function DoubtSessions() {
                     <option value="biology">Biology</option>
                   </select>
                 </div>
-                                {formError && (
+                {formError && (
                   <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                     {formError}
                   </div>
                 )}
                 <SpamGuard />
-<button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 mt-6">
+                <button disabled={isSubmitting} type="submit" className="disabled:opacity-70 w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 mt-6">
                   Book Session Today <ArrowRight className="w-5 h-5" />
                 </button>
               </form>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-16 bg-white border-y border-slate-100">
+        <div className="max-w-container-max mx-auto px-6">
+          <h2 className="text-3xl font-black text-secondary-900 mb-4">How a Doubt Session Works</h2>
+          <p className="text-slate-600 text-lg max-w-3xl mb-10">A doubt left overnight becomes a gap by exam day. Our process is built to close it the same week — book in a minute, meet an expert one-to-one, and leave with the concept clear, not just the answer.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-offwhite p-7 rounded-3xl border border-slate-200">
+              <div className="text-sm font-black text-amber-600 mb-2">STEP 1</div>
+              <h3 className="font-bold text-secondary-900 text-lg mb-2">Book in a minute</h3>
+              <p className="text-slate-600">Fill the form above with your name, mobile number and subject — or call <a href="tel:8800880028" className="text-primary-600 font-semibold hover:underline">8800 8800 28</a>. Our team confirms your slot, usually the same day.</p>
+            </div>
+            <div className="bg-offwhite p-7 rounded-3xl border border-slate-200">
+              <div className="text-sm font-black text-amber-600 mb-2">STEP 2</div>
+              <h3 className="font-bold text-secondary-900 text-lg mb-2">Meet your expert 1-to-1</h3>
+              <p className="text-slate-600">Sit with a subject-specialist faculty member — online live or offline at our Sector 85 centre — and work through your exact questions, however basic or advanced.</p>
+            </div>
+            <div className="bg-offwhite p-7 rounded-3xl border border-slate-200">
+              <div className="text-sm font-black text-amber-600 mb-2">STEP 3</div>
+              <h3 className="font-bold text-secondary-900 text-lg mb-2">Leave with clarity</h3>
+              <p className="text-slate-600">You don't just get the final answer — you get the underlying concept re-explained, plus pointers on what to practise so the same doubt never returns.</p>
+            </div>
+          </div>
+          <h3 className="text-2xl font-bold text-secondary-900 mb-6">Session Formats at a Glance</h3>
+          <div className="blog-table-wrap">
+            <table className="blog-table">
+              <thead>
+                <tr><th scope="col">Aspect</th><th scope="col">What you get</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mode</td><td>Online live session or offline at Sector 85, Gurgaon — your choice at booking</td></tr>
+                <tr><td>Format</td><td>One-to-one with a subject expert (Physics, Chemistry, Maths or Biology)</td></tr>
+                <tr><td>Levels covered</td><td>CBSE Classes 8–12, plus JEE and NEET problem-solving</td></tr>
+                <tr><td>Doubt day</td><td>Thursday is reserved every week for doubts, discussions and backup classes</td></tr>
+                <tr><td>Follow-up</td><td>Concept recap plus practice pointers after every session</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="py-16 bg-offwhite">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-black text-secondary-900 mb-3 text-center">Doubt Session FAQs</h2>
+          <p className="text-slate-600 text-lg text-center mb-10">Everything parents and students ask before booking their first session.</p>
+          <div className="flex flex-col gap-4">
+            {doubtFaqs.map((faq, idx) => (
+              <details key={idx} name="faq" className="faq-item group bg-white border border-slate-200 rounded-2xl shadow-sm">
+                <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold text-secondary-800 text-lg select-none group-open:bg-offwhite/50 transition-colors">
+                  {faq.q}
+                </summary>
+                <div className="faq-answer">
+                  <div className="faq-a px-6 pb-6 pt-2 text-slate-600 bg-offwhite/50 leading-relaxed border-t border-slate-100">
+                    <p>{faq.a}</p>
+                  </div>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

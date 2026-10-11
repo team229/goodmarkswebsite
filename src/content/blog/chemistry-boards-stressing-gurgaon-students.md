@@ -5,7 +5,7 @@ excerpt: Something changes the moment boards enter the picture. It's not enough 
   to just get chemistry — you need to recall it months later, under...
 date: '2026-07-06'
 image: /images/blog/chemistry-boards-stressing-gurgaon-students.jpg
-metaTitle: Chemistry Tuition for Board Exams in Gurgaon | Good Marks Classes
+metaTitle: "Chemistry Board Exam Tuition Gurgaon | Good Marks Classes"
 metaDescription: Chemistry boards stressing you out? Get expert chemistry tuition
   for board exams in Gurgaon with NCERT-focused revision, mock tests & step-marking
   guidance.

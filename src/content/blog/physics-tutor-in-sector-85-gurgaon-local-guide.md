@@ -4,7 +4,7 @@ excerpt: "Physics builds on itself — mechanics, electromagnetism, thermodynami
 date: "2026-08-22"
 image: /images/blog/physics-tutor-sector-85-gurgaon.jpg
 metaTitle: "Physics Tutor in Sector 85 Gurgaon | Good Marks Classes"
-metaDescription: "Searching for a Physics Tutor in Sector 85 Gurgaon? Good Marks Classes offers personalized physics coaching for CBSE, ICSE, JEE & NEET with experienced educators."
+metaDescription: "Searching for a Physics Tutor in Sector 85 Gurgaon? Good Marks Classes offers personalized physics coaching for CBSE, ICSE, JEE & NEET with experienced."
 category: Physics
 ---
 

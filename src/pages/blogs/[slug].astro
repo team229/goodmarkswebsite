@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPost from '../../components/BlogPost';
+import { generateBlogSchema } from '../../lib/blogSchema';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -14,8 +15,20 @@ const entry = posts.find(p => p.id === slug);
 const { data, body } = entry!;
 const metaTitle = data.metaTitle;
 const metaDescription = data.metaDescription;
+// Server-rendered BlogPosting schema (client-only injection is invisible to crawlers).
+const blogPostingSchema = generateBlogSchema({
+  slug: entry!.id,
+  title: data.title,
+  excerpt: data.excerpt,
+  date: data.date,
+  updated: data.updated,
+  image: data.image,
+  metaTitle: data.metaTitle,
+  metaDescription: data.metaDescription,
+  category: data.category,
+});
 ---
-<BaseLayout title={metaTitle} description={metaDescription}>
+<BaseLayout title={metaTitle} description={metaDescription} jsonLd={[blogPostingSchema]}>
   <BlogPost client:load post={{
     slug: entry!.id,
     title: data.title,

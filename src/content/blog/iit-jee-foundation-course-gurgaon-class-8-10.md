@@ -3,8 +3,8 @@ title: "IIT JEE Foundation Course in Gurgaon for Class 8-10: Why Starting Early 
 excerpt: "Most families in Gurgaon assume JEE prep really begins in Class 11. But an IIT JEE foundation course for Class 8-10 builds the thinking habits the exam actually rewards — long before the pressure starts. Here's what to look for."
 date: "2026-08-08"
 image: /images/blog/iit-jee-foundation-course-in-gurgaon.png
-metaTitle: "IIT JEE Foundation Course in Gurgaon for Class 8-10 | Good Marks Classes"
-metaDescription: "Looking for an IIT JEE foundation course in Gurgaon for Class 8-10? Good Marks Classes builds concept-first fundamentals, small batches and consistent testing from an early age."
+metaTitle: "JEE Foundation Course for Class 8–10, Gurgaon | Good Marks"
+metaDescription: "Looking for an IIT JEE foundation course in Gurgaon for Class 8-10? Good Marks Classes builds concept-first fundamentals, small batches and consistent."
 category: Foundation Course
 ---
 

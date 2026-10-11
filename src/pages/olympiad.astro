@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Olympiad from '../components/Olympiad';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Which classes can join the Olympiad batch?', acceptedAnswer: { '@type': 'Answer', text: 'Students of Class 6–10. Younger students build reasoning foundations; Class 9–10 students combine Olympiad training with NTSE-style mental ability and early JEE/NEET orientation.' } },
+    { '@type': 'Question', name: 'My child is average at Maths — is Olympiad prep suitable?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, that is exactly who benefits most. Olympiad training rebuilds how a student approaches an unfamiliar problem, which lifts school Maths marks too — not just contest scores.' } },
+    { '@type': 'Question', name: 'How are Olympiad classes different from school tuition?', acceptedAnswer: { '@type': 'Answer', text: 'School tuition covers the syllabus; Olympiad batches train application — timed papers, previous-year Olympiad questions, and detailed reviews of why each wrong option was tempting.' } },
+    { '@type': 'Question', name: 'Are classes online or offline?', acceptedAnswer: { '@type': 'Answer', text: 'Both. Offline batches run at our Sector 85 centre in Gurgaon; live online batches (max 10 students) serve students across India. Pick at enrolment.' } },
+    { '@type': 'Question', name: 'Does Olympiad prep help with JEE/NEET later?', acceptedAnswer: { '@type': 'Answer', text: 'Directly. The logical reasoning, speed and exam temperament built here are the same skills JEE Advanced and NEET toppers rely on. Many of our Olympiad students graduate into our foundation batches.' } },
+    { '@type': 'Question', name: 'Is there a free demo?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — attend a demo class before enrolling. Call 8800 8800 28 or fill the form above and we will schedule it.' } },
+  ]
+};
 ---
-<BaseLayout title="Olympiad Coaching in Gurgaon | Science & Maths | GoodMarks Classes" description="Prepare for Science and Maths Olympiads with dedicated coaching at GoodMarks Classes in Gurgaon. We help students develop analytical thinking and problem-solving skills to excel in national-level competitions.">
+<BaseLayout title="Olympiad Coaching Gurgaon (Science, Maths) | GoodMarks" description="Science and Maths Olympiad coaching in Gurgaon — build analytical thinking and problem-solving skills for national-level competitions.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <Olympiad client:load />
 </BaseLayout>

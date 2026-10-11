@@ -5,9 +5,7 @@ excerpt: Class 11 Physics hits differently than anything students have dealt wit
 date: '2026-06-30'
 image: /images/blog/best-physics-coaching-for-class-11-near-me.jpg
 metaTitle: Best Physics Coaching for Class 11 Near Me
-metaDescription: Looking for expert physics coaching for Class 11 near you? Good Marks
-  Classes offers CBSE-focused physics tuition with small batches, doubt sessions &
-  guaranteed results.
+metaDescription: "Looking for expert physics coaching for Class 11 near you? Good Marks Classes offers CBSE-focused physics tuition with small batches, doubt sessions &."
 category: Class 11 Physics
 ---
 

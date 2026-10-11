@@ -1,7 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DoubtSessions from '../components/DoubtSessions';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Who can book a doubt session?', acceptedAnswer: { '@type': 'Answer', text: 'Any student in Class 8–12 studying Physics, Chemistry, Maths or Biology — whether enrolled with us or not. Sessions help with school topics as well as JEE and NEET problems.' } },
+    { '@type': 'Question', name: 'Are doubt sessions online or offline?', acceptedAnswer: { '@type': 'Answer', text: 'Both. Choose a live online session from home, or visit our Sector 85 centre in Gurgaon for an in-person sitting. Thursday is additionally reserved every week for doubts and backup classes.' } },
+    { '@type': 'Question', name: 'How is this different from asking doubts in class?', acceptedAnswer: { '@type': 'Answer', text: 'Regular classes move at batch pace. A doubt session is one-to-one time with a subject expert, focused entirely on your questions — including the ones you hesitated to ask in front of classmates.' } },
+    { '@type': 'Question', name: 'What should I prepare before the session?', acceptedAnswer: { '@type': 'Answer', text: 'Just a list of the exact questions or topics troubling you — a photo of your attempt helps the faculty spot where your method diverged. No prior registration beyond the booking form.' } },
+    { '@type': 'Question', name: 'How fast can I get a slot?', acceptedAnswer: { '@type': 'Answer', text: 'Fill the form above or call 8800 8800 28. Slots are usually confirmed the same day, and Thursday doubt hours run every week through the session.' } },
+    { '@type': 'Question', name: 'Is there a free demo?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — new students can start with our free demo experience before committing to any programme. Mention it while booking and we will arrange it.' } },
+  ]
+};
 ---
-<BaseLayout title="Doubt Clearing Sessions in Gurgaon | GoodMarks Classes" description="Clear your concepts with dedicated doubt sessions at GoodMarks Classes in Gurgaon. Our expert faculty address student queries in Physics, Chemistry, Maths, and Biology to ensure no topic is left unclear.">
+<BaseLayout title="Doubt Clearing Sessions in Gurgaon | GoodMarks Classes" description="Dedicated doubt sessions in Gurgaon for Physics, Chemistry, Maths and Biology — expert faculty ensure no topic is left unclear.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <DoubtSessions client:load />
 </BaseLayout>

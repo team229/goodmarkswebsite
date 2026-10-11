@@ -5,9 +5,7 @@ excerpt: Something changes fast once Class 11 maths starts, and most students do
 date: '2026-07-06'
 image: /images/blog/class-11-maths-catches-students-off-guard.jpg
 metaTitle: Maths Coaching for Class 11 in Gurgaon | Good Marks Classes
-metaDescription: Class 11 maths catches students off guard every year. Get expert
-  maths coaching for class 11 in Gurgaon with concept-first teaching & NCERT-focused
-  practice.
+metaDescription: "Class 11 maths catches students off guard every year. Get expert maths coaching for class 11 in Gurgaon with concept-first teaching & NCERT-focused practice."
 category: Class 11 Maths
 ---
 

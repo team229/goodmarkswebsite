@@ -3,8 +3,8 @@ title: "Maths Tuition for Weak Students in Gurgaon: A Practical Guide for Parent
 excerpt: "A practical guide for parents on maths tuition for weak students in Gurgaon — the four kinds of maths gaps, when to start, how to evaluate tutors, and choosing Standard or Basic Maths in Class 10."
 date: "2026-09-19"
 image: /images/blog/maths-tuition-for-weak-students-gurgaon-practical-guide.webp
-metaTitle: "Maths Tuition for Weak Students in Gurgaon | Good Marks Classes"
-metaDescription: "A practical guide for parents: what 'weak in maths' really means, the four gap types, when to start tuition, how to evaluate tutors, and the Class 10 Standard vs Basic choice."
+metaTitle: "Weak Students Maths Tuition Gurgaon | Good Marks Classes"
+metaDescription: "A practical guide for parents: what 'weak in maths' really means, the four gap types, when to start tuition, how to evaluate tutors, and the Class 10."
 category: Mathematics
 ---
 

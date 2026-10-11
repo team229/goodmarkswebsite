@@ -4,7 +4,7 @@ excerpt: "A practical guide to Class 10 biology board exam preparation in Gurgao
 date: "2026-09-19"
 image: /images/blog/class-10-biology-tutor-gurgaon-practical-guide.webp
 metaTitle: "Biology Tutor for Class 10 in Gurgaon | Good Marks Classes"
-metaDescription: "A practical guide to Class 10 biology board prep in Gurgaon: what a biology tutor does, when to start, how to evaluate one, and the mistakes that cost marks. Call 8800 8800 28."
+metaDescription: "A practical guide to Class 10 biology board prep in Gurgaon: what a biology tutor does, when to start, how to evaluate one, and the mistakes that cost marks."
 category: Class 10 Biology
 ---
 

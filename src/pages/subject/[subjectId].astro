@@ -9,10 +9,10 @@ export async function getStaticPaths() {
 
 const { subjectId } = Astro.params;
 const meta: Record<string, { title: string; description: string }> = {
-  biology: { title: 'Biology Tuition for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Looking for a biology tutor in Gurgaon for board exams or NEET preparation? GoodMarks Classes offers CBSE and NCERT-based biology tuition for Class 10, 11, and 12 students across Gurugram, including near Sohna Road.' },
-  chemistry: { title: 'Chemistry Tuition for Class 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Get expert chemistry coaching in Gurgaon for Class 11 and 12 board exams. GoodMarks Classes offers CBSE-aligned chemistry tuition near Sector 85 and across Gurugram with concept-focused and exam-ready teaching.' },
-  mathematics: { title: 'Maths Coaching for Class 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Struggling with maths? GoodMarks Classes offers CBSE and ICSE maths tuition in Gurgaon for Class 10, 11, and 12. Our patient, concept-first approach is especially effective for students who need extra support.' },
-  physics: { title: 'Physics Tuition for Class 9, 10, 11 & 12 in Gurgaon | GoodMarks Classes', description: 'Find the best physics tutor in Gurgaon for CBSE board exams and competitive prep. GoodMarks Classes provides quality physics tuition for Class 9 to 12 students across Gurugram, including Sector 85, with experienced and dedicated teachers.' }
+  biology: { title: 'Biology Tuition Class 10–12, Gurgaon | GoodMarks Classes', description: 'Biology tutor in Gurgaon for boards and NEET — CBSE/NCERT biology tuition for Class 10–12 across Gurugram, near Sohna Road.' },
+  chemistry: { title: 'Chemistry Tuition Class 11–12, Gurgaon | GoodMarks', description: 'Chemistry coaching in Gurgaon for Class 11–12 boards — CBSE-aligned tuition near Sector 85 and across Gurugram.' },
+  mathematics: { title: 'Maths Coaching Class 10–12, Gurgaon | GoodMarks Classes', description: 'Maths tuition in Gurgaon for Class 10–12 (CBSE/ICSE) — patient, concept-first teaching, ideal for students needing support.' },
+  physics: { title: 'Physics Tuition Class 9–12, Gurgaon | GoodMarks Classes', description: 'Physics tutor in Gurgaon for CBSE boards and competitive prep — Class 9–12 tuition across Gurugram, including Sector 85.' }
 };
 
 const subjectMeta = meta[subjectId];

@@ -3,8 +3,8 @@ title: "NEET Foundation Course in Gurgaon for Classes 7 to 10"
 excerpt: "A NEET foundation course in Gurgaon builds strong Physics, Chemistry and Biology concepts in Classes 7 to 10 — before the two-year NEET race begins. Here is what it covers, who it suits, and how to evaluate one."
 date: "2026-09-11"
 image: /images/blog/neet-foundation-course-gurgaon-classes-7-10.jpg
-metaTitle: "NEET Foundation Course Gurgaon | Classes 7 to 10 | Good Marks Classes"
-metaDescription: "NEET foundation course in Gurgaon for Classes 7 to 10. NCERT-first Physics, Chemistry and Biology, small batches, regular tests and a free 1-week demo in Sector 85."
+metaTitle: "NEET Foundation (Class 7–10) Gurgaon | Good Marks Classes"
+metaDescription: "NEET foundation course in Gurgaon for Classes 7 to 10. NCERT-first Physics, Chemistry and Biology, small batches, regular tests and a free 1-week demo in."
 category: NEET
 ---
 

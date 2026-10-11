@@ -11,11 +11,13 @@ export interface Props {
   robots?: string;
   /** Google Ads `send_to` value for the conversion event snippet (e.g. AW-xxxx/conversion_id). */
   conversionEvent?: string;
+  /** Extra JSON-LD objects to emit in <head> (page-specific schema). */
+  jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, robots, conversionEvent } = Astro.props;
+const { title, description, robots, conversionEvent, jsonLd } = Astro.props;
 const siteUrl = 'https://www.goodmarksclasses.com';
-const ogImage = `${siteUrl}/good-marks-logo.png`;
+const ogImage = `${siteUrl}/og-default.jpg`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const organizationSchema = {
@@ -102,6 +104,9 @@ const organizationSchema = {
 
     <!-- Organization Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    {(jsonLd ?? []).map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
 
     <ScrollToTop client:load />
   </head>

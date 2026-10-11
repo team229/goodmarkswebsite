@@ -11,6 +11,7 @@ const blog = defineCollection({
     metaTitle: z.string(),
     metaDescription: z.string(),
     category: z.string().optional(),
+    updated: z.string().optional(),
   }),
 });
 

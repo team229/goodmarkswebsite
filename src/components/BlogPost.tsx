@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Calendar, ChevronLeft, Share2 } from 'lucide-react';
 import { motion } from 'motion/react';
-import { generateBlogSchema } from '../lib/blogSchema';
 import { injectLinks } from '../lib/internalLinks';
 import { blogLinks } from '../data/blogLinks';
 
@@ -73,16 +72,8 @@ export default function BlogPost({ post }: { post: BlogPostData }) {
   const linkedContent = injectBlogLinks(post.content, post.slug);
   const faqs = parseFaqs(linkedContent);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify(generateBlogSchema(post));
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [post]);
+  // NOTE: BlogPosting schema is server-rendered in blogs/[slug].astro <head>
+  // (client-side injection is invisible to crawlers). Do not re-add it here.
 
   useEffect(() => {
     const root = document.getElementById('blog-faq-root');

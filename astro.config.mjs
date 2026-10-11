@@ -14,9 +14,17 @@ redirects['/courses/prefoundation'] = '/courses/cbse';
 
 export default defineConfig({
   site: 'https://www.goodmarksclasses.com',
+  // Canonical URLs site-wide use a trailing slash — emit the same in dev
+  // so local preview matches production link tags.
+  trailingSlash: 'always',
   integrations: [react(), sitemap({
     serialize(item) {
-      if (item.url.includes('/thank-you')) {
+      // Keep conversion + error pages out of the sitemap.
+      if (item.url.includes('/thank-you') || item.url.endsWith('/404') || item.url.endsWith('/404/')) {
+        return undefined;
+      }
+      // Exclude static redirect stubs (meta-refresh pages, not content).
+      if (item.url.includes('/locations/iit-coaching-') || item.url.includes('/courses/prefoundation')) {
         return undefined;
       }
       return item;

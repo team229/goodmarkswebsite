@@ -48,8 +48,10 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <h1 className="font-h1 text-4xl lg:text-5xl text-secondary-900 leading-tight">Founder's Message</h1>
-              
+              <h1 className="font-h1 text-4xl lg:text-5xl text-secondary-900 leading-tight">About Good Marks Classes — JEE & NEET Coaching in Gurgaon</h1>
+
+              <h2 className="font-h2 text-xl text-secondary-700 font-bold">Founder's Message</h2>
+
               <div className="space-y-4 text-slate-600 font-body-md leading-relaxed text-lg">
                 <p>
                   Education isn't just about marks — it's about giving students the clarity to make the right decisions at the right time. When that foundation is strong, everything else follows.

@@ -4,7 +4,7 @@ excerpt: "A practical guide to choosing IIT JEE coaching in Gurgaon: what to com
 date: "2026-10-04"
 image: /images/blog/iit-jee-coaching-gurgaon.webp
 metaTitle: "IIT JEE Coaching in Gurgaon | Class 11 & 12 Programmes"
-metaDescription: "Compare IIT JEE coaching in Gurgaon by batch size, doubt support, test review and demo classes. 1-year and 2-year programmes for Class 11 and Class 12. Call 8800 8800 28."
+metaDescription: "Compare IIT JEE coaching in Gurgaon by batch size, doubt support, test review and demo classes. 1-year and 2-year programmes for Class 11 and Class 12."
 category: IIT JEE
 ---
 

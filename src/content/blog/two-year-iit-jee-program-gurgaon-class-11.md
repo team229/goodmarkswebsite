@@ -3,8 +3,8 @@ title: "Starting a 2-Year IIT JEE Program in Gurgaon in Class 11: Why Two Years 
 excerpt: "Class 11 admissions are wrapping up across Gurgaon, and parents are torn between starting a full 2-year IIT JEE program now or waiting for a shorter crash course later. Here's why the long runway wins for most students."
 date: "2026-08-08"
 image: /images/blog/2-year-iit-jee-program-in-gurgaon.jpg
-metaTitle: "2 Year IIT JEE Program in Gurgaon for Class 11: What Two Years Should Look Like | Good Marks Classes"
-metaDescription: "Exploring a 2 year IIT JEE program in Gurgaon for Class 11? Learn how year one builds fundamentals and year two shifts to mocks and revision — and how the two differ structurally."
+metaTitle: "2-Year JEE Program Class 11 Gurgaon | Good Marks Classes"
+metaDescription: "Exploring a 2 year IIT JEE program in Gurgaon for Class 11? Learn how year one builds fundamentals and year two shifts to mocks and revision — and how the."
 category: IIT JEE
 ---
 

@@ -5,10 +5,8 @@ excerpt: Something shifts the moment Class 11 chemistry begins. It's not really 
   same subject anymore. Mole concept, equilibrium, organic basics — they...
 date: '2026-07-06'
 image: /images/blog/class-11-chemistry-tougher-than-expected.jpg
-metaTitle: Best Chemistry Coaching for Class 11 in Gurgaon | Good Marks Classes
-metaDescription: Class 11 chemistry is tougher than expected. Get expert chemistry
-  coaching for class 11 in Gurgaon with small batches, doubt sessions & NCERT-focused
-  teaching.
+metaTitle: "Class 11 Chemistry Coaching Gurgaon | Good Marks Classes"
+metaDescription: "Class 11 chemistry is tougher than expected. Get expert chemistry coaching for class 11 in Gurgaon with small batches, doubt sessions & NCERT-focused teaching."
 category: Class 11 Chemistry
 ---
 

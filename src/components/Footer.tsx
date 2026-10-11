@@ -64,11 +64,11 @@ export default function Footer() {
             onSubmit={handleNewsletterSubmit}
             className="max-w-sm"
           >
-            {newsletterError && (
-              <div className="bg-red-950 text-red-300 border border-red-800 p-2.5 rounded-xl text-xs font-bold mb-2">
-                {newsletterError}
-              </div>
-            )}
+              {newsletterError && (
+                <div className="bg-red-950 text-red-300 border border-red-800 p-2.5 rounded-xl text-xs font-bold mb-2">
+                  {newsletterError}
+                </div>
+              )}
             <div className="mb-2 flex justify-start">
               <SpamGuard />
             </div>

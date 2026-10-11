@@ -3,6 +3,15 @@ import { useFormSubmit } from '../hooks/useFormSubmit';
 import SpamGuard from './SpamGuard';
 import { UserPlus, ArrowRight, CheckCircle, BookOpen, Clock, Presentation } from "lucide-react";
 
+const facultyFaqs = [
+  { q: 'What qualifications do you look for?', a: 'Deep subject mastery first — typically B.Tech/M.Tech from premier institutes or equivalent expertise — plus the ability to explain complex ideas simply. Prior competitive-exam coaching experience is strongly preferred.' },
+  { q: 'Is there a demo lecture in selection?', a: 'Yes. Shortlisted candidates teach a real topic to our academic panel, followed by trial sessions with actual students. Teaching ability is evaluated live, not on paper.' },
+  { q: 'Full-time or part-time?', a: 'Both. Choose offline batches at Sector 85, live online batches, hybrid, or home tuition assignments — full-time and part-time arrangements are available.' },
+  { q: 'Will I have to teach multiple subjects?', a: 'No. One subject per faculty, always. Physics teachers teach Physics; Chemistry teachers teach Chemistry. Specialisation is a core principle here.' },
+  { q: 'What support do faculty get?', a: 'Ready study material, testing systems (weekly tests, AITS), doubt-session structure and mentorship from academic heads — so you can focus purely on teaching.' },
+  { q: 'How do I apply?', a: 'Fill the application form on this page with your background, subject expertise and a resume link. Our team responds to shortlisted candidates shortly.' },
+];
+
 export default function JoinFaculty() {
   const { submitForm, isSubmitting, formError } = useFormSubmit('JoinFaculty');
 
@@ -156,18 +165,75 @@ export default function JoinFaculty() {
                 <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-primary-500 outline-none transition-all resize-y" placeholder="Tell us about your teaching methodology and achievements..."></textarea>
               </div>
 
-                            {formError && (
+              {formError && (
                 <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-xl text-sm font-bold">
                   {formError}
                 </div>
               )}
               <SpamGuard />
-<button type="submit" disabled={isSubmitting} className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/20 transition-all focus:ring-4 focus:ring-primary-500/50 mt-4">
+              <button type="submit" disabled={isSubmitting} className="disabled:opacity-70 w-full bg-primary-600 hover:bg-primary-700 text-secondary-900 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary-600/20 transition-all focus:ring-4 focus:ring-primary-500/50 mt-4">
                 Submit Application
               </button>
             </form>
           </div>
+        </div>
+      </div>
 
+      <div className="max-w-container-max mx-auto px-6 py-20">
+        <h2 className="text-3xl font-black text-secondary-900 mb-4 text-center">How Selection Works</h2>
+        <p className="text-slate-600 text-lg max-w-3xl mx-auto text-center mb-10">We hire slowly because our students feel every hiring decision. Expect a real teaching evaluation — not just a resume screen.</p>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+          <div className="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm text-center">
+            <div className="text-sm font-black text-primary-600 mb-2">STEP 1</div>
+            <h3 className="font-bold text-secondary-900 text-lg mb-2">Application review</h3>
+            <p className="text-slate-600 text-sm">We read every cover letter. Subject depth and past results matter more than degrees alone.</p>
+          </div>
+          <div className="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm text-center">
+            <div className="text-sm font-black text-primary-600 mb-2">STEP 2</div>
+            <h3 className="font-bold text-secondary-900 text-lg mb-2">Demo lecture</h3>
+            <p className="text-slate-600 text-sm">Teach a real topic to our academic panel — clarity, pacing and doubt-handling are evaluated live.</p>
+          </div>
+          <div className="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm text-center">
+            <div className="text-sm font-black text-primary-600 mb-2">STEP 3</div>
+            <h3 className="font-bold text-secondary-900 text-lg mb-2">Trial batch</h3>
+            <p className="text-slate-600 text-sm">Shortlisted faculty take trial sessions with actual students before any long-term commitment.</p>
+          </div>
+          <div className="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm text-center">
+            <div className="text-sm font-black text-primary-600 mb-2">STEP 4</div>
+            <h3 className="font-bold text-secondary-900 text-lg mb-2">Onboarding</h3>
+            <p className="text-slate-600 text-sm">Material, testing systems and mentorship structure provided — you focus purely on teaching.</p>
+          </div>
+        </div>
+        <h2 className="text-3xl font-black text-secondary-900 mb-4 text-center">Open Subjects</h2>
+        <p className="text-slate-600 text-lg max-w-3xl mx-auto text-center mb-10">One subject per faculty — we don't ask Physics teachers to cover Chemistry.</p>
+        <div className="blog-table-wrap max-w-3xl mx-auto mb-16">
+          <table className="blog-table">
+            <thead>
+              <tr><th scope="col">Subject</th><th scope="col">Levels</th><th scope="col">Modes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Physics</td><td>Class 11–12, JEE, NEET</td><td>Offline, online, home tuition</td></tr>
+              <tr><td>Chemistry</td><td>Class 11–12, JEE, NEET</td><td>Offline, online, home tuition</td></tr>
+              <tr><td>Mathematics</td><td>Class 8–12, JEE, Olympiad</td><td>Offline, online, home tuition</td></tr>
+              <tr><td>Biology</td><td>Class 9–12, NEET, Olympiad</td><td>Offline, online, home tuition</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 className="text-3xl font-black text-secondary-900 mb-3 text-center">Faculty FAQs</h2>
+        <p className="text-slate-600 text-lg text-center mb-10">Common questions from teaching applicants.</p>
+        <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+          {facultyFaqs.map((faq, idx) => (
+            <details key={idx} name="faq" className="faq-item group bg-white border border-slate-200 rounded-2xl shadow-sm">
+              <summary className="flex items-center justify-between gap-4 p-6 cursor-pointer list-none font-bold text-secondary-800 text-lg select-none group-open:bg-offwhite/50 transition-colors">
+                {faq.q}
+              </summary>
+              <div className="faq-answer">
+                <div className="faq-a px-6 pb-6 pt-2 text-slate-600 bg-offwhite/50 leading-relaxed border-t border-slate-100">
+                  <p>{faq.a}</p>
+                </div>
+              </div>
+            </details>
+          ))}
         </div>
       </div>
     </div>
