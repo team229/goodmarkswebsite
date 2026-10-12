@@ -1,3 +1,7 @@
+import { fileURLToPath } from 'node:url';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
@@ -11,6 +15,41 @@ for (const loc of locations) {
 }
 
 redirects['/courses/prefoundation'] = '/courses/cbse';
+
+/**
+ * `@astrojs/sitemap` writes `sitemap-index.xml` + `sitemap-0.xml`, never a
+ * bare `sitemap.xml`. The sitemap URL we advertise in robots.txt (and submit
+ * in Search Console) is `/sitemap.xml`, so mirror the generated payload there
+ * after each build instead of hardcoding a second sitemap generator that could
+ * drift from the integration's filters.
+ *
+ * Single chunk -> copy that chunk. Multiple chunks -> copy the index, so
+ * `/sitemap.xml` stays a complete, valid sitemap either way.
+ */
+function canonicalSitemapUrl() {
+  return {
+    name: 'canonical-sitemap-url',
+    hooks: {
+      'astro:build:done': async ({ dir, logger }) => {
+        const outDir = fileURLToPath(dir);
+        const emitted = await readdir(outDir);
+        const chunks = emitted.filter((f) => /^sitemap-\d+\.xml$/.test(f));
+
+        const source = chunks.length === 1 ? chunks[0] : 'sitemap-index.xml';
+        if (chunks.length !== 1 && !emitted.includes(source)) {
+          logger.error(
+            `canonical-sitemap-url: nothing to mirror (found ${chunks.length} chunk(s) and no sitemap-index.xml).`,
+          );
+          throw new Error('canonical-sitemap-url: @astrojs/sitemap emitted no usable sitemap.');
+        }
+
+        const xml = await readFile(path.join(outDir, source), 'utf8');
+        await writeFile(path.join(outDir, 'sitemap.xml'), xml, 'utf8');
+        logger.info(`canonical-sitemap-url: /sitemap.xml <- ${source} (${chunks.length} chunk(s))`);
+      },
+    },
+  };
+}
 
 export default defineConfig({
   site: 'https://www.goodmarksclasses.com',
@@ -29,7 +68,7 @@ export default defineConfig({
       }
       return item;
     }
-  })],
+  }), canonicalSitemapUrl()],
   vite: {
     plugins: [tailwindcss()],
   },
