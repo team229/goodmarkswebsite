@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url';
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 import { defineConfig } from 'astro/config';
@@ -16,15 +16,21 @@ for (const loc of locations) {
 
 redirects['/courses/prefoundation'] = '/courses/cbse';
 
+const SITEMAP_INDEX = 'sitemap-index.xml';
+const SITEMAP_CANONICAL = 'sitemap.xml';
+
 /**
- * `@astrojs/sitemap` writes `sitemap-index.xml` + `sitemap-0.xml`, never a
- * bare `sitemap.xml`. The sitemap URL we advertise in robots.txt (and submit
- * in Search Console) is `/sitemap.xml`, so mirror the generated payload there
- * after each build instead of hardcoding a second sitemap generator that could
- * drift from the integration's filters.
+ * `@astrojs/sitemap` writes `sitemap-index.xml` + `sitemap-0.xml` and never a
+ * bare `sitemap.xml`. The canonical sitemap URL we advertise in robots.txt (and
+ * submit in Search Console) is `/sitemap.xml`, so after each build we mirror the
+ * generated payload there and drop the intermediate artifacts. Reusing the
+ * integration's own output keeps it in sync with the `serialize` filters instead
+ * of hand-rolling a second sitemap generator that could drift from them.
  *
- * Single chunk -> copy that chunk. Multiple chunks -> copy the index, so
- * `/sitemap.xml` stays a complete, valid sitemap either way.
+ * Single chunk -> mirror the chunk, then delete both it and the index, leaving
+ * `/sitemap.xml` as the one published sitemap. Multiple chunks -> mirror the
+ * index and KEEP the chunks, since the index references them by URL and deleting
+ * them would turn it into a dangling pointer.
  */
 function canonicalSitemapUrl() {
   return {
@@ -34,18 +40,31 @@ function canonicalSitemapUrl() {
         const outDir = fileURLToPath(dir);
         const emitted = await readdir(outDir);
         const chunks = emitted.filter((f) => /^sitemap-\d+\.xml$/.test(f));
+        const hasIndex = emitted.includes(SITEMAP_INDEX);
+        const single = chunks.length === 1;
 
-        const source = chunks.length === 1 ? chunks[0] : 'sitemap-index.xml';
-        if (chunks.length !== 1 && !emitted.includes(source)) {
+        const source = single ? chunks[0] : SITEMAP_INDEX;
+        if (!single && !hasIndex) {
           logger.error(
-            `canonical-sitemap-url: nothing to mirror (found ${chunks.length} chunk(s) and no sitemap-index.xml).`,
+            `canonical-sitemap-url: nothing to mirror (found ${chunks.length} chunk(s) and no ${SITEMAP_INDEX}).`,
           );
-          throw new Error('canonical-sitemap-url: @astrojs/sitemap emitted no usable sitemap.');
+          throw new Error(`canonical-sitemap-url: @astrojs/sitemap emitted no ${SITEMAP_INDEX}.`);
         }
 
         const xml = await readFile(path.join(outDir, source), 'utf8');
-        await writeFile(path.join(outDir, 'sitemap.xml'), xml, 'utf8');
-        logger.info(`canonical-sitemap-url: /sitemap.xml <- ${source} (${chunks.length} chunk(s))`);
+        await writeFile(path.join(outDir, SITEMAP_CANONICAL), xml, 'utf8');
+
+        // Only safe to prune when the mirrored file no longer depends on them.
+        const stale = single ? [...chunks, ...(hasIndex ? [SITEMAP_INDEX] : [])] : [];
+        if (stale.length > 0) {
+          await Promise.all(stale.map((f) => rm(path.join(outDir, f))));
+        }
+
+        logger.info(
+          single
+            ? `canonical-sitemap-url: ${SITEMAP_CANONICAL} <- ${source}; removed ${stale.join(', ')}`
+            : `canonical-sitemap-url: ${SITEMAP_CANONICAL} <- ${source}; kept ${chunks.length} chunk(s) the index references`,
+        );
       },
     },
   };
