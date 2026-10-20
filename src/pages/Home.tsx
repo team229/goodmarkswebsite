@@ -169,6 +169,11 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 pt-8">
+                  <Link to="/cbse-worksheets/" className="w-full max-w-xl flex items-center gap-4 rounded-xl border border-primary-200 bg-primary-50 px-5 py-4 text-secondary-900 hover:bg-primary-100 transition-colors">
+                    <BookOpen className="w-7 h-7 shrink-0" aria-hidden="true" />
+                    <span className="flex-1"><strong className="block text-base">CBSE Worksheet Corner</strong><span className="block text-sm mt-1">Classes VIII–XII · Subjective &amp; Objective Sheets</span></span>
+                    <ArrowRight className="w-5 h-5 shrink-0" aria-hidden="true" />
+                  </Link>
                   <div className="glass-card px-5 py-3.5 rounded-xl flex items-center gap-3 border border-white bg-offwhite/60">
                     <Users className="w-5 h-5 text-secondary" />
                     <span className="text-sm font-label-bold text-secondary-800">Max 10 Students (Online)</span>

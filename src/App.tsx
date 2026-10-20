@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -16,6 +17,8 @@ import PhysicsClassesSunilGola from './pages/PhysicsClassesSunilGola';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
 
+const CbseWorksheets = lazy(() => import('./pages/CbseWorksheets'));
+
 export default function App() {
   return (
     <div className="bg-background text-on-background font-body-md scroll-smooth selection:bg-secondary/20 selection:text-secondary flex flex-col min-h-screen">
@@ -23,8 +26,11 @@ export default function App() {
       <SeoMeta />
       <Navbar />
       <div className="flex-1">
+         <Suspense fallback={<main className="pt-32 pb-16 px-6 text-center" role="status">Loading worksheets…</main>}>
          <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cbse-worksheets" element={<CbseWorksheets />} />
+          <Route path="/cbse-practice-papers" element={<Navigate to="/cbse-worksheets/" replace />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/:stream" element={<Courses />} />
@@ -38,6 +44,7 @@ export default function App() {
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
         </Routes>
+        </Suspense>
       </div>
       <Footer />
     </div>

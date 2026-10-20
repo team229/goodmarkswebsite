@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Recreated from the checksum-verified archive by predev/prebuild.
+public/practice-papers/

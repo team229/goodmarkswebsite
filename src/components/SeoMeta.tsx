@@ -8,6 +8,10 @@ type MetaConfig = {
 };
 
 const routeMeta: Record<string, MetaConfig> = {
+  '/cbse-worksheets': {
+    title: 'CBSE Worksheet Corner | Good Marks Classes',
+    description: 'Download chapter-wise CBSE subjective and objective worksheets for Classes 8–12. Choose your class and subject, download PDFs, or attempt objective sheets online.'
+  },
   '/': {
     title: '#1 JEE & NEET Coaching in Gurgaon | Enroll at GoodMarks Classes',
     description: "Join Gurgaon's most trusted JEE & NEET coaching institute. Expert faculty, proven results, and personalized attention for Class 9–12. Limited seats available — enroll at GoodMarks Classes today!"
@@ -148,12 +152,19 @@ export default function SeoMeta() {
         };
       }
     } else {
-      meta = routeMeta[pathname];
+      meta = routeMeta[pathname.replace(/\/$/, '') || '/'];
     }
 
     if (!meta) return;
     document.title = meta.title;
     setMetaDescription(meta.description);
+    if (pathname.replace(/\/$/, '') === '/cbse-worksheets') {
+      const canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = 'https://www.goodmarksclasses.com/cbse-worksheets/';
+      document.head.appendChild(canonical);
+      return () => canonical.remove();
+    }
   }, [location]);
 
   return null;

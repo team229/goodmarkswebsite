@@ -45,6 +45,7 @@ export default function Footer() {
             <Link className="hover:text-white transition-colors w-fit" to="/about">About Us</Link>
             <Link className="hover:text-white transition-colors w-fit" to="/courses">Courses</Link>
             <Link className="hover:text-white transition-colors w-fit" to="/blogs">Blog</Link>
+            <Link className="hover:text-white transition-colors w-fit" to="/cbse-worksheets/">CBSE Worksheet Corner</Link>
           </div>
         </div>
         
