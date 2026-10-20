@@ -53,13 +53,13 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 w-full z-50 bg-offwhite/90 backdrop-blur-lg border-b border-slate-100 transition-all duration-300">
-        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-container-max mx-auto gap-3 flex-nowrap">
+        <div className="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-3.5 sm:py-4 max-w-[1680px] mx-auto gap-3 flex-nowrap">
           <a href="/" className="text-2xl font-black text-secondary-900 tracking-tight flex items-center gap-2.5 shrink-0">
             <img src="/good-marks-logo.png" alt="Good Marks Classes" className="h-9 sm:h-10 w-auto object-contain rounded-lg shrink-0" />
             <span className="inline text-sm sm:text-lg font-bold leading-none whitespace-nowrap">Good Marks Classes</span>
           </a>
           <div className="flex items-center gap-2 sm:gap-4">
-            <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-bold text-slate-600 flex-nowrap">
+            <nav className="hidden 2xl:flex items-center gap-4 text-xs font-bold text-slate-600 flex-nowrap">
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/">Home</a>
               <div className="relative group py-6 -my-6 flex items-center">
                 <a className="hover:text-primary-600 transition-colors flex items-center gap-1 whitespace-nowrap" href="/courses">
@@ -76,6 +76,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
+              <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/cbse-worksheets/">CBSE Worksheets</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/blogs">Blog</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/locations">Locations</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/about">About Us</a>
@@ -95,20 +96,23 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen((p) => !p)}
-              className="lg:hidden p-2.5 hover:bg-slate-100 rounded-xl transition-colors shrink-0 active:scale-95"
+              className="2xl:hidden p-2.5 hover:bg-slate-100 rounded-xl transition-colors shrink-0 active:scale-95"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
         </div>
 
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div id="mobile-navigation" inert={!isMobileMenuOpen} className={`2xl:hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[calc(100dvh-80px)] overflow-y-auto opacity-100' : 'max-h-0 overflow-hidden opacity-0'}`}>
           <div className="border-t border-slate-100 bg-offwhite/95 backdrop-blur-lg">
             <nav className="flex flex-col gap-1 px-4 py-4 text-sm font-bold text-slate-600">
               {[
                 { label: 'Home', href: '/' },
                 { label: 'Courses', href: '/courses', sub: courses },
+                { label: 'CBSE Worksheet Corner', href: '/cbse-worksheets/' },
                 { label: 'Blog', href: '/blogs' },
                 { label: 'Locations', href: '/locations' },
                 { label: 'About Us', href: '/about' },

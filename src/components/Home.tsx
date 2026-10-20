@@ -157,6 +157,11 @@ export default function Home() {
                 <p className="text-sm text-slate-500 max-w-xl">
                   Note: CBSE and competitive exam preparation are delivered through separate and specialized programs to ensure focused learning. Students can start with <a href="/courses/iit" className="text-primary-700 underline hover:text-primary-800 transition-colors">IIT JEE coaching in Gurgaon</a> or <a href="/courses/neet" className="text-primary-700 underline hover:text-primary-800 transition-colors">NEET coaching in Gurgaon</a> and get placed in the right batch.
                 </p>
+                <a href="/cbse-worksheets/" className="flex items-center gap-4 rounded-2xl border border-secondary-100 bg-white p-4 text-secondary-900 shadow-sm hover:border-secondary-400 transition-colors max-w-xl">
+                  <FileText className="w-7 h-7 shrink-0 text-secondary-600" aria-hidden="true" />
+                  <span className="flex-1"><strong className="block">CBSE Worksheet Corner</strong><span className="block text-sm text-slate-600 mt-1">Subjective &amp; Objective Sheets · Classes VIII–XII</span></span>
+                  <ArrowRight className="w-5 h-5 shrink-0" aria-hidden="true" />
+                </a>
 
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-8 py-4 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">

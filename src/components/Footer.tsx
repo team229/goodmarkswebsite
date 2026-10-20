@@ -94,6 +94,7 @@ export default function Footer() {
             <a className="hover:text-white transition-colors w-fit" href="/">Home</a>
             <a className="hover:text-white transition-colors w-fit" href="/about">About Us</a>
             <a className="hover:text-white transition-colors w-fit" href="/courses">Courses</a>
+            <a className="hover:text-white transition-colors w-fit" href="/cbse-worksheets/">CBSE Worksheet Corner</a>
             <a className="hover:text-white transition-colors w-fit" href="/blogs">Blog</a>
           </div>
         </div>

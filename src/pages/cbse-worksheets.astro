@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import worksheetContent from '../data/cbse-worksheets.html?raw';
+
+const worksheetSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'CBSE Worksheet Corner',
+  description: 'Chapter-wise subjective and objective worksheets for Classes VIII–XII, with downloadable PDFs and online objective practice.',
+  url: 'https://www.goodmarksclasses.com/cbse-worksheets/',
+  isPartOf: { '@type': 'WebSite', name: 'Good Marks Classes', url: 'https://www.goodmarksclasses.com/' },
+};
+---
+
+<BaseLayout
+  title="CBSE Worksheet Corner | Subjective & Objective PDFs | Good Marks Classes"
+  description="Download CBSE subjective and objective chapter worksheets for Classes 8–12. Choose class, subject and chapter, download PDFs or attempt objective sheets online."
+  jsonLd={[worksheetSchema]}
+>
+  <link rel="stylesheet" href="/worksheet-assets/practice.css" />
+  <main class="practice-main gmc-worksheets" set:html={worksheetContent} />
+  <script is:inline src="/worksheet-assets/practice.js"></script>
+</BaseLayout>
+
+<style is:global>
+  .gmc-worksheets {
+    margin: 0 auto;
+    padding: 130px 24px 72px;
+    color: #172943;
+    line-height: 1.65;
+  }
+  .gmc-worksheets h1, .gmc-worksheets h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #0c2043;
+  }
+  .gmc-worksheets .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: #335483;
+  }
+  .gmc-worksheets .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid #c1960d;
+    border-radius: 10px;
+    background: #fdc411;
+    color: #08162f;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .gmc-worksheets .button:hover { background: #ffe57a; }
+  .gmc-worksheets a:focus-visible, .gmc-worksheets select:focus-visible,
+  .gmc-worksheets input:focus-visible, .gmc-worksheets button:focus-visible {
+    outline: 3px solid #335483;
+    outline-offset: 3px;
+  }
+  .gmc-worksheets .online-destination { font-size: 13px; color: #475569; }
+  .gmc-worksheets .worksheet-sources ul { list-style: disc; }
+  .gmc-worksheets .worksheet-sources a, .gmc-worksheets .practice-help a { text-decoration: underline; }
+  .gmc-worksheets .practice-help p { margin: 12px 0; }
+  .gmc-worksheets .sheet-info strong { font-weight: 700; }
+  @media (max-width: 760px) {
+    .gmc-worksheets { padding: 112px 18px 48px; }
+  }
+</style>

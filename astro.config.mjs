@@ -15,6 +15,7 @@ for (const loc of locations) {
 }
 
 redirects['/courses/prefoundation'] = '/courses/cbse';
+redirects['/cbse-practice-papers'] = '/cbse-worksheets/';
 
 const SITEMAP_INDEX = 'sitemap-index.xml';
 const SITEMAP_CANONICAL = 'sitemap.xml';
@@ -82,7 +83,7 @@ export default defineConfig({
         return undefined;
       }
       // Exclude static redirect stubs (meta-refresh pages, not content).
-      if (item.url.includes('/locations/iit-coaching-') || item.url.includes('/courses/prefoundation')) {
+      if (item.url.includes('/locations/iit-coaching-') || item.url.includes('/courses/prefoundation') || item.url.includes('/cbse-practice-papers')) {
         return undefined;
       }
       return item;

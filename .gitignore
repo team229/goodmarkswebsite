@@ -15,3 +15,6 @@ coverage/
 .env*
 AGENTS.md
 CLAUDE.md
+
+# Recreated from the verified worksheet-content archive before dev/build.
+/public/practice-papers/
