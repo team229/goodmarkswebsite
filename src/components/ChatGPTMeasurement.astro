@@ -1,0 +1,17 @@
+---
+// Keep ad measurement off student worksheets and employment applications.
+const excluded = /^\/(cbse-worksheets|join-faculty)(\/|$)/.test(Astro.url.pathname);
+---
+{!excluded && <>
+  <script is:inline src="/chatgpt-measurement.js"></script>
+  <aside id="chatgpt-measurement-choice" hidden aria-label="ChatGPT ad measurement" class="fixed bottom-20 lg:bottom-4 left-4 right-4 sm:left-auto sm:max-w-md z-[110] bg-white border border-slate-300 rounded-xl p-4 shadow-xl text-sm text-slate-800">
+    <p class="font-bold mb-2">Help us measure our ChatGPT ads</p>
+    <p>Optional: allow OpenAI cookies and measurement of visits, enquiry submissions and contact-button clicks. Matching may use hashed contact details entered on this site. Choose Allow only if you are 18 or older. Your enquiry works either way.</p>
+    <a href="/privacy-policy/#google-ads-and-marketing" class="underline inline-block mt-2">Privacy details</a>
+    <div class="flex gap-3 mt-3">
+      <button type="button" data-chatgpt-consent="yes" class="border border-slate-400 rounded px-3 py-2 font-bold">18+ · Allow</button>
+      <button type="button" data-chatgpt-consent="no" class="border border-slate-400 rounded px-3 py-2 font-bold">No thanks</button>
+    </div>
+  </aside>
+  <div class="text-center py-3 text-xs text-slate-600"><button type="button" id="chatgpt-measurement-settings" class="underline">ChatGPT ad measurement preferences</button></div>
+</>}
