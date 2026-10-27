@@ -117,6 +117,10 @@ export const privacyPolicySections: PolicySection[] = [
         type: 'paragraph',
         text: 'We do not sell your personal information to advertising platforms.',
       },
+      {
+        type: 'paragraph',
+        text: 'ChatGPT ad measurement is optional and is enabled only when a visitor selects the 18+ Allow option. It measures page visits, successful enquiry submissions, and WhatsApp or phone-button clicks. A button click is not proof of a completed conversation or admission. The OpenAI pixel may match these events using advertising click identifiers, browser cookies, and contact information hashed in the browser through automatic advanced matching. Our event calls do not include enquiry messages, student details, names, phone numbers, or email addresses. You can decline or withdraw this choice using ChatGPT ad measurement preferences at the bottom of the page; this choice controls the ChatGPT pixel only. The pixel is not installed on our worksheet or faculty application pages.',
+      },
     ],
   },
   {

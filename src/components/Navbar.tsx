@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { X, Phone, Menu, ChevronDown, Loader2 } from 'lucide-react';
 import SpamGuard from './SpamGuard';
+import { trackChatGPTLead } from '../lib/chatgptMeasurement';
 import { stripInternalFields, validateSubmission } from '../lib/antispam';
 
 const courses = [
@@ -39,12 +40,22 @@ export default function Navbar() {
     }
     setFormStatus('loading');
     try {
-      await fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
+      const response = await fetch('https://api-inform.bythub.in/?formId=LCKaS6XiKh1hrfOgsasy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ formName: 'Navbar Modal', ...stripInternalFields(data), sourceUrl: window.location.href }),
       });
-    } catch {}
+      if (!response.ok) {
+        setFormError('Something went wrong. Please try again.');
+        setFormStatus('idle');
+        return;
+      }
+      trackChatGPTLead();
+    } catch {
+      setFormError('Network error. Please check your connection and try again.');
+      setFormStatus('idle');
+      return;
+    }
     setForm({ name: '', email: '', phone: '', message: '' });
     setIsModalOpen(false);
     window.location.href = '/thank-you';

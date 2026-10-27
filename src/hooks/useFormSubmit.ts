@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { trackChatGPTLead } from "../lib/chatgptMeasurement";
 import {
   stripInternalFields,
   validateSubmission,
@@ -39,6 +40,7 @@ export function useFormSubmit(formName: string) {
 
       if (response.ok) {
         setIsSuccess(true);
+        if (formName !== "JoinFaculty") trackChatGPTLead();
         // Ads "Contact" conversion — fires here because lead forms show an
         // inline success message instead of navigating to /thank-you.
         // (Navbar modal navigates to /thank-you, which fires it there.)
