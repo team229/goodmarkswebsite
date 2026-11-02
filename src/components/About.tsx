@@ -80,7 +80,7 @@ export default function About() {
                 <button onClick={() => window.dispatchEvent(new CustomEvent('open-contact-modal'))} className="btn-gradient px-8 py-3.5 rounded-xl text-secondary-900 font-label-bold shadow-lg shadow-primary-500/30 hover:shadow-primary-500/50 flex items-center justify-center gap-2">
                   Enquire Now <ArrowRight className="w-5 h-5"/>
                 </button>
-                <a href="tel:+919876543210" className="px-8 py-3.5 rounded-xl border-2 border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite hover:border-slate-300 transition-colors flex items-center justify-center gap-2">
+                <a href="tel:+918800880028" className="px-8 py-3.5 rounded-xl border-2 border-slate-200 text-secondary-700 font-label-bold hover:bg-offwhite hover:border-slate-300 transition-colors flex items-center justify-center gap-2">
                   <PhoneCall className="w-5 h-5"/> Call for Consultation
                 </a>
               </div>
