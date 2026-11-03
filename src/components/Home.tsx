@@ -757,7 +757,7 @@ export default function Home() {
                 </thead>
                 <tbody>
                   {[
-                    { param: "Batch Size", us: "10-25 students (individual attention)", them: "40-100+ students per batch" },
+                    { param: "Batch Size", us: "10 online / 30 offline (individual attention)", them: "40-100+ students per batch" },
                     { param: "Doubt Resolution", us: "Same-day doubt clearing cell", them: "Limited due to large batches" },
                     { param: "Curriculum Focus", us: "CBSE syllabus first, then competitive", them: "Competitive exam focused, CBSE as add-on" },
                     { param: "Faculty Accessibility", us: "Direct access — teachers share personal numbers", them: "Limited interaction with senior faculty" },
