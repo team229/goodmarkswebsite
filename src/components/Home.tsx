@@ -1,3 +1,4 @@
+import { locationAnswer } from '../data/business';
 import React from 'react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import SpamGuard from './SpamGuard';
@@ -86,7 +87,7 @@ export default function Home() {
     },
     {
       q: 'Where is Good Marks Classes located in Gurgaon?',
-      a: 'Our offline center is conveniently located in Gurgaon, offering a focused learning environment. We also provide seamless hybrid, online, and home tutor services based on your preference.'
+      a: locationAnswer
     },
     {
       q: 'How can I enroll in Good Marks Classes?',
@@ -137,7 +138,7 @@ export default function Home() {
                     Academic Excellence Reimagined
                   </div>
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-800 font-label-bold text-xs uppercase tracking-widest shadow-sm">
-                    Now in Sector 85 Gurugram
+                    Main Teaching Centre: Sector 85, Gurugram
                   </div>
                 </div>
                 <h1 className="font-h1 text-secondary-900 leading-[1.1] text-5xl lg:text-6xl tracking-tight text-center lg:text-left">
@@ -763,7 +764,7 @@ export default function Home() {
                     { param: "Faculty Accessibility", us: "Direct access — teachers share personal numbers", them: "Limited interaction with senior faculty" },
                     { param: "Parent Involvement", us: "Regular PTMs & individual performance reports", them: "Annual parent meetings only" },
                     { param: "Cost", us: "Affordable — quality education for all", them: "Premium pricing (₹1-2 Lakh+ per year)" },
-                    { param: "Location", us: "Local — near your home in Gurgaon/Manesar", them: "Central locations, long commute" },
+                    { param: "Location", us: "Sector 85 centre; online, hybrid & home tuition for Gurgaon/Manesar", them: "Central locations, long commute" },
                     { param: "Study Material", us: "Research-oriented, custom curated", them: "Standardised material across all centres" },
                   ].map((row, i) => (
                     <tr key={i} className="border-b border-secondary-800/50 hover:bg-secondary-900/50 transition-colors">

@@ -42,10 +42,12 @@ export default function LocationsList() {
             <MapPin className="w-8 h-8 text-primary-600" />
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Our Locations</h1>
-            <p className="text-slate-500 mt-1">Find Good Marks Classes coaching near you — pick between <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> or <a href="/courses" className="text-primary-600 font-semibold hover:underline">subject-wise tuition</a>.</p>
+            <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Areas We Serve</h1>
+            <p className="text-slate-500 mt-1">Explore services for families in Gurgaon and Manesar — pick between <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> or <a href="/courses" className="text-primary-600 font-semibold hover:underline">subject-wise tuition</a>.</p>
           </div>
         </div>
+
+        <p className="text-slate-600 mb-8">Our main teaching centre is in Sector 85, Gurugram. The areas listed below are service areas. Classroom sessions take place at Sector 85; ask about live online classes, hybrid programmes or home tuition for your area, subject to availability.</p>
 
         <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8">
           <div className="flex flex-wrap items-center gap-2">
@@ -85,7 +87,7 @@ export default function LocationsList() {
         {Object.keys(grouped).length === 0 ? (
           <div className="text-center py-20">
             <MapPin className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-secondary-900 mb-2">No locations found</h2>
+            <h2 className="text-2xl font-bold text-secondary-900 mb-2">No service areas found</h2>
             <p className="text-slate-500">Try changing the filters above.</p>
           </div>
         ) : (
@@ -102,7 +104,7 @@ export default function LocationsList() {
                   <h2 className="text-2xl font-black text-secondary-900">
                     {meta.heading} in {area}
                   </h2>
-                  <span className="text-sm text-slate-400 font-semibold">({pages.length} locations)</span>
+                  <span className="text-sm text-slate-400 font-semibold">({pages.length} service areas)</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {pages.map(page => (

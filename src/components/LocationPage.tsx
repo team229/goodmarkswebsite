@@ -1,3 +1,4 @@
+import { organizationId } from '../data/business';
 import React from 'react';
 import { MapPin, ArrowLeft, GraduationCap, BookOpen, Star, ChevronDown, Award, CheckCircle2, Phone, ArrowRight, BookText, Users, Target, Clock, MessageCircleQuestion, FileText, Users as Users2, Activity, LineChart, BookOpen as BookOpen2, Flame } from 'lucide-react';
 import { locationPages } from '../data/locations';
@@ -28,7 +29,7 @@ export default function LocationPage({ slug }: LocationPageProps) {
           <h1 className="text-3xl font-black text-secondary-900 mb-4">Location Not Found</h1>
           <p className="text-slate-500 mb-8">The page you're looking for doesn't exist.</p>
           <a href="/locations" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:underline">
-            <ArrowLeft className="w-4 h-4" /> Browse All Locations
+            <ArrowLeft className="w-4 h-4" /> Browse All Service Areas
           </a>
         </div>
       </main>
@@ -104,40 +105,35 @@ export default function LocationPage({ slug }: LocationPageProps) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.goodmarksclasses.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://www.goodmarksclasses.com/locations' },
+      { '@type': 'ListItem', position: 2, name: 'Areas We Serve', item: 'https://www.goodmarksclasses.com/locations' },
       { '@type': 'ListItem', position: 3, name: page.title, item: `https://www.goodmarksclasses.com/locations/${slug}` }
     ]
   };
 
-  const localBusinessSchema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    '@id': `https://www.goodmarksclasses.com/locations/${slug}#organization`,
-    name: `Good Marks Classes — ${page.title}`,
-    url: `https://www.goodmarksclasses.com/locations/${slug}`,
-    parentOrganization: { '@id': 'https://www.goodmarksclasses.com/#organization' },
-    telephone: '+91-8800880028',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: area,
-      addressRegion: 'Haryana',
-      addressCountry: 'IN'
-    },
-    areaServed: area
+    '@type': 'Service',
+    '@id': `https://www.goodmarksclasses.com/locations/${slug}/#service`,
+    name: `${typeShort} for students in ${areaName}`,
+    serviceType: typeShort,
+    url: `https://www.goodmarksclasses.com/locations/${slug}/`,
+    provider: { '@id': organizationId },
+    areaServed: { '@type': 'Place', name: areaName },
+    description: `Services for families in ${areaName}. Classroom sessions take place at the Sector 85, Gurugram teaching centre. Live online classes, hybrid programmes and home tuition are subject to course and tutor availability.`
   };
 
   return (
     <main className="bg-offwhite min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero Section */}
       <section className={`bg-gradient-to-r ${typeColor} pt-32 lg:pt-40 pb-20 relative overflow-hidden`}>
         <div className="absolute inset-0 bg-black/10 pointer-events-none"></div>
         <div className="max-w-container-max mx-auto px-6 relative z-10">
           <a href="/locations" className="inline-flex items-center gap-2 text-white/80 hover:text-white font-semibold text-sm mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to all locations
+            <ArrowLeft className="w-4 h-4" /> Back to all service areas
           </a>
 
           <div className="max-w-4xl">
@@ -146,17 +142,18 @@ export default function LocationPage({ slug }: LocationPageProps) {
                 <MapPin className="w-7 h-7 text-white" />
               </div>
               <div>
-                <p className="uppercase tracking-[0.2em] text-xs font-bold text-white/70">Premium Coaching Center</p>
+                <p className="uppercase tracking-[0.2em] text-xs font-bold text-white/70">Coaching for Your Area</p>
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">{page.title}</h1>
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-8">
               {typeShort} at Good Marks Classes — expert faculty, small batches, and proven results for students in {areaName}
             </p>
+            <p className="text-white/90 max-w-3xl leading-relaxed mb-8">Serving families in {areaName}. Our main teaching centre is in Sector 85, Gurugram. Classroom sessions take place there; enquire about live online classes, hybrid programmes and home tuition for your area, subject to availability.</p>
             <div className="flex flex-wrap items-center gap-4">
               <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">{typeLabel}</span>
-              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Classroom Program</span>
-              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Online & Offline</span>
+              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Classroom at Sector 85</span>
+              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Online, Hybrid & Home Tuition</span>
             </div>
           </div>
         </div>

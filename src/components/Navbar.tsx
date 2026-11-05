@@ -89,7 +89,7 @@ export default function Navbar() {
               </div>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/cbse-worksheets/">CBSE Worksheets</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/blogs">Blog</a>
-              <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/locations">Locations</a>
+              <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/locations">Areas We Serve</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/about">About Us</a>
               <a className="hover:text-primary-600 transition-colors whitespace-nowrap" href="/join-faculty">Join as Faculty</a>
               <a href="/contact" className="hover:text-primary-600 transition-colors whitespace-nowrap">Contact Us</a>
@@ -125,7 +125,7 @@ export default function Navbar() {
                 { label: 'Courses', href: '/courses', sub: courses },
                 { label: 'CBSE Worksheet Corner', href: '/cbse-worksheets/' },
                 { label: 'Blog', href: '/blogs' },
-                { label: 'Locations', href: '/locations' },
+                { label: 'Areas We Serve', href: '/locations' },
                 { label: 'About Us', href: '/about' },
                 { label: 'Join as Faculty', href: '/join-faculty' },
               ].map((item) => (
