@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import MobileCTA from '../components/MobileCTA';
 import '../styles/global.css';
+import { organizationSchema } from '../lib/organizationSchema';
 
 export interface Props {
   title: string;
@@ -20,27 +21,6 @@ const { title, description, robots, conversionEvent, jsonLd } = Astro.props;
 const siteUrl = 'https://www.goodmarksclasses.com';
 const ogImage = `${siteUrl}/og-default.jpg`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  '@id': `${siteUrl}/#organization`,
-  name: 'Good Marks Classes',
-  url: siteUrl,
-  logo: `${siteUrl}/good-marks-logo.png`,
-  telephone: '+91-8800880028',
-  email: 'info@goodmarksclasses.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Gurgaon',
-    addressRegion: 'Haryana',
-    addressCountry: 'IN'
-  },
-  sameAs: [
-    'https://www.instagram.com/goodmarksclassesgurgaon/',
-    'https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ'
-  ]
-};
 ---
 
 <!DOCTYPE html>

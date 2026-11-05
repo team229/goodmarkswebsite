@@ -1,3 +1,5 @@
+import { organizationId } from '../data/business';
+
 export interface BlogPostMeta {
   slug: string;
   title: string;
@@ -30,14 +32,7 @@ export function generateBlogSchema(post: BlogPostMeta) {
       description: "Founder of Good Marks Classes, B.Tech, Delhi Technological University (DTU)",
       url: `${SITE}/physics-classes-sunil-gola/`,
     },
-    publisher: {
-      "@type": "EducationalOrganization",
-      name: "Good Marks Classes",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE}/good-marks-logo.png`,
-      },
-    },
+    publisher: { "@id": organizationId },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
@@ -45,22 +40,7 @@ export function generateBlogSchema(post: BlogPostMeta) {
     keywords: [post.category || "Education", "Good Marks Classes"],
     articleSection: post.category || "General",
     inLanguage: "en-IN",
-    about: {
-      "@type": "EducationalOrganization",
-      name: "Good Marks Classes",
-      description:
-        "Coaching institute in Gurugram offering CBSE, IIT JEE, NEET, CUET and Foundation programs through offline, online, hybrid and home tuition formats.",
-      telephone: "+91-8800880028",
-      email: "info@goodmarksclasses.com",
-      url: SITE,
-      founder: { "@type": "Person", name: "Sunil Gola" },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Gurugram",
-        addressRegion: "Haryana",
-        addressCountry: "IN",
-      },
-    },
+    about: { "@id": organizationId },
     audience: {
       "@type": "EducationalAudience",
       educationalRole: "student",

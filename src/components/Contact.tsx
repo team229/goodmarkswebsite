@@ -1,4 +1,5 @@
 import React from 'react';
+import { locationAnswer, learningFormatsAnswer, teachingCentre } from '../data/business';
 import { motion } from 'motion/react';
 import { useFormSubmit } from '../hooks/useFormSubmit';
 import SpamGuard from './SpamGuard';
@@ -29,7 +30,7 @@ import {
 const PHONE_DISPLAY = '8800 8800 28';
 const PHONE_TEL = 'tel:8800880028';
 const EMAIL = 'info@goodmarksclasses.com';
-const GOOGLE_MAPS = 'https://share.google/vhB5jd28c0iT57ikX';
+const GOOGLE_MAPS = teachingCentre.mapsUrl;
 const MAPS_EMBED =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4236.391238712835!2d76.9489722760682!3d28.39628499476872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3df96dc92b09%3A0x1ee2e068ba193a36!2sGOOD%20MARKS%20CLASSES!5e1!3m2!1sen!2sus!4v1778357077009!5m2!1sen!2sus';
 
@@ -44,7 +45,7 @@ const faqItems = [
   },
   {
     q: 'Where is Good Marks Classes located in Gurgaon?',
-    a: 'Good Marks Classes is based in Sector 85, Gurugram (Haryana). We serve students across Gurgaon Sectors 78–99 (including sectors 80, 81, 85, 87, 88, 88A, 93–96) and Manesar Sectors 1–5 + NSG Manesar. Use the map on this page to get directions.',
+    a: locationAnswer,
   },
   {
     q: 'What are the batch timings for coaching classes?',
@@ -52,7 +53,7 @@ const faqItems = [
   },
   {
     q: 'Do you offer online classes or home tuition as well?',
-    a: 'Yes. We offer offline classes at our Gurgaon centre, live online batches (max 10 students) for students across India, hybrid learning, and one-to-one home tuition in Gurgaon for CBSE Classes 8–12, IIT JEE, NEET and subject-wise support.',
+    a: learningFormatsAnswer,
   },
   {
     q: 'How quickly does the Good Marks team respond to enquiries?',
@@ -181,7 +182,7 @@ export default function Contact() {
                     <MonitorPlay className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-primary-600 pointer-events-none" />
                     <select name="mode" id="contact-mode" defaultValue="" className="w-full pl-10 pr-10 py-3 rounded-xl border border-primary-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 transition-all text-sm appearance-none shadow-sm">
                       <option value="" disabled>Preferred learning mode (optional)</option>
-                      <option value="offline">Offline – Gurgaon Centre</option>
+                      <option value="offline">Offline – Sector 85, Gurugram Centre</option>
                       <option value="online">Online (Live, max 10 students)</option>
                       <option value="hybrid">Hybrid</option>
                       <option value="home-tuition">Home Tuition</option>
@@ -242,7 +243,7 @@ export default function Contact() {
               <div className="w-14 h-14 rounded-2xl bg-primary-100 flex items-center justify-center mb-5">
                 <Navigation className="w-7 h-7 text-primary-600" />
               </div>
-              <h3 className="font-bold text-secondary-900 mb-1">Visit Campus</h3>
+              <h3 className="font-bold text-secondary-900 mb-1">Visit Our Teaching Centre</h3>
               <p className="text-lg font-black text-secondary-900 mb-1">Sector 85, Gurugram</p>
               <p className="text-caption text-slate-500 mb-4">Get directions on Google Maps & plan your visit</p>
               <span className="inline-flex items-center gap-1 text-primary-700 font-bold text-sm">Get Directions <ArrowRight className="w-4 h-4" /></span>
@@ -264,7 +265,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Good Marks Classes location on Google Maps"
+                title="Good Marks Classes Sector 85 teaching centre on Google Maps"
               ></iframe>
             </div>
             <div className="flex flex-col gap-6">
@@ -278,7 +279,8 @@ export default function Contact() {
                     <p className="text-caption text-slate-500">Sector 85, Gurugram, Haryana — see map</p>
                   </div>
                 </div>
-                <div className="flex gap-2.5 mb-3">
+                <p className="text-sm text-slate-600 mb-3">Service areas: classroom sessions at Sector 85; online, hybrid and home tuition options subject to availability.</p>
+                <div className="flex flex-wrap gap-2.5 mb-3">
                   <span className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-bold text-secondary-700">Gurgaon Sectors 78–99</span>
                   <span className="px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-bold text-secondary-700">Manesar Sectors 1–5, NSG</span>
                 </div>

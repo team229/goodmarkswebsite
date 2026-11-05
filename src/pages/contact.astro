@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../components/Contact';
+import { organizationId, locationAnswer, learningFormatsAnswer } from '../data/business';
 
 const siteUrl = 'https://www.goodmarksclasses.com';
 const url = `${siteUrl}/contact`;
@@ -15,48 +16,7 @@ const contactPageSchema = {
     name: 'Good Marks Classes',
     url: siteUrl
   },
-  mainEntity: {
-    '@type': ['EducationalOrganization', 'LocalBusiness'],
-    name: 'Good Marks Classes',
-    url: siteUrl,
-    telephone: '+918800880028',
-    email: 'info@goodmarksclasses.com',
-    logo: `${siteUrl}/good-marks-logo.png`,
-    image: `${siteUrl}/good-marks-logo.png`,
-    founder: {
-      '@type': 'Person',
-      name: 'Sunil Gola',
-      description: 'Founder, B.Tech, Delhi Technological University (DTU)'
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Gurgaon',
-      addressRegion: 'Haryana',
-      addressCountry: 'IN'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 28.39628499476872,
-      longitude: 76.9489722760682
-    },
-    hasMap: 'https://www.google.com/maps/search/?api=1&query=GOOD+MARKS+CLASSES+28.39628499476872,76.9489722760682',
-    areaServed: [
-      { '@type': 'Place', name: 'Gurgaon Sectors 78 to 99' },
-      { '@type': 'Place', name: 'Manesar Sectors 1 to 5' },
-      { '@type': 'Place', name: 'NSG Manesar' }
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+918800880028',
-      email: 'info@goodmarksclasses.com',
-      contactType: 'Customer Support',
-      availableLanguage: ['en', 'hi']
-    },
-    sameAs: [
-      'https://www.instagram.com/goodmarksclassesgurgaon/',
-      'https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ'
-    ]
-  }
+  mainEntity: { '@id': organizationId }
 };
 
 const breadcrumbSchema = {
@@ -103,7 +63,7 @@ const faqSchema = {
       name: 'Where is Good Marks Classes located in Gurgaon?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Good Marks Classes is based in Sector 85, Gurugram (Haryana). We serve students across Gurgaon Sectors 78–99 (including sectors 80, 81, 85, 87, 88, 88A, 93–96) and Manesar Sectors 1–5 + NSG Manesar. Use the map on this page to get directions.'
+        text: locationAnswer
       }
     },
     {
@@ -119,7 +79,7 @@ const faqSchema = {
       name: 'Do you offer online classes or home tuition as well?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. We offer offline classes at our Gurgaon centre, live online batches (max 10 students) for students across India, hybrid learning, and one-to-one home tuition in Gurgaon for CBSE Classes 8–12, IIT JEE, NEET and subject-wise support.'
+        text: learningFormatsAnswer
       }
     },
     {
@@ -135,7 +95,7 @@ const faqSchema = {
 ---
 <BaseLayout
   title="Contact Us | Call 8800 8800 28 | GoodMarks Classes"
-  description="Contact GoodMarks Classes in Gurgaon for JEE, NEET and CBSE tuition. Call 8800 8800 28 or book a free demo class today."
+  description="Contact our Sector 85, Gurugram teaching centre for JEE, NEET and CBSE tuition serving Gurgaon and Manesar. Call 8800 8800 28."
 >
   <script type="application/ld+json" set:html={JSON.stringify(contactPageSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />

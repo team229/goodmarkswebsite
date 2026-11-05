@@ -1,3 +1,4 @@
+import { organizationId } from '../data/business';
 import React from 'react';
 import { ArrowLeft, GraduationCap, ChevronDown, Award, CheckCircle2, Phone, BookText, Users as Users2, Target, Clock, MessageCircleQuestion, Activity, Flame, Atom, FlaskConical, Calculator, Dna } from 'lucide-react';
 import { tuitionPages, TuitionPage } from '../data/tuition';
@@ -120,10 +121,13 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
 
   const courseSchema = {
     '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    name: 'Good Marks Classes',
-    url: 'https://www.goodmarksclasses.com',
-    description: `Best ${subjectName} tuition classes in ${location} for Class 11 & 12. CBSE boards, JEE, and NEET preparation with small batches.`
+    '@type': 'Service',
+    '@id': `https://www.goodmarksclasses.com/tuition/${slug}/#service`,
+    name: `${subjectName} tuition for students in ${location}`,
+    url: `https://www.goodmarksclasses.com/tuition/${slug}/`,
+    provider: { '@id': organizationId },
+    areaServed: { '@type': 'Place', name: location },
+    description: `${subjectName} tuition for families in ${location}. Classroom sessions at Sector 85, Gurugram; online, hybrid and home tuition options subject to availability.`
   };
 
   return (
@@ -149,6 +153,7 @@ export default function TuitionPage({ slug }: TuitionPageProps) {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">{page.title}</h1>
+            <p className="text-white/90 max-w-3xl leading-relaxed mb-6">Our main teaching centre is in Sector 85, Gurugram. We serve families in {location} through classroom sessions there, live online classes, hybrid programmes and home tuition, subject to course and tutor availability.</p>
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-8">
               Class 11 & 12 {subjectName} tuition at Good Marks Classes — {config.exams} preparation with expert faculty and genuinely small batches.
             </p>

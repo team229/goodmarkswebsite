@@ -86,7 +86,7 @@ Class 11 and 12 Physics Tuition Classes in Manesar batches at Good Marks Classes
       { q: "How small are the batches, roughly?", a: "Small enough that a teacher knows every student by name and by weak topic. Numbers stay well below what a typical school classroom holds." },
       { q: "Do we need to arrange our own study material?", a: "No, it's included — notes, practice sheets, and previous years' papers, kept current with the syllabus." },
       { q: "Can we sit in on a class before enrolling?", a: "Yes, and honestly we'd rather you did. A free demo class tells you more than anything written here could." },
-      { q: "What timings do you run at the Manesar center?", a: "Morning, evening, and weekend batches — pick whichever one fits around school." }
+      { q: "How can students in Manesar attend classes?", a: "Our teaching centre is in Sector 85, Gurugram. Students in Manesar can enquire about classroom sessions there, live online classes, hybrid programmes or home tuition. Confirm current timings and tutor availability before booking." }
     ]
   },
   {

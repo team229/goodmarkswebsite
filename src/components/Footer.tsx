@@ -1,3 +1,4 @@
+import { teachingCentre } from '../data/business';
 import { useRef, useState } from 'react';
 import { Instagram, Youtube, Globe } from 'lucide-react';
 import SpamGuard from './SpamGuard';
@@ -111,7 +112,7 @@ export default function Footer() {
         <div className="col-span-1">
           <h4 className="font-label-bold mb-4 text-white uppercase tracking-wider text-xs">Contact</h4>
           <div className="flex flex-col gap-2.5 text-sm opacity-80 mb-5">
-            <p>Gurgaon, Haryana, India</p>
+            <p>Main teaching centre: {teachingCentre.addressLabel}</p>
             <p>info@goodmarksclasses.com</p>
             <p><a href="tel:8800880028" className="hover:text-white transition-colors">8800 8800 28</a></p>
           </div>
@@ -119,6 +120,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2.5 text-sm opacity-80">
             <p><strong className="text-white">Gurgaon:</strong> Sectors 78 to 99 (incl. 80, 81, 85, 87, 88, 88A, 93-96)</p>
             <p><strong className="text-white">Manesar:</strong> Sectors 1-5, NSG Manesar</p>
+            <p>Online, hybrid and home tuition options subject to availability; classroom sessions at Sector 85.</p>
           </div>
         </div>
         
