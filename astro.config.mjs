@@ -1,5 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
 import { defineConfig } from 'astro/config';
@@ -13,6 +14,27 @@ const redirects = {};
 for (const loc of locations) {
   redirects[`/locations/iit-coaching-${loc}`] = `/locations/jee-coaching-${loc}`;
 }
+
+// Per-post <lastmod> for blog URLs, taken from the post's own frontmatter.
+// Other pages carry no lastmod: a build-time stamp would mark every URL as
+// changed on every deploy, which is a worse signal than no date at all.
+const blogLastmod = (() => {
+  const dir = path.join(process.cwd(), 'src/content/blog');
+  const map = new Map();
+  try {
+    for (const file of readdirSync(dir)) {
+      if (!file.endsWith('.md')) continue;
+      const src = readFileSync(path.join(dir, file), 'utf8').slice(0, 600);
+      const updated = src.match(/^updated:\s*"([0-9]{4}-[0-9]{2}-[0-9]{2})"/m);
+      const date = src.match(/^date:\s*"([0-9]{4}-[0-9]{2}-[0-9]{2})"/m);
+      const iso = updated?.[1] ?? date?.[1];
+      if (iso) map.set(file.replace(/\.md$/, ''), iso);
+    }
+  } catch {
+    // Missing content dir in a fresh checkout: emit the sitemap without lastmod.
+  }
+  return map;
+})();
 
 redirects['/courses/prefoundation'] = '/courses/cbse';
 redirects['/cbse-practice-papers'] = '/cbse-worksheets/';
@@ -85,6 +107,12 @@ export default defineConfig({
       // Exclude static redirect stubs (meta-refresh pages, not content).
       if (item.url.includes('/locations/iit-coaching-') || item.url.includes('/courses/prefoundation') || item.url.includes('/cbse-practice-papers')) {
         return undefined;
+      }
+      // Blog posts carry their own lastmod (frontmatter `updated`, else `date`).
+      const blog = item.url.match(/\/blogs\/([^/]+)\/$/);
+      if (blog) {
+        const iso = blogLastmod.get(blog[1]);
+        if (iso) item.lastmod = iso;
       }
       return item;
     }
