@@ -2,114 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Home from '../components/Home';
 
-const organizationLocalSchema = {
-  '@context': 'https://schema.org',
-  '@type': ['EducationalOrganization', 'LocalBusiness'],
-  name: 'Good Marks Classes',
-  url: 'https://www.goodmarksclasses.com',
-  telephone: '+918800880028',
-  email: 'info@goodmarksclasses.com',
-  location: [
-    {
-      '@type': 'Place',
-      name: 'Good Marks Classes – Gurgaon',
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 28.39628499476872,
-        longitude: 76.9489722760682
-      },
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Gurugram',
-        addressRegion: 'Haryana',
-        addressCountry: 'IN',
-        description: 'Sectors 78 to 99 including Sectors 80, 81, 85, 87, 88, 88A, 93, 94, 95, 96'
-      }
-    },
-    {
-      '@type': 'Place',
-      name: 'Good Marks Classes – Manesar',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Manesar',
-        addressRegion: 'Haryana',
-        addressCountry: 'IN',
-        description: 'Sectors 1, 2, 3, 4, 5, NSG Manesar'
-      }
-    }
-  ],
-  areaServed: [
-    { '@type': 'Place', name: 'Gurgaon Sector 78' },
-    { '@type': 'Place', name: 'Gurgaon Sector 79' },
-    { '@type': 'Place', name: 'Gurgaon Sector 80' },
-    { '@type': 'Place', name: 'Gurgaon Sector 81' },
-    { '@type': 'Place', name: 'Gurgaon Sector 82' },
-    { '@type': 'Place', name: 'Gurgaon Sector 83' },
-    { '@type': 'Place', name: 'Gurgaon Sector 84' },
-    { '@type': 'Place', name: 'Gurgaon Sector 85' },
-    { '@type': 'Place', name: 'Gurgaon Sector 86' },
-    { '@type': 'Place', name: 'Gurgaon Sector 87' },
-    { '@type': 'Place', name: 'Gurgaon Sector 88' },
-    { '@type': 'Place', name: 'Gurgaon Sector 88A' },
-    { '@type': 'Place', name: 'Gurgaon Sector 89' },
-    { '@type': 'Place', name: 'Gurgaon Sector 90' },
-    { '@type': 'Place', name: 'Gurgaon Sector 91' },
-    { '@type': 'Place', name: 'Gurgaon Sector 92' },
-    { '@type': 'Place', name: 'Gurgaon Sector 93' },
-    { '@type': 'Place', name: 'Gurgaon Sector 94' },
-    { '@type': 'Place', name: 'Gurgaon Sector 95' },
-    { '@type': 'Place', name: 'Gurgaon Sector 96' },
-    { '@type': 'Place', name: 'Gurgaon Sector 97' },
-    { '@type': 'Place', name: 'Gurgaon Sector 98' },
-    { '@type': 'Place', name: 'Gurgaon Sector 99' },
-    { '@type': 'Place', name: 'Manesar Sector 1' },
-    { '@type': 'Place', name: 'Manesar Sector 2' },
-    { '@type': 'Place', name: 'Manesar Sector 3' },
-    { '@type': 'Place', name: 'Manesar Sector 4' },
-    { '@type': 'Place', name: 'Manesar Sector 5' },
-    { '@type': 'Place', name: 'NSG Manesar' }
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+918800880028',
-    email: 'info@goodmarksclasses.com',
-    contactType: 'Customer Support'
-  }
-};
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Good Marks Classes',
-  url: 'https://www.goodmarksclasses.com',
-  telephone: '+918800880028',
-  email: 'info@goodmarksclasses.com',
-  address: [
-    {
-      '@type': 'PostalAddress',
-      name: 'Good Marks Classes – Gurgaon',
-      addressLocality: 'Gurugram',
-      addressRegion: 'Haryana',
-      addressCountry: 'IN',
-      description: 'Sectors 78 to 99 including Sectors 80, 81, 85, 87, 88, 88A, 93, 94, 95, 96'
-    },
-    {
-      '@type': 'PostalAddress',
-      name: 'Good Marks Classes – Manesar',
-      addressLocality: 'Manesar',
-      addressRegion: 'Haryana',
-      addressCountry: 'IN',
-      description: 'Sectors 1, 2, 3, 4, 5, NSG Manesar'
-    }
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+918800880028',
-    email: 'info@goodmarksclasses.com',
-    contactType: 'Customer Support'
-  }
-};
-
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -126,8 +18,6 @@ const webSiteSchema = {
 };
 ---
 <BaseLayout title="JEE & NEET Coaching in Gurgaon | GoodMarks Classes" description="JEE & NEET coaching in Gurgaon with expert faculty, small batches and personal attention for Class 9–12. Book a free demo class today.">
-  <script type="application/ld+json" set:html={JSON.stringify(organizationLocalSchema)} />
-  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
   <Home client:load />
 </BaseLayout>

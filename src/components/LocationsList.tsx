@@ -42,8 +42,8 @@ export default function LocationsList() {
             <MapPin className="w-8 h-8 text-primary-600" />
           </div>
           <div>
-            <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Our Locations</h1>
-            <p className="text-slate-500 mt-1">Find Good Marks Classes coaching near you — pick between <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> or <a href="/courses" className="text-primary-600 font-semibold hover:underline">subject-wise tuition</a>.</p>
+            <h1 className="text-4xl md:text-5xl font-black text-secondary-900 tracking-tight">Areas We Serve</h1>
+            <p className="text-slate-500 mt-1">Our teaching centre is in Sector 85, Gurugram. These pages describe areas we serve, with live online classes also available. Explore <a href="/courses/iit" className="text-primary-600 font-semibold hover:underline">IIT JEE coaching in Gurgaon</a>, <a href="/courses/neet" className="text-primary-600 font-semibold hover:underline">NEET coaching in Gurgaon</a> or <a href="/courses" className="text-primary-600 font-semibold hover:underline">subject-wise tuition</a>.</p>
           </div>
         </div>
 
@@ -102,7 +102,7 @@ export default function LocationsList() {
                   <h2 className="text-2xl font-black text-secondary-900">
                     {meta.heading} in {area}
                   </h2>
-                  <span className="text-sm text-slate-400 font-semibold">({pages.length} locations)</span>
+                  <span className="text-sm text-slate-400 font-semibold">({pages.length} service pages)</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                   {pages.map(page => (

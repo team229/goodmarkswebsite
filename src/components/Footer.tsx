@@ -111,7 +111,7 @@ export default function Footer() {
         <div className="col-span-1">
           <h4 className="font-label-bold mb-4 text-white uppercase tracking-wider text-xs">Contact</h4>
           <div className="flex flex-col gap-2.5 text-sm opacity-80 mb-5">
-            <p>Gurgaon, Haryana, India</p>
+            <p>Teaching centre: Sector 85, Gurugram, Haryana, India</p>
             <p>info@goodmarksclasses.com</p>
             <p><a href="tel:8800880028" className="hover:text-white transition-colors">8800 8800 28</a></p>
           </div>

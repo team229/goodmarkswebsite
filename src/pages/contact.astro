@@ -15,48 +15,7 @@ const contactPageSchema = {
     name: 'Good Marks Classes',
     url: siteUrl
   },
-  mainEntity: {
-    '@type': ['EducationalOrganization', 'LocalBusiness'],
-    name: 'Good Marks Classes',
-    url: siteUrl,
-    telephone: '+918800880028',
-    email: 'info@goodmarksclasses.com',
-    logo: `${siteUrl}/good-marks-logo.png`,
-    image: `${siteUrl}/good-marks-logo.png`,
-    founder: {
-      '@type': 'Person',
-      name: 'Sunil Gola',
-      description: 'Founder, B.Tech, Delhi Technological University (DTU)'
-    },
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Gurgaon',
-      addressRegion: 'Haryana',
-      addressCountry: 'IN'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 28.39628499476872,
-      longitude: 76.9489722760682
-    },
-    hasMap: 'https://www.google.com/maps/search/?api=1&query=GOOD+MARKS+CLASSES+28.39628499476872,76.9489722760682',
-    areaServed: [
-      { '@type': 'Place', name: 'Gurgaon Sectors 78 to 99' },
-      { '@type': 'Place', name: 'Manesar Sectors 1 to 5' },
-      { '@type': 'Place', name: 'NSG Manesar' }
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+918800880028',
-      email: 'info@goodmarksclasses.com',
-      contactType: 'Customer Support',
-      availableLanguage: ['en', 'hi']
-    },
-    sameAs: [
-      'https://www.instagram.com/goodmarksclassesgurgaon/',
-      'https://youtube.com/@sunilgolaphysicsclasses?si=4yL9JVuHUPDfdTYQ'
-    ]
-  }
+  mainEntity: { '@id': `${siteUrl}/#organization` }
 };
 
 const breadcrumbSchema = {

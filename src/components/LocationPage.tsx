@@ -109,28 +109,22 @@ export default function LocationPage({ slug }: LocationPageProps) {
     ]
   };
 
-  const localBusinessSchema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'EducationalOrganization',
-    '@id': `https://www.goodmarksclasses.com/locations/${slug}#organization`,
-    name: `Good Marks Classes — ${page.title}`,
+    '@type': 'Service',
+    '@id': `https://www.goodmarksclasses.com/locations/${slug}#service`,
+    name: page.title,
+    serviceType: typeShort,
     url: `https://www.goodmarksclasses.com/locations/${slug}`,
-    parentOrganization: { '@id': 'https://www.goodmarksclasses.com/#organization' },
-    telephone: '+91-8800880028',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: area,
-      addressRegion: 'Haryana',
-      addressCountry: 'IN'
-    },
-    areaServed: area
+    provider: { '@id': 'https://www.goodmarksclasses.com/#organization' },
+    areaServed: { '@type': 'Place', name: areaName }
   };
 
   return (
     <main className="bg-offwhite min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero Section */}
       <section className={`bg-gradient-to-r ${typeColor} pt-32 lg:pt-40 pb-20 relative overflow-hidden`}>
@@ -146,16 +140,19 @@ export default function LocationPage({ slug }: LocationPageProps) {
                 <MapPin className="w-7 h-7 text-white" />
               </div>
               <div>
-                <p className="uppercase tracking-[0.2em] text-xs font-bold text-white/70">Premium Coaching Center</p>
+                <p className="uppercase tracking-[0.2em] text-xs font-bold text-white/70">Coaching Service Area</p>
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight">{page.title}</h1>
             <p className="text-xl text-white/90 max-w-3xl leading-relaxed mb-8">
               {typeShort} at Good Marks Classes — expert faculty, small batches, and proven results for students in {areaName}
             </p>
+            <p className="text-white/90 mb-6">
+              Our teaching centre is in Sector 85, Gurugram. This page covers services for students in {areaName}; live online classes are also available. Contact us to confirm the suitable learning mode.
+            </p>
             <div className="flex flex-wrap items-center gap-4">
               <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">{typeLabel}</span>
-              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Classroom Program</span>
+              <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Classroom at Sector 85</span>
               <span className="px-5 py-2 rounded-full bg-white/20 backdrop-blur text-white text-sm font-bold uppercase tracking-wider">Online & Offline</span>
             </div>
           </div>
