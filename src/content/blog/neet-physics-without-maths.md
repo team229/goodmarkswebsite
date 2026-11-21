@@ -3,7 +3,7 @@ title: "NEET Physics Without Strong Maths: What Actually Helps"
 excerpt: "Most NEET aspirants who fear Physics are not bad at Maths. They were never taught to rearrange a formula before putting numbers in. The small toolkit behind most numericals, the chapters to secure first, and a six-week repair plan."
 date: "2026-11-03"
 updated: "2026-11-03"
-image: /images/blog/neet-physics-without-maths.webp
+image: /images/blog/neet-physics-without-maths-v2.webp
 metaTitle: "NEET Physics Without Strong Maths: What to Fix First"
 metaDescription: "NEET Physics uses far less Maths than students fear. The six core skills behind most numericals, the chapters to secure first, and a six-week repair plan."
 category: "NEET"

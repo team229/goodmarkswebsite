@@ -3,7 +3,7 @@ title: "JEE Advanced After JEE Main: What Actually Changes"
 excerpt: "Mains rewards coverage and speed. Advanced rewards depth, stamina and the willingness to sit with one problem. What changes in the paper, in the week, and in the three habits that decide the result."
 date: "2026-11-05"
 updated: "2026-11-05"
-image: /images/blog/jee-advanced-after-mains.webp
+image: /images/blog/jee-advanced-after-mains-v2.webp
 metaTitle: "JEE Advanced After JEE Main: What Actually Changes"
 metaDescription: "JEE Advanced rewards depth, not speed. What changes in the paper and the week, and how to read your JEE Main result as a diagnostic rather than a forecast."
 category: "IIT JEE"

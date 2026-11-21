@@ -3,7 +3,7 @@ title: "Drop a Year for JEE or NEET? The Questions That Decide It"
 excerpt: "The result tells you where the student finished. Three months of marked papers tell you whether a repeat changes anything. A framework for the ten days after a disappointing score."
 date: "2026-11-03"
 updated: "2026-11-03"
-image: /images/blog/drop-year-jee-neet-decision.webp
+image: /images/blog/drop-year-jee-neet-decision-v2.webp
 metaTitle: "Dropping a Year for JEE or NEET: What to Check First"
 metaDescription: "A drop year is a decision about trajectory, not one result. The evidence that predicts a better second attempt, the three repeat models, and what to ask."
 category: "IIT JEE"

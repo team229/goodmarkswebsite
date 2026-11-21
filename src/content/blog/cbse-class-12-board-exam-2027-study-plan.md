@@ -3,7 +3,7 @@ title: "CBSE Class 12 Boards 2027: A 12-Week Plan That Fits JEE/NEET"
 excerpt: "Twelve weeks from 12 November, four phases, and one rule that settles the morning argument: board work takes the first slot, entrance work the second. Includes the practical file deadline, the pre-board repair method and a December stop list."
 date: "2026-11-05"
 updated: "2026-11-05"
-image: /images/blog/cbse-class-12-board-exam-2027-study-plan.webp
+image: /images/blog/cbse-class-12-board-exam-2027-study-plan-v2.webp
 metaTitle: "CBSE Class 12 Study Plan 2027: Boards and JEE/NEET"
 metaDescription: "A 12-week CBSE Class 12 plan for the 2027 boards that still leaves real time for JEE or NEET, with four phases, a weekly split and a December stop list."
 category: "CBSE"
