@@ -1,8 +1,8 @@
 ---
 title: "NEET Biology: How to Read NCERT So It Actually Sticks"
 excerpt: "A student can read a chapter twice, highlight most of it and still lose marks on a line she was sure of. The fix is not more reading. It is four passes, a blank page and a recall test."
-date: "2026-11-02"
-updated: "2026-11-02"
+date: "2026-11-30"
+updated: "2026-11-21"
 image: /images/blog/neet-biology-ncert-study-method.webp
 metaTitle: "NEET Biology: How to Read NCERT So It Actually Sticks"
 metaDescription: "Re-reading NCERT feels like studying and is not. A four-pass method for NEET Biology: survey, annotate, rebuild diagrams, turn the chapter into questions."

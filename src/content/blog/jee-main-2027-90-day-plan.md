@@ -1,8 +1,8 @@
 ---
 title: "JEE Main 2027: A 90-Day Plan for Session 1"
 excerpt: "Three 30-day blocks from 2 November: diagnose what is actually broken, convert it into timed papers, then repair and taper. One mock every Saturday, an error log that changes the plan, and a list of what to stop doing in the last three weeks."
-date: "2026-11-02"
-updated: "2026-11-02"
+date: "2026-11-27"
+updated: "2026-11-21"
 image: /images/blog/jee-main-2027-90-day-plan-v2.webp
 metaTitle: "JEE Main 2027: 90-Day Plan for Session 1 (Week by Week)"
 metaDescription: "Three 30-day blocks, one mock every Saturday and an error log that changes next week's study plan. A workable 90-day plan for JEE Main Session 1."

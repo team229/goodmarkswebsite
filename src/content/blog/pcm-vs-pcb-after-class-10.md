@@ -1,8 +1,8 @@
 ---
 title: "PCM or PCB After Class 10: What the Choice Actually Decides"
 excerpt: "PCM keeps JEE Main open. PCB keeps NEET UG open. Neither keeps both, and PCMB costs a fourth subject's hours. The two rules, and the evidence a 15-year-old can produce before the form."
-date: "2026-11-05"
-updated: "2026-11-05"
+date: "2026-11-15"
+updated: "2026-11-21"
 image: /images/blog/pcm-vs-pcb-after-class-10-v2.webp
 metaTitle: "PCM or PCB After Class 10: What the Choice Actually Decides"
 metaDescription: "PCM keeps JEE Main open and PCB keeps NEET UG open, but neither keeps both. The subject rules, what PCMB really costs, and the evidence before the form."

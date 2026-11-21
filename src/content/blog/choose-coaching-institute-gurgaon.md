@@ -2,7 +2,7 @@
 title: "How to Choose a Coaching Institute in Gurgaon: 10 Checks"
 excerpt: "Ten checks a parent can run in one visit, each with the answer that should worry you, and the one that decides most cases: who marks the work."
 date: "2026-11-05"
-updated: "2026-11-05"
+updated: "2026-11-21"
 image: /images/blog/choose-coaching-institute-gurgaon-v2.webp
 metaTitle: "How to Choose a Coaching Institute in Gurgaon: 10 Checks"
 metaDescription: "Ten checks to run before you pay a coaching institute in Gurgaon, from the real batch size to who marks the scripts, plus a one-visit script for parents."
